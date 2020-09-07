@@ -1,0 +1,1 @@
+Sea una empresa que ofrece travesías en Kayak. La misma ofrece distintas travesías que varían en duración (medido en cantidad de días)  y en el itinerario (un recorrido que se describe con texto). La empresa admite kayakistas inexpertos como también de experiencia. Cualquier persona que quiera hacer una travesía le solicita a la empresa y la empresa le informa el arancel.

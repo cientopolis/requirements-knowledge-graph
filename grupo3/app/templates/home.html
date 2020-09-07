@@ -1,26 +1,43 @@
-{% extends "layout.html" %}
-{% block content %}
-
+{% extends "layout.html" %} {% block content %}
 
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-md-12">
-           <br>
-            <form method="POST" enctype="multipart/form-data">
-                  <input type="file" onchange="this.form.submit()" name="file"/>
-             </form>
-             <hr>
-                  <form method="POST" action="/mejorado">
-                    <div class="form-group">
-                        <label for="exampleFormControlTextarea1">Ingrese texto</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1"name="texto" rows="3">{{ texto_default }}</textarea>
-                        <br>
-                        <button type="submit" class="btn btn-primary" name="siguiente">Procesar texto</button>
-                      </div>
-                  </form>
+	<div class="row">
+		<div class="col-md-12">
+			<br />
+			<form method="POST" enctype="multipart/form-data">
+				<input
+					type="file"
+					onchange="this.form.submit()"
+					name="file"
+				/>
+			</form>
+			<hr />
+			<form method="POST" action="/mejorado">
+				<div class="form-group">
+					<label for="exampleFormControlTextarea1"
+						>Ingrese texto</label
+					>
+					<textarea
+						required
+						class="form-control"
+						id="exampleFormControlTextarea1"
+						name="texto"
+						rows="3"
+					>
+{{ texto_default }}</textarea
+					>
+					<br />
+					<button
+						type="submit"
+						class="btn btn-primary"
+						name="siguiente"
+					>
+						Procesar texto
+					</button>
+				</div>
+			</form>
 		</div>
 	</div>
 </div>
-
 
 {% endblock %}
