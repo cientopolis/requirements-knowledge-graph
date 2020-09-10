@@ -6,6 +6,7 @@ ALLOWED_EXTENSIONS = {'txt'}
 
 app = Flask(__name__)
 app.debug=True
+aux_dict={}
 
 
 
@@ -42,16 +43,52 @@ def home():
 
 
 
+def procesar_texto_basico(_texto_basico):
+    """Acá habría que invocar el código que genere el equipo 1
+    por el momento solamente recibe como parametro el texto ingresado
+    en la pagina de inicio y retorna una lista de strings hardcodeada"""
+    return[ "Una empresa ofrece travesías en kayak.",
+            "Las travesías en kayak tienen duración.",
+            "La duración es un tiempo.",
+            "El tiempo es medido en días.",
+            "Las travesías en kayak tienen itinerario.",
+            "El itinerario es un texto.",
+            "La empresa ofrece travesías en kayak a kayakistas inexpertos.",
+            "La empresa ofrece travesías en kayak a kayakistas expertos.",
+            "Un kayakista solicita una travesía en kayak a la empresa.",
+            "La travesía en kayak tiene arancel.",
+            "La empresa informa el arancel a los kayakistas.",
+]
+
 @app.route("/mejorado", methods=['POST', 'GET'])
 def mejorado():
     if request.method =="POST":
         if "siguiente" in request.form:
-            #Acá es donde se debería procesar el texto que se encuentra en request.form["texto"], por ahora lo retorno asi nomas para no tener la pagina vacia
-            return render_template("mejorado.html", texto=request.form["texto"])
+            lista_texto_mejorado = procesar_texto_basico(request.form["texto"])
+            #Guardo la estructura en un diccionario creado previamente para no tener 
+            #que pasarme la estructura intacta desde la vista
+            aux_dict["lista_mejorado"]=lista_texto_mejorado
+            return render_template("mejorado.html", lista_mejorado=aux_dict["lista_mejorado"])
     #Si no se recibió el texto por POST, redirige a la página de inicio.
     return redirect("/")
 
 
+def procesar_texto_mejorado(_lista_texto_mejorado):
+    pass
+
+@app.route("/grafo", methods=['POST', 'GET'])
+def grafo():
+    if request.method =="POST":
+        if "generar_grafo" in request.form:
+            #recupero del diccionario auxiliar la lista de strings
+            lista_texto_mejorado = aux_dict["lista_mejorado"]
+            #procesa el texto para convertirlo a grafo
+            procesar_texto_mejorado(lista_texto_mejorado)
+            return render_template("grafo.html")
+    #Si no se recibió el texto por POST, redirige a la página de inicio.
+    return redirect("/")
+
 if __name__ == "__main__":
     app.secret_key = 'super secret key'
     app.run(debug=True)
+

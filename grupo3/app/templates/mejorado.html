@@ -6,7 +6,25 @@
     <div class="row">
         <div class="col-md-12">
            <br>
-            {{ texto }}
+        <table class="table table-striped">
+            <tread>
+                <tr>
+                    <th>Texto procesado</th>
+                </tr>
+            </tread>
+            <br>
+            <tbody>
+                {%  for item in lista_mejorado  %}
+                <tr>
+                    <td>{{ item }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <form method="POST" action="/grafo">
+            <button type="submit" class="btn btn-primary" name="generar_grafo">Generar grafo
+            </form>
+    </button>
 		</div>
 	</div>
 </div>
