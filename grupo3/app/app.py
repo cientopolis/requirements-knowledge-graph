@@ -1,12 +1,13 @@
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for, flash,  session
 from werkzeug.utils import secure_filename
+from flask_session import Session
+import json
 
 #Extensiones de archivos permitidos
 ALLOWED_EXTENSIONS = {'txt'}
 
 app = Flask(__name__)
 app.debug=True
-aux_dict={}
 
 
 
@@ -17,6 +18,10 @@ def allowed_file(filename):
 
 
  #usar  app.logger.info("asdasdasd") para imprimir en consola
+# Para grabar en la cookie usar session["algo"] = datos
+# Para recuperar usar    variable = session.get["algo"]
+# Posiblemente tengamos que aplicar string.decode("utf-8") al string que traemos de la cookie
+
 
 @app.route("/", methods=['POST', 'GET'])
 def home():
@@ -67,8 +72,8 @@ def mejorado():
             lista_texto_mejorado = procesar_texto_basico(request.form["texto"])
             #Guardo la estructura en un diccionario creado previamente para no tener 
             #que pasarme la estructura intacta desde la vista
-            aux_dict["lista_mejorado"]=lista_texto_mejorado
-            return render_template("mejorado.html", lista_mejorado=aux_dict["lista_mejorado"])
+            session["lista_mejorado"]=json.dumps(lista_texto_mejorado)
+            return render_template("mejorado.html", lista_mejorado=lista_texto_mejorado)
     #Si no se recibió el texto por POST, redirige a la página de inicio.
     return redirect("/")
 
@@ -81,7 +86,9 @@ def grafo():
     if request.method =="POST":
         if "generar_grafo" in request.form:
             #recupero del diccionario auxiliar la lista de strings
-            lista_texto_mejorado = aux_dict["lista_mejorado"]
+            lista_texto_mejorado = session.get("lista_mejorado")
+            #muestro en consola el texto obtenido
+            app.logger.info(lista_texto_mejorado)
             #procesa el texto para convertirlo a grafo
             procesar_texto_mejorado(lista_texto_mejorado)
             return render_template("grafo.html")
@@ -90,5 +97,7 @@ def grafo():
 
 if __name__ == "__main__":
     app.secret_key = 'super secret key'
+    app.config['SESSION_TYPE'] = 'filesystem'
+    Session(app)
     app.run(debug=True)
 
