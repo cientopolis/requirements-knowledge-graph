@@ -1,0 +1,22 @@
+{% extends "layout.html" %} {% block content %}
+
+<div class="card border-white text-white bg-dark">
+	<div class="card-header">Data frame</div>
+	<img
+		class="mx-auto d-block"
+		src="{{ url_for('static', filename='img/dataframe.jpg') }}"
+		alt="Card image cap"
+		width="70%"
+		height="70%"
+	/>
+	<div class="card-body">
+		<h4 class="card-title">Dataframe</h4>
+		<p class="card-text">
+			Dataframe a partir de texto procesado 
+		</p>
+	</div>
+</div>
+<form method="POST" action="/grafo">
+    <button type="submit" class="btn btn-primary" name="generar_grafo">Derivar Grafo
+    </form>
+{% endblock %}

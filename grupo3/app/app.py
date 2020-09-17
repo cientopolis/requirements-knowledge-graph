@@ -78,6 +78,13 @@ def mejorado():
     return redirect("/")
 
 
+@app.route("/dataframe",methods=["POST", "GET"])
+def dataframe():
+    if(request.method =="POST"):
+        if "generar_dataframe" in request.form:
+            return render_template("dataframe.html")
+    return redirect("/")
+
 def procesar_texto_mejorado(_lista_texto_mejorado):
     pass
 
