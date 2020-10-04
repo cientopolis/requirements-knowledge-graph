@@ -23,8 +23,27 @@ def allowed_file(filename):
 # Posiblemente tengamos que aplicar string.decode("utf-8") al string que traemos de la cookie
 
 
+
+@app.route("/login", methods=["POST", "GET"])
+def login():
+    
+    if(request.method == "POST"):
+        if(request.form["nombre"] and request.form["email"]):
+            session["nombre"] = request.form["nombre"]
+            session["email"] = request.form["email"]
+            return redirect("/")
+    else:
+        if(session.get("nombre")):
+            return redirect("/")
+    return render_template("login.html")
+
+
+
 @app.route("/", methods=['POST', 'GET'])
 def home():
+    if(not session.get("nombre") or not session.get("email")):
+        return redirect("/login")
+        
     if request.method == 'POST':
         #Verifica haber recibido un archivo en POST
         if 'file'  in request.files:

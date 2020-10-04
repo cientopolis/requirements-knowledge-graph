@@ -1,0 +1,55 @@
+{% extends "layout.html" %} {% block content %}
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-6 align-self-center">
+			<div class="page-header">
+				<h1>
+					<span class="upper">Bienvenidos a </span>
+					<br /><span class="super-big" id="super-big">
+						NLP Processing</span
+					>
+				</h1>
+				<h4>Una herramienta de procesamiento de requerimientos</h4>
+			</div>
+		</div>
+		<div class="col-md-6 align-self-center mt-5">
+			<form role="form" method="POST">
+				<legend class="legend">
+					Para poder usar la app, por favor ingrese sus datos:
+				</legend>
+				<fieldset>
+					<div class="form-group">
+						<label for="exampleNombre">
+							Nombre y apellido
+						</label>
+						<input
+							name="nombre"
+							required
+							type="text"
+							class="form-control"
+							id="exampleNombre"
+						/>
+					</div>
+
+					<div class="form-group">
+						<label for="exampleInputEmail1">
+							Correo Electronico
+						</label>
+						<input
+							name="email"
+							required
+							type="email"
+							class="form-control"
+							id="exampleInputEmail1"
+						/>
+					</div>
+				</fieldset>
+				<button type="submit" class="btn btn-primary">
+					Continuar
+				</button>
+			</form>
+		</div>
+	</div>
+</div>
+{% endblock %}

@@ -1,3 +1,17 @@
+:root {
+	--azulTele: #0088cc;
+}
+
+html,
+body {
+	height: 100%;
+}
+
 .navHeader {
-	background-color: #0088cc;
+	background-color: var(--azulTele);
+}
+
+h1 span.super-big {
+	font-size: 4rem;
+	color: var(--azulTele);
 }
