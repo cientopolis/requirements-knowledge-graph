@@ -1,10 +1,8 @@
 from flask import Flask, render_template, request, redirect, url_for, flash,  session
 from werkzeug.utils import secure_filename
 from flask_session import Session
-from flask_mysqldb import MySQL
+import mysql.connector
 import json
-
-
 from SentenceLoader import *
 #Extensiones de archivos permitidos
 ALLOWED_EXTENSIONS = {'txt'}
@@ -12,7 +10,13 @@ ALLOWED_EXTENSIONS = {'txt'}
 app = Flask(__name__)
 app.debug=True
 
-
+config = {
+        'user':'super',
+        'password': 'matitambero3',
+        'host': 'localhost',
+        'port': '3306',
+        'database': 'lifia'
+    }
 
 def allowed_file(filename):
     return '.' in filename and \
@@ -34,6 +38,17 @@ def login():
         if(request.form["nombre"] and request.form["email"]):
             session["nombre"] = request.form["nombre"]
             session["email"] = request.form["email"]
+            try:
+                connection = mysql.connector.connect(**config)
+                cursor = connection.cursor(buffered=True)
+                query = "Insert into usuarios(mail,nombreYApellido)values('"+request.form["email"]+"','"+request.form["nombre"]+"')"
+            
+                cursor.execute(query)
+                connection.commit()
+                cursor.close()
+                connection.close()
+            except:
+                flash("Ya existe un usuario con ese mail. Accediendo...")
             return redirect("/")
     else:
         if(session.get("nombre")):
@@ -60,6 +75,16 @@ def home():
                 flash('archivo subido correctamente', 'success')
                 #El decode("UTF-8") es porque lo trae como ascii, por lo que las tildes y otros simbolos se ven mal
                 texto_default = str(file.read().decode('UTF-8'))
+                try:
+                    connection = mysql.connector.connect(**config)
+                    cursor = connection.cursor(buffered=True)
+                    query = "Insert into archivos(texto,usuario)values('"+texto_default+"','"+session.get("email")+"')"
+                    cursor.execute(query)
+                    connection.commit()
+                    cursor.close()
+                    connection.close()
+                except:
+                    flash("El archivo es muy grande", "error")
                 #Vuelvo a cargar la página pero con el texto leido desde el archivo
                 return render_template('home.html', texto_default=texto_default)
             else:
@@ -71,7 +96,6 @@ def home():
 
 
 def procesar_texto_basico(_texto_basico):
-    print(_texto_basico)
     sl = SentencesLoader()
     processedSentences = ["Hubo un error procesando el texto"]
     try:
@@ -123,6 +147,7 @@ def grafo():
     return redirect("/")
 
 if __name__ == "__main__":
+    
     
     
     app.secret_key = 'super secret key'
