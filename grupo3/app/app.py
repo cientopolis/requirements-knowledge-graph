@@ -1,8 +1,11 @@
 from flask import Flask, render_template, request, redirect, url_for, flash,  session
 from werkzeug.utils import secure_filename
 from flask_session import Session
+from flask_mysqldb import MySQL
 import json
 
+
+from SentenceLoader import *
 #Extensiones de archivos permitidos
 ALLOWED_EXTENSIONS = {'txt'}
 
@@ -53,7 +56,7 @@ def home():
                 return redirect(request.url)
             #Verifica que el archivo tenga extensión válida
             if file and allowed_file(file.filename):
-                filename = secure_filename(file.filename)
+                
                 flash('archivo subido correctamente', 'success')
                 #El decode("UTF-8") es porque lo trae como ascii, por lo que las tildes y otros simbolos se ven mal
                 texto_default = str(file.read().decode('UTF-8'))
@@ -68,21 +71,19 @@ def home():
 
 
 def procesar_texto_basico(_texto_basico):
-    """Acá habría que invocar el código que genere el equipo 1
-    por el momento solamente recibe como parametro el texto ingresado
-    en la pagina de inicio y retorna una lista de strings hardcodeada"""
-    return[ "Una empresa ofrece travesías en kayak.",
-            "Las travesías en kayak tienen duración.",
-            "La duración es un tiempo.",
-            "El tiempo es medido en días.",
-            "Las travesías en kayak tienen itinerario.",
-            "El itinerario es un texto.",
-            "La empresa ofrece travesías en kayak a kayakistas inexpertos.",
-            "La empresa ofrece travesías en kayak a kayakistas expertos.",
-            "Un kayakista solicita una travesía en kayak a la empresa.",
-            "La travesía en kayak tiene arancel.",
-            "La empresa informa el arancel a los kayakistas.",
-]
+    print(_texto_basico)
+    sl = SentencesLoader()
+    processedSentences = ["Hubo un error procesando el texto"]
+    try:
+        processedSentences = sl.parse_paragraph(_texto_basico)
+    except(MissingParenthesis):
+        processedSentences = "Hay un error de parentesis"
+    except(MissingNoun):
+        processedSentences= "Hay un error de sustantivos"
+    except:
+        processedSentences = "Hubo un error en la aplicacion, por favor intente de nuevo"
+
+    return processedSentences
 
 @app.route("/mejorado", methods=['POST', 'GET'])
 def mejorado():
@@ -122,6 +123,8 @@ def grafo():
     return redirect("/")
 
 if __name__ == "__main__":
+    
+    
     app.secret_key = 'super secret key'
     app.config['SESSION_TYPE'] = 'filesystem'
     Session(app)
