@@ -1,0 +1,204 @@
+@prefix : <https://raw.githubusercontent.com/fdioguardi/scenarios_ontology/main/scenarios.ttll#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl> .
+
+<http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/requiredBy
+<http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/requiredBy> rdf:type owl:ObjectProperty ;
+                                                                            owl:inverseOf <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#dependsOn> .
+
+
+###  http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#dependsOn
+<http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#dependsOn> rdf:type owl:ObjectProperty ;
+                                                                            rdfs:domain <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/BehaviourDescription> ;
+                                                                            rdfs:range <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/BehaviourDescription> ;
+                                                                            rdfs:comment "Represents that an BehaviourDescription depends its behaviour on the completion of another BehaviourDescription."@en .
+
+
+###  http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#hasAction
+<http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#hasAction> rdf:type owl:ObjectProperty ;
+                                                                            rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                            rdfs:domain <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#Episode> ;
+                                                                            rdfs:range <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#Action> .
+
+
+###  http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#hasActor
+<http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#hasActor> rdf:type owl:ObjectProperty ;
+                                                                           rdfs:domain <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/BehaviourDescription> ;
+                                                                           rdfs:range <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#Actor> .
+
+
+###  http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#hasContext
+<http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#hasContext> rdf:type owl:ObjectProperty ;
+                                                                             rdfs:domain <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#Scenario> ;
+                                                                             rdfs:range <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#Condition> .
+
+
+###  http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#hasEpisode
+<http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#hasEpisode> rdf:type owl:ObjectProperty ;
+                                                                             rdfs:domain <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#Scenario> ;
+                                                                             rdfs:range <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#Episode> .
+
+
+###  http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#hasGoal
+<http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#hasGoal> rdf:type owl:ObjectProperty ;
+                                                                          rdfs:domain <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#Scenario> ;
+                                                                          rdfs:range <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#Condition> .
+
+
+###  http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#hasResource
+<http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#hasResource> rdf:type owl:ObjectProperty ;
+                                                                              rdfs:domain <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/BehaviourDescription> ;
+                                                                              rdfs:range <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#Resource> .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/BehaviourDescription
+<http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/BehaviourDescription> rdf:type owl:Class .
+
+
+###  http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#Action
+<http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#Action> rdf:type owl:Class .
+
+
+###  http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#Actor
+<http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#Actor> rdf:type owl:Class .
+
+
+###  http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#Condition
+<http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#Condition> rdf:type owl:Class .
+
+
+###  http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#Episode
+<http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#Episode> rdf:type owl:Class ;
+                                                                          rdfs:subClassOf <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/BehaviourDescription> .
+
+
+###  http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#Resource
+<http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#Resource> rdf:type owl:Class .
+
+
+###  http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#Scenario
+<http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#Scenario> rdf:type owl:Class ;
+                                                                           rdfs:subClassOf <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/BehaviourDescription> .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/c1
+<http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/c1> rdf:type owl:NamedIndividual ,
+                                                                             <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#Condition> ;
+                                                                    rdfs:label "The tomato plant has grown for about a month after being sowed."@en .
+
+
+###  http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/c2
+<http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/c2> rdf:type owl:NamedIndividual ,
+                                                                             <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#Condition> ;
+                                                                    rdfs:label "Plant the tomato seedling on soil"@en .
+
+
+###  http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/ep1
+<http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/ep1> rdf:type owl:NamedIndividual ,
+                                                                              <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#Episode> ;
+                                                                     rdfs:label "The gardener digs a hole in the soil with a shovel"@en .
+
+
+###  http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/ep2
+<http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/ep2> rdf:type owl:NamedIndividual ,
+                                                                              <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#Episode> ;
+                                                                     <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#dependsOn> <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/ep1> ;
+                                                                     rdfs:label "The gardener waters the soil"@en .
+
+
+###  http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/ep3
+<http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/ep3> rdf:type owl:NamedIndividual ,
+                                                                              <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#Episode> ;
+                                                                     <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#dependsOn> <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/ep2> ;
+                                                                     rdfs:label "The gardener takes the tomato plant from the seedbed"@en .
+
+
+###  http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/ep4
+<http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/ep4> rdf:type owl:NamedIndividual ,
+                                                                              <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#Episode> ;
+                                                                     <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#dependsOn> <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/ep3> ;
+                                                                     rdfs:label "The gardener places the tomato plant into the hole"@en .
+
+
+###  http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/ep5
+<http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/ep5> rdf:type owl:NamedIndividual ,
+                                                                              <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#Episode> ;
+                                                                     <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#dependsOn> <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/ep4> ;
+                                                                     rdfs:label "The gardener covers half of the stem of the tomato plant with soil"@en .
+
+
+###  http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/ep6
+<http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/ep6> rdf:type owl:NamedIndividual ,
+                                                                              <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#Episode> ;
+                                                                     <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#dependsOn> <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/ep5> ;
+                                                                     rdfs:label "The gardener waters the planted tomato plant"@en .
+
+
+###  http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/gardener
+<http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/gardener> rdf:type owl:NamedIndividual ,
+                                                                                   <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#Actor> ;
+                                                                          rdfs:label "gardener"@en .
+
+
+###  http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/sc1
+<http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/sc1> rdf:type owl:NamedIndividual ,
+                                                                              <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#Scenario> ;
+                                                                     <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#hasActor> <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/gardener> ;
+                                                                     <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#hasContext> <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/c1> ;
+                                                                     <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#hasEpisode> <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/ep1> ,
+                                                                                                                                                  <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/ep2> ,
+                                                                                                                                                  <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/ep3> ,
+                                                                                                                                                  <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/ep4> ,
+                                                                                                                                                  <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/ep5> ,
+                                                                                                                                                  <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/ep6> ;
+                                                                     <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#hasGoal> <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/c2> ;
+                                                                     <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#hasResource> <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/seedbed> ,
+                                                                                                                                                   <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/shovel> ,
+                                                                                                                                                   <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/soil> ,
+                                                                                                                                                   <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/tomato_plant> ;
+                                                                     rdfs:label "Transplant tomato plant"@en .
+
+
+###  http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/seedbed
+<http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/seedbed> rdf:type owl:NamedIndividual ,
+                                                                                  <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#Resource> ;
+                                                                         rdfs:label "seedbed"@en .
+
+
+###  http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/shovel
+<http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/shovel> rdf:type owl:NamedIndividual ,
+                                                                                 <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#Resource> ;
+                                                                        rdfs:label "shovel"@en .
+
+
+###  http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/soil
+<http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/soil> rdf:type owl:NamedIndividual ,
+                                                                               <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#Resource> ;
+                                                                      rdfs:label "soil"@en .
+
+
+###  http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/tomato_plant
+<http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/tomato_plant> rdf:type owl:NamedIndividual ,
+                                                                                       <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#Resource> ;
+                                                                              rdfs:label "tomato plant"@en .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
