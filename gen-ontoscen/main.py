@@ -9,7 +9,10 @@ def analyzeSentences(scenarios):
     # graph.parse("data/template.ttl", format="turtle", encoding="utf-8")
     for scenario in scenarios:
         print(scenario)
+        graph.createScenario(scenario)
 
+    file = open("output.txt", mode="w")
+    file.write(graph.serialize(format="turtle"))
 
 def loadSentencesFromJSON(fileName):
     file = open(fileName)
