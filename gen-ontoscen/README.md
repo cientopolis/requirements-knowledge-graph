@@ -4,7 +4,7 @@ Ontoscen generator is a Python tool that builds an Ontoscen graph out of a json 
 
 ## Structure
 
-✨ [`data/input.json`](./data/input.json) is a file containing requirement specification in the form of Scenarios. You can replace it by another file as long as it follows the same format.
+✨ [`data/input.json`](./data/input.json) is a file containing requirement specification in the form of Scenarios. You can replace it with any file that follows the same format.
 
 ✨ [`Ontoscen`](./src/ontoscen.py) represents an RDF graph with the Ontoscen ontology.
 
@@ -18,7 +18,8 @@ Ontoscen generator is a Python tool that builds an Ontoscen graph out of a json 
 # Clone the repo
 git clone https://github.com/cientopolis/requirements-knowledge-graph \
   && cd requirements-knowledge-graph \
-  && git checkout ontoscen
+  && git checkout ontoscen -- \
+  && cd gen-ontoscen
 
 # Setup and activate a virtual environment
 if python -m venv .venv && source .venv/bin/activate; then
@@ -34,8 +35,8 @@ fi
 
 The tool should be used as follows:
 
-```bash
-python main.py input_file output_file format
+```abnf
+python main.py <input_file> <output_file> <format>
 ```
 
 Example:
