@@ -4,33 +4,35 @@
 
 <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl> a owl:Ontology .
 
-<http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/requiredBy> a owl:ObjectProperty ;
-    owl:inverseOf <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#dependsOn> .
-
-<http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#hasAction> a owl:ObjectProperty ;
-    rdfs:domain <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#Episode> ;
-    rdfs:range <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#Action> ;
+ns1:hasAction a owl:ObjectProperty ;
+    rdfs:domain ns1:Episode ;
+    rdfs:range ns1:Action ;
     rdfs:subPropertyOf owl:topObjectProperty .
 
-<http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#hasActor> a owl:ObjectProperty ;
+ns1:hasActor a owl:ObjectProperty ;
     rdfs:domain <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/BehaviourDescription> ;
-    rdfs:range <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#Actor> .
+    rdfs:range ns1:Actor .
 
-<http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#hasContext> a owl:ObjectProperty ;
-    rdfs:domain <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#Scenario> ;
-    rdfs:range <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#Condition> .
+ns1:hasContext a owl:ObjectProperty ;
+    rdfs:domain ns1:Scenario ;
+    rdfs:range ns1:Condition .
 
-<http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#hasEpisode> a owl:ObjectProperty ;
-    rdfs:domain <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#Scenario> ;
-    rdfs:range <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#Episode> .
+ns1:hasEpisode a owl:ObjectProperty ;
+    rdfs:domain ns1:Scenario ;
+    rdfs:range ns1:Episode .
 
-<http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#hasGoal> a owl:ObjectProperty ;
-    rdfs:domain <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#Scenario> ;
-    rdfs:range <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#Condition> .
+ns1:hasGoal a owl:ObjectProperty ;
+    rdfs:domain ns1:Scenario ;
+    rdfs:range ns1:Condition .
 
-<http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#hasResource> a owl:ObjectProperty ;
+ns1:hasResource a owl:ObjectProperty ;
     rdfs:domain <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/BehaviourDescription> ;
-    rdfs:range <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#Resource> .
+    rdfs:range ns1:Resource .
+
+<http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/requiredBy> a owl:ObjectProperty ;
+    owl:inverseOf ns1:dependsOn .
+
+ns1:Action a owl:Class .
 
 ns1:actor1 a ns1:Actor ;
     rdfs:label "agricultural engineering" .
@@ -157,6 +159,11 @@ ns1:condition8 a ns1:Condition ;
 
 ns1:condition9 a ns1:Condition ;
     rdfs:label "have a healthy tomato plant, just pruned and ungrafted" .
+
+ns1:dependsOn a owl:ObjectProperty ;
+    rdfs:comment "Represents that an BehaviourDescription depends its behaviour on the completion of another BehaviourDescription."@en ;
+    rdfs:domain <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/BehaviourDescription> ;
+    rdfs:range <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/BehaviourDescription> .
 
 ns1:resource1 a ns1:Resource ;
     rdfs:label "agricultural lime" .
@@ -580,17 +587,6 @@ ns1:scenario9 a ns1:Scenario ;
         ns1:resource7 ;
     ns1:requiredBy ns1:episode54 .
 
-<http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#Action> a owl:Class .
-
-<http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#Actor> a owl:Class .
-
-<http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#Resource> a owl:Class .
-
-<http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#dependsOn> a owl:ObjectProperty ;
-    rdfs:comment "Represents that an BehaviourDescription depends its behaviour on the completion of another BehaviourDescription."@en ;
-    rdfs:domain <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/BehaviourDescription> ;
-    rdfs:range <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/BehaviourDescription> .
-
 ns1:actor4 a ns1:Actor ;
     rdfs:label "farmer" .
 
@@ -728,11 +724,6 @@ ns1:scenario7 a ns1:Scenario ;
         ns1:resource7 ;
     ns1:requiredBy ns1:episode33,
         ns1:episode39 .
-
-<http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#Condition> a owl:Class .
-
-<http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#Episode> a owl:Class ;
-    rdfs:subClassOf <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/BehaviourDescription> .
 
 ns1:episode0 a ns1:Episode ;
     rdfs:label "the agricultural engineer interprets the results of the soil analysis" ;
@@ -1149,14 +1140,13 @@ ns1:episode99 a ns1:Episode ;
     ns1:dependsOn ns1:episode98 ;
     ns1:requiredBy ns1:episode100 .
 
-<http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttll#Scenario> a owl:Class ;
-    rdfs:subClassOf <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/BehaviourDescription> .
-
 ns1:resource13 a ns1:Resource ;
     rdfs:label "tools" .
 
 ns1:resource0 a ns1:Resource ;
     rdfs:label "soil" .
+
+ns1:Actor a owl:Class .
 
 ns1:actor2 a ns1:Actor ;
     rdfs:label "agricultural engineer" .
@@ -1168,4 +1158,14 @@ ns1:resource7 a ns1:Resource ;
 
 ns1:actor0 a ns1:Actor ;
     rdfs:label "gardener" .
+
+ns1:Scenario a owl:Class ;
+    rdfs:subClassOf <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/BehaviourDescription> .
+
+ns1:Condition a owl:Class .
+
+ns1:Resource a owl:Class .
+
+ns1:Episode a owl:Class ;
+    rdfs:subClassOf <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/BehaviourDescription> .
 
