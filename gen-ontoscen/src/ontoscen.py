@@ -166,7 +166,7 @@ class Ontoscen(Graph):
         return individual
 
     def _add_individual(self, type: str, label: str) -> URIRef:
-        """Add a individual to Ontoscen if it doesn't exist.
+        """Add an individual to Ontoscen if it doesn't exist.
 
         If the individual doesn't exist:
             Add it to Ontoscen.
@@ -178,8 +178,8 @@ class Ontoscen(Graph):
                 counted.
 
         Returns:
-            individual (URIRef): A node with triples defining it's
-                class and label
+            individual (URIRef): A node with triples defining its class
+                and label.
         """
         if self.exists_individual_with(type, label):
             return self.get_individual_with(type, label)
