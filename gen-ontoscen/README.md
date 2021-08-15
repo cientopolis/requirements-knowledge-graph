@@ -31,16 +31,27 @@ if python -m venv .venv && source .venv/bin/activate; then
 fi
 ```
 
-## Running
+## Usage
 
-The tool should be used as follows:
+```
+$ python main.py -h
 
-```abnf
-python main.py <input_file> <output_file> <format>
+usage: main.py [-h] [-i INPUT] [-o OUTPUT] [--format {xml,n3,turtle,nt,pretty-xml,trix,trig,nquads}]
+
+Generate an Ontoscen graph from a JSON file.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -i INPUT, --input INPUT
+                        Specify an input file containing a JSON list of scenarios (defaults to 'data/input.json').
+  -o OUTPUT, --output OUTPUT
+                        Specify the output file for the Ontoscen graph (defaults to 'data/output')
+  --format {xml,n3,turtle,nt,pretty-xml,trix,trig,nquads}
+                        Set the format of the output file (defaults to 'turtle')
 ```
 
 Example:
 
 ```bash
-python main.py data/input.json data/output.ttl turtle
+python main.py --input data/input.json --output data/output.ttl --format turtle
 ```

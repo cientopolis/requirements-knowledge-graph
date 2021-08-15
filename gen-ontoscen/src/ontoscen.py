@@ -33,16 +33,6 @@ class Ontoscen(Graph):
         if requirements:
             self.add_requirements(requirements)
 
-    def save(self, file: str, format: str) -> Ontoscen:
-        """Save the graph to a destination.
-
-        Arguments:
-            destination (str): file where the graph will be saved.
-            format (str): format in which the graph will be saved.
-        """
-        self.serialize(file, format=format, encoding="utf-8")
-        return self
-
     def add_requirements(self, requirements: list[Requirement]) -> Ontoscen:
         """Add a list of Requirements to the graph.
 

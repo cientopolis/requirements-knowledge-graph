@@ -1,13 +1,53 @@
-from sys import argv, exit
+from argparse import ArgumentParser
 
-from src.ontoscen import Ontoscen
 from src.jsonparser import JSONParser
+from src.ontoscen import Ontoscen
+
+
+def set_arguments():
+    parser = ArgumentParser(
+        description="Generate an Ontoscen graph from a JSON file.",
+    )
+    parser.add_argument(
+        "-i",
+        "--input",
+        default="data/input.json",
+        help="Specify an input file containing a JSON list of scenarios "
+        "(defaults to 'data/input.json').",
+    )
+    parser.add_argument(
+        "-o",
+        "--output",
+        default="data/output",
+        help="Specify the output file for the Ontoscen graph (defaults to "
+        "'data/output')",
+    )
+
+    parser.add_argument(
+        "--format",
+        choices=[
+            "xml",
+            "n3",
+            "turtle",
+            "nt",
+            "pretty-xml",
+            "trix",
+            "trig",
+            "nquads",
+        ],
+        default="turtle",
+        help="Set the format of the output file (defaults to 'turtle')",
+    )
+
+    return parser
+
+
+def main():
+    args = set_arguments().parse_args()
+    Ontoscen(JSONParser(args.input).requirements()).serialize(
+        args.output, format=args.format, encoding="utf-8"
+    )
+
 
 if __name__ == "__main__":
-    if len(argv) != 4:
-        print("gen-ontoscen: amount of parameters incorrect.")
-        print("USAGE: python main.py INPUT_FILE.json OUTPUT_FILE FORMAT")
-        exit(1)
-
-    graph = Ontoscen(JSONParser(argv[1]).requirements())
-    graph.save(argv[2], argv[3])
+    main()
