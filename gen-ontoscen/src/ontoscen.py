@@ -5,7 +5,7 @@ from typing import Optional
 from rdflib import Graph, Literal, Namespace, URIRef
 from rdflib.namespace import RDF, RDFS
 
-from src.requirement import Requirement
+from .requirement import Requirement
 
 
 class Ontoscen(Graph):
@@ -15,7 +15,7 @@ class Ontoscen(Graph):
         IRI (URIRef): Identifier for the Ontoscen ontology.
     """
 
-    IRI = Namespace(
+    IRI: Namespace = Namespace(
         "http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl#"
     )
 
@@ -128,22 +128,22 @@ class Ontoscen(Graph):
         return self._add_individual("Condition", condition)
 
     def _add_goal(self, scenario: URIRef, goal: str) -> URIRef:
-        individual = self._add_condition(goal)
+        individual: URIRef = self._add_condition(goal)
         self.add((scenario, self.IRI["hasGoal"], individual))
         return individual
 
     def _add_context(self, scenario: URIRef, context: str) -> URIRef:
-        individual = self._add_condition(context)
+        individual: URIRef = self._add_condition(context)
         self.add((scenario, self.IRI["hasContext"], individual))
         return individual
 
     def _add_actor(self, scenario: URIRef, actor: str) -> URIRef:
-        individual = self._add_individual("Actor", actor)
+        individual: URIRef = self._add_individual("Actor", actor)
         self.add((scenario, self.IRI["hasActor"], individual))
         return individual
 
     def _add_resource(self, scenario: URIRef, resource: str) -> URIRef:
-        individual = self._add_individual("Resource", resource)
+        individual: URIRef = self._add_individual("Resource", resource)
         self.add((scenario, self.IRI["hasResource"], individual))
         return individual
 
@@ -161,7 +161,7 @@ class Ontoscen(Graph):
 
     def _add_episode(self, scenario: URIRef, episode: str) -> URIRef:
 
-        individual = self._add_individual("Episode", episode)
+        individual: URIRef = self._add_individual("Episode", episode)
         self.add((scenario, self.IRI["hasEpisode"], individual))
         return individual
 
@@ -184,7 +184,7 @@ class Ontoscen(Graph):
         if self.exists_individual_with(type, label):
             return self.get_individual_with(type, label)
 
-        individual = self.IRI[
+        individual: URIRef = self.IRI[
             type.lower() + str(self.count_individuals_of_type(type))
         ]
 

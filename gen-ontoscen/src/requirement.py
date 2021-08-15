@@ -14,9 +14,9 @@ class Requirement:
     """
 
     def __init__(self, req: dict):
-        self.scenario = req["scenario"]
-        self.goal = req["goal"]
-        self.context = req["context"]
-        self.episodes = req["episodes"]
-        self.actors = req["actors"]
-        self.resources = req["resources"]
+        self.scenario: str = req["scenario"]
+        self.goal: str = req["goal"]
+        self.context: str = req["context"]
+        self.episodes: list[str] = req["episodes"]
+        self.actors: list[str] = req["actors"]
+        self.resources: list[str] = req["resources"]

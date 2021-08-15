@@ -1,6 +1,6 @@
 from json import load
 
-from src.requirement import Requirement
+from .requirement import Requirement
 
 
 class JSONParser:
@@ -21,7 +21,7 @@ class JSONParser:
 
     def __init__(self, file_name: str):
         with open(file_name, mode="r", encoding="utf8") as file:
-            self.data = load(file)
+            self.data: dict = load(file)
 
     def requirements(self) -> list[Requirement]:
         """Get a list of objects representing each parsed requirement.
