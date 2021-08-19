@@ -18,7 +18,7 @@ def set_arguments():
     parser.add_argument(
         "-o",
         "--output",
-        default="data/output",
+        default="data/output.ttl",
         help="Specify the output file for the Ontoscen graph (defaults to "
         "'data/output')",
     )
