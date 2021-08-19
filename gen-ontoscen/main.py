@@ -1,32 +1,53 @@
-import json
-from sys import argv
+from argparse import ArgumentParser
 
-from src.scenario_graph import ScenarioGraph
+from src.jsonparser import JSONParser
+from src.ontoscen import Ontoscen
 
 
-def analyzeSentences(scenarios):
-    graph = ScenarioGraph()
-    # graph.parse("data/template.ttl", format="turtle", encoding="utf-8")
-    for scenario in scenarios:
-        print(scenario)
-        graph.createScenario(scenario)
+def set_arguments():
+    parser = ArgumentParser(
+        description="Generate an Ontoscen graph from a JSON file.",
+    )
+    parser.add_argument(
+        "-i",
+        "--input",
+        default="data/input.json",
+        help="Specify an input file containing a JSON list of scenarios "
+        "(defaults to 'data/input.json').",
+    )
+    parser.add_argument(
+        "-o",
+        "--output",
+        default="data/output.ttl",
+        help="Specify the output file for the Ontoscen graph (defaults to "
+        "'data/output')",
+    )
 
-    file = open("output.txt", mode="w")
-    file.write(graph.serialize(format="turtle"))
+    parser.add_argument(
+        "--format",
+        choices=[
+            "xml",
+            "n3",
+            "turtle",
+            "nt",
+            "pretty-xml",
+            "trix",
+            "trig",
+            "nquads",
+        ],
+        default="turtle",
+        help="Set the format of the output file (defaults to 'turtle')",
+    )
 
-def loadSentencesFromJSON(fileName):
-    file = open(fileName)
-    scenarios = json.load(file)
-    file.close()
-    return scenarios
+    return parser
 
 
 def main():
-    if len(argv) != 2:
-        print("Ingresar nombre de archivo")
-        exit
-    else:
-        analyzeSentences(loadSentencesFromJSON(argv[1]))
+    args = set_arguments().parse_args()
+    Ontoscen(JSONParser(args.input).requirements()).serialize(
+        args.output, format=args.format, encoding="utf-8"
+    )
 
 
-main()
+if __name__ == "__main__":
+    main()
