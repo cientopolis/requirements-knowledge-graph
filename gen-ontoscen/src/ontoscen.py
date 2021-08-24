@@ -1,6 +1,6 @@
 from __future__ import annotations
 from functools import reduce
-from typing import List, Optional
+from typing import Optional
 
 from rdflib import Graph, Literal, Namespace, URIRef
 from rdflib.namespace import RDF, RDFS
@@ -9,12 +9,14 @@ from .requirement import Requirement
 
 from src.analyzer import Analyzer
 
+
 class Ontoscen(Graph):
     """An RDF graph that respects the Ontoscen ontology.
 
     Class attributes:
         IRI (URIRef): Identifier for the Ontoscen ontology.
     """
+
     ANALYZER = Analyzer()
 
     IRI: Namespace = Namespace(
@@ -60,7 +62,12 @@ class Ontoscen(Graph):
             self._add_actor(scenario, actor)
         for resource in requirement.resources:
             self._add_resource(scenario, resource)
-        self._add_episodes(scenario, requirement.episodes, requirement.actors, requirement.resources)
+        self._add_episodes(
+            scenario,
+            requirement.episodes,
+            requirement.actors,
+            requirement.resources,
+        )
         return self
 
     def count_individuals_of_type(self, a_type: str) -> int:
@@ -139,13 +146,18 @@ class Ontoscen(Graph):
         self.add((scenario, self.IRI["hasResource"], individual))
         return individual
 
-    def _add_episodes(self, scenario: URIRef, episodes: list[str], actors, resources) -> None:
+    def _add_episodes(
+        self, scenario: URIRef, episodes: list[str], actors, resources
+    ) -> None:
         reduce(
             self._add_dependency,
-            map(lambda ep: self._add_episode(scenario, ep, actors, resources), episodes),
+            map(
+                lambda ep: self._add_episode(scenario, ep, actors, resources),
+                episodes,
+            ),
             scenario,
         )
-        
+
     def _add_action(self, episode, action):
         individual: URIRef = self._add_individual("Action", action)
         self.add((episode, self.IRI["hasAction"], individual))
@@ -156,32 +168,48 @@ class Ontoscen(Graph):
         self.add((required, self.IRI["requiredBy"], dependent))
         return dependent
 
-    def _add_episode(self, scenario: URIRef, episode: str, actors, resources) -> URIRef:
+    def _add_episode(
+        self, scenario: URIRef, episode: str, actors, resources
+    ) -> URIRef:
         individual: URIRef = self._add_individual("Episode", episode)
         self.add((scenario, self.IRI["hasEpisode"], individual))
         self._analyze_episode(scenario, episode, individual, actors, resources)
         return individual
 
-    def _analyze_episode_for_actors(self, scenario: URIRef, episode: str, actors: List):
-        actor= self.ANALYZER.analyzeForActors(episode, actors, scenario)
-        if (actor!=None):
+    def _analyze_episode_for_actors(
+        self, scenario: URIRef, episode: str, actors: list[str]
+    ):
+        actor = self.ANALYZER.analyze_for_actors(episode, actors, scenario)
+        if actor:
             self._add_actor(scenario, actor)
 
-    def _analyze_episode_for_actions(self, episode: str, episode_individual):
-        action= self.ANALYZER.analyzeForActions(episode)
-        if action != None:
+    def _analyze_episode_for_actions(
+        self, episode: str, episode_individual: URIRef
+    ):
+        action = self.ANALYZER.analyze_for_actions(episode)
+        if action:
             self._add_action(episode_individual, action)
 
-    def _analyze_episode_for_resources(self, scenario, episode, resources):
-        resources= self.ANALYZER.analyzeForResources(episode, resources, scenario)
-        for resource in resources:
+    def _analyze_episode_for_resources(
+        self, scenario: URIRef, episode: str, resources: list[str]
+    ):
+        for resource in self.ANALYZER.analyze_for_resources(
+            episode, resources, scenario
+        ):
             self._add_resource(scenario, resource)
 
-    def _analyze_episode(self, scenario: URIRef, episode: str, episode_individual, actors, resources):
+    def _analyze_episode(
+        self,
+        scenario: URIRef,
+        episode: str,
+        episode_individual: URIRef,
+        actors: list[str],
+        resources: list[str],
+    ):
         # self._analyze_episode_for_actors(scenario, episode, actors)
         # self._analyze_episode_for_actions(episode, episode_individual)
         self._analyze_episode_for_resources(scenario, episode, resources)
-        
+
     def _add_individual(self, type: str, label: str) -> URIRef:
         """Add an individual to Ontoscen if it doesn't exist.
 
