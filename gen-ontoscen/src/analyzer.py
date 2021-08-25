@@ -36,19 +36,6 @@ class Analyzer:
             candidate_resources.add(max(candidate_list, key=len))
         elif len(candidate_list) == 1:
             candidate_resources.add(candidate_list[0])
-    
-    def _get_action(self, episode):
-            accion = ""
-            ok = False
-            episode= NLP(episode)
-            for i in episode:
-                if i.pos_ == "VERB":
-                    ok = True
-                if ok:
-                    accion = accion +i.text +" "
-                if i.dep_ == "dobj":
-                    ok = False
-            return accion.strip()
 
     def _get_actor(self, episode):
         episode = NLP(episode)
@@ -181,7 +168,17 @@ class Analyzer:
         self._remove_rules_for_actors()
 
     def analyze_for_actions(self, episode) -> str:
-        return self._get_action(episode)
+        action = ""
+        ok = False
+        episode= NLP(episode)
+        for i in episode:
+            if i.pos_ == "VERB":
+                ok = True
+            if ok:
+                action = action +i.text +" "
+            if i.dep_ == "dobj":
+                ok = False
+        return action.strip()
 
     def analyze_for_resources(self, episode: str, resources: list[str], scenario: URIRef) -> list[str]:
         self._add_rules_for_resources()

@@ -206,7 +206,7 @@ class Ontoscen(Graph):
         actors: list[str],
         resources: list[str],
     ):
-        # self._analyze_episode_for_actors(scenario, episode, actors)
+        self._analyze_episode_for_actors(scenario, episode, actors)
         self._analyze_episode_for_actions(episode, episode_individual)
         self._analyze_episode_for_resources(scenario, episode, resources)
 

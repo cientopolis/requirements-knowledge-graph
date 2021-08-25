@@ -454,143 +454,134 @@ ns1:dependsOn a owl:ObjectProperty ;
 ns1:resource1 a ns1:Resource ;
     rdfs:label "magnesium" .
 
-ns1:resource10 a ns1:Resource ;
-    rdfs:label "pruning pliers" .
-
 ns1:resource11 a ns1:Resource ;
-    rdfs:label "stakes made of cane or bamboo" .
-
-ns1:resource12 a ns1:Resource ;
-    rdfs:label "sisal yarn" .
-
-ns1:resource14 a ns1:Resource ;
     rdfs:label "pesticide" .
 
-ns1:resource15 a ns1:Resource ;
+ns1:resource12 a ns1:Resource ;
     rdfs:label "pest" .
 
-ns1:resource16 a ns1:Resource ;
+ns1:resource13 a ns1:Resource ;
     rdfs:label "pest traps" .
 
-ns1:resource17 a ns1:Resource ;
+ns1:resource14 a ns1:Resource ;
     rdfs:label "garden" .
 
-ns1:resource18 a ns1:Resource ;
+ns1:resource15 a ns1:Resource ;
     rdfs:label "soil corer" .
 
-ns1:resource19 a ns1:Resource ;
+ns1:resource16 a ns1:Resource ;
     rdfs:label "analysis result" .
 
-ns1:resource2 a ns1:Resource ;
-    rdfs:label "result of soil analysis" .
-
-ns1:resource20 a ns1:Resource ;
+ns1:resource17 a ns1:Resource ;
     rdfs:label "fertilizer solution" .
 
-ns1:resource21 a ns1:Resource ;
+ns1:resource18 a ns1:Resource ;
     rdfs:label "sample of soil" .
 
-ns1:resource22 a ns1:Resource ;
+ns1:resource19 a ns1:Resource ;
     rdfs:label "fruit peels" .
 
-ns1:resource23 a ns1:Resource ;
-    rdfs:label "vegetable scraps" .
-
-ns1:resource24 a ns1:Resource ;
-    rdfs:label "egg shells" .
-
-ns1:resource25 a ns1:Resource ;
-    rdfs:label "ground bones" .
-
-ns1:resource26 a ns1:Resource ;
-    rdfs:label "leaves" .
-
-ns1:resource27 a ns1:Resource ;
-    rdfs:label "mate herb" .
-
-ns1:resource28 a ns1:Resource ;
-    rdfs:label "tea bag" .
-
-ns1:resource29 a ns1:Resource ;
-    rdfs:label "coffee bag" .
-
-ns1:resource3 a ns1:Resource ;
-    rdfs:label "solution" .
-
-ns1:resource30 a ns1:Resource ;
-    rdfs:label "container" .
-
-ns1:resource31 a ns1:Resource ;
-    rdfs:label "fertilizer" .
-
-ns1:resource32 a ns1:Resource ;
-    rdfs:label "water" .
-
-ns1:resource33 a ns1:Resource ;
-    rdfs:label "watercan" .
-
-ns1:resource34 a ns1:Resource ;
-    rdfs:label "worm leachate (if the plant requires)" .
-
-ns1:resource36 a ns1:Resource ;
-    rdfs:label "crate" .
-
-ns1:resource37 a ns1:Resource ;
-    rdfs:label "clean plastic tubs" .
-
-ns1:resource38 a ns1:Resource ;
-    rdfs:label "base tomato seedling" .
-
-ns1:resource39 a ns1:Resource ;
-    rdfs:label "portion of tissue from another tomato seedling" .
-
-ns1:resource4 a ns1:Resource ;
-    rdfs:label "agricultural lime" .
-
-ns1:resource40 a ns1:Resource ;
-    rdfs:label "catalogue of symptoms" .
-
-ns1:resource41 a ns1:Resource ;
-    rdfs:label "calcium based fertilizer" .
-
-ns1:resource42 a ns1:Resource ;
-    rdfs:label "fungicide" .
-
-ns1:resource44 a ns1:Resource ;
-    rdfs:label "pesticides" .
-
-ns1:resource45 a ns1:Resource ;
-    rdfs:label "traps" .
-
-ns1:resource46 a ns1:Resource ;
-    rdfs:label "weed" .
-
-ns1:resource47 a ns1:Resource ;
-    rdfs:label "hoe" .
-
-ns1:resource48 a ns1:Resource ;
-    rdfs:label "string trimmer" .
-
-ns1:resource49 a ns1:Resource ;
-    rdfs:label "machete" .
-
-ns1:resource5 a ns1:Resource ;
+ns1:resource2 a ns1:Resource ;
     rdfs:label "irrigation mechanism" .
 
-ns1:resource50 a ns1:Resource ;
+ns1:resource20 a ns1:Resource ;
+    rdfs:label "vegetable scraps" .
+
+ns1:resource21 a ns1:Resource ;
+    rdfs:label "egg shells" .
+
+ns1:resource22 a ns1:Resource ;
+    rdfs:label "ground bones" .
+
+ns1:resource23 a ns1:Resource ;
+    rdfs:label "leaves" .
+
+ns1:resource24 a ns1:Resource ;
+    rdfs:label "mate herb" .
+
+ns1:resource25 a ns1:Resource ;
+    rdfs:label "tea bag" .
+
+ns1:resource26 a ns1:Resource ;
+    rdfs:label "coffee bag" .
+
+ns1:resource27 a ns1:Resource ;
+    rdfs:label "container" .
+
+ns1:resource28 a ns1:Resource ;
+    rdfs:label "fertilizer" .
+
+ns1:resource29 a ns1:Resource ;
+    rdfs:label "water" .
+
+ns1:resource30 a ns1:Resource ;
+    rdfs:label "watercan" .
+
+ns1:resource31 a ns1:Resource ;
+    rdfs:label "worm leachate (if the plant requires)" .
+
+ns1:resource33 a ns1:Resource ;
+    rdfs:label "crate" .
+
+ns1:resource34 a ns1:Resource ;
+    rdfs:label "clean plastic tubs" .
+
+ns1:resource35 a ns1:Resource ;
+    rdfs:label "base tomato seedling" .
+
+ns1:resource36 a ns1:Resource ;
+    rdfs:label "portion of tissue from another tomato seedling" .
+
+ns1:resource37 a ns1:Resource ;
+    rdfs:label "catalogue of symptoms" .
+
+ns1:resource38 a ns1:Resource ;
+    rdfs:label "calcium based fertilizer" .
+
+ns1:resource39 a ns1:Resource ;
+    rdfs:label "fungicide" .
+
+ns1:resource41 a ns1:Resource ;
+    rdfs:label "pesticides" .
+
+ns1:resource42 a ns1:Resource ;
+    rdfs:label "traps" .
+
+ns1:resource43 a ns1:Resource ;
+    rdfs:label "weed" .
+
+ns1:resource44 a ns1:Resource ;
+    rdfs:label "hoe" .
+
+ns1:resource45 a ns1:Resource ;
+    rdfs:label "string trimmer" .
+
+ns1:resource46 a ns1:Resource ;
+    rdfs:label "machete" .
+
+ns1:resource47 a ns1:Resource ;
     rdfs:label "herbicide" .
 
-ns1:resource51 a ns1:Resource ;
+ns1:resource48 a ns1:Resource ;
     rdfs:label "transparent plastic" .
 
-ns1:resource52 a ns1:Resource ;
+ns1:resource49 a ns1:Resource ;
     rdfs:label "wires" .
 
-ns1:resource8 a ns1:Resource ;
+ns1:resource5 a ns1:Resource ;
     rdfs:label "shovel" .
 
-ns1:resource9 a ns1:Resource ;
+ns1:resource6 a ns1:Resource ;
     rdfs:label "seedbed" .
+
+ns1:resource7 a ns1:Resource ;
+    rdfs:label "pruning pliers" .
+
+ns1:resource8 a ns1:Resource ;
+    rdfs:label "stakes made of cane or bamboo" .
+
+ns1:resource9 a ns1:Resource ;
+    rdfs:label "sisal yarn" .
 
 ns1:scenario0 a ns1:Scenario ;
     rdfs:label "neutralize the soil's acidity" ;
@@ -602,10 +593,7 @@ ns1:scenario0 a ns1:Scenario ;
         ns1:episode2 ;
     ns1:hasGoal ns1:condition0 ;
     ns1:hasResource ns1:resource0,
-        ns1:resource1,
-        ns1:resource2,
-        ns1:resource3,
-        ns1:resource4 ;
+        ns1:resource1 ;
     ns1:requiredBy ns1:episode0 .
 
 ns1:scenario1 a ns1:Scenario ;
@@ -620,8 +608,8 @@ ns1:scenario1 a ns1:Scenario ;
         ns1:episode8,
         ns1:episode9 ;
     ns1:hasGoal ns1:condition2 ;
-    ns1:hasResource ns1:resource5,
-        ns1:resource6 ;
+    ns1:hasResource ns1:resource2,
+        ns1:resource3 ;
     ns1:requiredBy ns1:episode3 .
 
 ns1:scenario10 a ns1:Scenario ;
@@ -634,9 +622,9 @@ ns1:scenario10 a ns1:Scenario ;
         ns1:episode61,
         ns1:episode62 ;
     ns1:hasGoal ns1:condition20 ;
-    ns1:hasResource ns1:resource13,
-        ns1:resource35,
-        ns1:resource7 ;
+    ns1:hasResource ns1:resource10,
+        ns1:resource32,
+        ns1:resource4 ;
     ns1:requiredBy ns1:episode59 .
 
 ns1:scenario11 a ns1:Scenario ;
@@ -658,11 +646,11 @@ ns1:scenario11 a ns1:Scenario ;
         ns1:episode74,
         ns1:episode75 ;
     ns1:hasGoal ns1:condition22 ;
-    ns1:hasResource ns1:resource13,
-        ns1:resource35,
-        ns1:resource36,
-        ns1:resource37,
-        ns1:resource7 ;
+    ns1:hasResource ns1:resource10,
+        ns1:resource32,
+        ns1:resource33,
+        ns1:resource34,
+        ns1:resource4 ;
     ns1:requiredBy ns1:episode63 .
 
 ns1:scenario12 a ns1:Scenario ;
@@ -673,8 +661,8 @@ ns1:scenario12 a ns1:Scenario ;
         ns1:episode77,
         ns1:episode78 ;
     ns1:hasGoal ns1:condition24 ;
-    ns1:hasResource ns1:resource38,
-        ns1:resource39 ;
+    ns1:hasResource ns1:resource35,
+        ns1:resource36 ;
     ns1:requiredBy ns1:episode76 .
 
 ns1:scenario13 a ns1:Scenario ;
@@ -685,7 +673,7 @@ ns1:scenario13 a ns1:Scenario ;
         ns1:episode80,
         ns1:episode81 ;
     ns1:hasGoal ns1:condition26 ;
-    ns1:hasResource ns1:resource40 ;
+    ns1:hasResource ns1:resource37 ;
     ns1:requiredBy ns1:episode79 .
 
 ns1:scenario14 a ns1:Scenario ;
@@ -696,7 +684,7 @@ ns1:scenario14 a ns1:Scenario ;
         ns1:episode83,
         ns1:episode84 ;
     ns1:hasGoal ns1:condition28 ;
-    ns1:hasResource ns1:resource41 ;
+    ns1:hasResource ns1:resource38 ;
     ns1:requiredBy ns1:episode82 .
 
 ns1:scenario15 a ns1:Scenario ;
@@ -708,7 +696,7 @@ ns1:scenario15 a ns1:Scenario ;
         ns1:episode87,
         ns1:episode88 ;
     ns1:hasGoal ns1:condition30 ;
-    ns1:hasResource ns1:resource42 ;
+    ns1:hasResource ns1:resource39 ;
     ns1:requiredBy ns1:episode85 .
 
 ns1:scenario16 a ns1:Scenario ;
@@ -718,7 +706,7 @@ ns1:scenario16 a ns1:Scenario ;
     ns1:hasEpisode ns1:episode89,
         ns1:episode90 ;
     ns1:hasGoal ns1:condition32 ;
-    ns1:hasResource ns1:resource43 ;
+    ns1:hasResource ns1:resource40 ;
     ns1:requiredBy ns1:episode89 .
 
 ns1:scenario17 a ns1:Scenario ;
@@ -730,9 +718,9 @@ ns1:scenario17 a ns1:Scenario ;
         ns1:episode93,
         ns1:episode94 ;
     ns1:hasGoal ns1:condition34 ;
-    ns1:hasResource ns1:resource43,
-        ns1:resource44,
-        ns1:resource45 ;
+    ns1:hasResource ns1:resource40,
+        ns1:resource41,
+        ns1:resource42 ;
     ns1:requiredBy ns1:episode91 .
 
 ns1:scenario18 a ns1:Scenario ;
@@ -747,13 +735,13 @@ ns1:scenario18 a ns1:Scenario ;
         ns1:episode98,
         ns1:episode99 ;
     ns1:hasGoal ns1:condition36 ;
-    ns1:hasResource ns1:resource13,
+    ns1:hasResource ns1:resource10,
+        ns1:resource4,
+        ns1:resource43,
+        ns1:resource44,
+        ns1:resource45,
         ns1:resource46,
-        ns1:resource47,
-        ns1:resource48,
-        ns1:resource49,
-        ns1:resource50,
-        ns1:resource7 ;
+        ns1:resource47 ;
     ns1:requiredBy ns1:episode95 .
 
 ns1:scenario19 a ns1:Scenario ;
@@ -764,8 +752,8 @@ ns1:scenario19 a ns1:Scenario ;
         ns1:episode102,
         ns1:episode103 ;
     ns1:hasGoal ns1:condition38 ;
-    ns1:hasResource ns1:resource51,
-        ns1:resource52 ;
+    ns1:hasResource ns1:resource48,
+        ns1:resource49 ;
     ns1:requiredBy ns1:episode101 .
 
 ns1:scenario2 a ns1:Scenario ;
@@ -780,9 +768,9 @@ ns1:scenario2 a ns1:Scenario ;
         ns1:episode15 ;
     ns1:hasGoal ns1:condition4 ;
     ns1:hasResource ns1:resource0,
-        ns1:resource7,
-        ns1:resource8,
-        ns1:resource9 ;
+        ns1:resource4,
+        ns1:resource5,
+        ns1:resource6 ;
     ns1:requiredBy ns1:episode10 .
 
 ns1:scenario3 a ns1:Scenario ;
@@ -792,7 +780,7 @@ ns1:scenario3 a ns1:Scenario ;
     ns1:hasEpisode ns1:episode16,
         ns1:episode17 ;
     ns1:hasGoal ns1:condition6 ;
-    ns1:hasResource ns1:resource10,
+    ns1:hasResource ns1:resource4,
         ns1:resource7 ;
     ns1:requiredBy ns1:episode16 .
 
@@ -804,7 +792,7 @@ ns1:scenario4 a ns1:Scenario ;
         ns1:episode19 ;
     ns1:hasGoal ns1:condition8 ;
     ns1:hasResource ns1:resource0,
-        ns1:resource7 ;
+        ns1:resource4 ;
     ns1:requiredBy ns1:episode18 .
 
 ns1:scenario5 a ns1:Scenario ;
@@ -821,9 +809,9 @@ ns1:scenario5 a ns1:Scenario ;
         ns1:episode26,
         ns1:episode27 ;
     ns1:hasGoal ns1:condition10 ;
-    ns1:hasResource ns1:resource11,
-        ns1:resource12,
-        ns1:resource13 ;
+    ns1:hasResource ns1:resource10,
+        ns1:resource8,
+        ns1:resource9 ;
     ns1:requiredBy ns1:episode20 .
 
 ns1:scenario6 a ns1:Scenario ;
@@ -837,11 +825,11 @@ ns1:scenario6 a ns1:Scenario ;
         ns1:episode31,
         ns1:episode32 ;
     ns1:hasGoal ns1:condition12 ;
-    ns1:hasResource ns1:resource14,
-        ns1:resource15,
-        ns1:resource16,
-        ns1:resource17,
-        ns1:resource7 ;
+    ns1:hasResource ns1:resource11,
+        ns1:resource12,
+        ns1:resource13,
+        ns1:resource14,
+        ns1:resource4 ;
     ns1:requiredBy ns1:episode28 .
 
 ns1:scenario8 a ns1:Scenario ;
@@ -853,8 +841,8 @@ ns1:scenario8 a ns1:Scenario ;
         ns1:episode53 ;
     ns1:hasGoal ns1:condition16 ;
     ns1:hasResource ns1:resource0,
-        ns1:resource31,
-        ns1:resource6 ;
+        ns1:resource28,
+        ns1:resource3 ;
     ns1:requiredBy ns1:episode51 .
 
 ns1:scenario9 a ns1:Scenario ;
@@ -867,10 +855,10 @@ ns1:scenario9 a ns1:Scenario ;
         ns1:episode57,
         ns1:episode58 ;
     ns1:hasGoal ns1:condition18 ;
-    ns1:hasResource ns1:resource32,
-        ns1:resource33,
-        ns1:resource34,
-        ns1:resource7 ;
+    ns1:hasResource ns1:resource29,
+        ns1:resource30,
+        ns1:resource31,
+        ns1:resource4 ;
     ns1:requiredBy ns1:episode54 .
 
 ns1:action37 a ns1:Action ;
@@ -987,14 +975,14 @@ ns1:episode94 a ns1:Episode ;
     ns1:dependsOn ns1:episode93 ;
     ns1:hasAction ns1:action91 .
 
-ns1:resource35 a ns1:Resource ;
+ns1:resource3 a ns1:Resource ;
+    rdfs:label "tomato plants" .
+
+ns1:resource32 a ns1:Resource ;
     rdfs:label "ripened tomato" .
 
-ns1:resource43 a ns1:Resource ;
+ns1:resource40 a ns1:Resource ;
     rdfs:label "disinfectant" .
-
-ns1:resource6 a ns1:Resource ;
-    rdfs:label "tomato plants" .
 
 ns1:scenario7 a ns1:Scenario ;
     rdfs:label "prepare fertilizer solution" ;
@@ -1021,6 +1009,9 @@ ns1:scenario7 a ns1:Scenario ;
         ns1:episode50 ;
     ns1:hasGoal ns1:condition14 ;
     ns1:hasResource ns1:resource0,
+        ns1:resource15,
+        ns1:resource16,
+        ns1:resource17,
         ns1:resource18,
         ns1:resource19,
         ns1:resource20,
@@ -1031,10 +1022,7 @@ ns1:scenario7 a ns1:Scenario ;
         ns1:resource25,
         ns1:resource26,
         ns1:resource27,
-        ns1:resource28,
-        ns1:resource29,
-        ns1:resource30,
-        ns1:resource7 ;
+        ns1:resource4 ;
     ns1:requiredBy ns1:episode33,
         ns1:episode39 .
 
@@ -1533,7 +1521,7 @@ ns1:episode99 a ns1:Episode ;
     ns1:hasAction ns1:action95 ;
     ns1:requiredBy ns1:episode100 .
 
-ns1:resource13 a ns1:Resource ;
+ns1:resource10 a ns1:Resource ;
     rdfs:label "tools" .
 
 ns1:Actor a owl:Class .
@@ -1546,7 +1534,7 @@ ns1:resource0 a ns1:Resource ;
 ns1:actor1 a ns1:Actor ;
     rdfs:label "agricultural engineer" .
 
-ns1:resource7 a ns1:Resource ;
+ns1:resource4 a ns1:Resource ;
     rdfs:label "tomato plant" .
 
 ns1:actor0 a ns1:Actor ;
