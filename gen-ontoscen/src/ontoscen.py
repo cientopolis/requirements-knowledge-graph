@@ -179,8 +179,8 @@ class Ontoscen(Graph):
 
     def _analyze_episode(self, scenario: URIRef, episode: str, episode_individual, actors, resources):
         # self._analyze_episode_for_actors(scenario, episode, actors)
-        # self._analyze_episode_for_actions(episode, episode_individual)
-        self._analyze_episode_for_resources(scenario, episode, resources)
+        self._analyze_episode_for_actions(episode, episode_individual)
+        # self._analyze_episode_for_resources(scenario, episode, resources)
         
     def _add_individual(self, type: str, label: str) -> URIRef:
         """Add an individual to Ontoscen if it doesn't exist.

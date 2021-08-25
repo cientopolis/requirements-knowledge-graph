@@ -17,7 +17,6 @@ class Analyzer:
 
     def _getVerbPosition(self, sentence):
         pos = 0
-        self.Od_ind(sentence)
         for token in sentence:
             relation = self._getRelation(sentence)
             if token.text == relation:
@@ -28,12 +27,6 @@ class Analyzer:
         for token in sentence:
             if token.pos_ == "VERB":
                 return token.text
-
-    def _getActor(self, episode):
-        episode= NLP(episode)
-
-        matches = MATCHER(episode[0:self._getVerbPosition(episode)], as_spans=True)
-        return matches[0] 
 
     def _counter_of_matches(self, matches):
         ocurrences_of_match_id= list()
@@ -47,11 +40,30 @@ class Analyzer:
             candidate_resources.add(max(candidate_list, key=len))
         elif len(candidate_list)==1:
             candidate_resources.add(candidate_list[0])
+    
+    def _get_action(self, episode):
+            accion = ""
+            ok = False
+            episode= NLP(episode)
+            for i in episode:
+                if i.pos_ == "VERB":
+                    ok = True
+                if ok:
+                    accion = accion +i.text +" "
+                if i.dep_ == "dobj":
+                    ok = False
+            return accion.strip()
 
-    def _getResources(self, episode): 
+    def _get_actor(self, episode):
+        episode= NLP(episode)
+
+        matches = MATCHER(episode[0:self._getVerbPosition(episode)], as_spans=True)
+        return matches[0] 
+
+    def _get_resources(self, episode): 
         episode= NLP(episode)    
         matches=MATCHER(episode)   
-        
+
         candidate_resources= set()
         candidate_resources_simple_od= list()  
         candidate_resources_of = list()  
@@ -69,21 +81,6 @@ class Analyzer:
         self._select_matches_from_candidates('of', matches, candidate_resources, candidate_resources_of)   
 
         return candidate_resources
-
-    def _getAction(self, episode):
-        e_length= len(episode)
-        print(episode)
-
-        episode= NLP(episode)
-        for i in episode:
-            print(i.text, i.dep_, i.pos_)
-        
-        
-        matches = MATCHER(episode[self._getVerbPosition(episode):e_length], as_spans=True)
-        print("Matches: ",matches)
-        print()
-        if len(matches) != 0:
-            return matches[0]
 
     def _addRulesForActors(self):
         MATCHER.add(
@@ -177,7 +174,7 @@ class Analyzer:
 
     def analyzeForActions(self, episode) -> List:
         self._addRulesForActions()
-        action= self._getAction(episode)
+        action= self._get_action(episode)
         
         self._removeRulesForActions()
         return action 
@@ -191,7 +188,7 @@ class Analyzer:
 
     def _get_resoruces_not_defined_in_scenario(self, episode, resources):
         resources_not_included= list()
-        for candidate_resource in self._getResources(episode): 
+        for candidate_resource in self._get_resources(episode): 
             if candidate_resource not in self._get_lemma_from_included_resources(resources):
                 resources_not_included.append(candidate_resource)
 
