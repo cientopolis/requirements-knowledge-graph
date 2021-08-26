@@ -182,6 +182,7 @@ class Ontoscen(Graph):
         actor = self.ANALYZER.analyze_for_actors(episode, actors, scenario)
         if actor:
             self._add_actor(scenario, actor)
+            actors.append(actor)
 
     def _analyze_episode_for_actions(
         self, episode: str, episode_individual: URIRef
@@ -197,6 +198,7 @@ class Ontoscen(Graph):
             episode, resources, scenario
         ):
             self._add_resource(scenario, resource)
+            resources.append(resource)
 
     def _analyze_episode(
         self,

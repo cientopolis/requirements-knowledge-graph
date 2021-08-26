@@ -1,4 +1,3 @@
-from typing import List
 import spacy
 from spacy.matcher import Matcher
 from rdflib import URIRef
@@ -22,7 +21,7 @@ class Analyzer:
     def _getRelation(self, sentence):
         for token in sentence:
             if token.pos_ == "VERB":
-                return token.text   
+                return token.text
 
     def _counter_of_matches(self, matches):
         return Counter(map(lambda match: match[0], matches))
@@ -140,7 +139,9 @@ class Analyzer:
             resources
         )
 
-    def _get_resources_not_defined_in_scenario(self, episode: str, resources: list[str]):
+    def _get_resources_not_defined_in_scenario(
+        self, episode: str, resources: list[str]
+    ):
         resources_not_included = list()
         for candidate_resource in self._get_lemmatized_resources(episode):
             if not self._is_resource_included(candidate_resource, resources):
@@ -170,17 +171,19 @@ class Analyzer:
     def analyze_for_actions(self, episode) -> str:
         action = ""
         ok = False
-        episode= NLP(episode)
+        episode = NLP(episode)
         for i in episode:
             if i.pos_ == "VERB":
                 ok = True
             if ok:
-                action = action +i.text +" "
+                action = action + i.text + " "
             if i.dep_ == "dobj":
                 ok = False
         return action.strip()
 
-    def analyze_for_resources(self, episode: str, resources: list[str], scenario: URIRef) -> list[str]:
+    def analyze_for_resources(
+        self, episode: str, resources: list[str], scenario: URIRef
+    ) -> list[str]:
         self._add_rules_for_resources()
         resources_not_included = self._get_resources_not_defined_in_scenario(
             episode, resources
