@@ -4,7 +4,7 @@
     "goal": "neutralize the soil acidity for having the proper ph to sow seeds",
     "context": "have soil with a high acidity",
     "actors": ["gardener", "agricultural engineer"],
-    "resources": ["soil", "magnesium"],
+    "resources": ["soil", "agricultural lime", "magnesium", "solution"],
     "episodes": [
       "the agricultural engineer interprets the results of the soil analysis",
       "the agricultural engineer prepares a solution with agricultural lime and magnesium",
@@ -287,7 +287,7 @@
     "actors": ["gardener"],
     "episodes": [
       "the gardener applies fungicide to the plant",
-      "the gardener prunes the affected parts of the plant",
+      "the gardener prunes affected parts of the plant",
       "the gardener prevents the fruit to be in contact with the ground",
       "the gardener controls the irrigation of the tomato plant"
     ]

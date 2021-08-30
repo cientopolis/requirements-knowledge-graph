@@ -1,3 +1,5 @@
+from os import remove
+from numpy import pi
 import spacy
 from spacy.matcher import Matcher
 from rdflib import URIRef
@@ -27,25 +29,40 @@ class Analyzer:
         return Counter(map(lambda match: match[0], matches))
 
     def _select_matches_from_candidates(
-        self, match_id, matches, candidate_resources, candidate_list
+        self, match_id, matches, candidate_list
     ):
         # if it matches with match_id and it has more than one match is bc it is matching with the modifiers and without it
         # it should get the most complete match
         if self._counter_of_matches(matches)[NLP.vocab.strings[match_id]] > 1:
-            candidate_resources.add(max(candidate_list, key=len))
+            return max(candidate_list, key=len)
         elif len(candidate_list) == 1:
-            candidate_resources.add(candidate_list[0])
-
-    def _get_actor(self, episode):
+            return candidate_list[0]
+            
+    def _get_actor(self, episode) -> str:
         episode = NLP(episode)
 
         matches = MATCHER(
             episode[0 : self._getVerbPosition(episode)], as_spans=True
         )
-        return matches[0]
+
+        return str(matches[0])
+    
+    def _remove_unnecessary_matches(self, candidate_resources, candidate_resources_of):
+        with_modifier = list(filter(lambda r: self._has_modifier(r), candidate_resources))
+        simples = list(filter(lambda r: r not in with_modifier, candidate_resources))
+        simples_that_matter = list(filter(lambda s: not  self.forma_compuesto(s, with_modifier), simples))
+        result= simples_that_matter + with_modifier
+
+        for candidate_resource in result:
+            for candidate_resource_of in candidate_resources_of:
+                if candidate_resource in candidate_resource_of:
+                    result.remove(candidate_resource)
+        
+        return result+candidate_resources_of
 
     def _get_lemmatized_resources(self, episode):
         episode = NLP(episode)
+
         matches = MATCHER(episode)
 
         candidate_resources = set()
@@ -62,25 +79,32 @@ class Analyzer:
                 candidate_resources_of.append(match)
             elif NLP.vocab.strings[match_id] == "simple_od":
                 candidate_resources_simple_od.append(match)
-
-        self._select_matches_from_candidates(
-            "simple_od",
-            matches,
-            candidate_resources,
-            candidate_resources_simple_od,
-        )
-        self._select_matches_from_candidates(
-            "of", matches, candidate_resources, candidate_resources_of
-        )
+        
+        candidate_resources=list(candidate_resources)
+        candidate_resources+= self._remove_unnecessary_matches(candidate_resources_simple_od, candidate_resources_of)
+        
+        # occurrence_on_of= self._select_matches_from_candidates(
+        #     "of", matches, candidate_resources_of
+        # )
 
         return candidate_resources
+
+    def forma_compuesto(self, simple, lista_compuestos):
+            return any(simple in c for c in lista_compuestos)
+
+    def _has_modifier(self, resource):
+        return " " in resource
 
     def _add_rules_for_actors(self):
         MATCHER.add(
             "nominal_subject",
             [
                 [
-                    {"DEP": "amod", "OP": "?"},
+                    {"DEP": {
+                        "IN":["compound","amod"]
+                        }, 
+                        "OP": "?"
+                    },
                     {
                         "POS": "NOUN",
                         "DEP": {
@@ -119,11 +143,12 @@ class Analyzer:
                 ]
             ],
         )
+
         MATCHER.add(
             "simple_od",
             [
                 [
-                    {"DEP": {"IN": ["amod", "compound"]}, "OP": "?"},  # tomato
+                    {"DEP": {"IN": ["amod", "compound"]}, 'OP':'?'},  # tomato
                     {"POS": "NOUN", "DEP": "dobj"},  # plant
                 ]
             ],
@@ -134,39 +159,22 @@ class Analyzer:
         MATCHER.remove("with")
         MATCHER.remove("simple_od")
 
-    def _is_resource_included(self, candidate_resource, resources):
-        return candidate_resource in self._get_lemma_from_included_resources(
-            resources
-        )
-
-    def _get_resources_not_defined_in_scenario(
-        self, episode: str, resources: list[str]
-    ):
-        resources_not_included = list()
-        for candidate_resource in self._get_lemmatized_resources(episode):
-            if not self._is_resource_included(candidate_resource, resources):
-                resources_not_included.append(candidate_resource)
-
-        return resources_not_included
-
-    def _get_lemma_from_included_resources(self, resources):
-        lemmatized_resources = list()
-        for resource in resources:
-            resource = NLP(resource)
-            lemmatized_resources.append(" ".join([r.lemma_ for r in resource]))
-        return lemmatized_resources
-
-    def analyze_for_actors(self, episode, actors, scenario) -> str:
+    def analyze_for_actors(self, episode) -> str:
         self._add_rules_for_actors()
         actor = self._get_actor(episode)
-        if str(actor) not in actors:
-            answer = input(
-                f"The actor {actor} is not defined for scenario {scenario}. Add it? Y/n "
-            )
-            if answer.lower() == "y":
-                self._remove_rules_for_actors()
-                return actor
         self._remove_rules_for_actors()
+        return actor
+        
+    def _get_resources(self, episode, resources):
+        #this method is just necessary bc is needed to ask the user for adding some resources, and we don't want to ask twice
+        #when delete it, modify analyze_for_resources to just add all resources found as in get_actor method
+        #remove resources parameter too
+        lista=list()
+        for resource in self._get_lemmatized_resources(episode):
+            if resource not in resources:
+                lista.append(resource)
+
+        return lista
 
     def analyze_for_actions(self, episode) -> str:
         action = ""
@@ -181,16 +189,11 @@ class Analyzer:
                 ok = False
         return action.strip()
 
-    def analyze_for_resources(
-        self, episode: str, resources: list[str], scenario: URIRef
-    ) -> list[str]:
+    def analyze_for_resources(self, episode: str, scenario: URIRef, resources: list[str]) -> list[str]:
         self._add_rules_for_resources()
-        resources_not_included = self._get_resources_not_defined_in_scenario(
-            episode, resources
-        )
-
+        resources_not_included = self._get_resources(episode, resources)
         result = list()
-        if resources_not_included:
+        if len(resources_not_included)>1:
             print(
                 f"The following resources are not defined for scenario {scenario}."
                 "Select the number/s of the resource/s you want to include, or press Enter to skip.",
@@ -206,8 +209,8 @@ class Analyzer:
             for index in indexes:
                 if int(index) < len(resources_not_included):
                     result.append(resources_not_included[int(index)])
-                else:
-                    print("Skipped.")
+        elif len(resources_not_included)==1:
+             result.append(resources_not_included[0])
 
         self._remove_rules_for_resources()
         return result

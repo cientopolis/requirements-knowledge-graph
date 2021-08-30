@@ -26,7 +26,7 @@
 
 
 
-5. Si aparece un of, queda el más completo -> ok
+5. Si aparece un of, queda el más completo
 
 
 
