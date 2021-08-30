@@ -8,8 +8,6 @@ from rdflib.namespace import RDF, RDFS
 from .requirement import Requirement
 
 from src.analyzer import Analyzer
-import spacy
-NLP = spacy.load("en_core_web_sm")
 
 class Ontoscen(Graph):
     """An RDF graph that respects the Ontoscen ontology.
@@ -132,12 +130,12 @@ class Ontoscen(Graph):
         return individual
 
     def _add_actor(self, scenario: URIRef, actor: str) -> URIRef:
-        individual: URIRef = self._add_individual("Actor", self._lemmatize(actor))
+        individual: URIRef = self._add_individual("Actor", self.ANALYZER.lemmatize(actor))
         self.add((scenario, self.IRI["hasActor"], individual))
         return individual
 
     def _add_resource(self, scenario: URIRef, resource: str) -> URIRef:
-        individual: URIRef = self._add_individual("Resource", self._lemmatize(resource))
+        individual: URIRef = self._add_individual("Resource", self.ANALYZER.lemmatize(resource))
         self.add((scenario, self.IRI["hasResource"], individual))
         return individual
 
@@ -175,7 +173,7 @@ class Ontoscen(Graph):
         actor = self.ANALYZER.analyze_for_actors(episode)
         if self._exists_individual_with("Resource", actor):
             #if actor exists in the graph as Resource, then append it to scenario with role "Actor"
-            #inconsistency detected here
+            #TODO: inconsistency detected here
             self._add_actor(episode_individual, actor)
         else:
             #actor not already exists, or actor is an Actor
@@ -190,7 +188,8 @@ class Ontoscen(Graph):
         for resource in self.ANALYZER.analyze_for_resources(episode, scenario, resources):
             if self._exists_individual_with("Actor", resource):
                 #if resource exists in the graph as Actor, then append it to scenario with role "Resource"
-                #inconsistency detected here
+                #TODO: inconsistency detected here
+                
                 self._add_resource(episode_individual, resource)
             else:
                 #resource not already exists, or resource is a Resource
@@ -248,5 +247,4 @@ class Ontoscen(Graph):
     def _add_type(self, individual, type):
         self.add((individual, RDF.type, self.IRI[type]))
 
-    def _lemmatize(self, element: str):
-        return " ".join([r.lemma_ for r in NLP(element)])
+    

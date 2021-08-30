@@ -10,8 +10,10 @@ NLP = spacy.load("en_core_web_sm")
 
 MATCHER = Matcher(NLP.vocab)
 
-
 class Analyzer:
+    def lemmatize(self, element: str):
+        return " ".join([r.lemma_ for r in NLP(element)])
+        
     def _getVerbPosition(self, sentence):
         pos = 0
         for token in sentence:
