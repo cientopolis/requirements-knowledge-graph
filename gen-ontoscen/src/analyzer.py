@@ -37,7 +37,7 @@ class Analyzer:
             return max(candidate_list, key=len)
         elif len(candidate_list) == 1:
             return candidate_list[0]
-            
+
     def _get_actor(self, episode) -> str:
         episode = NLP(episode)
 
@@ -46,19 +46,32 @@ class Analyzer:
         )
 
         return str(matches[0])
-    
-    def _remove_unnecessary_matches(self, candidate_resources, candidate_resources_of):
-        with_modifier = list(filter(lambda r: self._has_modifier(r), candidate_resources))
-        simples = list(filter(lambda r: r not in with_modifier, candidate_resources))
-        simples_that_matter = list(filter(lambda s: not  self.forma_compuesto(s, with_modifier), simples))
-        result= simples_that_matter + with_modifier
 
-        for candidate_resource in result:
-            for candidate_resource_of in candidate_resources_of:
-                if candidate_resource in candidate_resource_of:
-                    result.remove(candidate_resource)
-        
-        return result+candidate_resources_of
+    def _remove_unnecessary_matches(
+        self, candidate_resources, candidate_resources_of
+    ):
+        with_modifier = list(
+            filter(lambda r: self._has_modifier(r), candidate_resources)
+        )
+        simples = list(
+            filter(lambda r: r not in with_modifier, candidate_resources)
+        )
+        simples_that_matter = list(
+            filter(
+                lambda s: not self.is_substring_of_any(s, with_modifier),
+                simples,
+            )
+        )
+
+        # breakpoint()
+        return candidate_resources_of + list(
+            filter(
+                lambda r: not self.is_substring_of_any(
+                    r, candidate_resources_of
+                ),
+                simples_that_matter + with_modifier,
+            )
+        )
 
     def _get_lemmatized_resources(self, episode):
         episode = NLP(episode)
@@ -79,18 +92,20 @@ class Analyzer:
                 candidate_resources_of.append(match)
             elif NLP.vocab.strings[match_id] == "simple_od":
                 candidate_resources_simple_od.append(match)
-        
-        candidate_resources=list(candidate_resources)
-        candidate_resources+= self._remove_unnecessary_matches(candidate_resources_simple_od, candidate_resources_of)
-        
+
+        candidate_resources = list(candidate_resources)
+        candidate_resources += self._remove_unnecessary_matches(
+            candidate_resources_simple_od, candidate_resources_of
+        )
+
         # occurrence_on_of= self._select_matches_from_candidates(
         #     "of", matches, candidate_resources_of
         # )
 
         return candidate_resources
 
-    def forma_compuesto(self, simple, lista_compuestos):
-            return any(simple in c for c in lista_compuestos)
+    def is_substring_of_any(self, simple, lista_compuestos):
+        return any(simple in c for c in lista_compuestos)
 
     def _has_modifier(self, resource):
         return " " in resource
@@ -100,11 +115,7 @@ class Analyzer:
             "nominal_subject",
             [
                 [
-                    {"DEP": {
-                        "IN":["compound","amod"]
-                        }, 
-                        "OP": "?"
-                    },
+                    {"DEP": {"IN": ["compound", "amod"]}, "OP": "?"},
                     {
                         "POS": "NOUN",
                         "DEP": {
@@ -148,7 +159,7 @@ class Analyzer:
             "simple_od",
             [
                 [
-                    {"DEP": {"IN": ["amod", "compound"]}, 'OP':'?'},  # tomato
+                    {"DEP": {"IN": ["amod", "compound"]}, "OP": "?"},  # tomato
                     {"POS": "NOUN", "DEP": "dobj"},  # plant
                 ]
             ],
@@ -164,12 +175,12 @@ class Analyzer:
         actor = self._get_actor(episode)
         self._remove_rules_for_actors()
         return actor
-        
+
     def _get_resources(self, episode, resources):
-        #this method is just necessary bc is needed to ask the user for adding some resources, and we don't want to ask twice
-        #when delete it, modify analyze_for_resources to just add all resources found as in get_actor method
-        #remove resources parameter too
-        lista=list()
+        # this method is just necessary bc is needed to ask the user for adding some resources, and we don't want to ask twice
+        # when delete it, modify analyze_for_resources to just add all resources found as in get_actor method
+        # remove resources parameter too
+        lista = list()
         for resource in self._get_lemmatized_resources(episode):
             if resource not in resources:
                 lista.append(resource)
@@ -189,11 +200,13 @@ class Analyzer:
                 ok = False
         return action.strip()
 
-    def analyze_for_resources(self, episode: str, scenario: URIRef, resources: list[str]) -> list[str]:
+    def analyze_for_resources(
+        self, episode: str, scenario: URIRef, resources: list[str]
+    ) -> list[str]:
         self._add_rules_for_resources()
         resources_not_included = self._get_resources(episode, resources)
         result = list()
-        if len(resources_not_included)>1:
+        if len(resources_not_included) > 1:
             print(
                 f"The following resources are not defined for scenario {scenario}."
                 "Select the number/s of the resource/s you want to include, or press Enter to skip.",
@@ -209,8 +222,8 @@ class Analyzer:
             for index in indexes:
                 if int(index) < len(resources_not_included):
                     result.append(resources_not_included[int(index)])
-        elif len(resources_not_included)==1:
-             result.append(resources_not_included[0])
+        elif len(resources_not_included) == 1:
+            result.append(resources_not_included[0])
 
         self._remove_rules_for_resources()
         return result
