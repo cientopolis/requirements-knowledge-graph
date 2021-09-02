@@ -24,14 +24,30 @@
     3. Agregar al grafo G la tripleta {ep1 hasResource r1}.
     4. DETECTAR INCONSISTENCIA: un elemento de tipo Resource en el grafo también es Actor.
 
-
-
 5. Si aparece un of, queda el más completo
-
-
 
 6. Caso with: se detecta como recurso y se agrega como recurso del ep, same caso 3
 
-
-
 7. Caso adjetivo + actor|recurso.
+
+# Caso de testeo
+
+## Casos
+
+1. Hacer test de unidad para el siguiente caso
+Ep1: "the gardener uses the pruning pliers to prune the infected or withered branches of the tomato plants" -> Debería detectar 
+    - Ep1 -> hasActor -> gardener
+    - Ep1 -> hasResource -> prune plier
+    - Ep1 -> hasResource -> infected branch of the tomato plant
+    - Ep1 -> hasResource -> withered branch of the tomato plan
+    - Ep1 -> hasAction -> uses to prune
+
+Action1: "uses to prune"
+    - gardener -> actsIn -> Action1
+    - prune plier -> usesIn -> Action1
+    - infected branch of the tomato plant -> hasResource -> Action1
+    - withered branch of the tomato plant -> hasResource -> Action1
+
+Para revisión:
+    gardener -> uses -> pruning pliers
+    pruning pliers -> to prune -> [mod] branch of the tomato plant
