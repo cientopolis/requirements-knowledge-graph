@@ -47,7 +47,7 @@ class Analyzer:
             episode[0 : self._getVerbPosition(episode)], as_spans=True
         )
 
-        return str(matches[0])
+        return str(max(matches, key=len))
 
     def _remove_unnecessary_matches(
         self, candidate_resources, candidate_resources_of
@@ -200,6 +200,7 @@ class Analyzer:
                 action = action + i.text + " "
             if i.dep_ == "dobj":
                 ok = False
+        print(action)
         return action.strip()
 
     def analyze_for_resources(
