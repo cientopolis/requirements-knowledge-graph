@@ -1,6 +1,6 @@
 from __future__ import annotations
 from functools import reduce
-from typing import Optional
+from typing import Optional, Union
 
 from rdflib import Graph, Literal, Namespace, URIRef
 from rdflib.namespace import RDF, RDFS
@@ -63,7 +63,6 @@ class Ontoscen(Graph):
         self._add_episodes(
             scenario,
             requirement.episodes,
-            requirement.actors,
             requirement.resources,
         )
         return self
@@ -97,9 +96,9 @@ class Ontoscen(Graph):
             Literal(label),
         ) in self
 
-    def get_individual(self, label: str) -> URIRef:
+    def get_individual(self, label: str) -> Union[URIRef|bool]:
         """Retrieve the individual of RDFS.label
-            `label`.
+            `label` or False if not found
 
         Arguments:
             type (str): An RDF class.
@@ -110,7 +109,7 @@ class Ontoscen(Graph):
 
         """
         return next(
-            self.subjects(RDFS.label, Literal(label)),
+            self.subjects(RDFS.label, Literal(label)), False
         )
 
     def _add_scenario(self, scenario: str) -> URIRef:
@@ -140,12 +139,12 @@ class Ontoscen(Graph):
         return individual
 
     def _add_episodes(
-        self, scenario: URIRef, episodes: list[str], actors, resources
+        self, scenario: URIRef, episodes: list[str], resources
     ) -> None:
         reduce(
             self._add_dependency,
             map(
-                lambda ep: self._add_episode(scenario, ep, actors, resources),
+                lambda ep: self._add_episode(scenario, ep, resources),
                 episodes,
             ),
             scenario,
@@ -162,7 +161,7 @@ class Ontoscen(Graph):
         return dependent
 
     def _add_episode(
-        self, scenario: URIRef, episode: str, actors, resources
+        self, scenario: URIRef, episode: str, resources
     ) -> URIRef:
         individual: URIRef = self._add_individual("Episode", episode)
         self.add((scenario, self.IRI["hasEpisode"], individual))
