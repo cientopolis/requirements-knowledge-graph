@@ -39,13 +39,10 @@ class TestOntoscen(unittest.TestCase):
         self.assertFalse((self.solution, RDF.type, self.actor) in self.graph)
 
     def test_detect_resources(self):
-
-        for i in self.graph:
-            print(i)
         self.assertTrue((self.IRI.episode0, self.hasResource, self.results_of_soil_analysis) in self.graph)
         self.assertTrue((self.IRI.episode1, self.hasResource, self.solution) in self.graph)
         self.assertTrue((self.IRI.episode1, self.hasResource, self.agricultural_lime) in self.graph)
-        # self.assertTrue((self.IRI.episode1, self.hasResource, self.magnesium) in self.graph)
+        self.assertTrue((self.IRI.episode1, self.hasResource, self.magnesium) in self.graph)
         self.assertTrue((self.IRI.episode2, self.hasResource, self.solution) in self.graph)
         self.assertTrue((self.IRI.episode2, self.hasResource, self.soil) in self.graph)
         self.assertTrue((self.IRI.episode3, self.hasResource, self.soil) in self.graph)

@@ -184,6 +184,7 @@ class Ontoscen(Graph):
             self._add_action(episode_individual, action)
 
     def _analyze_episode_for_resources(self, scenario: URIRef, episode: str, episode_individual: URIRef, resources: list[str]):
+        
         for resource in self.ANALYZER.analyze_for_resources(episode, scenario, resources):
             if self._exists_individual_with("Actor", resource):
                 #if resource exists in the graph as Actor, then append it to scenario with role "Resource"
@@ -192,9 +193,9 @@ class Ontoscen(Graph):
                 self._add_resource(episode_individual, resource)
             else:
                 #resource not already exists, or resource is a Resource
-                self._add_resource(episode_individual, resource)
+                self._add_resource(episode_individual, resource)            
             resources.append(resource)
-
+            
     def _analyze_episode(
         self,
         scenario: URIRef,
@@ -203,7 +204,7 @@ class Ontoscen(Graph):
         resources: list[str],
     ):
         self._analyze_episode_for_actors(episode, episode_individual)
-        # self._analyze_episode_for_actions(episode, episode_individual)
+        self._analyze_episode_for_actions(episode, episode_individual)
         self._analyze_episode_for_resources(scenario, episode, episode_individual, resources)
 
     def _add_individual(self, type: str, label: str) -> URIRef:

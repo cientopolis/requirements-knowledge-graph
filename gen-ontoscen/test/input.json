@@ -4,12 +4,12 @@
       "goal": "neutralize the soil acidity for having the proper ph to sow seeds",
       "context": "have soil with a high acidity",
       "actors": [],
-      "resources": ["soil", "agricultural lime", "magnesium", "solution"],
+      "resources": ["magnesium"],
       "episodes": [
         "the agricultural engineer interprets the results of the soil analysis",
         "the agricultural engineer prepares a solution with agricultural lime and magnesium", 
         "the gardener applies the solution to the soil",
-        "the solution makes the soil better"
+        "the solution improves the soil"
       ]
     }
 ]

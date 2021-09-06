@@ -77,7 +77,6 @@ class Analyzer:
 
     def _get_lemmatized_resources(self, episode):
         episode = NLP(episode)
-
         matches = MATCHER(episode)
 
         candidate_resources = set()
@@ -88,6 +87,7 @@ class Analyzer:
             match = " ".join(
                 [t.lemma_ for t in episode[start:end] if t.dep_ != "det"]
             )
+
             if NLP.vocab.strings[match_id] == "with":
                 candidate_resources.add(match.replace("with", "").strip())
             elif NLP.vocab.strings[match_id] == "of":
@@ -182,34 +182,38 @@ class Analyzer:
         # this method is just necessary bc is needed to ask the user for adding some resources, and we don't want to ask twice
         # when delete it, modify analyze_for_resources to just add all resources found as in get_actor method
         # remove resources parameter too
-        lista = list()
+        not_included = list()
+        included = list()
+
         for resource in self._get_lemmatized_resources(episode):
             if resource not in resources:
-                lista.append(resource)
+                not_included.append(resource)
+            else:
+                included.append(resource)
 
-        return lista
+        return not_included, included
 
     def analyze_for_actions(self, episode) -> str:
-        action = ""
-        ok = False
-        episode = NLP(episode)
+        episode= NLP(episode)
+        filtro = []
         for i in episode:
             if i.pos_ == "VERB":
-                ok = True
-            if ok:
-                action = action + i.text + " "
-            if i.dep_ == "dobj":
-                ok = False
-        print(action)
-        return action.strip()
+                filtro.append(i)
+            if i.dep_ == "aux":
+                filtro.append(i)
+        accion = ""
+        for i in filtro:
+            accion = accion + i.text +" "
+
+        return accion
 
     def analyze_for_resources(
         self, episode: str, scenario: URIRef, resources: list[str]
     ) -> list[str]:
         self._add_rules_for_resources()
-        resources_not_included = self._get_resources(episode, resources)
+        not_included_resources, included_resources = self._get_resources(episode, resources)
         result = list()
-        if len(resources_not_included) > 1:
+        if len(not_included_resources) > 1:
             print(
                 f"The following resources are not defined for scenario {scenario}."
                 "Select the number/s of the resource/s you want to include, or press Enter to skip.",
@@ -217,16 +221,16 @@ class Analyzer:
             )
 
             for index, resource_not_included in enumerate(
-                resources_not_included
+                not_included_resources
             ):
                 print(str(index) + ")", resource_not_included)
 
             indexes = input("Options: ").replace("\n", " ").split()
             for index in indexes:
-                if int(index) < len(resources_not_included):
-                    result.append(resources_not_included[int(index)])
-        elif len(resources_not_included) == 1:
-            result.append(resources_not_included[0])
-
+                if int(index) < len(not_included_resources):
+                    result.append(not_included_resources[int(index)])
+        elif len(not_included_resources) == 1:
+            result.append(not_included_resources[0])
+        
         self._remove_rules_for_resources()
-        return result
+        return result+included_resources

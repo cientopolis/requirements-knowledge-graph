@@ -28,7 +28,7 @@
       "the agricultural engineer analyzes the tomato plants",
       "the agricultural engineer analyzes the environmental properties",
       "the agricultural engineer configures the water requirement based on the development of the tomato plants and environmental properties",
-      "the agricultural engineer sets the frequency of irrigation"
+      "the tomato plant sets the frequency of irrigation"
     ]
   },
 
@@ -43,7 +43,7 @@
       "the gardener waters the soil",
       "the gardener takes the tomato plant from the seedbed",
       "the gardener places the tomato plant into the hole",
-      "the gardener covers half of the stem of the tomato plant with soil",
+      "the agricultural engineer covers half of the stem of the tomato plant with soil",
       "the gardener waters the planted tomato plant"
     ]
   },
