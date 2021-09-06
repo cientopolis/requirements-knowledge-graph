@@ -59,7 +59,7 @@ class Ontoscen(Graph):
         for actor in requirement.actors:
             self._add_actor(scenario, actor)
         for resource in requirement.resources:
-            self._add_resource(scenario, resource)
+            self._add_resource(scenario, self.ANALYZER.lemmatize(resource))
         self._add_episodes(
             scenario,
             requirement.episodes,
@@ -134,7 +134,7 @@ class Ontoscen(Graph):
         return individual
 
     def _add_resource(self, scenario: URIRef, resource: str) -> URIRef:
-        individual: URIRef = self._add_individual("Resource", self.ANALYZER.lemmatize(resource))
+        individual: URIRef = self._add_individual("Resource", resource)
         self.add((scenario, self.IRI["hasResource"], individual))
         return individual
 

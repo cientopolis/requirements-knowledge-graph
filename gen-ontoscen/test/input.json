@@ -11,5 +11,16 @@
         "the gardener applies the solution to the soil",
         "the solution improves the soil"
       ]
+    },
+    {
+      "scenario": "prune tomato plants",
+      "goal": "improve tomato plants' health for better quality production",
+      "context": "have tomato plants with abnormalities about a month after transplanting",
+      "resources": ["tomato plant", "pruning pliers"],
+      "actors": ["gardener"],
+      "episodes": [
+        "the gardener identifies the tomato plants with an abnormal growth or diseases",
+        "the gardener uses the pruning pliers to prune the infected or withered branches of the tomato plants"
+      ]
     }
 ]

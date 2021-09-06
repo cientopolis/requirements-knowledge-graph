@@ -12,7 +12,15 @@ MATCHER = Matcher(NLP.vocab)
 
 class Analyzer:
     def lemmatize(self, element: str):
-        return " ".join([r.lemma_ for r in NLP(element)])
+        lemmatized_element= ""
+        for token in NLP(element):
+            if (token.dep_ != "det"):
+                if (token.pos_ != "VERB"):
+                    lemmatized_element+=token.lemma_+" "
+                else:
+                    lemmatized_element+=token.text+" "
+        
+        return lemmatized_element.strip()
         
     def _getVerbPosition(self, sentence):
         pos = 0
@@ -65,8 +73,7 @@ class Analyzer:
             )
         )
 
-        # breakpoint()
-        return candidate_resources_of + list(
+        return self._analyze_of_match(candidate_resources_of) + list(
             filter(
                 lambda r: not self.is_substring_of_any(
                     r, candidate_resources_of
@@ -75,6 +82,22 @@ class Analyzer:
             )
         )
 
+    def _analyze_of_match(self, candidate_resources) -> list[str]:
+        '''
+        If sentence matches with the "of" option:
+        -> if [mod] [conj] [mod] [obj] ... then it's divided in two different resources, like [mod][obj]...
+        -> if there's no [conj], it returns the [mod][obj]... match 
+        '''
+        if len(candidate_resources) > 0:
+            candidate_resource= NLP(max(candidate_resources, key=len))
+            for token in candidate_resource:
+                if (token.dep_ =="cc"):
+                    first_match= candidate_resource[0].text+" "+ str(candidate_resource[3:len(candidate_resource)])
+                    second_match= str(candidate_resource[2:len(candidate_resource)])
+                    return [first_match, second_match]
+            return [" ".join(c.text for c in candidate_resource)]
+        return []
+        
     def _get_lemmatized_resources(self, episode):
         episode = NLP(episode)
         matches = MATCHER(episode)
@@ -84,9 +107,7 @@ class Analyzer:
         candidate_resources_of = list()
 
         for match_id, start, end in matches:
-            match = " ".join(
-                [t.lemma_ for t in episode[start:end] if t.dep_ != "det"]
-            )
+            match = self.lemmatize(str(episode[start:end]))
 
             if NLP.vocab.strings[match_id] == "with":
                 candidate_resources.add(match.replace("with", "").strip())
@@ -99,10 +120,6 @@ class Analyzer:
         candidate_resources += self._remove_unnecessary_matches(
             candidate_resources_simple_od, candidate_resources_of
         )
-
-        # occurrence_on_of= self._select_matches_from_candidates(
-        #     "of", matches, candidate_resources_of
-        # )
 
         return candidate_resources
 
@@ -147,7 +164,9 @@ class Analyzer:
             "of",
             [
                 [
-                    {"DEP": {"IN": ["amod", "compound"]}, "OP": "?"},  # great
+                    {"POS": "ADJ", "OP": "?"},  # big
+                    {"POS": "CCONJ", "OP": "?"},  # and
+                    {"POS": "ADJ", "OP": "?"},  # great
                     {"DEP": "dobj"},  # results
                     {"ORTH": "of"},  # of
                     {"DEP": "det", "OP": "?"},  # the
@@ -184,6 +203,8 @@ class Analyzer:
         # remove resources parameter too
         not_included = list()
         included = list()
+
+        resources= [self.lemmatize(r) for r in resources]        
 
         for resource in self._get_lemmatized_resources(episode):
             if resource not in resources:
