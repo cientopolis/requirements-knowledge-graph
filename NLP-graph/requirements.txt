@@ -1,0 +1,6 @@
+spacy
+rdflib
+networkx
+matplotlib
+requests
+beautifulsoup4
