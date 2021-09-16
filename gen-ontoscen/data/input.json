@@ -16,10 +16,7 @@
     "scenario": "choose irrigation mechanism",
     "goal": "select the proper irrigation mechanism for planting tomato seeds",
     "context": "do not have an irrigation mechanism for watering tomato plants",
-    "resources": [
-      "irrigation mechanism",
-      "tomato plants"
-    ],
+    "resources": ["irrigation mechanism", "tomato plants"],
     "actors": ["agricultural engineer"],
     "episodes": [
       "the agricultural engineer analyzes the soil composition and water availability",

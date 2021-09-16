@@ -2,6 +2,14 @@ from argparse import ArgumentParser
 
 from src.jsonparser import JSONParser
 from src.ontoscen import Ontoscen
+from src.wikilink import Wikilink
+
+
+def main():
+    args = set_arguments().parse_args()
+    Wikilink().enrich(
+        Ontoscen(JSONParser(args.input).requirements())
+    ).serialize(args.output, format=args.format, encoding="utf-8")
 
 
 def set_arguments():
@@ -40,13 +48,6 @@ def set_arguments():
     )
 
     return parser
-
-
-def main():
-    args = set_arguments().parse_args()
-    Ontoscen(JSONParser(args.input).requirements()).serialize(
-        args.output, format=args.format, encoding="utf-8"
-    )
 
 
 if __name__ == "__main__":

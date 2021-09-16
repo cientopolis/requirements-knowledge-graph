@@ -1,0 +1,31 @@
+[
+  {
+    "scenario": "neutralize the soil's acidity",
+    "goal": "neutralize the soil acidity for having the proper ph to sow seeds",
+    "context": "have soil with a high acidity",
+    "actors": ["gardener", "agricultural engineer"],
+    "resources": ["soil", "agricultural lime", "magnesium", "solution"],
+    "episodes": [
+      "the agricultural engineer interprets the results of the soil analysis",
+      "the agricultural engineer prepares a solution with agricultural lime and magnesium",
+      "the gardener applies the solution to the soil"
+    ]
+  },
+
+  {
+    "scenario": "choose irrigation mechanism",
+    "goal": "select the proper irrigation mechanism for planting tomato seeds",
+    "context": "do not have an irrigation mechanism for watering tomato plants",
+    "resources": ["irrigation mechanism", "tomato plants"],
+    "actors": ["agricultural engineer"],
+    "episodes": [
+      "the agricultural engineer analyzes the soil composition and water availability",
+      "the agricultural engineer chooses an irrigation mechanism based on soil analysis and water availability",
+      "the agricultural engineer installs the irrigation mechanism",
+      "the agricultural engineer analyzes the tomato plants",
+      "the agricultural engineer analyzes the environmental properties",
+      "the agricultural engineer configures the water requirement based on the development of the tomato plants and environmental properties",
+      "the tomato plant sets the frequency of irrigation"
+    ]
+  }
+]

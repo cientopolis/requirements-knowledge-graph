@@ -7,7 +7,8 @@ from rdflib.namespace import RDF, RDFS
 
 from .requirement import Requirement
 
-from src.analyzer import Analyzer
+from .analyzer import Analyzer
+
 
 class Ontoscen(Graph):
     """An RDF graph that respects the Ontoscen ontology.
@@ -15,6 +16,7 @@ class Ontoscen(Graph):
     Class attributes:
         IRI (URIRef): Identifier for the Ontoscen ontology.
     """
+
     ANALYZER = Analyzer()
 
     IRI: Namespace = Namespace(
@@ -79,6 +81,25 @@ class Ontoscen(Graph):
         """
         return len(list(self.triples((None, RDF.type, self.IRI[a_type]))))
 
+    def get_resources(self) -> list[URIRef]:
+        """Retrieve the Resources on the Ontoscen graph
+
+        Returns:
+            resources (list[URIRef]): list of Resources.
+        """
+        return list(self.subjects(RDF.type, self.IRI["Resource"]))
+
+    def get_actors(self) -> list[URIRef]:
+        """Retrieve the Actors on the Ontoscen graph
+
+        Returns:
+            actors (list[URIRef]): list of Actors.
+        """
+        return list(self.subjects(RDF.type, self.IRI["Actor"]))
+
+    def get_label(self, subject: URIRef) -> Union[Literal, None]:
+        return next(self.objects(subject, RDFS.label), None)
+
     def _exists_individual_with(self, type: str, label: str) -> bool:
         """Check in the graph for an individual of type `type` and label
             `label`.
@@ -96,7 +117,7 @@ class Ontoscen(Graph):
             Literal(label),
         ) in self
 
-    def get_individual(self, label: str) -> Union[URIRef|bool]:
+    def get_individual(self, label: str) -> Union[URIRef | bool]:
         """Retrieve the individual of RDFS.label
             `label` or False if not found
 
@@ -108,9 +129,7 @@ class Ontoscen(Graph):
             individual (URIRef): An subject linked with RDFS.label `label`.
 
         """
-        return next(
-            self.subjects(RDFS.label, Literal(label)), False
-        )
+        return next(self.subjects(RDFS.label, Literal(label)), False)
 
     def _add_scenario(self, scenario: str) -> URIRef:
         return self._add_individual("Scenario", scenario)
@@ -129,7 +148,9 @@ class Ontoscen(Graph):
         return individual
 
     def _add_actor(self, scenario: URIRef, actor: str) -> URIRef:
-        individual: URIRef = self._add_individual("Actor", self.ANALYZER.lemmatize(actor))
+        individual: URIRef = self._add_individual(
+            "Actor", self.ANALYZER.lemmatize(actor)
+        )
         self.add((scenario, self.IRI["hasActor"], individual))
         return individual
 
@@ -168,34 +189,46 @@ class Ontoscen(Graph):
         self._analyze_episode(scenario, episode, individual, resources)
         return individual
 
-    def _analyze_episode_for_actors(self, episode: str, episode_individual: URIRef):
+    def _analyze_episode_for_actors(
+        self, episode: str, episode_individual: URIRef
+    ):
         actor = self.ANALYZER.analyze_for_actors(episode)
         if self._exists_individual_with("Resource", actor):
-            #if actor exists in the graph as Resource, then append it to scenario with role "Actor"
-            #TODO: inconsistency detected here
+            # if actor exists in the graph as Resource, then append it to scenario with role "Actor"
+            # TODO: inconsistency detected here
             self._add_actor(episode_individual, actor)
         else:
-            #actor not already exists, or actor is an Actor
+            # actor not already exists, or actor is an Actor
             self._add_actor(episode_individual, actor)
 
-    def _analyze_episode_for_actions(self, episode: str, episode_individual: URIRef):
+    def _analyze_episode_for_actions(
+        self, episode: str, episode_individual: URIRef
+    ):
         action = self.ANALYZER.analyze_for_actions(episode)
         if action:
             self._add_action(episode_individual, action)
 
-    def _analyze_episode_for_resources(self, scenario: URIRef, episode: str, episode_individual: URIRef, resources: list[str]):
-        
-        for resource in self.ANALYZER.analyze_for_resources(episode, scenario, resources):
+    def _analyze_episode_for_resources(
+        self,
+        scenario: URIRef,
+        episode: str,
+        episode_individual: URIRef,
+        resources: list[str],
+    ):
+
+        for resource in self.ANALYZER.analyze_for_resources(
+            episode, scenario, resources
+        ):
             if self._exists_individual_with("Actor", resource):
-                #if resource exists in the graph as Actor, then append it to scenario with role "Resource"
-                #TODO: inconsistency detected here
-                
+                # if resource exists in the graph as Actor, then append it to scenario with role "Resource"
+                # TODO: inconsistency detected here
+
                 self._add_resource(episode_individual, resource)
             else:
-                #resource not already exists, or resource is a Resource
-                self._add_resource(episode_individual, resource)            
+                # resource not already exists, or resource is a Resource
+                self._add_resource(episode_individual, resource)
             resources.append(resource)
-            
+
     def _analyze_episode(
         self,
         scenario: URIRef,
@@ -205,7 +238,9 @@ class Ontoscen(Graph):
     ):
         self._analyze_episode_for_actors(episode, episode_individual)
         self._analyze_episode_for_actions(episode, episode_individual)
-        self._analyze_episode_for_resources(scenario, episode, episode_individual, resources)
+        self._analyze_episode_for_resources(
+            scenario, episode, episode_individual, resources
+        )
 
     def _add_individual(self, type: str, label: str) -> URIRef:
         """Add an individual to Ontoscen if it doesn't exist.
@@ -236,15 +271,14 @@ class Ontoscen(Graph):
         return individual
 
     def _individual_exists(self, label):
-        return (None,
-                RDFS.label,
-                Literal(label),
-                ) in self
+        return (
+            None,
+            RDFS.label,
+            Literal(label),
+        ) in self
 
     def _add_label(self, individual, label):
         self.add((individual, RDFS.label, Literal(label)))
 
     def _add_type(self, individual, type):
         self.add((individual, RDF.type, self.IRI[type]))
-
-    
