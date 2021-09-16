@@ -55,3 +55,9 @@ Example:
 ```bash
 python main.py --input data/input.json --output data/output.ttl --format turtle
 ```
+
+## Test
+Change directory to test folder
+$ python -m unittest <testName.py>
+
+Accept the requested resources for successful execution

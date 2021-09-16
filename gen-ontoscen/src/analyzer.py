@@ -57,6 +57,14 @@ class Analyzer:
 
         return str(max(matches, key=len))
 
+    def _remove_substrings(self, source, target):
+        return list(
+            filter(
+                lambda s: not self.is_substring_of_any(s, target),
+                source,
+            )
+        )
+
     def _remove_unnecessary_matches(
         self, candidate_resources, candidate_resources_of
     ):
@@ -66,12 +74,8 @@ class Analyzer:
         simples = list(
             filter(lambda r: r not in with_modifier, candidate_resources)
         )
-        simples_that_matter = list(
-            filter(
-                lambda s: not self.is_substring_of_any(s, with_modifier),
-                simples,
-            )
-        )
+        
+        simples_that_matter = self._remove_substrings(simples, with_modifier)
 
         return self._analyze_of_match(candidate_resources_of) + list(
             filter(
@@ -103,7 +107,8 @@ class Analyzer:
         matches = MATCHER(episode)
 
         candidate_resources = set()
-        candidate_resources_simple_od = list()
+        candidate_resources_simple_dobj = list()
+        candidate_resources_simple_pobj = list()
         candidate_resources_of = list()
 
         for match_id, start, end in matches:
@@ -113,13 +118,18 @@ class Analyzer:
                 candidate_resources.add(match.replace("with", "").strip())
             elif NLP.vocab.strings[match_id] == "of":
                 candidate_resources_of.append(match)
-            elif NLP.vocab.strings[match_id] == "simple_od":
-                candidate_resources_simple_od.append(match)
+            elif NLP.vocab.strings[match_id] == "simple_dobj":
+                candidate_resources_simple_dobj.append(match)
+            elif NLP.vocab.strings[match_id] == "simple_pobj":
+                candidate_resources_simple_pobj.append(match)
 
         candidate_resources = list(candidate_resources)
         candidate_resources += self._remove_unnecessary_matches(
-            candidate_resources_simple_od, candidate_resources_of
+            candidate_resources_simple_dobj, candidate_resources_of
         )
+
+        # candidate_resources+=self._remove_substrings(candidate_resources_simple_pobj, candidate_resources)
+
 
         return candidate_resources
 
@@ -177,7 +187,7 @@ class Analyzer:
         )
 
         MATCHER.add(
-            "simple_od",
+            "simple_dobj",
             [
                 [
                     {"DEP": {"IN": ["amod", "compound"]}, "OP": "?"},  # tomato
@@ -186,10 +196,44 @@ class Analyzer:
             ],
         )
 
+        MATCHER.add(
+            "simple_pobj",
+            [
+                [
+                    {"POS": "NOUN", "DEP": "pobj"}, 
+                ]
+            ],
+        )
+
     def _remove_rules_for_resources(self):
         MATCHER.remove("of")
         MATCHER.remove("with")
-        MATCHER.remove("simple_od")
+        MATCHER.remove("simple_dobj")
+        MATCHER.remove("simple_pobj")
+
+    def _add_rules_for_actions(self):
+        MATCHER.add(
+            "verb",
+            [
+                [
+                    {"POS": "VERB", "DEP":"ROOT"}  
+                ],
+            ],
+        )
+
+        MATCHER.add(
+            "tobe",
+            [
+                [
+                    {"POS": "PART", "DEP":"aux"},
+                    {"POS": "VERB", "DEP":"xcomp"}  
+                ],
+            ],
+        )
+
+    def _remove_rules_for_actions(self):
+        MATCHER.remove("verb")
+        MATCHER.remove("tobe")
 
     def analyze_for_actors(self, episode) -> str:
         self._add_rules_for_actors()
@@ -214,18 +258,18 @@ class Analyzer:
 
         return not_included, included
 
-    def analyze_for_actions(self, episode) -> str:
+    def _get_action(self, episode) -> str:
         episode= NLP(episode)
-        filtro = []
-        for i in episode:
-            if i.pos_ == "VERB":
-                filtro.append(i)
-            if i.dep_ == "aux":
-                filtro.append(i)
-        accion = ""
-        for i in filtro:
-            accion = accion + i.text +" "
+        
+        matches = MATCHER(episode, as_spans=True)
+        return ' '.join([str(match) for match in matches])
 
+
+    def analyze_for_actions(self, episode) -> str:
+        self._add_rules_for_actions()
+        accion= self._get_action(episode)
+
+        self._remove_rules_for_actions()
         return accion
 
     def analyze_for_resources(
