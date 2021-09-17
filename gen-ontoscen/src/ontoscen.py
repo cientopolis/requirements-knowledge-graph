@@ -215,7 +215,6 @@ class Ontoscen(Graph):
         episode_individual: URIRef,
         resources: list[str],
     ):
-
         for resource in self.ANALYZER.analyze_for_resources(
             episode, scenario, resources
         ):

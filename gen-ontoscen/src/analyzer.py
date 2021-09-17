@@ -1,5 +1,3 @@
-from os import remove
-from numpy import pi
 import spacy
 from spacy.matcher import Matcher
 from rdflib import URIRef
@@ -10,18 +8,19 @@ NLP = spacy.load("en_core_web_sm")
 
 MATCHER = Matcher(NLP.vocab)
 
+
 class Analyzer:
     def lemmatize(self, element: str):
-        lemmatized_element= ""
+        lemmatized_element = ""
         for token in NLP(element):
-            if (token.dep_ != "det"):
-                if (token.pos_ != "VERB"):
-                    lemmatized_element+=token.lemma_+" "
+            if token.dep_ != "det":
+                if token.pos_ != "VERB":
+                    lemmatized_element += token.lemma_ + " "
                 else:
-                    lemmatized_element+=token.text+" "
-        
+                    lemmatized_element += token.text + " "
+
         return lemmatized_element.strip()
-        
+
     def _getVerbPosition(self, sentence):
         pos = 0
         for token in sentence:
@@ -74,7 +73,7 @@ class Analyzer:
         simples = list(
             filter(lambda r: r not in with_modifier, candidate_resources)
         )
-        
+
         simples_that_matter = self._remove_substrings(simples, with_modifier)
 
         return self._analyze_of_match(candidate_resources_of) + list(
@@ -87,21 +86,27 @@ class Analyzer:
         )
 
     def _analyze_of_match(self, candidate_resources) -> list[str]:
-        '''
+        """
         If sentence matches with the "of" option:
         -> if [mod] [conj] [mod] [obj] ... then it's divided in two different resources, like [mod][obj]...
-        -> if there's no [conj], it returns the [mod][obj]... match 
-        '''
+        -> if there's no [conj], it returns the [mod][obj]... match
+        """
         if len(candidate_resources) > 0:
-            candidate_resource= NLP(max(candidate_resources, key=len))
+            candidate_resource = NLP(max(candidate_resources, key=len))
             for token in candidate_resource:
-                if (token.dep_ =="cc"):
-                    first_match= candidate_resource[0].text+" "+ str(candidate_resource[3:len(candidate_resource)])
-                    second_match= str(candidate_resource[2:len(candidate_resource)])
+                if token.dep_ == "cc":
+                    first_match = (
+                        candidate_resource[0].text
+                        + " "
+                        + str(candidate_resource[3 : len(candidate_resource)])
+                    )
+                    second_match = str(
+                        candidate_resource[2 : len(candidate_resource)]
+                    )
                     return [first_match, second_match]
             return [" ".join(c.text for c in candidate_resource)]
         return []
-        
+
     def _get_lemmatized_resources(self, episode):
         episode = NLP(episode)
         matches = MATCHER(episode)
@@ -129,7 +134,6 @@ class Analyzer:
         )
 
         # candidate_resources+=self._remove_substrings(candidate_resources_simple_pobj, candidate_resources)
-
 
         return candidate_resources
 
@@ -200,7 +204,7 @@ class Analyzer:
             "simple_pobj",
             [
                 [
-                    {"POS": "NOUN", "DEP": "pobj"}, 
+                    {"POS": "NOUN", "DEP": "pobj"},
                 ]
             ],
         )
@@ -215,9 +219,7 @@ class Analyzer:
         MATCHER.add(
             "verb",
             [
-                [
-                    {"POS": "VERB", "DEP":"ROOT"}  
-                ],
+                [{"POS": "VERB", "DEP": "ROOT"}],
             ],
         )
 
@@ -225,8 +227,8 @@ class Analyzer:
             "tobe",
             [
                 [
-                    {"POS": "PART", "DEP":"aux"},
-                    {"POS": "VERB", "DEP":"xcomp"}  
+                    {"POS": "PART", "DEP": "aux"},
+                    {"POS": "VERB", "DEP": "xcomp"},
                 ],
             ],
         )
@@ -248,7 +250,7 @@ class Analyzer:
         not_included = list()
         included = list()
 
-        resources= [self.lemmatize(r) for r in resources]        
+        resources = [self.lemmatize(r) for r in resources]
 
         for resource in self._get_lemmatized_resources(episode):
             if resource not in resources:
@@ -259,15 +261,14 @@ class Analyzer:
         return not_included, included
 
     def _get_action(self, episode) -> str:
-        episode= NLP(episode)
-        
-        matches = MATCHER(episode, as_spans=True)
-        return ' '.join([str(match) for match in matches])
+        episode = NLP(episode)
 
+        matches = MATCHER(episode, as_spans=True)
+        return " ".join([str(match) for match in matches])
 
     def analyze_for_actions(self, episode) -> str:
         self._add_rules_for_actions()
-        accion= self._get_action(episode)
+        accion = self._get_action(episode)
 
         self._remove_rules_for_actions()
         return accion
@@ -276,7 +277,9 @@ class Analyzer:
         self, episode: str, scenario: URIRef, resources: list[str]
     ) -> list[str]:
         self._add_rules_for_resources()
-        not_included_resources, included_resources = self._get_resources(episode, resources)
+        not_included_resources, included_resources = self._get_resources(
+            episode, resources
+        )
         result = list()
         if len(not_included_resources) > 1:
             print(
@@ -288,14 +291,14 @@ class Analyzer:
             for index, resource_not_included in enumerate(
                 not_included_resources
             ):
-                print(str(index) + ")", resource_not_included)
+                print(str(index + 1) + ")", resource_not_included)
 
             indexes = input("Options: ").replace("\n", " ").split()
             for index in indexes:
-                if int(index) < len(not_included_resources):
-                    result.append(not_included_resources[int(index)])
+                if int(index) <= len(not_included_resources):
+                    result.append(not_included_resources[int(index) - 1])
         elif len(not_included_resources) == 1:
             result.append(not_included_resources[0])
-        
+
         self._remove_rules_for_resources()
-        return result+included_resources
+        return result + included_resources
