@@ -57,7 +57,9 @@ python main.py --input data/input.json --output data/output.ttl --format turtle
 ```
 
 ## Test
-Change directory to test folder
-$ python -m unittest <testName.py>
 
-Accept the requested resources for successful execution
+From `gen-ontoscen/` go to the `test/` directory. **When asked for input, select every option.**
+
+```bash
+$ python -m unittest <testName.py>
+```
