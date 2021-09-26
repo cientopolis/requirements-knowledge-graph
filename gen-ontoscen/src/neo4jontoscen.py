@@ -90,7 +90,7 @@ class Neo4jOntoscen:
 
     @staticmethod
     def _add_goal(tx, scenario: str, goal: str):
-        query = ("match (e:Scenario { label: $scenario }) "
+        query = ("match (e{ label: $scenario }) "
                  "optional match (a { label: $goal }) "
                  "call apoc.do.when(a is not null, "
                  "'merge (e)-[:hasGoal]->(a)', "
@@ -101,7 +101,7 @@ class Neo4jOntoscen:
 
     @staticmethod
     def _add_context(tx, scenario: str, context: str):
-        query = ("match (e:Scenario { label: $scenario }) "
+        query = ("match (e{ label: $scenario }) "
                  "optional match (a { label: $context }) "
                  "call apoc.do.when(a is not null, "
                  "'merge (e)-[:hasContext]->(a)', "
@@ -112,7 +112,7 @@ class Neo4jOntoscen:
 
     @staticmethod
     def _add_actors(tx, scenario: str, actors):
-        query = ("match (e:Scenario{ label: $scenario }) "
+        query = ("match (e{ label: $scenario }) "
                  "unwind $actors as actor "
                  "optional match (a { label:actor }) "
                  "call apoc.do.when(a is not null, "
@@ -124,7 +124,7 @@ class Neo4jOntoscen:
 
     @staticmethod
     def _add_resource(tx, scenario: str, resource: str):
-        query = ("match (e:Scenario { label: $scenario }) "
+        query = ("match (e{ label: $scenario }) "
                  "optional match (a { label: $resource }) "
                  "call apoc.do.when(a is not null, "
                  "'merge (e)-[:hasResource]->(a)', "
@@ -181,7 +181,7 @@ class Neo4jOntoscen:
 
     @staticmethod
     def _add_episode(tx, scenario: str, episode: str):
-        query = ("match (e:Scenario{ label: $scenario }) "
+        query = ("match (e{ label: $scenario }) "
                  "optional match (a { label: $episode }) "
                  "call apoc.do.when(a is not null, "
                  "'merge (e)-[:hasEpisode]->(a)', "
