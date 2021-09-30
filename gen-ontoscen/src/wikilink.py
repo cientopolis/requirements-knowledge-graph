@@ -1,7 +1,7 @@
 from functools import reduce
 from .ontoscen import Ontoscen
 from wikibase_api import Wikibase
-from rdflib import URIRef, Graph, Literal, Namespace
+from rdflib import URIRef, Literal, Namespace
 from rdflib.namespace import OWL, RDFS
 
 
@@ -39,7 +39,7 @@ class Wikilink:
 
     def _enrich_subject(self, ontoscen: Ontoscen, subject: URIRef) -> Ontoscen:
 
-        if self._is_enriched(subject, ontoscen):
+        if ontoscen.is_linked(subject):
             return ontoscen
 
         label = ontoscen.get_label(subject)
@@ -114,10 +114,3 @@ class Wikilink:
         return self.WB.entity.search(item_label, "en", limit=self.LIMIT)[
             "search"
         ]
-
-    def _is_enriched(self, subject: URIRef, graph: Graph) -> bool:
-        return (subject, OWL.sameAs, None) in graph or (
-            None,
-            OWL.sameAs,
-            subject,
-        ) in graph

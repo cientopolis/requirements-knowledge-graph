@@ -3,7 +3,7 @@ from functools import reduce
 from typing import Optional, Union
 
 from rdflib import Graph, Literal, Namespace, URIRef
-from rdflib.namespace import RDF, RDFS
+from rdflib.namespace import RDF, RDFS, OWL
 
 from .requirement import Requirement
 
@@ -130,6 +130,13 @@ class Ontoscen(Graph):
 
         """
         return next(self.subjects(RDFS.label, Literal(label)), False)
+
+    def is_linked(self, individual: URIRef) -> bool:
+        return (individual, OWL.sameAs, None) in self or (
+            None,
+            OWL.sameAs,
+            individual,
+        ) in self
 
     def _add_scenario(self, scenario: str) -> URIRef:
         return self._add_individual("Scenario", scenario)
