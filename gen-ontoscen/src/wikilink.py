@@ -1,8 +1,12 @@
 from functools import reduce
-from .ontoscen import Ontoscen
-from wikibase_api import Wikibase
-from rdflib import URIRef, Literal, Namespace
+from json import load, dump
+
+from rdflib import Literal, Namespace, URIRef
 from rdflib.namespace import OWL, RDFS
+from wikibase_api import Wikibase
+
+from .ontoscen import Ontoscen
+from .helpers import get_user_input
 
 
 SCHEMA = Namespace("https://schema.org/")
@@ -17,8 +21,10 @@ class Wikilink:
     """
 
     def __init__(self, limit: int = 10):
-        self.LIMIT = limit
-        self.WB = Wikibase()
+        self.LIMIT: int = limit
+        self.WB: Wikibase = Wikibase()
+        self.CACHE_FILE: str = "data/cache.json"
+        self.CACHE: dict = self.open_cache()
 
     def enrich(self, graph: Ontoscen) -> Ontoscen:
         """Enrich the resources and actors of an Ontoscen graph with
@@ -31,11 +37,24 @@ class Wikilink:
             graph (Ontoscen): an Ontoscen graph linked with Wikidata.
         """
 
-        return reduce(
+        enriched_graph = reduce(
             self._enrich_subject,
             graph.get_resources() + graph.get_actors(),
             graph,
         )
+        self.save_cache()
+        return enriched_graph
+
+    def open_cache(self) -> dict:
+        try:
+            with open(self.CACHE_FILE, mode="r", encoding="utf8") as file:
+                return load(file)
+        except FileNotFoundError:
+            return {}
+
+    def save_cache(self) -> None:
+        with open(self.CACHE_FILE, "w", encoding="utf-8") as file:
+            dump(self.CACHE, file, ensure_ascii=False, indent=4)
 
     def _enrich_subject(self, ontoscen: Ontoscen, subject: URIRef) -> Ontoscen:
 
@@ -104,13 +123,15 @@ class Wikilink:
 
             print("")
 
-        selection = input("Select: ")
+        selection = get_user_input("Select: ")
         try:
             return options[int(selection) - 1]
         except:
             return {}
 
     def _query(self, item_label: str) -> list[dict]:
-        return self.WB.entity.search(item_label, "en", limit=self.LIMIT)[
-            "search"
-        ]
+        if not item_label in self.CACHE.keys():
+            self.CACHE[item_label] = self.WB.entity.search(
+                item_label, "en", limit=self.LIMIT
+            )["search"]
+        return self.CACHE[item_label]
