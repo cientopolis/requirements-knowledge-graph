@@ -14,9 +14,9 @@ class Requirement:
     """
 
     def __init__(self, req: dict):
-        self.scenario: str = req["scenario"]
-        self.goal: str = req["goal"]
-        self.context: str = req["context"]
-        self.episodes: list[str] = req["episodes"]
-        self.actors: list[str] = req["actors"]
-        self.resources: list[str] = req["resources"]
+        self.scenario: str = req["scenario"].lower()
+        self.goal: str = req["goal"].lower()
+        self.context: str = req["context"].lower()
+        self.episodes: list[str] = list(map(lambda r: r.lower(), req["episodes"]))
+        self.actors: list[str] = list(map(lambda r: r.lower(), req["actors"]))
+        self.resources: list[str] = list(map(lambda r: r.lower(), req["resources"]))

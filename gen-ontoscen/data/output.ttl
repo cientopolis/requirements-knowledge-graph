@@ -1,4 +1,5 @@
 @prefix ns1: <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl#> .
+@prefix ns2: <https://schema.org/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
@@ -33,209 +34,3280 @@ ns1:hasResource a owl:ObjectProperty ;
     owl:inverseOf ns1:dependsOn .
 
 ns1:action0 a ns1:Action ;
-    rdfs:label "interprets " .
+    rdfs:label "appears" .
 
-ns1:action1 a ns1:Action ;
-    rdfs:label "prepares " .
+ns1:action14 a ns1:Action ;
+    rdfs:label "sets" .
 
-ns1:action2 a ns1:Action ;
-    rdfs:label "applies " .
+ns1:action15 a ns1:Action ;
+    rdfs:label "guides" .
 
-ns1:action4 a ns1:Action ;
-    rdfs:label "chooses based " .
+ns1:action16 a ns1:Action ;
+    rdfs:label "destroys" .
+
+ns1:action20 a ns1:Action ;
+    rdfs:label "consults" .
+
+ns1:action22 a ns1:Action ;
+    rdfs:label "irrigates" .
+
+ns1:action24 a ns1:Action ;
+    rdfs:label "protects to prevent" .
+
+ns1:action25 a ns1:Action ;
+    rdfs:label "scans" .
+
+ns1:action27 a ns1:Action ;
+    rdfs:label "cleans" .
+
+ns1:action28 a ns1:Action ;
+    rdfs:label "sprays" .
+
+ns1:action30 a ns1:Action ;
+    rdfs:label "decides to use" .
+
+ns1:action31 a ns1:Action ;
+    rdfs:label "decides to transplant" .
+
+ns1:action32 a ns1:Action ;
+    rdfs:label "moves" .
+
+ns1:action38 a ns1:Action ;
+    rdfs:label "stretches" .
+
+ns1:action39 a ns1:Action ;
+    rdfs:label "acquires" .
+
+ns1:action40 a ns1:Action ;
+    rdfs:label "sanitizes" .
+
+ns1:action43 a ns1:Action ;
+    rdfs:label "transports" .
+
+ns1:action44 a ns1:Action ;
+    rdfs:label "separates" .
 
 ns1:action5 a ns1:Action ;
-    rdfs:label "installs " .
+    rdfs:label "performs" .
 
-ns1:action6 a ns1:Action ;
-    rdfs:label "configures based " .
+ns1:action50 a ns1:Action ;
+    rdfs:label "carries" .
+
+ns1:action51 a ns1:Action ;
+    rdfs:label "smashed" .
+
+ns1:action53 a ns1:Action ;
+    rdfs:label "communicates" .
+
+ns1:action55 a ns1:Action ;
+    rdfs:label "vibrates to release" .
+
+ns1:action56 a ns1:Action ;
+    rdfs:label "take to damage" .
+
+ns1:action57 a ns1:Action ;
+    rdfs:label "left" .
+
+ns1:action60 a ns1:Action ;
+    rdfs:label "uses to tie" .
+
+ns1:action61 a ns1:Action ;
+    rdfs:label "added" .
+
+ns1:action62 a ns1:Action ;
+    rdfs:label "grabs" .
+
+ns1:action63 a ns1:Action ;
+    rdfs:label "repeats" .
+
+ns1:action64 a ns1:Action ;
+    rdfs:label "pours" .
+
+ns1:action65 a ns1:Action ;
+    rdfs:label "set" .
+
+ns1:action66 a ns1:Action ;
+    rdfs:label "rotates" .
+
+ns1:action67 a ns1:Action ;
+    rdfs:label "analyses" .
+
+ns1:action68 a ns1:Action ;
+    rdfs:label "uses to detect" .
+
+ns1:action69 a ns1:Action ;
+    rdfs:label "uses to fight" .
 
 ns1:action7 a ns1:Action ;
-    rdfs:label "sets " .
+    rdfs:label "reports" .
+
+ns1:action70 a ns1:Action ;
+    rdfs:label "manifests" .
+
+ns1:action71 a ns1:Action ;
+    rdfs:label "prevents" .
+
+ns1:action72 a ns1:Action ;
+    rdfs:label "uses to protect" .
+
+ns1:action73 a ns1:Action ;
+    rdfs:label "installs" .
+
+ns1:action74 a ns1:Action ;
+    rdfs:label "harvests" .
+
+ns1:action75 a ns1:Action ;
+    rdfs:label "prunes" .
+
+ns1:actor13 a ns1:Actor ;
+    rdfs:label "gardener proceed" .
+
+ns1:actor14 a ns1:Actor ;
+    rdfs:label "rows" .
+
+ns1:actor4 a ns1:Actor ;
+    rdfs:label "meteorological service" .
 
 ns1:condition0 a ns1:Condition ;
-    rdfs:label "neutralize the soil acidity for having the proper ph to sow seeds" .
+    rdfs:label "control of diseases regarding lack or excess of some necessary condition for the growing of the plant" .
 
-ns1:condition1 a ns1:Condition ;
-    rdfs:label "have soil with a high acidity" .
+ns1:condition10 a ns1:Condition ;
+    rdfs:label "seeds in seedbeds and tomato plant on ground" .
+
+ns1:condition11 a ns1:Condition ;
+    rdfs:label "favor the development of a greater number of roots in the tomato plant" .
+
+ns1:condition12 a ns1:Condition ;
+    rdfs:label "the tomato plant has been pruned. the tomato plant is not grafted." .
+
+ns1:condition13 a ns1:Condition ;
+    rdfs:label "prevent the growing of, or eliminate once appeared, undesirable plants of any vegetal species that are not a direct object of the agricultural holding and compete with the tomato plant" .
+
+ns1:condition14 a ns1:Condition ;
+    rdfs:label "between 30 and 75 days have passed since the transplant." .
+
+ns1:condition15 a ns1:Condition ;
+    rdfs:label "remove branches of the tomato plant to make the tomato grow bigger and also to prevent diseases" .
+
+ns1:condition16 a ns1:Condition ;
+    rdfs:label "tomato plant in its mature stage." .
+
+ns1:condition17 a ns1:Condition ;
+    rdfs:label "place the tomato seeds in the seedbed" .
+
+ns1:condition18 a ns1:Condition ;
+    rdfs:label "seed and seedbeds prepared." .
+
+ns1:condition19 a ns1:Condition ;
+    rdfs:label "pests prevention on tomato plant" .
 
 ns1:condition2 a ns1:Condition ;
-    rdfs:label "select the proper irrigation mechanism for planting tomato seeds" .
+    rdfs:label "choose the variety of tomatoes to plant" .
+
+ns1:condition20 a ns1:Condition ;
+    rdfs:label "the tomato plant has been transplanted" .
+
+ns1:condition21 a ns1:Condition ;
+    rdfs:label "move the seedling from the hotbed to the seedbed" .
+
+ns1:condition22 a ns1:Condition ;
+    rdfs:label "he seedling is in his young plant stage. it has lasted between 25 and 30 days from the sowing. the seedling has not reached the flowering stage" .
+
+ns1:condition23 a ns1:Condition ;
+    rdfs:label "obtain the tomato plants in a young plant state." .
+
+ns1:condition24 a ns1:Condition ;
+    rdfs:label "the sowing of the seed takes place in the month of april (winter sowing) or in october/november (summer sowing)" .
+
+ns1:condition25 a ns1:Condition ;
+    rdfs:label "obtain a marketable tomato" .
+
+ns1:condition26 a ns1:Condition ;
+    rdfs:label "the tomato plants are in a harvestable state. the harvest of an individual tomato starts during the morning. there is no presence of dew" .
+
+ns1:condition27 a ns1:Condition ;
+    rdfs:label "get marketable tomatoes" .
+
+ns1:condition28 a ns1:Condition ;
+    rdfs:label "the tomato plant is ready to be harvested. harvesting bunches of tomatoes starts at the morning. there is not dew" .
+
+ns1:condition29 a ns1:Condition ;
+    rdfs:label "control the main bacterial diseases" .
 
 ns1:condition3 a ns1:Condition ;
-    rdfs:label "do not have an irrigation mechanism for watering tomato plants" .
+    rdfs:label "arvest the tomato plant when it is ripe from the tomato plant" .
+
+ns1:condition30 a ns1:Condition ;
+    rdfs:label "garden with diseases" .
+
+ns1:condition31 a ns1:Condition ;
+    rdfs:label "manage major viral diseases" .
+
+ns1:condition33 a ns1:Condition ;
+    rdfs:label "windy environment" .
+
+ns1:condition34 a ns1:Condition ;
+    rdfs:label "plants protected by plastic roofs" .
+
+ns1:condition35 a ns1:Condition ;
+    rdfs:label "pollinate the fruits" .
+
+ns1:condition36 a ns1:Condition ;
+    rdfs:label "encourage the development of a greater number of roots." .
+
+ns1:condition37 a ns1:Condition ;
+    rdfs:label "practice carried out after the shape pruning" .
+
+ns1:condition38 a ns1:Condition ;
+    rdfs:label "remove disposable flowers and fruits." .
+
+ns1:condition39 a ns1:Condition ;
+    rdfs:label "plants with disposable flowers and fruits" .
+
+ns1:condition4 a ns1:Condition ;
+    rdfs:label "the tomato ripened" .
+
+ns1:condition40 a ns1:Condition ;
+    rdfs:label "shape the plant leaving one or two stalk per plant." .
+
+ns1:condition41 a ns1:Condition ;
+    rdfs:label "twenty or thirty days after transplant, the plant grow up in height and it can reach 2m until touches the ceiling and the plant can grow vertically up to 1.5m. and the gardener leads it horizontally over the support strings" .
+
+ns1:condition42 a ns1:Condition ;
+    rdfs:label "protect the garden from the rain." .
+
+ns1:condition43 a ns1:Condition ;
+    rdfs:label "the gardener must protect the plants from the rain and decrease the impact of fungal and bacterial diseases in the garden" .
+
+ns1:condition44 a ns1:Condition ;
+    rdfs:label "give support and keep the plants upright" .
+
+ns1:condition45 a ns1:Condition ;
+    rdfs:label "plants 60 cm tall" .
+
+ns1:condition46 a ns1:Condition ;
+    rdfs:label "harvest tomato fruits" .
+
+ns1:condition47 a ns1:Condition ;
+    rdfs:label "the plants have mature fruits" .
+
+ns1:condition48 a ns1:Condition ;
+    rdfs:label "control plant size" .
+
+ns1:condition49 a ns1:Condition ;
+    rdfs:label "after four weeks from seeding, the plants grow out of alignment" .
+
+ns1:condition5 a ns1:Condition ;
+    rdfs:label "allow to keep the tomato plant upright" .
+
+ns1:condition50 a ns1:Condition ;
+    rdfs:label "insufficient rains" .
+
+ns1:condition51 a ns1:Condition ;
+    rdfs:label "move the seedlings from the seedbed to a definitive place" .
+
+ns1:condition52 a ns1:Condition ;
+    rdfs:label "the gardener has garden boxes with seedlings" .
+
+ns1:condition53 a ns1:Condition ;
+    rdfs:label "seeds in the seedbed must be germinating" .
+
+ns1:condition54 a ns1:Condition ;
+    rdfs:label "fertilized seedbed" .
+
+ns1:condition55 a ns1:Condition ;
+    rdfs:label "the gardener must have garden boxes or grow boxes, soil, compost and seeds" .
+
+ns1:condition56 a ns1:Condition ;
+    rdfs:label "germinate the seedbed" .
+
+ns1:condition57 a ns1:Condition ;
+    rdfs:label "the gardener must have garden boxes or grow boxes, soil, compost, and seeds" .
+
+ns1:condition58 a ns1:Condition ;
+    rdfs:label "control an insect species by taking actions" .
+
+ns1:condition59 a ns1:Condition ;
+    rdfs:label "tomato plant affected by the pest" .
+
+ns1:condition6 a ns1:Condition ;
+    rdfs:label "unsupported tomato plant" .
+
+ns1:condition60 a ns1:Condition ;
+    rdfs:label "make the soil more fertile with the aim of feeding the tomato plant. the fertilizer could be organic or synthetic compound" .
+
+ns1:condition61 a ns1:Condition ;
+    rdfs:label "unfertilized soil" .
+
+ns1:condition62 a ns1:Condition ;
+    rdfs:label "add lime and magnesium to the soil in order to cope the acidity of the soil. that is, adjust the ph according to the needs of the crop" .
+
+ns1:condition63 a ns1:Condition ;
+    rdfs:label "soil without agricultural lime" .
+
+ns1:condition64 a ns1:Condition ;
+    rdfs:label "the virus produces different colored spots on the leaves, the 'tomato spotted wilt virus' produces discoloration on the leaves and fruit (which is more evident)" .
+
+ns1:condition65 a ns1:Condition ;
+    rdfs:label "bacteria-infected tomato plants" .
+
+ns1:condition66 a ns1:Condition ;
+    rdfs:label "fungal infected tomato plants" .
+
+ns1:condition67 a ns1:Condition ;
+    rdfs:label "disease control due to lack or excess of any factor necessary for the life of the tomato plant" .
+
+ns1:condition68 a ns1:Condition ;
+    rdfs:label "infected tomato plants" .
+
+ns1:condition69 a ns1:Condition ;
+    rdfs:label "choose an irrigation mechanism based on soil survey and water availability" .
+
+ns1:condition7 a ns1:Condition ;
+    rdfs:label "using chemicals on tomato plants to control pests" .
+
+ns1:condition70 a ns1:Condition ;
+    rdfs:label "different irrigation mechanisms" .
+
+ns1:condition71 a ns1:Condition ;
+    rdfs:label "harvest tomato's fruits when they are ready to consume" .
+
+ns1:condition72 a ns1:Condition ;
+    rdfs:label "tomato plants reach maturity" .
+
+ns1:condition73 a ns1:Condition ;
+    rdfs:label "cut or remove excess branches so that the plant grows and develops more strongly" .
+
+ns1:condition74 a ns1:Condition ;
+    rdfs:label "tomato plant in the flowering stage" .
+
+ns1:condition75 a ns1:Condition ;
+    rdfs:label "take the tomato plant from the pot and put it into the soil" .
+
+ns1:condition77 a ns1:Condition ;
+    rdfs:label "remove weeds around the tomato plant" .
+
+ns1:condition78 a ns1:Condition ;
+    rdfs:label "eliminate crop pests" .
+
+ns1:condition79 a ns1:Condition ;
+    rdfs:label "pest detected on tomato plants" .
+
+ns1:condition8 a ns1:Condition ;
+    rdfs:label "detection of insect pest on tomato plants" .
+
+ns1:condition80 a ns1:Condition ;
+    rdfs:label "bring water to tomato seeds and plants to meet their water needs" .
+
+ns1:condition81 a ns1:Condition ;
+    rdfs:label "seeds on seedling and tomato plants on soil" .
+
+ns1:condition82 a ns1:Condition ;
+    rdfs:label "achieve a new plant with more efficient results" .
+
+ns1:condition83 a ns1:Condition ;
+    rdfs:label "rootstock and a portion of tissue from another plant" .
+
+ns1:condition84 a ns1:Condition ;
+    rdfs:label "put tomato seeds in seedling" .
+
+ns1:condition85 a ns1:Condition ;
+    rdfs:label "seed and seedling ready" .
+
+ns1:condition9 a ns1:Condition ;
+    rdfs:label "consist of providing water to the seeds and the tomato plants to meet the water needs" .
 
 ns1:dependsOn a owl:ObjectProperty ;
     rdfs:comment "Represents that an BehaviourDescription depends its behaviour on the completion of another BehaviourDescription."@en ;
     rdfs:domain <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/BehaviourDescription> ;
     rdfs:range <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/BehaviourDescription> .
 
-ns1:resource0 a ns1:Resource ;
-    rdfs:label "soil" ;
-    owl:sameAs <http://www.wikidata.org/entity/Q36133> .
+ns1:resource101 a ns1:Resource ;
+    rdfs:label "clean plastic tub" .
 
-ns1:resource2 a ns1:Resource ;
-    rdfs:label "magnesium" ;
-    owl:sameAs <http://www.wikidata.org/entity/Q660> .
+ns1:resource102 a ns1:Resource ;
+    rdfs:label "blows" .
 
-ns1:resource4 a ns1:Resource ;
+ns1:resource103 a ns1:Resource ;
+    rdfs:label "number of productive stems" .
+
+ns1:resource104 a ns1:Resource ;
+    rdfs:label "previous step" .
+
+ns1:resource107 a ns1:Resource ;
+    rdfs:label "beds" .
+
+ns1:resource109 a ns1:Resource ;
+    rdfs:label "temperature of garden box" .
+
+ns1:resource11 a ns1:Resource ;
+    rdfs:label "ripe tomato" .
+
+ns1:resource110 a ns1:Resource ;
+    rdfs:label "average" .
+
+ns1:resource111 a ns1:Resource ;
+    rdfs:label "remains of crop" .
+
+ns1:resource112 a ns1:Resource ;
+    rdfs:label "insect trap" .
+
+ns1:resource113 a ns1:Resource ;
+    rdfs:label "biological control" .
+
+ns1:resource114 a ns1:Resource ;
+    rdfs:label "mosquito net" .
+
+ns1:resource115 a ns1:Resource ;
+    rdfs:label "soil analysis" .
+
+ns1:resource116 a ns1:Resource ;
     rdfs:label "result of soil analysis" .
 
+ns1:resource119 a ns1:Resource ;
+    rdfs:label "trap" .
+
+ns1:resource120 a ns1:Resource ;
+    rdfs:label "infected fruit" .
+
+ns1:resource121 a ns1:Resource ;
+    rdfs:label "diseased plant" .
+
+ns1:resource122 a ns1:Resource ;
+    rdfs:label "fruit of tomato plant" .
+
+ns1:resource123 a ns1:Resource ;
+    rdfs:label "irrigation of tomato plant" .
+
+ns1:resource124 a ns1:Resource ;
+    rdfs:label "temperature of seedling" .
+
+ns1:resource125 a ns1:Resource ;
+    rdfs:label "proper nutrition" .
+
+ns1:resource126 a ns1:Resource ;
+    rdfs:label "maturity state" .
+
+ns1:resource127 a ns1:Resource ;
+    rdfs:label "growing different" .
+
+ns1:resource128 a ns1:Resource ;
+    rdfs:label "redundant branch of tomato plant" .
+
+ns1:resource131 a ns1:Resource ;
+    rdfs:label "plague type" .
+
+ns1:resource132 a ns1:Resource ;
+    rdfs:label "intensity of watering" .
+
+ns1:resource133 a ns1:Resource ;
+    rdfs:label "portion of tissue" .
+
+ns1:resource134 a ns1:Resource ;
+    rdfs:label "graft" .
+
+ns1:resource14 a ns1:Resource ;
+    rdfs:label "supporting technique" .
+
+ns1:resource17 a ns1:Resource ;
+    rdfs:label "leaves" .
+
+ns1:resource2 a ns1:Resource ;
+    rdfs:label "temperature of hotbed" .
+
+ns1:resource22 a ns1:Resource ;
+    rdfs:label "state of weather service" .
+
+ns1:resource23 a ns1:Resource ;
+    rdfs:label "information" .
+
+ns1:resource24 a ns1:Resource ;
+    rdfs:label "intensity of irrigation" .
+
+ns1:resource27 a ns1:Resource ;
+    rdfs:label "bottom of tomato plant" .
+
+ns1:resource28 a ns1:Resource ;
+    rdfs:label "wound" .
+
+ns1:resource29 a ns1:Resource ;
+    rdfs:label "entry of pathogen" .
+
+ns1:resource30 a ns1:Resource ;
+    rdfs:label "hoe" .
+
+ns1:resource31 a ns1:Resource ;
+    rdfs:label "string trimmer" .
+
+ns1:resource32 a ns1:Resource ;
+    rdfs:label "machete" .
+
+ns1:resource34 a ns1:Resource ;
+    rdfs:label "detected pest" .
+
+ns1:resource35 a ns1:Resource ;
+    rdfs:label "tillage equipment" .
+
+ns1:resource36 a ns1:Resource ;
+    rdfs:label "future entry of crop pest" .
+
+ns1:resource37 a ns1:Resource ;
+    rdfs:label "branch" .
+
+ns1:resource4 a ns1:Resource ;
+    rdfs:label "drainages" .
+
+ns1:resource40 a ns1:Resource ;
+    rdfs:label "available pesticide" .
+
+ns1:resource42 a ns1:Resource ;
+    rdfs:label "maturity stage" .
+
+ns1:resource43 a ns1:Resource ;
+    rdfs:label "stage of seedling" .
+
+ns1:resource44 a ns1:Resource ;
+    rdfs:label "moment" .
+
+ns1:resource46 a ns1:Resource ;
+    rdfs:label "ridge" .
+
+ns1:resource47 a ns1:Resource ;
+    rdfs:label "double line of sowing" .
+
+ns1:resource48 a ns1:Resource ;
+    rdfs:label "single line of sowing" .
+
+ns1:resource49 a ns1:Resource ;
+    rdfs:label "distance" .
+
+ns1:resource50 a ns1:Resource ;
+    rdfs:label "cover" .
+
+ns1:resource51 a ns1:Resource ;
+    rdfs:label "mecale" .
+
+ns1:resource53 a ns1:Resource ;
+    rdfs:label "germinator" .
+
+ns1:resource54 a ns1:Resource ;
+    rdfs:label "type of substrate" .
+
+ns1:resource55 a ns1:Resource ;
+    rdfs:label "black plastic" .
+
+ns1:resource56 a ns1:Resource ;
+    rdfs:label "availability of water" .
+
+ns1:resource57 a ns1:Resource ;
+    rdfs:label "humidity of substrate" .
+
+ns1:resource62 a ns1:Resource ;
+    rdfs:label "maturity" .
+
+ns1:resource63 a ns1:Resource ;
+    rdfs:label "damage" .
+
+ns1:resource65 a ns1:Resource ;
+    rdfs:label "calyx" .
+
+ns1:resource66 a ns1:Resource ;
+    rdfs:label "peduncle" .
+
+ns1:resource67 a ns1:Resource ;
+    rdfs:label "technical regulation" .
+
+ns1:resource69 a ns1:Resource ;
+    rdfs:label "caliper" .
+
 ns1:resource7 a ns1:Resource ;
-    rdfs:label "soil composition" .
+    rdfs:label "weather forecast" .
 
-ns1:resource8 a ns1:Resource ;
-    rdfs:label "environmental property" .
+ns1:resource70 a ns1:Resource ;
+    rdfs:label "loaded tub" .
 
-ns1:resource9 a ns1:Resource ;
-    rdfs:label "frequency of irrigation" .
+ns1:resource71 a ns1:Resource ;
+    rdfs:label "adequate aeration of tomato" .
+
+ns1:resource72 a ns1:Resource ;
+    rdfs:label "regulation" .
+
+ns1:resource73 a ns1:Resource ;
+    rdfs:label "grading machine" .
+
+ns1:resource74 a ns1:Resource ;
+    rdfs:label "filled crate" .
+
+ns1:resource75 a ns1:Resource ;
+    rdfs:label "correct aeration of tomato" .
+
+ns1:resource81 a ns1:Resource ;
+    rdfs:label "it" .
+
+ns1:resource82 a ns1:Resource ;
+    rdfs:label "mixture" .
+
+ns1:resource83 a ns1:Resource ;
+    rdfs:label "organica solution" .
+
+ns1:resource84 a ns1:Resource ;
+    rdfs:label "harvest abortion" .
+
+ns1:resource85 a ns1:Resource ;
+    rdfs:label "high barrier of tarp" .
+
+ns1:resource86 a ns1:Resource ;
+    rdfs:label "pollen" .
+
+ns1:resource88 a ns1:Resource ;
+    rdfs:label "inferior part of plant" .
+
+ns1:resource89 a ns1:Resource ;
+    rdfs:label "organic fertilizer" .
+
+ns1:resource90 a ns1:Resource ;
+    rdfs:label "special care" .
+
+ns1:resource91 a ns1:Resource ;
+    rdfs:label "stems" .
+
+ns1:resource92 a ns1:Resource ;
+    rdfs:label "size" .
+
+ns1:resource94 a ns1:Resource ;
+    rdfs:label "plier" .
+
+ns1:resource95 a ns1:Resource ;
+    rdfs:label "ventilation" .
+
+ns1:resource97 a ns1:Resource ;
+    rdfs:label "wire" .
+
+ns1:resource98 a ns1:Resource ;
+    rdfs:label "width" .
+
+ns1:resource99 a ns1:Resource ;
+    rdfs:label "degree of inclination" .
 
 ns1:scenario0 a ns1:Scenario ;
-    rdfs:label "neutralize the soil's acidity" ;
+    rdfs:label "control of abiotic diseases" ;
     ns1:hasActor ns1:actor0,
         ns1:actor1 ;
     ns1:hasContext ns1:condition1 ;
     ns1:hasEpisode ns1:episode0,
         ns1:episode1,
-        ns1:episode2 ;
+        ns1:episode2,
+        ns1:episode3,
+        ns1:episode4,
+        ns1:episode5 ;
     ns1:hasGoal ns1:condition0 ;
-    ns1:hasResource ns1:resource0,
-        ns1:resource1,
-        ns1:resource2,
-        ns1:resource3 ;
     ns1:requiredBy ns1:episode0 .
 
 ns1:scenario1 a ns1:Scenario ;
-    rdfs:label "choose irrigation mechanism" ;
-    ns1:hasActor ns1:actor1 ;
-    ns1:hasContext ns1:condition3 ;
-    ns1:hasEpisode ns1:episode3,
-        ns1:episode4,
-        ns1:episode5,
-        ns1:episode6,
+    rdfs:label "choose tomato variety" ;
+    ns1:hasActor ns1:actor2,
+        ns1:actor3 ;
+    ns1:hasContext ns1:condition1 ;
+    ns1:hasEpisode ns1:episode6,
         ns1:episode7,
         ns1:episode8,
         ns1:episode9 ;
     ns1:hasGoal ns1:condition2 ;
-    ns1:hasResource ns1:resource5,
-        ns1:resource6 ;
-    ns1:requiredBy ns1:episode3 .
-
-ns1:actor0 a ns1:Actor ;
-    rdfs:label "gardener" ;
-    owl:sameAs <http://www.wikidata.org/entity/Q758780> .
-
-ns1:episode2 a ns1:Episode ;
-    rdfs:label "the gardener applies the solution to the soil" ;
-    ns1:dependsOn ns1:episode1 ;
-    ns1:hasAction ns1:action2 ;
-    ns1:hasActor ns1:actor0 ;
-    ns1:hasResource ns1:resource3 .
-
-ns1:episode9 a ns1:Episode ;
-    rdfs:label "the tomato plant sets the frequency of irrigation" ;
-    ns1:dependsOn ns1:episode8 ;
-    ns1:hasAction ns1:action7 ;
-    ns1:hasActor ns1:resource6 ;
-    ns1:hasResource ns1:resource9 .
-
-ns1:resource1 a ns1:Resource ;
-    rdfs:label "agricultural lime" ;
-    owl:sameAs <http://www.wikidata.org/entity/Q3550861> .
-
-ns1:Actor a owl:Class .
-
-ns1:action3 a ns1:Action ;
-    rdfs:label "analyzes " .
-
-ns1:episode0 a ns1:Episode ;
-    rdfs:label "the agricultural engineer interprets the results of the soil analysis" ;
-    ns1:dependsOn ns1:scenario0 ;
-    ns1:hasAction ns1:action0 ;
-    ns1:hasActor ns1:actor1 ;
-    ns1:hasResource ns1:resource4 ;
-    ns1:requiredBy ns1:episode1 .
-
-ns1:episode1 a ns1:Episode ;
-    rdfs:label "the agricultural engineer prepares a solution with agricultural lime and magnesium" ;
-    ns1:dependsOn ns1:episode0 ;
-    ns1:hasAction ns1:action1 ;
-    ns1:hasActor ns1:actor1 ;
-    ns1:hasResource ns1:resource1,
-        ns1:resource3 ;
-    ns1:requiredBy ns1:episode2 .
-
-ns1:episode3 a ns1:Episode ;
-    rdfs:label "the agricultural engineer analyzes the soil composition and water availability" ;
-    ns1:dependsOn ns1:scenario1 ;
-    ns1:hasAction ns1:action3 ;
-    ns1:hasActor ns1:actor1 ;
-    ns1:hasResource ns1:resource7 ;
-    ns1:requiredBy ns1:episode4 .
-
-ns1:episode4 a ns1:Episode ;
-    rdfs:label "the agricultural engineer chooses an irrigation mechanism based on soil analysis and water availability" ;
-    ns1:dependsOn ns1:episode3 ;
-    ns1:hasAction ns1:action4 ;
-    ns1:hasActor ns1:actor1 ;
-    ns1:hasResource ns1:resource5 ;
-    ns1:requiredBy ns1:episode5 .
-
-ns1:episode5 a ns1:Episode ;
-    rdfs:label "the agricultural engineer installs the irrigation mechanism" ;
-    ns1:dependsOn ns1:episode4 ;
-    ns1:hasAction ns1:action5 ;
-    ns1:hasActor ns1:actor1 ;
     ns1:hasResource ns1:resource5 ;
     ns1:requiredBy ns1:episode6 .
 
-ns1:episode6 a ns1:Episode ;
-    rdfs:label "the agricultural engineer analyzes the tomato plants" ;
-    ns1:dependsOn ns1:episode5 ;
+ns1:scenario10 a ns1:Scenario ;
+    rdfs:label "fumigation" ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasContext ns1:condition20 ;
+    ns1:hasEpisode ns1:episode46,
+        ns1:episode47,
+        ns1:episode48,
+        ns1:episode49,
+        ns1:episode50 ;
+    ns1:hasGoal ns1:condition19 ;
+    ns1:hasResource ns1:resource16 ;
+    ns1:requiredBy ns1:episode46 .
+
+ns1:scenario12 a ns1:Scenario ;
+    rdfs:label "sowing the seed" ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasContext ns1:condition24 ;
+    ns1:hasEpisode ns1:episode66,
+        ns1:episode67,
+        ns1:episode68,
+        ns1:episode69,
+        ns1:episode70,
+        ns1:episode71,
+        ns1:episode72,
+        ns1:episode73,
+        ns1:episode74,
+        ns1:episode75,
+        ns1:episode76,
+        ns1:episode77,
+        ns1:episode78,
+        ns1:episode79,
+        ns1:episode80,
+        ns1:episode81,
+        ns1:episode82 ;
+    ns1:hasGoal ns1:condition23 ;
+    ns1:hasResource ns1:resource25,
+        ns1:resource41,
+        ns1:resource5,
+        ns1:resource52,
+        ns1:resource53 ;
+    ns1:requiredBy ns1:episode66 .
+
+ns1:scenario13 a ns1:Scenario ;
+    rdfs:label "harvest of an individual tomato" ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasContext ns1:condition26 ;
+    ns1:hasEpisode ns1:episode83,
+        ns1:episode84,
+        ns1:episode85,
+        ns1:episode86,
+        ns1:episode87,
+        ns1:episode88,
+        ns1:episode89,
+        ns1:episode90,
+        ns1:episode91,
+        ns1:episode92,
+        ns1:episode93,
+        ns1:episode94,
+        ns1:episode95,
+        ns1:episode96,
+        ns1:episode97,
+        ns1:episode98 ;
+    ns1:hasGoal ns1:condition25 ;
+    ns1:hasResource ns1:resource58,
+        ns1:resource8 ;
+    ns1:requiredBy ns1:episode83 .
+
+ns1:scenario14 a ns1:Scenario ;
+    rdfs:label "harvest bunches of tomatoes" ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasContext ns1:condition28 ;
+    ns1:hasEpisode ns1:episode100,
+        ns1:episode101,
+        ns1:episode102,
+        ns1:episode103,
+        ns1:episode104,
+        ns1:episode105,
+        ns1:episode106,
+        ns1:episode107,
+        ns1:episode108,
+        ns1:episode109,
+        ns1:episode110,
+        ns1:episode111,
+        ns1:episode112,
+        ns1:episode99 ;
+    ns1:hasGoal ns1:condition27 ;
+    ns1:hasResource ns1:resource10,
+        ns1:resource8 ;
+    ns1:requiredBy ns1:episode99 .
+
+ns1:scenario15 a ns1:Scenario ;
+    rdfs:label "control the virus" ;
+    ns1:hasActor ns1:actor0,
+        ns1:actor12 ;
+    ns1:hasContext ns1:condition30 ;
+    ns1:hasEpisode ns1:episode113,
+        ns1:episode114,
+        ns1:episode115 ;
+    ns1:hasGoal ns1:condition29 ;
+    ns1:hasResource ns1:resource76,
+        ns1:resource77,
+        ns1:resource78,
+        ns1:resource79 ;
+    ns1:requiredBy ns1:episode113 .
+
+ns1:scenario16 a ns1:Scenario ;
+    rdfs:label "control fungus" ;
+    ns1:hasActor ns1:actor0,
+        ns1:actor12 ;
+    ns1:hasContext ns1:condition32 ;
+    ns1:hasEpisode ns1:episode114,
+        ns1:episode116,
+        ns1:episode117 ;
+    ns1:hasGoal ns1:condition31 ;
+    ns1:hasResource ns1:resource76,
+        ns1:resource77,
+        ns1:resource78,
+        ns1:resource79 ;
+    ns1:requiredBy ns1:episode116 .
+
+ns1:scenario17 a ns1:Scenario ;
+    rdfs:label "install windshield" ;
+    ns1:hasActor ns1:actor0,
+        ns1:actor12 ;
+    ns1:hasContext ns1:condition34 ;
+    ns1:hasEpisode ns1:episode118 ;
+    ns1:hasGoal ns1:condition33 ;
+    ns1:hasResource ns1:resource76 ;
+    ns1:requiredBy ns1:episode118 .
+
+ns1:scenario18 a ns1:Scenario ;
+    rdfs:label "manage the pollination of the fruits" ;
+    ns1:hasActor ns1:actor0,
+        ns1:actor12 ;
+    ns1:hasContext ns1:condition32 ;
+    ns1:hasEpisode ns1:episode119 ;
+    ns1:hasGoal ns1:condition35 ;
+    ns1:hasResource ns1:resource76 ;
+    ns1:requiredBy ns1:episode119 .
+
+ns1:scenario19 a ns1:Scenario ;
+    rdfs:label "earth up the plant" ;
+    ns1:hasActor ns1:actor0,
+        ns1:actor12 ;
+    ns1:hasContext ns1:condition37 ;
+    ns1:hasEpisode ns1:episode120,
+        ns1:episode121 ;
+    ns1:hasGoal ns1:condition36 ;
+    ns1:hasResource ns1:resource76 ;
+    ns1:requiredBy ns1:episode120 .
+
+ns1:scenario20 a ns1:Scenario ;
+    rdfs:label "cut off inflorescences" ;
+    ns1:hasActor ns1:actor0,
+        ns1:actor12 ;
+    ns1:hasContext ns1:condition39 ;
+    ns1:hasEpisode ns1:episode122 ;
+    ns1:hasGoal ns1:condition38 ;
+    ns1:hasResource ns1:resource76 ;
+    ns1:requiredBy ns1:episode122 .
+
+ns1:scenario21 a ns1:Scenario ;
+    rdfs:label "shape prune" ;
+    ns1:hasActor ns1:actor0,
+        ns1:actor12 ;
+    ns1:hasContext ns1:condition41 ;
+    ns1:hasEpisode ns1:episode123,
+        ns1:episode124,
+        ns1:episode125,
+        ns1:episode126 ;
+    ns1:hasGoal ns1:condition40 ;
+    ns1:hasResource ns1:resource76,
+        ns1:resource93 ;
+    ns1:requiredBy ns1:episode123 .
+
+ns1:scenario22 a ns1:Scenario ;
+    rdfs:label "place plastics bands or ceiling" ;
+    ns1:hasActor ns1:actor0,
+        ns1:actor12 ;
+    ns1:hasContext ns1:condition43 ;
+    ns1:hasEpisode ns1:episode127,
+        ns1:episode128 ;
+    ns1:hasGoal ns1:condition42 ;
+    ns1:hasResource ns1:resource76,
+        ns1:resource96,
+        ns1:resource97 ;
+    ns1:requiredBy ns1:episode127 .
+
+ns1:scenario23 a ns1:Scenario ;
+    rdfs:label "tie the plants" ;
+    ns1:hasActor ns1:actor0,
+        ns1:actor12 ;
+    ns1:hasContext ns1:condition45 ;
+    ns1:hasEpisode ns1:episode129,
+        ns1:episode130,
+        ns1:episode131 ;
+    ns1:hasGoal ns1:condition44 ;
+    ns1:hasResource ns1:resource100,
+        ns1:resource76 ;
+    ns1:requiredBy ns1:episode129 .
+
+ns1:scenario24 a ns1:Scenario ;
+    rdfs:label "prune the plants" ;
+    ns1:hasActor ns1:actor0,
+        ns1:actor12 ;
+    ns1:hasContext ns1:condition49 ;
+    ns1:hasEpisode ns1:episode134,
+        ns1:episode135 ;
+    ns1:hasGoal ns1:condition48 ;
+    ns1:hasResource ns1:resource93 ;
+    ns1:requiredBy ns1:episode134 .
+
+ns1:scenario27 a ns1:Scenario ;
+    rdfs:label "fertilize the seedbed" ;
+    ns1:hasActor ns1:actor0,
+        ns1:actor12 ;
+    ns1:hasContext ns1:condition55 ;
+    ns1:hasEpisode ns1:episode144,
+        ns1:episode145 ;
+    ns1:hasGoal ns1:condition54 ;
+    ns1:hasResource ns1:resource106,
+        ns1:resource52,
+        ns1:resource76 ;
+    ns1:requiredBy ns1:episode144 .
+
+ns1:scenario28 a ns1:Scenario ;
+    rdfs:label "sow the seedbed" ;
+    ns1:hasActor ns1:actor0,
+        ns1:actor12 ;
+    ns1:hasContext ns1:condition57 ;
+    ns1:hasEpisode ns1:episode144,
+        ns1:episode146,
+        ns1:episode147,
+        ns1:episode148 ;
+    ns1:hasGoal ns1:condition56 ;
+    ns1:hasResource ns1:resource106,
+        ns1:resource76 ;
+    ns1:requiredBy ns1:episode144 .
+
+ns1:scenario29 a ns1:Scenario ;
+    rdfs:label "pests control" ;
+    ns1:hasActor ns1:resource16,
+        ns1:resource3,
+        ns1:resource38,
+        ns1:resource79 ;
+    ns1:hasContext ns1:condition59 ;
+    ns1:hasEpisode ns1:episode149,
+        ns1:episode150,
+        ns1:episode151,
+        ns1:episode152,
+        ns1:episode153,
+        ns1:episode154,
+        ns1:episode155 ;
+    ns1:hasGoal ns1:condition58 ;
+    ns1:hasResource ns1:resource3,
+        ns1:resource52 ;
+    ns1:requiredBy ns1:episode149 .
+
+ns1:scenario3 a ns1:Scenario ;
+    rdfs:label "supporting with a string" ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasContext ns1:condition6 ;
+    ns1:hasEpisode ns1:episode15,
+        ns1:episode16,
+        ns1:episode17,
+        ns1:episode18 ;
+    ns1:hasGoal ns1:condition5 ;
+    ns1:hasResource ns1:resource13,
+        ns1:resource8,
+        ns1:resource9 ;
+    ns1:requiredBy ns1:episode15 .
+
+ns1:scenario30 a ns1:Scenario ;
+    rdfs:label "fertilize" ;
+    ns1:hasActor ns1:actor0,
+        ns1:resource79 ;
+    ns1:hasContext ns1:condition61 ;
+    ns1:hasEpisode ns1:episode156,
+        ns1:episode157 ;
+    ns1:hasGoal ns1:condition60 ;
+    ns1:hasResource ns1:resource3,
+        ns1:resource52 ;
+    ns1:requiredBy ns1:episode156 .
+
+ns1:scenario31 a ns1:Scenario ;
+    rdfs:label "apply agricultural lime to the soil" ;
+    ns1:hasActor ns1:actor0,
+        ns1:resource79 ;
+    ns1:hasContext ns1:condition63 ;
+    ns1:hasEpisode ns1:episode158,
+        ns1:episode159,
+        ns1:episode160,
+        ns1:episode161 ;
+    ns1:hasGoal ns1:condition62 ;
+    ns1:hasResource ns1:resource115,
+        ns1:resource3 ;
+    ns1:requiredBy ns1:episode158 .
+
+ns1:scenario35 a ns1:Scenario ;
+    rdfs:label "abiotic disease control" ;
+    ns1:hasActor ns1:actor0,
+        ns1:actor1,
+        ns1:resource79 ;
+    ns1:hasContext ns1:condition68 ;
+    ns1:hasEpisode ns1:episode177,
+        ns1:episode178,
+        ns1:episode179,
+        ns1:episode180,
+        ns1:episode181 ;
+    ns1:hasGoal ns1:condition67 ;
+    ns1:hasResource ns1:resource1,
+        ns1:resource3,
+        ns1:resource52,
+        ns1:resource76 ;
+    ns1:requiredBy ns1:episode177 .
+
+ns1:scenario36 a ns1:Scenario ;
+    rdfs:label "choose irrigation mechanism" ;
+    ns1:hasActor ns1:actor0,
+        ns1:resource79 ;
+    ns1:hasContext ns1:condition70 ;
+    ns1:hasEpisode ns1:episode182,
+        ns1:episode183,
+        ns1:episode184 ;
+    ns1:hasGoal ns1:condition69 ;
+    ns1:hasResource ns1:resource20,
+        ns1:resource21 ;
+    ns1:requiredBy ns1:episode182 .
+
+ns1:scenario37 a ns1:Scenario ;
+    rdfs:label "prune tomato plant" ;
+    ns1:hasActor ns1:actor0,
+        ns1:actor10 ;
+    ns1:hasContext ns1:condition74 ;
+    ns1:hasEpisode ns1:episode190,
+        ns1:episode191 ;
+    ns1:hasGoal ns1:condition73 ;
+    ns1:hasResource ns1:resource20,
+        ns1:resource3,
+        ns1:resource8 ;
+    ns1:requiredBy ns1:episode190 .
+
+ns1:scenario38 a ns1:Scenario ;
+    rdfs:label "transplant tomato plant" ;
+    ns1:hasActor ns1:actor0,
+        ns1:resource79 ;
+    ns1:hasContext ns1:condition76 ;
+    ns1:hasEpisode ns1:episode159,
+        ns1:episode192,
+        ns1:episode193 ;
+    ns1:hasGoal ns1:condition75 ;
+    ns1:hasResource ns1:resource129,
+        ns1:resource20,
+        ns1:resource3,
+        ns1:resource8 ;
+    ns1:requiredBy ns1:episode159 .
+
+ns1:scenario39 a ns1:Scenario ;
+    rdfs:label "make graft" ;
+    ns1:hasActor ns1:actor0,
+        ns1:resource79 ;
+    ns1:hasContext ns1:condition83 ;
+    ns1:hasEpisode ns1:episode205,
+        ns1:episode206 ;
+    ns1:hasGoal ns1:condition82 ;
+    ns1:hasResource ns1:resource8 ;
+    ns1:requiredBy ns1:episode205 .
+
+ns1:scenario5 a ns1:Scenario ;
+    rdfs:label "irrigate" ;
+    ns1:hasActor ns1:actor2,
+        ns1:actor3 ;
+    ns1:hasContext ns1:condition10 ;
+    ns1:hasEpisode ns1:episode26,
+        ns1:episode27,
+        ns1:episode28,
+        ns1:episode29,
+        ns1:episode30 ;
+    ns1:hasGoal ns1:condition9 ;
+    ns1:hasResource ns1:resource19,
+        ns1:resource20,
+        ns1:resource21,
+        ns1:resource8 ;
+    ns1:requiredBy ns1:episode26 .
+
+ns1:scenario6 a ns1:Scenario ;
+    rdfs:label "hilling/earthing up" ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasContext ns1:condition12 ;
+    ns1:hasEpisode ns1:episode31,
+        ns1:episode32,
+        ns1:episode33,
+        ns1:episode34 ;
+    ns1:hasGoal ns1:condition11 ;
+    ns1:hasResource ns1:resource25,
+        ns1:resource26,
+        ns1:resource3 ;
+    ns1:requiredBy ns1:episode31 .
+
+ns1:action10 a ns1:Action ;
+    rdfs:label "decides to harvest" .
+
+ns1:action17 a ns1:Action ;
+    rdfs:label "damages" .
+
+ns1:action18 a ns1:Action ;
+    rdfs:label "fumigates" .
+
+ns1:action26 a ns1:Action ;
+    rdfs:label "eliminates" .
+
+ns1:action34 a ns1:Action ;
+    rdfs:label "waters" .
+
+ns1:action37 a ns1:Action ;
+    rdfs:label "ties" .
+
+ns1:action41 a ns1:Action ;
+    rdfs:label "deposits" .
+
+ns1:action42 a ns1:Action ;
+    rdfs:label "waits" .
+
+ns1:action45 a ns1:Action ;
+    rdfs:label "discards" .
+
+ns1:action48 a ns1:Action ;
+    rdfs:label "washes" .
+
+ns1:action49 a ns1:Action ;
+    rdfs:label "stows" .
+
+ns1:action52 a ns1:Action ;
+    rdfs:label "checks" .
+
+ns1:action54 a ns1:Action ;
+    rdfs:label "identifies" .
+
+ns1:actor11 a ns1:Actor ;
+    rdfs:label "gardener water" .
+
+ns1:actor15 a ns1:Actor ;
+    rdfs:label "gardener spray" .
+
+ns1:actor5 a ns1:Actor ;
+    rdfs:label "laborer" .
+
+ns1:actor8 a ns1:Actor ;
+    rdfs:label "insect" .
+
+ns1:condition1 a ns1:Condition ;
+    rdfs:label "tomato plant with some diseases identified" .
+
+ns1:condition32 a ns1:Condition ;
+    rdfs:label "truck garden infected" .
+
+ns1:condition76 a ns1:Condition ;
+    rdfs:label "prepared soil" .
+
+ns1:episode112 a ns1:Episode ;
+    rdfs:label "the farmer checks the crates allow the correct aeration of the tomato." ;
+    ns1:dependsOn ns1:episode111 ;
+    ns1:hasAction ns1:action52 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource75 .
+
+ns1:episode115 a ns1:Episode ;
+    rdfs:label "the gardener proceeds to incorporate the natural or commercial mixtures into his tuck garden" ;
+    ns1:dependsOn ns1:episode114 ;
+    ns1:hasActor ns1:actor13 ;
+    ns1:hasResource ns1:resource82 .
+
+ns1:episode117 a ns1:Episode ;
+    rdfs:label "the gardener applies the organica solution or commercial solution to his garden" ;
+    ns1:dependsOn ns1:episode114 ;
+    ns1:hasAction ns1:action2 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:resource83 .
+
+ns1:episode118 a ns1:Episode ;
+    rdfs:label "the gardener places a high barrier of tarps or mesh, around the garden, to prevent the fruit from undergoing a pre-harvest abortion." ;
+    ns1:dependsOn ns1:scenario17 ;
+    ns1:hasAction ns1:action12 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:resource84,
+        ns1:resource85 .
+
+ns1:episode119 a ns1:Episode ;
+    rdfs:label "the gardener vibrates the plants to release the pollen" ;
+    ns1:dependsOn ns1:scenario18 ;
+    ns1:hasAction ns1:action55 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:resource86,
+        ns1:resource87 .
+
+ns1:episode121 a ns1:Episode ;
+    rdfs:label "the gardener must take special care not to damage the stems or roots, since the wounds serve as an entry point for insects or pests." ;
+    ns1:dependsOn ns1:episode120 ;
+    ns1:hasAction ns1:action56 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:resource90,
+        ns1:resource91 .
+
+ns1:episode122 a ns1:Episode ;
+    rdfs:label "the gardener removes flowers and fruits to homogenize and increase the size and quality of the fruits" ;
+    ns1:dependsOn ns1:scenario20 ;
+    ns1:hasAction ns1:action46 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:resource92 .
+
+ns1:episode126 a ns1:Episode ;
+    rdfs:label "the gardener get rid of old or sick leaves, facilitating plant's ventilation" ;
+    ns1:dependsOn ns1:episode125 ;
+    ns1:hasAction ns1:action58 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:resource95 .
+
+ns1:episode128 a ns1:Episode ;
+    rdfs:label "the gardener provides the plasts some degrees of inclination to prevent the accumulation of water" ;
+    ns1:dependsOn ns1:episode127 ;
     ns1:hasAction ns1:action3 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:resource99 .
+
+ns1:episode131 a ns1:Episode ;
+    rdfs:label "three to four rows of thread are added as the plant grows" ;
+    ns1:dependsOn ns1:episode130 ;
+    ns1:hasAction ns1:action61 ;
+    ns1:hasActor ns1:actor14 .
+
+ns1:episode133 a ns1:Episode ;
+    rdfs:label "the gardener places the fruit in the clean plastic tub, avoiding blows" ;
+    ns1:dependsOn ns1:episode132 ;
+    ns1:hasAction ns1:action12 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:resource102,
+        ns1:resource64 .
+
+ns1:episode135 a ns1:Episode ;
+    rdfs:label "the gardener repeats the previous step for each plant" ;
+    ns1:dependsOn ns1:episode134 ;
+    ns1:hasAction ns1:action63 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:resource104 .
+
+ns1:episode136 a ns1:Episode ;
+    rdfs:label "the gardener decides what type of water to apply depending on the conditions of the crop: gravity irrigation, drip irrigation or regular watering." ;
+    ns1:dependsOn ns1:scenario25 ;
+    ns1:hasAction ns1:action21 ;
+    ns1:hasActor ns1:actor0 .
+
+ns1:episode14 a ns1:Episode ;
+    rdfs:label "the laborer places the harvested tomatoes in the crate." ;
+    ns1:dependsOn ns1:episode13 ;
+    ns1:hasAction ns1:action12 ;
+    ns1:hasActor ns1:actor5 ;
+    ns1:hasResource ns1:resource12 .
+
+ns1:episode141 a ns1:Episode ;
+    rdfs:label "the gardener removes the seedling from the garden box and places it in the hole, adding soil 2 cm to 3 cm from the base of the seedling" ;
+    ns1:dependsOn ns1:episode140 ;
+    ns1:hasAction ns1:action46 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:resource3,
+        ns1:resource45 .
+
+ns1:episode143 a ns1:Episode ;
+    rdfs:label "the gardener gently pours water into each hole" ;
+    ns1:dependsOn ns1:episode142 ;
+    ns1:hasAction ns1:action64 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:resource20 .
+
+ns1:episode145 a ns1:Episode ;
+    rdfs:label "the gardener places a seed on each hole, completing in a proportion of 35% to 50%" ;
+    ns1:dependsOn ns1:episode144 ;
+    ns1:hasAction ns1:action12 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:resource5 .
+
+ns1:episode148 a ns1:Episode ;
+    rdfs:label "the gardener waits an average of five to eight days after the sowing" ;
+    ns1:dependsOn ns1:episode147 ;
+    ns1:hasAction ns1:action42 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:resource110 .
+
+ns1:episode155 a ns1:Episode ;
+    rdfs:label "the agricultural engineer rotates the crops" ;
+    ns1:dependsOn ns1:episode154 ;
+    ns1:hasAction ns1:action66 ;
+    ns1:hasActor ns1:resource79 ;
+    ns1:hasResource ns1:resource105 .
+
+ns1:episode157 a ns1:Episode ;
+    rdfs:label "the gardener fertilizes the soil" ;
+    ns1:dependsOn ns1:episode156 ;
+    ns1:hasAction ns1:action35 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:resource3 .
+
+ns1:episode161 a ns1:Episode ;
+    rdfs:label "the gardener applies the solution to the soil" ;
+    ns1:dependsOn ns1:episode160 ;
+    ns1:hasAction ns1:action2 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:resource117 .
+
+ns1:episode167 a ns1:Episode ;
+    rdfs:label "the agricultural engineer uses pesticide to fight bugs" ;
+    ns1:dependsOn ns1:episode166 ;
+    ns1:hasAction ns1:action69 ;
+    ns1:hasActor ns1:resource79 ;
+    ns1:hasResource ns1:resource118,
+        ns1:resource16 .
+
+ns1:episode176 a ns1:Episode ;
+    rdfs:label "the agricultural engineer controls the irrigation of the tomato plant" ;
+    ns1:dependsOn ns1:episode171 ;
+    ns1:hasAction ns1:action4 ;
+    ns1:hasActor ns1:resource79 ;
+    ns1:hasResource ns1:resource123 .
+
+ns1:episode18 a ns1:Episode ;
+    rdfs:label "the stake guides the tomato plant's growth." ;
+    ns1:dependsOn ns1:episode17 ;
+    ns1:hasAction ns1:action15 ;
+    ns1:hasActor ns1:actor6 ;
+    ns1:hasResource ns1:resource15 .
+
+ns1:episode181 a ns1:Episode ;
+    rdfs:label "the agricultural engineer engineer provides proper nutrition to the tomato plant" ;
+    ns1:dependsOn ns1:episode180 ;
+    ns1:hasAction ns1:action3 ;
+    ns1:hasActor ns1:resource79 ;
+    ns1:hasResource ns1:resource125 .
+
+ns1:episode184 a ns1:Episode ;
+    rdfs:label "the gardener uses the irrigation mechanism" ;
+    ns1:dependsOn ns1:episode183 ;
+    ns1:hasAction ns1:action59 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:resource21 .
+
+ns1:episode189 a ns1:Episode ;
+    rdfs:label "the gardener places the harvested tomatoes in the crate" ;
+    ns1:dependsOn ns1:episode188 ;
+    ns1:hasAction ns1:action12 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:resource12 .
+
+ns1:episode191 a ns1:Episode ;
+    rdfs:label "the gardener prunes the redundant branches of the tomato plant" ;
+    ns1:dependsOn ns1:episode190 ;
+    ns1:hasAction ns1:action75 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:resource128 .
+
+ns1:episode193 a ns1:Episode ;
+    rdfs:label "the agricultural engineer chooses the watering mechanism" ;
+    ns1:dependsOn ns1:episode192 ;
+    ns1:hasAction ns1:action6 ;
+    ns1:hasActor ns1:resource79 ;
+    ns1:hasResource ns1:resource129 .
+
+ns1:episode195 a ns1:Episode ;
+    rdfs:label "the gardener removes out the weed from the ground" ;
+    ns1:dependsOn ns1:episode194 ;
+    ns1:hasAction ns1:action46 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:resource130 .
+
+ns1:episode201 a ns1:Episode ;
+    rdfs:label "the gardener fumigates the tomato plants with the pesticide" ;
+    ns1:dependsOn ns1:episode200 ;
+    ns1:hasAction ns1:action18 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:resource16,
+        ns1:resource8 .
+
+ns1:episode204 a ns1:Episode ;
+    rdfs:label "the gardener waters with a watering mechanism and water" ;
+    ns1:dependsOn ns1:episode203 ;
+    ns1:hasActor ns1:actor11 ;
+    ns1:hasResource ns1:resource129 .
+
+ns1:episode206 a ns1:Episode ;
+    rdfs:label "the gardener makes the graft" ;
+    ns1:dependsOn ns1:episode205 ;
+    ns1:hasAction ns1:action33 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:resource134 .
+
+ns1:episode209 a ns1:Episode ;
+    rdfs:label "the gardener sprays with water the seedling" ;
+    ns1:dependsOn ns1:episode208 ;
+    ns1:hasActor ns1:actor15 ;
+    ns1:hasResource ns1:resource20 .
+
+ns1:episode25 a ns1:Episode ;
+    rdfs:label "the farmer fumigates with pesticide the tomato plants" ;
+    ns1:dependsOn ns1:episode24 ;
+    ns1:hasAction ns1:action18 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource16,
+        ns1:resource8 .
+
+ns1:episode30 a ns1:Episode ;
+    rdfs:label "the farmer irrigates with the irrigation mechanism and water" ;
+    ns1:dependsOn ns1:episode29 ;
+    ns1:hasAction ns1:action22 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource21 .
+
+ns1:episode34 a ns1:Episode ;
+    rdfs:label "the farmer protects the wounds found to prevent the entry of pathogens" ;
+    ns1:dependsOn ns1:episode33 ;
+    ns1:hasAction ns1:action24 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource28,
+        ns1:resource29 .
+
+ns1:episode38 a ns1:Episode ;
+    rdfs:label "the farmer applies herbicide on the ground." ;
+    ns1:dependsOn ns1:episode37 ;
+    ns1:hasAction ns1:action2 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource33 .
+
+ns1:episode41 a ns1:Episode ;
+    rdfs:label "the gardener prune the branches with irregular growing" ;
+    ns1:dependsOn ns1:episode40 ;
+    ns1:hasAction ns1:scenario8 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:resource37 .
+
+ns1:episode45 a ns1:Episode ;
+    rdfs:label "the farmer sprays the seedbed with water." ;
+    ns1:dependsOn ns1:episode44 ;
+    ns1:hasAction ns1:action28 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource20 .
+
+ns1:episode5 a ns1:Episode ;
+    rdfs:label "the gardener performs drainages to aerate the soil." ;
+    ns1:dependsOn ns1:episode4 ;
+    ns1:hasAction ns1:action5 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:resource3,
+        ns1:resource4 .
+
+ns1:episode50 a ns1:Episode ;
+    rdfs:label "the farmer applies the pesticide on the tomato plant or on the soil" ;
+    ns1:dependsOn ns1:episode49 ;
+    ns1:hasAction ns1:action2 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource16 .
+
+ns1:episode65 a ns1:Episode ;
+    rdfs:label "the gardener stretches the 'mecales' to the cover." ;
+    ns1:dependsOn ns1:episode64 ;
+    ns1:hasAction ns1:action38 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:resource51 .
+
+ns1:episode82 a ns1:Episode ;
+    rdfs:label "the farmer waits for the seed to germinate" ;
+    ns1:dependsOn ns1:episode81 ;
+    ns1:hasAction ns1:action42 ;
+    ns1:hasActor ns1:actor2 .
+
+ns1:episode9 a ns1:Episode ;
+    rdfs:label "the farmer chooses a variety of tomato." ;
+    ns1:dependsOn ns1:episode8 ;
+    ns1:hasAction ns1:action6 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource6 .
+
+ns1:episode98 a ns1:Episode ;
+    rdfs:label "the farmer verifies that the tubs allow adequate aeration of the tomato." ;
+    ns1:dependsOn ns1:episode97 ;
+    ns1:hasActor ns1:actor9 ;
+    ns1:hasResource ns1:resource71 .
+
+ns1:resource0 a ns1:Resource ;
+    rdfs:label "based fertilizer" .
+
+ns1:resource100 a ns1:Resource ;
+    rdfs:label "sisal yarn" .
+
+ns1:resource105 a ns1:Resource ;
+    rdfs:label "crop" .
+
+ns1:resource108 a ns1:Resource ;
+    rdfs:label "watering" ;
+    ns1:hasActor ns1:resource79 ;
+    ns1:hasContext ns1:condition81 ;
+    ns1:hasEpisode ns1:episode202,
+        ns1:episode203,
+        ns1:episode204 ;
+    ns1:hasGoal ns1:condition80 ;
+    ns1:hasResource ns1:resource129,
+        ns1:resource20,
+        ns1:resource3,
+        ns1:resource8 ;
+    ns1:requiredBy ns1:episode202 .
+
+ns1:resource117 a ns1:Resource ;
+    rdfs:label "solution" .
+
+ns1:resource118 a ns1:Resource ;
+    rdfs:label "bug" .
+
+ns1:resource12 a ns1:Resource ;
+    rdfs:label "harvested tomato" .
+
+ns1:resource130 a ns1:Resource ;
+    rdfs:label "weed" .
+
+ns1:resource19 a ns1:Resource ;
+    rdfs:label "ground" .
+
+ns1:resource26 a ns1:Resource ;
+    rdfs:label "compost" .
+
+ns1:resource33 a ns1:Resource ;
+    rdfs:label "herbicide" .
+
+ns1:resource39 a ns1:Resource ;
+    rdfs:label "tomato seed" .
+
+ns1:resource58 a ns1:Resource ;
+    rdfs:label "tub" .
+
+ns1:resource59 a ns1:Resource ;
+    rdfs:label "scale" .
+
+ns1:resource6 a ns1:Resource ;
+    rdfs:label "variety of tomato" .
+
+ns1:resource60 a ns1:Resource ;
+    rdfs:label "physiological maturity of tomato plant" .
+
+ns1:resource61 a ns1:Resource ;
+    rdfs:label "commercial maturity of tomato plant" .
+
+ns1:resource68 a ns1:Resource ;
+    rdfs:label "rtcr" .
+
+ns1:resource77 a ns1:Resource ;
+    rdfs:label "natural mixture" .
+
+ns1:resource78 a ns1:Resource ;
+    rdfs:label "commercial mixture" .
+
+ns1:resource80 a ns1:Resource ;
+    rdfs:label "type of disease" .
+
+ns1:resource96 a ns1:Resource ;
+    rdfs:label "transparent plastic" .
+
+ns1:scenario11 a ns1:Scenario ;
+    rdfs:label "transplant" ;
+    ns1:hasActor ns1:actor0,
+        ns1:actor12 ;
+    ns1:hasContext ns1:condition22,
+        ns1:condition52 ;
+    ns1:hasEpisode ns1:episode137,
+        ns1:episode138,
+        ns1:episode139,
+        ns1:episode140,
+        ns1:episode141,
+        ns1:episode51,
+        ns1:episode52,
+        ns1:episode53,
+        ns1:episode54,
+        ns1:episode55,
+        ns1:episode56,
+        ns1:episode57,
+        ns1:episode58,
+        ns1:episode59,
+        ns1:episode60,
+        ns1:episode61,
+        ns1:episode62,
+        ns1:episode63,
+        ns1:episode64,
+        ns1:episode65 ;
+    ns1:hasGoal ns1:condition21,
+        ns1:condition51 ;
+    ns1:hasResource ns1:actor6,
+        ns1:resource106,
+        ns1:resource20,
+        ns1:resource3,
+        ns1:resource38,
+        ns1:resource41,
+        ns1:resource45,
+        ns1:resource76 ;
+    ns1:requiredBy ns1:episode137,
+        ns1:episode51 .
+
+ns1:scenario25 a ns1:Scenario ;
+    rdfs:label "water the garden" ;
+    ns1:hasActor ns1:actor0,
+        ns1:actor12 ;
+    ns1:hasContext ns1:condition50 ;
+    ns1:hasEpisode ns1:episode136 ;
+    ns1:hasGoal ns1:scenario25 ;
+    ns1:hasResource ns1:resource105,
+        ns1:resource20 ;
+    ns1:requiredBy ns1:episode136 .
+
+ns1:scenario26 a ns1:Scenario ;
+    rdfs:label "water the seedbed" ;
+    ns1:hasActor ns1:actor0,
+        ns1:actor12 ;
+    ns1:hasContext ns1:condition53 ;
+    ns1:hasEpisode ns1:episode142,
+        ns1:episode143 ;
+    ns1:hasGoal ns1:scenario26 ;
+    ns1:hasResource ns1:resource20,
+        ns1:resource38,
+        ns1:resource76 ;
+    ns1:requiredBy ns1:episode142 .
+
+ns1:scenario32 a ns1:Scenario ;
+    rdfs:label "viral disease control" ;
+    ns1:hasActor ns1:actor16,
+        ns1:resource79 ;
+    ns1:hasContext ns1:condition64 ;
+    ns1:hasEpisode ns1:episode162,
+        ns1:episode163,
+        ns1:episode164,
+        ns1:episode165,
+        ns1:episode166,
+        ns1:episode167 ;
+    ns1:hasGoal ns1:scenario32 ;
+    ns1:hasResource ns1:resource1,
+        ns1:resource3,
+        ns1:resource52 ;
+    ns1:requiredBy ns1:episode162 .
+
+ns1:scenario33 a ns1:Scenario ;
+    rdfs:label "bacterial disease control" ;
+    ns1:hasActor ns1:actor0,
+        ns1:actor17,
+        ns1:resource79 ;
+    ns1:hasContext ns1:condition65 ;
+    ns1:hasEpisode ns1:episode165,
+        ns1:episode168,
+        ns1:episode169,
+        ns1:episode170,
+        ns1:episode171 ;
+    ns1:hasGoal ns1:scenario33 ;
+    ns1:hasResource ns1:resource1,
+        ns1:resource3,
+        ns1:resource52,
+        ns1:resource76 ;
+    ns1:requiredBy ns1:episode168 .
+
+ns1:scenario34 a ns1:Scenario ;
+    rdfs:label "fungal disease control" ;
+    ns1:hasActor ns1:actor18,
+        ns1:resource79 ;
+    ns1:hasContext ns1:condition66 ;
+    ns1:hasEpisode ns1:episode171,
+        ns1:episode172,
+        ns1:episode173,
+        ns1:episode174,
+        ns1:episode175,
+        ns1:episode176 ;
+    ns1:hasGoal ns1:scenario34 ;
+    ns1:hasResource ns1:resource1,
+        ns1:resource3,
+        ns1:resource45,
+        ns1:resource52 ;
+    ns1:requiredBy ns1:episode172 .
+
+ns1:scenario4 a ns1:Scenario ;
+    rdfs:label "fumigate" ;
+    ns1:hasActor ns1:actor0,
+        ns1:actor2,
+        ns1:actor7,
+        ns1:actor8,
+        ns1:resource79 ;
+    ns1:hasContext ns1:condition79,
+        ns1:condition8 ;
+    ns1:hasEpisode ns1:episode19,
+        ns1:episode196,
+        ns1:episode197,
+        ns1:episode198,
+        ns1:episode199,
+        ns1:episode20,
+        ns1:episode200,
+        ns1:episode201,
+        ns1:episode21,
+        ns1:episode22,
+        ns1:episode23,
+        ns1:episode24,
+        ns1:episode25 ;
+    ns1:hasGoal ns1:condition7,
+        ns1:condition78 ;
+    ns1:hasResource ns1:resource16,
+        ns1:resource8,
+        ns1:resource9 ;
+    ns1:requiredBy ns1:episode19,
+        ns1:episode196 .
+
+ns1:scenario7 a ns1:Scenario ;
+    rdfs:label "weeding" ;
+    ns1:hasActor ns1:actor0,
+        ns1:actor2,
+        ns1:resource79 ;
+    ns1:hasContext ns1:condition14,
+        ns1:condition76 ;
+    ns1:hasEpisode ns1:episode194,
+        ns1:episode195,
+        ns1:episode35,
+        ns1:episode36,
+        ns1:episode37,
+        ns1:episode38 ;
+    ns1:hasGoal ns1:condition13,
+        ns1:condition77 ;
+    ns1:hasResource ns1:resource129,
+        ns1:resource20,
+        ns1:resource3,
+        ns1:resource30,
+        ns1:resource31,
+        ns1:resource32,
+        ns1:resource33,
+        ns1:resource8 ;
+    ns1:requiredBy ns1:episode194,
+        ns1:episode35 .
+
+ns1:scenario8 a ns1:Scenario ;
+    rdfs:label "prune" ;
+    ns1:hasActor ns1:actor10,
+        ns1:actor2 ;
+    ns1:hasContext ns1:condition16 ;
+    ns1:hasEpisode ns1:episode39,
+        ns1:episode40,
+        ns1:episode41 ;
+    ns1:hasGoal ns1:condition15 ;
+    ns1:hasResource ns1:resource20,
+        ns1:resource3,
+        ns1:resource8 ;
+    ns1:requiredBy ns1:episode39 .
+
+ns1:scenario9 a ns1:Scenario ;
+    rdfs:label "sow tomato seeds" ;
+    ns1:hasActor ns1:actor0,
+        ns1:actor2 ;
+    ns1:hasContext ns1:condition18,
+        ns1:condition85 ;
+    ns1:hasEpisode ns1:episode207,
+        ns1:episode208,
+        ns1:episode209,
+        ns1:episode42,
+        ns1:episode43,
+        ns1:episode44,
+        ns1:episode45 ;
+    ns1:hasGoal ns1:condition17,
+        ns1:condition84 ;
+    ns1:hasResource ns1:resource20,
+        ns1:resource21,
+        ns1:resource25,
+        ns1:resource3,
+        ns1:resource38,
+        ns1:resource45,
+        ns1:resource5 ;
+    ns1:requiredBy ns1:episode207,
+        ns1:episode42 .
+
+ns1:action19 a ns1:Action ;
+    rdfs:label "selects" .
+
+ns1:action33 a ns1:Action ;
+    rdfs:label "makes" .
+
+ns1:action35 a ns1:Action ;
+    rdfs:label "fertilizes" .
+
+ns1:action36 a ns1:Action ;
+    rdfs:label "puts" .
+
+ns1:action4 a ns1:Action ;
+    rdfs:label "controls" .
+
+ns1:action58 a ns1:Action ;
+    rdfs:label "rid" .
+
+ns1:actor10 a ns1:Actor ;
+    rdfs:label "disease" .
+
+ns1:actor16 a ns1:Actor ;
+    rdfs:label "viral disease" .
+
+ns1:actor17 a ns1:Actor ;
+    rdfs:label "bacterial disease" .
+
+ns1:actor18 a ns1:Actor ;
+    rdfs:label "fungal disease" .
+
+ns1:actor6 a ns1:Actor ;
+    rdfs:label "stake" .
+
+ns1:episode0 a ns1:Episode ;
+    rdfs:label "the abiotic disease appears in the tomato plant." ;
+    ns1:dependsOn ns1:scenario0 ;
+    ns1:hasAction ns1:action0 ;
     ns1:hasActor ns1:actor1 ;
+    ns1:requiredBy ns1:episode1 .
+
+ns1:episode1 a ns1:Episode ;
+    rdfs:label "the gardener detects the abiotic disease." ;
+    ns1:dependsOn ns1:episode0 ;
+    ns1:hasAction ns1:action1 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:actor1 ;
+    ns1:requiredBy ns1:episode2 .
+
+ns1:episode10 a ns1:Episode ;
+    rdfs:label "the farmer analyzes the tomato plant." ;
+    ns1:dependsOn ns1:scenario2 ;
+    ns1:hasAction ns1:action8 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource8 ;
+    ns1:requiredBy ns1:episode11 .
+
+ns1:episode100 a ns1:Episode ;
+    rdfs:label "the farmer evaluates the commercial maturity of the tomato plant " ;
+    ns1:dependsOn ns1:episode99 ;
+    ns1:hasAction ns1:action29 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource61 ;
+    ns1:requiredBy ns1:episode101 .
+
+ns1:episode101 a ns1:Episode ;
+    rdfs:label "the farmer decides if the fruit has reached the necessary physiological  and commercial maturity to be harvested" ;
+    ns1:dependsOn ns1:episode100 ;
+    ns1:hasAction ns1:action21 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:requiredBy ns1:episode102 .
+
+ns1:episode102 a ns1:Episode ;
+    rdfs:label "the farmer carries the crates to the tomato plants" ;
+    ns1:dependsOn ns1:episode101 ;
+    ns1:hasAction ns1:action50 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource10 ;
+    ns1:requiredBy ns1:episode103 .
+
+ns1:episode103 a ns1:Episode ;
+    rdfs:label "the farmer removes the tomato from the plant." ;
+    ns1:dependsOn ns1:episode102 ;
+    ns1:hasAction ns1:action46 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource9 ;
+    ns1:requiredBy ns1:episode104 .
+
+ns1:episode104 a ns1:Episode ;
+    rdfs:label "the farmer discards those fruits that are damaged by pests" ;
+    ns1:dependsOn ns1:episode103 ;
+    ns1:hasAction ns1:action45 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource64 ;
+    ns1:requiredBy ns1:episode105 .
+
+ns1:episode105 a ns1:Episode ;
+    rdfs:label "the farmer classifies the tomato by its maturity using the rtcr 739-2004 regulation, which is specific for tomato for fresh consumption" ;
+    ns1:dependsOn ns1:episode104 ;
+    ns1:hasAction ns1:action47 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource68,
+        ns1:resource72,
+        ns1:resource9 ;
+    ns1:requiredBy ns1:episode106 .
+
+ns1:episode106 a ns1:Episode ;
+    rdfs:label "the farmer classifies the tomato by its quality in first, second and third, using the grading machine" ;
+    ns1:dependsOn ns1:episode105 ;
+    ns1:hasAction ns1:action47 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource73,
+        ns1:resource9 ;
+    ns1:requiredBy ns1:episode107 .
+
+ns1:episode107 a ns1:Episode ;
+    rdfs:label "the farmer washes the tomato" ;
+    ns1:dependsOn ns1:episode106 ;
+    ns1:hasAction ns1:action48 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource9 ;
+    ns1:requiredBy ns1:episode108 .
+
+ns1:episode108 a ns1:Episode ;
+    rdfs:label "the farmer puts the fruit into the suitable crate according to its maturity, size and quality" ;
+    ns1:dependsOn ns1:episode107 ;
+    ns1:hasAction ns1:action36 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource64 ;
+    ns1:requiredBy ns1:episode109 .
+
+ns1:episode109 a ns1:Episode ;
+    rdfs:label "the farmer stows the filled crates " ;
+    ns1:dependsOn ns1:episode108 ;
+    ns1:hasAction ns1:action49 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource74 ;
+    ns1:requiredBy ns1:episode110 .
+
+ns1:episode11 a ns1:Episode ;
+    rdfs:label "the farmer determines that the tomato ripened.." ;
+    ns1:dependsOn ns1:episode10 ;
+    ns1:hasAction ns1:action9 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:requiredBy ns1:episode12 .
+
+ns1:episode110 a ns1:Episode ;
+    rdfs:label "the farmer checks the tomatoes into the crates are not smashed." ;
+    ns1:dependsOn ns1:episode109 ;
+    ns1:hasAction ns1:action51 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource9 ;
+    ns1:requiredBy ns1:episode111 .
+
+ns1:episode111 a ns1:Episode ;
+    rdfs:label "the farmer checks the crates are in the shade " ;
+    ns1:dependsOn ns1:episode110 ;
+    ns1:hasAction ns1:action52 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:requiredBy ns1:episode112 .
+
+ns1:episode113 a ns1:Episode ;
+    rdfs:label "the agricultural engineer detects the type of disease according to the symptom presented by the plant" ;
+    ns1:dependsOn ns1:scenario15 ;
+    ns1:hasAction ns1:action1 ;
+    ns1:hasActor ns1:resource79 ;
+    ns1:hasResource ns1:resource80 ;
+    ns1:requiredBy ns1:episode114 .
+
+ns1:episode116 a ns1:Episode ;
+    rdfs:label "the agricultural engineer identifies the type of disease according to the symptoms of the plant." ;
+    ns1:dependsOn ns1:scenario16 ;
+    ns1:hasAction ns1:action54 ;
+    ns1:hasActor ns1:resource79 ;
+    ns1:hasResource ns1:resource80 ;
+    ns1:requiredBy ns1:episode114 .
+
+ns1:episode12 a ns1:Episode ;
+    rdfs:label "the farmer decides when to harvest the ripe tomato." ;
+    ns1:dependsOn ns1:episode11 ;
+    ns1:hasAction ns1:action10 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource11 ;
+    ns1:requiredBy ns1:episode13 .
+
+ns1:episode120 a ns1:Episode ;
+    rdfs:label "the gardener covers the inferior part of the plant with organic fertilizer." ;
+    ns1:dependsOn ns1:scenario19 ;
+    ns1:hasAction ns1:action23 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:resource88,
+        ns1:resource89 ;
+    ns1:requiredBy ns1:episode121 .
+
+ns1:episode123 a ns1:Episode ;
+    rdfs:label "the gardener takes pruning pliers and cuts, leaving one, two or three stalk per plant" ;
+    ns1:dependsOn ns1:scenario21 ;
+    ns1:hasAction ns1:action11 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:resource94 ;
+    ns1:requiredBy ns1:episode124 .
+
+ns1:episode124 a ns1:Episode ;
+    rdfs:label "in case of a plant which its fruit is the cherry tomato, between three and four stems are usually left." ;
+    ns1:dependsOn ns1:episode123 ;
+    ns1:hasAction ns1:action57 ;
+    ns1:hasActor ns1:resource64 ;
+    ns1:requiredBy ns1:episode125 .
+
+ns1:episode125 a ns1:Episode ;
+    rdfs:label "the gardener get rid of auxiliary stalks, improving the main stalk's growth" ;
+    ns1:dependsOn ns1:episode124 ;
+    ns1:hasAction ns1:action58 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:resource15 ;
+    ns1:requiredBy ns1:episode126 .
+
+ns1:episode127 a ns1:Episode ;
+    rdfs:label "the gardener uses transparent plastic with a width between 0.8 cm and 1.2 m. the plastic is stretched on a wire" ;
+    ns1:dependsOn ns1:scenario22 ;
+    ns1:hasAction ns1:action59 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:resource96,
+        ns1:resource98 ;
+    ns1:requiredBy ns1:episode128 .
+
+ns1:episode129 a ns1:Episode ;
+    rdfs:label "the gardener uses sisal yarn to tie the plants to the stakes" ;
+    ns1:dependsOn ns1:scenario23 ;
+    ns1:hasAction ns1:action60 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:resource100,
+        ns1:resource87 ;
+    ns1:requiredBy ns1:episode130 .
+
+ns1:episode13 a ns1:Episode ;
+    rdfs:label "the laborer takes the tomato from the tomato plant." ;
+    ns1:dependsOn ns1:episode12 ;
+    ns1:hasAction ns1:action11 ;
+    ns1:hasActor ns1:actor5 ;
+    ns1:hasResource ns1:resource9 ;
+    ns1:requiredBy ns1:episode14 .
+
+ns1:episode130 a ns1:Episode ;
+    rdfs:label "the gardener ties the plant loosely as it grows" ;
+    ns1:dependsOn ns1:episode129 ;
+    ns1:hasAction ns1:action37 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:resource87 ;
+    ns1:requiredBy ns1:episode131 .
+
+ns1:episode132 a ns1:Episode ;
+    rdfs:label "the gardener carefully and manually removes the fruit from the plant" ;
+    ns1:dependsOn ns1:scenario2 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:resource64 ;
+    ns1:requiredBy ns1:episode133 .
+
+ns1:episode134 a ns1:Episode ;
+    rdfs:label "the gardener grabs the pruning pliers and cuts, limiting the number of productive stems and the amount of fruits per plant" ;
+    ns1:dependsOn ns1:scenario24 ;
+    ns1:hasAction ns1:action62 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:resource103,
+        ns1:resource93 ;
+    ns1:requiredBy ns1:episode135 .
+
+ns1:episode137 a ns1:Episode ;
+    rdfs:label "the gardener prepares the beds or loins in a straight line, making a hole slightly larger than the volume occupied by the container that contains the seedling" ;
+    ns1:dependsOn ns1:scenario11 ;
+    ns1:hasAction ns1:action13 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:resource107,
+        ns1:resource18,
+        ns1:resource45 ;
+    ns1:requiredBy ns1:episode138 .
+
+ns1:episode138 a ns1:Episode ;
+    rdfs:label "the gardener takes the garden boxes with the seedlings and transports them to the final place in the cool hours of the morning or after three in the afternoon" ;
+    ns1:dependsOn ns1:episode137 ;
+    ns1:hasAction ns1:action11 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:resource106,
+        ns1:resource45 ;
+    ns1:requiredBy ns1:episode139 .
+
+ns1:episode139 a ns1:Episode ;
+    rdfs:label "the gardener waters the soil prior to sowing if it is very dry" ;
+    ns1:dependsOn ns1:episode138 ;
+    ns1:hasAction ns1:action34 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:resource3 ;
+    ns1:requiredBy ns1:episode140 .
+
+ns1:episode140 a ns1:Episode ;
+    rdfs:label "the gardener sprays each hole with fertilizer" ;
+    ns1:dependsOn ns1:episode139 ;
+    ns1:hasActor ns1:actor15 ;
+    ns1:hasResource ns1:resource18,
+        ns1:resource52 ;
+    ns1:requiredBy ns1:episode141 .
+
+ns1:episode142 a ns1:Episode ;
+    rdfs:label "the gardener takes the watering can filled with water" ;
+    ns1:dependsOn ns1:scenario26 ;
+    ns1:hasAction ns1:action11 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:resource108,
+        ns1:resource20 ;
+    ns1:requiredBy ns1:episode143 .
+
+ns1:episode146 a ns1:Episode ;
+    rdfs:label "the gardener places a seed on each hole, completing it with compost" ;
+    ns1:dependsOn ns1:episode144 ;
+    ns1:hasAction ns1:action12 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:resource26,
+        ns1:resource5 ;
+    ns1:requiredBy ns1:episode147 .
+
+ns1:episode147 a ns1:Episode ;
+    rdfs:label "the gardener set the temperature of the garden box (optimal from 16 °c to 28 °c)" ;
+    ns1:dependsOn ns1:episode146 ;
+    ns1:hasAction ns1:action65 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:resource109 ;
+    ns1:requiredBy ns1:episode148 .
+
+ns1:episode149 a ns1:Episode ;
+    rdfs:label "the agricultural engineer places the seedbeds in protected environments" ;
+    ns1:dependsOn ns1:scenario29 ;
+    ns1:hasAction ns1:action12 ;
+    ns1:hasActor ns1:resource79 ;
+    ns1:hasResource ns1:resource38 ;
+    ns1:requiredBy ns1:episode150 .
+
+ns1:episode15 a ns1:Episode ;
+    rdfs:label "the farmer chooses the supporting technique." ;
+    ns1:dependsOn ns1:scenario3 ;
+    ns1:hasAction ns1:action6 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource14 ;
+    ns1:requiredBy ns1:episode16 .
+
+ns1:episode150 a ns1:Episode ;
+    rdfs:label "the agricultural engineer applies the pesticide" ;
+    ns1:dependsOn ns1:episode149 ;
+    ns1:hasAction ns1:action2 ;
+    ns1:hasActor ns1:resource79 ;
+    ns1:hasResource ns1:resource16 ;
+    ns1:requiredBy ns1:episode151 .
+
+ns1:episode151 a ns1:Episode ;
+    rdfs:label "the agricultural engineer removes remains of crops" ;
+    ns1:dependsOn ns1:episode150 ;
+    ns1:hasAction ns1:action46 ;
+    ns1:hasActor ns1:resource79 ;
+    ns1:hasResource ns1:resource111 ;
+    ns1:requiredBy ns1:episode152 .
+
+ns1:episode152 a ns1:Episode ;
+    rdfs:label "the agricultural engineer uses insect traps" ;
+    ns1:dependsOn ns1:episode151 ;
+    ns1:hasAction ns1:action59 ;
+    ns1:hasActor ns1:resource79 ;
+    ns1:hasResource ns1:resource112 ;
+    ns1:requiredBy ns1:episode153 .
+
+ns1:episode153 a ns1:Episode ;
+    rdfs:label "the agricultural engineer makes a biological control" ;
+    ns1:dependsOn ns1:episode152 ;
+    ns1:hasAction ns1:action33 ;
+    ns1:hasActor ns1:resource79 ;
+    ns1:hasResource ns1:resource113 ;
+    ns1:requiredBy ns1:episode154 .
+
+ns1:episode154 a ns1:Episode ;
+    rdfs:label "the agricultural engineer uses mosquito nets" ;
+    ns1:dependsOn ns1:episode153 ;
+    ns1:hasAction ns1:action59 ;
+    ns1:hasActor ns1:resource79 ;
+    ns1:hasResource ns1:resource114 ;
+    ns1:requiredBy ns1:episode155 .
+
+ns1:episode156 a ns1:Episode ;
+    rdfs:label "the agricultural engineer prepares the fertilizer" ;
+    ns1:dependsOn ns1:scenario30 ;
+    ns1:hasAction ns1:action13 ;
+    ns1:hasActor ns1:resource79 ;
+    ns1:hasResource ns1:resource52 ;
+    ns1:requiredBy ns1:episode157 .
+
+ns1:episode158 a ns1:Episode ;
+    rdfs:label "the agricultural engineer analyses the results of the soil analysis" ;
+    ns1:dependsOn ns1:scenario31 ;
+    ns1:hasAction ns1:action67 ;
+    ns1:hasActor ns1:resource79 ;
+    ns1:hasResource ns1:resource116 ;
+    ns1:requiredBy ns1:episode159 .
+
+ns1:episode16 a ns1:Episode ;
+    rdfs:label "the farmer prepares the string." ;
+    ns1:dependsOn ns1:episode15 ;
+    ns1:hasAction ns1:action13 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource13 ;
+    ns1:requiredBy ns1:episode17 .
+
+ns1:episode160 a ns1:Episode ;
+    rdfs:label "the agricultural engineer prepares the solution with lime and magnesium" ;
+    ns1:dependsOn ns1:episode159 ;
+    ns1:hasAction ns1:action13 ;
+    ns1:hasActor ns1:resource79 ;
+    ns1:hasResource ns1:resource117 ;
+    ns1:requiredBy ns1:episode161 .
+
+ns1:episode162 a ns1:Episode ;
+    rdfs:label "the viral disease manifests in the tomato plant" ;
+    ns1:dependsOn ns1:scenario32 ;
+    ns1:hasActor ns1:actor16 ;
+    ns1:requiredBy ns1:episode163 .
+
+ns1:episode163 a ns1:Episode ;
+    rdfs:label "the agricultural engineer detects the viral disease" ;
+    ns1:dependsOn ns1:episode162 ;
+    ns1:hasAction ns1:action1 ;
+    ns1:hasActor ns1:resource79 ;
+    ns1:hasResource ns1:actor16 ;
+    ns1:requiredBy ns1:episode164 .
+
+ns1:episode164 a ns1:Episode ;
+    rdfs:label "the agricultural engineer gets rid of weeds, harvest residues and fruits" ;
+    ns1:dependsOn ns1:episode163 ;
+    ns1:hasAction ns1:action58 ;
+    ns1:hasActor ns1:resource79 ;
+    ns1:requiredBy ns1:episode165 .
+
+ns1:episode166 a ns1:Episode ;
+    rdfs:label "the agricultural engineer uses traps to detect and capture bugs" ;
+    ns1:dependsOn ns1:episode165 ;
+    ns1:hasAction ns1:action68 ;
+    ns1:hasActor ns1:resource79 ;
+    ns1:hasResource ns1:resource118,
+        ns1:resource119 ;
+    ns1:requiredBy ns1:episode167 .
+
+ns1:episode168 a ns1:Episode ;
+    rdfs:label "the bacterial disease manifests in the tomato plant" ;
+    ns1:dependsOn ns1:scenario33 ;
+    ns1:hasActor ns1:actor17 ;
+    ns1:requiredBy ns1:episode169 .
+
+ns1:episode169 a ns1:Episode ;
+    rdfs:label "the agricultural engineer detects the bacterial disease" ;
+    ns1:dependsOn ns1:episode168 ;
+    ns1:hasAction ns1:action1 ;
+    ns1:hasActor ns1:resource79 ;
+    ns1:hasResource ns1:actor17 ;
+    ns1:requiredBy ns1:episode170 .
+
+ns1:episode17 a ns1:Episode ;
+    rdfs:label "the farmer sets the string." ;
+    ns1:dependsOn ns1:episode16 ;
+    ns1:hasAction ns1:action14 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource13 ;
+    ns1:requiredBy ns1:episode18 .
+
+ns1:episode170 a ns1:Episode ;
+    rdfs:label "the agricultural engineer removes infected fruits" ;
+    ns1:dependsOn ns1:episode169 ;
+    ns1:hasAction ns1:action46 ;
+    ns1:hasActor ns1:resource79 ;
+    ns1:hasResource ns1:resource120 ;
+    ns1:requiredBy ns1:episode165 .
+
+ns1:episode172 a ns1:Episode ;
+    rdfs:label "the fungal disease manifests in the tomato plant" ;
+    ns1:dependsOn ns1:scenario34 ;
+    ns1:hasAction ns1:action70 ;
+    ns1:hasActor ns1:actor18 ;
+    ns1:requiredBy ns1:episode173 .
+
+ns1:episode173 a ns1:Episode ;
+    rdfs:label "the agricultural engineer detects the fungal disease" ;
+    ns1:dependsOn ns1:episode172 ;
+    ns1:hasActor ns1:resource79 ;
+    ns1:hasResource ns1:actor18 ;
+    ns1:requiredBy ns1:episode174 .
+
+ns1:episode174 a ns1:Episode ;
+    rdfs:label "the agricultural engineer prevents the fruit of the tomato plant from rubbing against the ground" ;
+    ns1:dependsOn ns1:episode173 ;
+    ns1:hasAction ns1:action71 ;
+    ns1:hasActor ns1:resource79 ;
+    ns1:hasResource ns1:resource122 ;
+    ns1:requiredBy ns1:episode175 .
+
+ns1:episode175 a ns1:Episode ;
+    rdfs:label "the agricultural engineer uses fungicide to protect the tomato plant" ;
+    ns1:dependsOn ns1:episode174 ;
+    ns1:hasAction ns1:action72 ;
+    ns1:hasActor ns1:resource79 ;
+    ns1:hasResource ns1:resource8 ;
+    ns1:requiredBy ns1:episode171 .
+
+ns1:episode177 a ns1:Episode ;
+    rdfs:label "the abiotic disease manifests in the tomato plant" ;
+    ns1:dependsOn ns1:scenario35 ;
+    ns1:hasActor ns1:actor1 ;
+    ns1:requiredBy ns1:episode178 .
+
+ns1:episode178 a ns1:Episode ;
+    rdfs:label "the gardener detects the abiotic disease" ;
+    ns1:dependsOn ns1:episode177 ;
+    ns1:hasAction ns1:action1 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:actor1 ;
+    ns1:requiredBy ns1:episode179 .
+
+ns1:episode179 a ns1:Episode ;
+    rdfs:label "the agricultural engineer applies calcium based fertilizer" ;
+    ns1:dependsOn ns1:episode178 ;
+    ns1:hasAction ns1:action2 ;
+    ns1:hasActor ns1:resource79 ;
+    ns1:hasResource ns1:resource0 ;
+    ns1:requiredBy ns1:episode180 .
+
+ns1:episode180 a ns1:Episode ;
+    rdfs:label "the gardener controls the temperature of the seedlings" ;
+    ns1:dependsOn ns1:episode179 ;
+    ns1:hasAction ns1:action4 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:resource124 ;
+    ns1:requiredBy ns1:episode181 .
+
+ns1:episode182 a ns1:Episode ;
+    rdfs:label "the agricultural engineer chooses an irrigation mechanism based on soil survey" ;
+    ns1:dependsOn ns1:scenario36 ;
+    ns1:hasAction ns1:action6 ;
+    ns1:hasActor ns1:resource79 ;
+    ns1:hasResource ns1:resource21 ;
+    ns1:requiredBy ns1:episode183 .
+
+ns1:episode183 a ns1:Episode ;
+    rdfs:label "the agricultural engineer installs the irrigation mechanism" ;
+    ns1:dependsOn ns1:episode182 ;
+    ns1:hasAction ns1:action73 ;
+    ns1:hasActor ns1:resource79 ;
+    ns1:hasResource ns1:resource21 ;
+    ns1:requiredBy ns1:episode184 .
+
+ns1:episode185 a ns1:Episode ;
+    rdfs:label "the agricultural engineer analyzes the tomato plant" ;
+    ns1:dependsOn ns1:scenario2 ;
+    ns1:hasAction ns1:action8 ;
+    ns1:hasActor ns1:resource79 ;
+    ns1:hasResource ns1:resource8 ;
+    ns1:requiredBy ns1:episode186 .
+
+ns1:episode186 a ns1:Episode ;
+    rdfs:label "the agricultural engineer determines that the tomato plant reached the maturity state" ;
+    ns1:dependsOn ns1:episode185 ;
+    ns1:hasAction ns1:action9 ;
+    ns1:hasActor ns1:resource79 ;
+    ns1:hasResource ns1:resource126 ;
+    ns1:requiredBy ns1:episode187 .
+
+ns1:episode187 a ns1:Episode ;
+    rdfs:label "the agricultural engineer decides when the mature  tomato is ready to harvest" ;
+    ns1:dependsOn ns1:episode186 ;
+    ns1:hasAction ns1:action10 ;
+    ns1:hasActor ns1:resource79 ;
+    ns1:requiredBy ns1:episode188 .
+
+ns1:episode188 a ns1:Episode ;
+    rdfs:label "the gardener harvests tomato from tomato plant" ;
+    ns1:dependsOn ns1:episode187 ;
+    ns1:hasAction ns1:action74 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:requiredBy ns1:episode189 .
+
+ns1:episode19 a ns1:Episode ;
+    rdfs:label "the farmer detects that there is an abnormal growth in the tomato plant" ;
+    ns1:dependsOn ns1:scenario4 ;
+    ns1:hasAction ns1:action1 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:requiredBy ns1:episode20 .
+
+ns1:episode190 a ns1:Episode ;
+    rdfs:label "the gardener identifies the plant with a growing different from the expected" ;
+    ns1:dependsOn ns1:scenario37 ;
+    ns1:hasAction ns1:action54 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:resource127 ;
+    ns1:requiredBy ns1:episode191 .
+
+ns1:episode192 a ns1:Episode ;
+    rdfs:label "the gardener chooses a tomato plant from the pot" ;
+    ns1:dependsOn ns1:episode159 ;
+    ns1:hasAction ns1:action6 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:resource8 ;
+    ns1:requiredBy ns1:episode193 .
+
+ns1:episode194 a ns1:Episode ;
+    rdfs:label "the agricultural engineer detects the weed in the tomato plant" ;
+    ns1:dependsOn ns1:scenario7 ;
+    ns1:hasAction ns1:action1 ;
+    ns1:hasActor ns1:resource79 ;
+    ns1:hasResource ns1:resource130 ;
+    ns1:requiredBy ns1:episode195 .
+
+ns1:episode196 a ns1:Episode ;
+    rdfs:label "the gardener detects abnormal development/growth in tomato plant" ;
+    ns1:dependsOn ns1:scenario4 ;
+    ns1:hasAction ns1:action1 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:resource15 ;
+    ns1:requiredBy ns1:episode20 .
+
+ns1:episode197 a ns1:Episode ;
+    rdfs:label "the plague damages the tomato plant" ;
+    ns1:dependsOn ns1:episode20 ;
+    ns1:hasAction ns1:action17 ;
+    ns1:hasActor ns1:actor7 ;
+    ns1:hasResource ns1:resource8 ;
+    ns1:requiredBy ns1:episode198 .
+
+ns1:episode198 a ns1:Episode ;
+    rdfs:label "the agricultural engineer analyzes the plague type" ;
+    ns1:dependsOn ns1:episode197 ;
+    ns1:hasAction ns1:action8 ;
+    ns1:hasActor ns1:resource79 ;
+    ns1:hasResource ns1:resource131 ;
+    ns1:requiredBy ns1:episode199 .
+
+ns1:episode199 a ns1:Episode ;
+    rdfs:label "the agricultural engineer prepares pesticide" ;
+    ns1:dependsOn ns1:episode198 ;
+    ns1:hasAction ns1:action13 ;
+    ns1:hasActor ns1:resource79 ;
+    ns1:hasResource ns1:resource16 ;
+    ns1:requiredBy ns1:episode200 .
+
+ns1:episode2 a ns1:Episode ;
+    rdfs:label "the gardener applies calcium based fertilizer." ;
+    ns1:dependsOn ns1:episode1 ;
+    ns1:hasAction ns1:action2 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:resource0 ;
+    ns1:requiredBy ns1:episode3 .
+
+ns1:episode200 a ns1:Episode ;
+    rdfs:label "the agricultural engineer chooses the pesticide" ;
+    ns1:dependsOn ns1:episode199 ;
+    ns1:hasAction ns1:action6 ;
+    ns1:hasActor ns1:resource79 ;
+    ns1:hasResource ns1:resource16 ;
+    ns1:requiredBy ns1:episode201 .
+
+ns1:episode202 a ns1:Episode ;
+    rdfs:label "the agricultural engineer selects the watering mechanism" ;
+    ns1:dependsOn ns1:resource108 ;
+    ns1:hasAction ns1:action19 ;
+    ns1:hasActor ns1:resource79 ;
+    ns1:hasResource ns1:resource129 ;
+    ns1:requiredBy ns1:episode203 .
+
+ns1:episode203 a ns1:Episode ;
+    rdfs:label "the agricultural engineer decides the intensity of the watering according to the analysis of the ground" ;
+    ns1:dependsOn ns1:episode202 ;
+    ns1:hasAction ns1:action21 ;
+    ns1:hasActor ns1:resource79 ;
+    ns1:hasResource ns1:resource132 ;
+    ns1:requiredBy ns1:episode204 .
+
+ns1:episode205 a ns1:Episode ;
+    rdfs:label "the agricultural engineer selects a portion of tissue from a tomato plant" ;
+    ns1:dependsOn ns1:scenario39 ;
+    ns1:hasAction ns1:action19 ;
+    ns1:hasActor ns1:resource79 ;
+    ns1:hasResource ns1:resource133 ;
+    ns1:requiredBy ns1:episode206 .
+
+ns1:episode207 a ns1:Episode ;
+    rdfs:label "the agricultural engineer chooses tomato seeds" ;
+    ns1:dependsOn ns1:scenario9 ;
+    ns1:hasAction ns1:action6 ;
+    ns1:hasActor ns1:resource79 ;
+    ns1:hasResource ns1:resource39 ;
+    ns1:requiredBy ns1:episode208 .
+
+ns1:episode208 a ns1:Episode ;
+    rdfs:label "the gardener puts the seeds in the seedlings" ;
+    ns1:dependsOn ns1:episode207 ;
+    ns1:hasAction ns1:action36 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:resource5 ;
+    ns1:requiredBy ns1:episode209 .
+
+ns1:episode21 a ns1:Episode ;
+    rdfs:label "the plague damages the tomato by making holes" ;
+    ns1:dependsOn ns1:episode20 ;
+    ns1:hasAction ns1:action17 ;
+    ns1:hasActor ns1:actor7 ;
+    ns1:hasResource ns1:resource18,
+        ns1:resource9 ;
+    ns1:requiredBy ns1:episode22 .
+
+ns1:episode22 a ns1:Episode ;
+    rdfs:label "the farmer analyzes the insect" ;
+    ns1:dependsOn ns1:episode21 ;
+    ns1:hasAction ns1:action8 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:actor8 ;
+    ns1:requiredBy ns1:episode23 .
+
+ns1:episode23 a ns1:Episode ;
+    rdfs:label "the farmer chooses a pesticide" ;
+    ns1:dependsOn ns1:episode22 ;
+    ns1:hasAction ns1:action6 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource16 ;
+    ns1:requiredBy ns1:episode24 .
+
+ns1:episode24 a ns1:Episode ;
+    rdfs:label "the farmer prepares the pesticide" ;
+    ns1:dependsOn ns1:episode23 ;
+    ns1:hasAction ns1:action13 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource16 ;
+    ns1:requiredBy ns1:episode25 .
+
+ns1:episode26 a ns1:Episode ;
+    rdfs:label "the farmer selects the irrigation mechanism" ;
+    ns1:dependsOn ns1:scenario5 ;
+    ns1:hasAction ns1:action19 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource21 ;
+    ns1:requiredBy ns1:episode27 .
+
+ns1:episode27 a ns1:Episode ;
+    rdfs:label "the farmer consults the state of weather service" ;
+    ns1:dependsOn ns1:episode26 ;
+    ns1:hasAction ns1:action20 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource22 ;
+    ns1:requiredBy ns1:episode28 .
+
+ns1:episode28 a ns1:Episode ;
+    rdfs:label "the weather service provides information about the weather" ;
+    ns1:dependsOn ns1:episode27 ;
+    ns1:hasAction ns1:action3 ;
+    ns1:hasActor ns1:actor3 ;
+    ns1:hasResource ns1:resource23 ;
+    ns1:requiredBy ns1:episode29 .
+
+ns1:episode29 a ns1:Episode ;
+    rdfs:label "the farmer decides the intensity of the irrigation" ;
+    ns1:dependsOn ns1:episode28 ;
+    ns1:hasAction ns1:action21 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource24 ;
+    ns1:requiredBy ns1:episode30 .
+
+ns1:episode3 a ns1:Episode ;
+    rdfs:label "the gardener provides nutrients according to the needs of the tomato plant." ;
+    ns1:dependsOn ns1:episode2 ;
+    ns1:hasAction ns1:action3 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:resource1 ;
+    ns1:requiredBy ns1:episode4 .
+
+ns1:episode31 a ns1:Episode ;
+    rdfs:label "the farmer verifies that the tomato plant is not grafted." ;
+    ns1:dependsOn ns1:scenario6 ;
+    ns1:hasActor ns1:actor9 ;
+    ns1:requiredBy ns1:episode32 .
+
+ns1:episode32 a ns1:Episode ;
+    rdfs:label "the farmer covers the bottom of the tomato plant with soil, substrate or compost." ;
+    ns1:dependsOn ns1:episode31 ;
+    ns1:hasAction ns1:action23 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource27,
+        ns1:resource3 ;
+    ns1:requiredBy ns1:episode33 .
+
+ns1:episode33 a ns1:Episode ;
+    rdfs:label "the farmer verifies that the stem and the roots of the tomato plant have not been damaged." ;
+    ns1:dependsOn ns1:episode32 ;
+    ns1:hasActor ns1:actor9 ;
+    ns1:requiredBy ns1:episode34 .
+
+ns1:episode35 a ns1:Episode ;
+    rdfs:label "the farmer scans the ground in search of crop pests." ;
+    ns1:dependsOn ns1:scenario7 ;
+    ns1:hasAction ns1:action25 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource19 ;
+    ns1:requiredBy ns1:episode36 .
+
+ns1:episode36 a ns1:Episode ;
+    rdfs:label "the farmer eliminates the detected pest via the hoe, string trimmer, or machete." ;
+    ns1:dependsOn ns1:episode35 ;
+    ns1:hasAction ns1:action26 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource34 ;
+    ns1:requiredBy ns1:episode37 .
+
+ns1:episode37 a ns1:Episode ;
+    rdfs:label "the farmer cleans the tillage equipment to prevent future entry of crop pests." ;
+    ns1:dependsOn ns1:episode36 ;
+    ns1:hasAction ns1:action27 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource35,
+        ns1:resource36 ;
+    ns1:requiredBy ns1:episode38 .
+
+ns1:episode39 a ns1:Episode ;
+    rdfs:label "the gardener detects diseases in the tomato plants" ;
+    ns1:dependsOn ns1:scenario8 ;
+    ns1:hasAction ns1:action1 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:actor10 ;
+    ns1:requiredBy ns1:episode40 .
+
+ns1:episode4 a ns1:Episode ;
+    rdfs:label "the gardener controls the temperature of the hotbeds." ;
+    ns1:dependsOn ns1:episode3 ;
+    ns1:hasAction ns1:action4 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:resource2 ;
+    ns1:requiredBy ns1:episode5 .
+
+ns1:episode40 a ns1:Episode ;
+    rdfs:label "the gardener detects irregular growing in tomato plants" ;
+    ns1:dependsOn ns1:episode39 ;
+    ns1:hasAction ns1:action1 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:requiredBy ns1:episode41 .
+
+ns1:episode42 a ns1:Episode ;
+    rdfs:label "the farmer chooses the tomato seeds." ;
+    ns1:dependsOn ns1:scenario9 ;
+    ns1:hasAction ns1:action6 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource39 ;
+    ns1:requiredBy ns1:episode43 .
+
+ns1:episode43 a ns1:Episode ;
+    rdfs:label "the farmer places the seeds in the seedbed." ;
+    ns1:dependsOn ns1:episode42 ;
+    ns1:hasAction ns1:action12 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource5 ;
+    ns1:requiredBy ns1:episode44 .
+
+ns1:episode44 a ns1:Episode ;
+    rdfs:label "the farmer covers the seeds with substrate." ;
+    ns1:dependsOn ns1:episode43 ;
+    ns1:hasAction ns1:action23 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource25,
+        ns1:resource5 ;
+    ns1:requiredBy ns1:episode45 .
+
+ns1:episode46 a ns1:Episode ;
+    rdfs:label "the farmer evaluates the tomato plant" ;
+    ns1:dependsOn ns1:scenario10 ;
+    ns1:hasAction ns1:action29 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource8 ;
+    ns1:requiredBy ns1:episode47 .
+
+ns1:episode47 a ns1:Episode ;
+    rdfs:label "the farmer decides which pests are a risk for the tomato plant" ;
+    ns1:dependsOn ns1:episode46 ;
+    ns1:hasAction ns1:action21 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:requiredBy ns1:episode48 .
+
+ns1:episode48 a ns1:Episode ;
+    rdfs:label "the farmer evaluates the available pesticides in the market " ;
+    ns1:dependsOn ns1:episode47 ;
+    ns1:hasAction ns1:action29 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource40 ;
+    ns1:requiredBy ns1:episode49 .
+
+ns1:episode49 a ns1:Episode ;
+    rdfs:label "the farmer decides which pesticides to use for fumigate" ;
+    ns1:dependsOn ns1:episode48 ;
+    ns1:hasAction ns1:action30 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource16 ;
+    ns1:requiredBy ns1:episode50 .
+
+ns1:episode51 a ns1:Episode ;
+    rdfs:label "the gardener determines the maturity stage of the seedling" ;
+    ns1:dependsOn ns1:scenario11 ;
+    ns1:hasAction ns1:action9 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:resource42,
+        ns1:resource43 ;
+    ns1:requiredBy ns1:episode52 .
+
+ns1:episode52 a ns1:Episode ;
+    rdfs:label "the gardener decides the moment to transplant" ;
+    ns1:dependsOn ns1:episode51 ;
+    ns1:hasAction ns1:action31 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:resource44 ;
+    ns1:requiredBy ns1:episode53 .
+
+ns1:episode53 a ns1:Episode ;
+    rdfs:label "the gardener moves the seedling from the hotbed to the seedbed" ;
+    ns1:dependsOn ns1:episode52 ;
+    ns1:hasAction ns1:action32 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:resource45 ;
+    ns1:requiredBy ns1:episode54 .
+
+ns1:episode54 a ns1:Episode ;
+    rdfs:label "the gardener prepares the ridge and the furrows" ;
+    ns1:dependsOn ns1:episode53 ;
+    ns1:hasAction ns1:action13 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:resource46 ;
+    ns1:requiredBy ns1:episode55 .
+
+ns1:episode55 a ns1:Episode ;
+    rdfs:label "the gardener determines whether to use a single or double line of sowing." ;
+    ns1:dependsOn ns1:episode54 ;
+    ns1:hasAction ns1:action9 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:resource47,
+        ns1:resource48 ;
+    ns1:requiredBy ns1:episode56 .
+
+ns1:episode56 a ns1:Episode ;
+    rdfs:label "the gardener determines the distance according the plant, the season and past experience." ;
+    ns1:dependsOn ns1:episode55 ;
+    ns1:hasAction ns1:action9 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:resource49 ;
+    ns1:requiredBy ns1:episode57 .
+
+ns1:episode57 a ns1:Episode ;
+    rdfs:label "the gardener makes the holes in the seedbed according to the previous definitions." ;
+    ns1:dependsOn ns1:episode56 ;
+    ns1:hasAction ns1:action33 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:resource18 ;
+    ns1:requiredBy ns1:episode58 .
+
+ns1:episode58 a ns1:Episode ;
+    rdfs:label "the gardener waters the soil." ;
+    ns1:dependsOn ns1:episode57 ;
+    ns1:hasAction ns1:action34 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:resource3 ;
+    ns1:requiredBy ns1:episode59 .
+
+ns1:episode59 a ns1:Episode ;
+    rdfs:label "the gardener fertilizes the soil." ;
+    ns1:dependsOn ns1:episode58 ;
+    ns1:hasAction ns1:action35 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:resource3 ;
+    ns1:requiredBy ns1:episode60 .
+
+ns1:episode6 a ns1:Episode ;
+    rdfs:label "the farmer chooses a variety of tomato according to its performance." ;
+    ns1:dependsOn ns1:scenario1 ;
+    ns1:hasAction ns1:action6 ;
+    ns1:hasActor ns1:actor2 ;
     ns1:hasResource ns1:resource6 ;
     ns1:requiredBy ns1:episode7 .
 
+ns1:episode60 a ns1:Episode ;
+    rdfs:label "the gardener puts the seedling in the holes." ;
+    ns1:dependsOn ns1:episode59 ;
+    ns1:hasAction ns1:action36 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:resource45 ;
+    ns1:requiredBy ns1:episode61 .
+
+ns1:episode61 a ns1:Episode ;
+    rdfs:label "the gardener water the base of the seedling." ;
+    ns1:dependsOn ns1:episode60 ;
+    ns1:hasActor ns1:actor11 ;
+    ns1:requiredBy ns1:episode62 .
+
+ns1:episode62 a ns1:Episode ;
+    rdfs:label "the gardener place the stake." ;
+    ns1:dependsOn ns1:episode61 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:actor6 ;
+    ns1:requiredBy ns1:episode63 .
+
+ns1:episode63 a ns1:Episode ;
+    rdfs:label "the gardener ties the seedling to the stake." ;
+    ns1:dependsOn ns1:episode62 ;
+    ns1:hasAction ns1:action37 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:resource45 ;
+    ns1:requiredBy ns1:episode64 .
+
+ns1:episode64 a ns1:Episode ;
+    rdfs:label "the gardener places the cover." ;
+    ns1:dependsOn ns1:episode63 ;
+    ns1:hasAction ns1:action12 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:resource50 ;
+    ns1:requiredBy ns1:episode65 .
+
+ns1:episode66 a ns1:Episode ;
+    rdfs:label "the farmer acquires the seed." ;
+    ns1:dependsOn ns1:scenario12 ;
+    ns1:hasAction ns1:action39 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource5 ;
+    ns1:requiredBy ns1:episode67 .
+
+ns1:episode67 a ns1:Episode ;
+    rdfs:label "the farmer sanitizes the hotbed." ;
+    ns1:dependsOn ns1:episode66 ;
+    ns1:hasAction ns1:action40 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource41 ;
+    ns1:requiredBy ns1:episode68 .
+
+ns1:episode68 a ns1:Episode ;
+    rdfs:label "the farmer chooses the type of substrate to use." ;
+    ns1:dependsOn ns1:episode67 ;
+    ns1:hasAction ns1:action6 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource54 ;
+    ns1:requiredBy ns1:episode69 .
+
+ns1:episode69 a ns1:Episode ;
+    rdfs:label "the farmer deposits the substrate in the hotbed" ;
+    ns1:dependsOn ns1:episode68 ;
+    ns1:hasAction ns1:action41 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource25 ;
+    ns1:requiredBy ns1:episode70 .
+
 ns1:episode7 a ns1:Episode ;
-    rdfs:label "the agricultural engineer analyzes the environmental properties" ;
+    rdfs:label "the meteorological service reports the weather forecast." ;
     ns1:dependsOn ns1:episode6 ;
-    ns1:hasAction ns1:action3 ;
-    ns1:hasActor ns1:actor1 ;
-    ns1:hasResource ns1:resource8 ;
+    ns1:hasAction ns1:action7 ;
+    ns1:hasActor ns1:actor4 ;
     ns1:requiredBy ns1:episode8 .
 
+ns1:episode70 a ns1:Episode ;
+    rdfs:label "the farmer fertilizes the substrate." ;
+    ns1:dependsOn ns1:episode69 ;
+    ns1:hasAction ns1:action35 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource25 ;
+    ns1:requiredBy ns1:episode71 .
+
+ns1:episode71 a ns1:Episode ;
+    rdfs:label "the farmer places the mulch on the substrate." ;
+    ns1:dependsOn ns1:episode70 ;
+    ns1:hasAction ns1:action12 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:requiredBy ns1:episode72 .
+
+ns1:episode72 a ns1:Episode ;
+    rdfs:label "the farmer places the seed in the hotbed." ;
+    ns1:dependsOn ns1:episode71 ;
+    ns1:hasAction ns1:action12 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource5 ;
+    ns1:requiredBy ns1:episode73 .
+
+ns1:episode73 a ns1:Episode ;
+    rdfs:label "the farmer covers the hotbed with black plastic." ;
+    ns1:dependsOn ns1:episode72 ;
+    ns1:hasAction ns1:action23 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource41,
+        ns1:resource55 ;
+    ns1:requiredBy ns1:episode74 .
+
+ns1:episode74 a ns1:Episode ;
+    rdfs:label "the farmer verifies the proper lighting of the germinator." ;
+    ns1:dependsOn ns1:episode73 ;
+    ns1:hasActor ns1:actor9 ;
+    ns1:requiredBy ns1:episode75 .
+
+ns1:episode75 a ns1:Episode ;
+    rdfs:label "the farmer verifies that the germinator is free of shadows." ;
+    ns1:dependsOn ns1:episode74 ;
+    ns1:hasActor ns1:actor9 ;
+    ns1:requiredBy ns1:episode76 .
+
+ns1:episode76 a ns1:Episode ;
+    rdfs:label "the farmer verifies that the germinator is protected from strong winds." ;
+    ns1:dependsOn ns1:episode75 ;
+    ns1:hasActor ns1:actor9 ;
+    ns1:requiredBy ns1:episode77 .
+
+ns1:episode77 a ns1:Episode ;
+    rdfs:label "the farmer places the hotbed in the germinator" ;
+    ns1:dependsOn ns1:episode76 ;
+    ns1:hasAction ns1:action12 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource41 ;
+    ns1:requiredBy ns1:episode78 .
+
+ns1:episode78 a ns1:Episode ;
+    rdfs:label "the farmer verifies that the hotbed is placed in an east-west orientation in the germinator" ;
+    ns1:dependsOn ns1:episode77 ;
+    ns1:hasActor ns1:actor9 ;
+    ns1:requiredBy ns1:episode79 .
+
+ns1:episode79 a ns1:Episode ;
+    rdfs:label "the farmer verifies the availability of water for irrigation." ;
+    ns1:dependsOn ns1:episode78 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource56 ;
+    ns1:requiredBy ns1:episode80 .
+
 ns1:episode8 a ns1:Episode ;
-    rdfs:label "the agricultural engineer configures the water requirement based on the development of the tomato plants and environmental properties" ;
+    rdfs:label "the farmer analyzes the weather forecast." ;
     ns1:dependsOn ns1:episode7 ;
-    ns1:hasAction ns1:action6 ;
-    ns1:hasActor ns1:actor1 ;
+    ns1:hasAction ns1:action8 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource7 ;
     ns1:requiredBy ns1:episode9 .
 
-ns1:resource3 a ns1:Resource ;
-    rdfs:label "solution" ;
-    owl:sameAs <http://www.wikidata.org/entity/Q5447188> .
+ns1:episode80 a ns1:Episode ;
+    rdfs:label "the farmer verifies that the temperature in the germinator is between 16 and 28 degrees celsius." ;
+    ns1:dependsOn ns1:episode79 ;
+    ns1:hasActor ns1:actor9 ;
+    ns1:requiredBy ns1:episode81 .
 
-ns1:resource5 a ns1:Resource ;
+ns1:episode81 a ns1:Episode ;
+    rdfs:label "the farmer verifies the humidity of the substrate." ;
+    ns1:dependsOn ns1:episode80 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource57 ;
+    ns1:requiredBy ns1:episode82 .
+
+ns1:episode83 a ns1:Episode ;
+    rdfs:label "the farmer evaluates the physiological maturity of the tomato plant using the meic-mag 2004 scale." ;
+    ns1:dependsOn ns1:scenario13 ;
+    ns1:hasAction ns1:action29 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource59,
+        ns1:resource60 ;
+    ns1:requiredBy ns1:episode84 .
+
+ns1:episode84 a ns1:Episode ;
+    rdfs:label "the farmer evaluates the commercial maturity of the tomato plant." ;
+    ns1:dependsOn ns1:episode83 ;
+    ns1:hasAction ns1:action29 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource61 ;
+    ns1:requiredBy ns1:episode85 .
+
+ns1:episode85 a ns1:Episode ;
+    rdfs:label "the farmer decides if the fruit has reached the physiological and commercial maturity necessary to be harvested." ;
+    ns1:dependsOn ns1:episode84 ;
+    ns1:hasAction ns1:action21 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource62 ;
+    ns1:requiredBy ns1:episode86 .
+
+ns1:episode86 a ns1:Episode ;
+    rdfs:label "the farmer transports the tubs to the tomato plant." ;
+    ns1:dependsOn ns1:episode85 ;
+    ns1:hasAction ns1:action43 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource58 ;
+    ns1:requiredBy ns1:episode87 .
+
+ns1:episode87 a ns1:Episode ;
+    rdfs:label "the farmer separates the tomato from the tomato plant." ;
+    ns1:dependsOn ns1:episode86 ;
+    ns1:hasAction ns1:action44 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource9 ;
+    ns1:requiredBy ns1:episode88 .
+
+ns1:episode88 a ns1:Episode ;
+    rdfs:label "the farmer discards those fruits presenting damage by pests." ;
+    ns1:dependsOn ns1:episode87 ;
+    ns1:hasAction ns1:action45 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource63,
+        ns1:resource64 ;
+    ns1:requiredBy ns1:episode89 .
+
+ns1:episode89 a ns1:Episode ;
+    rdfs:label "the farmer eliminates the tomato's calyx." ;
+    ns1:dependsOn ns1:episode88 ;
+    ns1:hasAction ns1:action26 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource65 ;
+    ns1:requiredBy ns1:episode90 .
+
+ns1:episode90 a ns1:Episode ;
+    rdfs:label "the farmer removes the peduncle from the tomato." ;
+    ns1:dependsOn ns1:episode89 ;
+    ns1:hasAction ns1:action46 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource66 ;
+    ns1:requiredBy ns1:episode91 .
+
+ns1:episode91 a ns1:Episode ;
+    rdfs:label "the farmer classifies the tomato according to its state of maturity using the rtcr 739-2004  technical regulation specific for tomato for consumption in fresh state." ;
+    ns1:dependsOn ns1:episode90 ;
+    ns1:hasAction ns1:action47 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource67,
+        ns1:resource68,
+        ns1:resource9 ;
+    ns1:requiredBy ns1:episode92 .
+
+ns1:episode92 a ns1:Episode ;
+    rdfs:label "the farmer classifies the tomato according to its quality in first, second, third using the caliper." ;
+    ns1:dependsOn ns1:episode91 ;
+    ns1:hasAction ns1:action47 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource69,
+        ns1:resource9 ;
+    ns1:requiredBy ns1:episode93 .
+
+ns1:episode93 a ns1:Episode ;
+    rdfs:label "the farmer washes the tomato." ;
+    ns1:dependsOn ns1:episode92 ;
+    ns1:hasAction ns1:action48 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource9 ;
+    ns1:requiredBy ns1:episode94 .
+
+ns1:episode94 a ns1:Episode ;
+    rdfs:label "the farmer deposits the fruit on the corresponding tub according to its state of maturity, size, and quality." ;
+    ns1:dependsOn ns1:episode93 ;
+    ns1:hasAction ns1:action41 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource64 ;
+    ns1:requiredBy ns1:episode95 .
+
+ns1:episode95 a ns1:Episode ;
+    rdfs:label "the farmer stows the loaded tub." ;
+    ns1:dependsOn ns1:episode94 ;
+    ns1:hasAction ns1:action49 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource70 ;
+    ns1:requiredBy ns1:episode96 .
+
+ns1:episode96 a ns1:Episode ;
+    rdfs:label "the farmer verifies that the tomato in the tub doesn't get smashed." ;
+    ns1:dependsOn ns1:episode95 ;
+    ns1:hasActor ns1:actor9 ;
+    ns1:requiredBy ns1:episode97 .
+
+ns1:episode97 a ns1:Episode ;
+    rdfs:label "the farmer verifies that the tubs are in the shade" ;
+    ns1:dependsOn ns1:episode96 ;
+    ns1:hasActor ns1:actor9 ;
+    ns1:requiredBy ns1:episode98 .
+
+ns1:episode99 a ns1:Episode ;
+    rdfs:label "the farmer evaluates the physiological maturity of the tomato plant using the meic-mag 2004 scale" ;
+    ns1:dependsOn ns1:scenario14 ;
+    ns1:hasAction ns1:action29 ;
+    ns1:hasActor ns1:actor2 ;
+    ns1:hasResource ns1:resource59,
+        ns1:resource60 ;
+    ns1:requiredBy ns1:episode100 .
+
+ns1:resource10 a ns1:Resource ;
+    rdfs:label "crate" .
+
+ns1:resource13 a ns1:Resource ;
+    rdfs:label "string" .
+
+ns1:resource15 a ns1:Resource ;
+    rdfs:label "growth" .
+
+ns1:resource87 a ns1:Resource ;
+    rdfs:label "plant" .
+
+ns1:resource93 a ns1:Resource ;
+    rdfs:label "pruning plier" .
+
+ns1:scenario2 a ns1:Scenario ;
+    rdfs:label "harvest" ;
+    ns1:hasActor ns1:actor0,
+        ns1:actor12,
+        ns1:actor2,
+        ns1:actor3,
+        ns1:resource79 ;
+    ns1:hasContext ns1:condition4,
+        ns1:condition47,
+        ns1:condition72 ;
+    ns1:hasEpisode ns1:episode10,
+        ns1:episode11,
+        ns1:episode12,
+        ns1:episode13,
+        ns1:episode132,
+        ns1:episode133,
+        ns1:episode14,
+        ns1:episode185,
+        ns1:episode186,
+        ns1:episode187,
+        ns1:episode188,
+        ns1:episode189 ;
+    ns1:hasGoal ns1:condition3,
+        ns1:condition46,
+        ns1:condition71 ;
+    ns1:hasResource ns1:resource10,
+        ns1:resource101,
+        ns1:resource76,
+        ns1:resource8,
+        ns1:resource9 ;
+    ns1:requiredBy ns1:episode10,
+        ns1:episode132,
+        ns1:episode185 .
+
+ns1:action23 a ns1:Action ;
+    rdfs:label "covers" .
+
+ns1:action3 a ns1:Action ;
+    rdfs:label "provides" .
+
+ns1:action47 a ns1:Action ;
+    rdfs:label "classifies" .
+
+ns1:action59 a ns1:Action ;
+    rdfs:label "uses" .
+
+ns1:actor3 a ns1:Actor ;
+    rdfs:label "weather service" .
+
+ns1:actor7 a ns1:Actor ;
+    rdfs:label "plague" .
+
+ns1:resource18 a ns1:Resource ;
+    rdfs:label "hole" .
+
+ns1:action11 a ns1:Action ;
+    rdfs:label "takes" .
+
+ns1:action8 a ns1:Action ;
+    rdfs:label "analyzes" .
+
+ns1:action9 a ns1:Action ;
+    rdfs:label "determines" .
+
+ns1:episode171 a ns1:Episode ;
+    rdfs:label "the agricultural engineer removes diseased plants" ;
+    ns1:dependsOn ns1:episode165,
+        ns1:episode175 ;
+    ns1:hasAction ns1:action46 ;
+    ns1:hasActor ns1:resource79 ;
+    ns1:hasResource ns1:resource121 ;
+    ns1:requiredBy ns1:episode176 .
+
+ns1:episode20 a ns1:Episode ;
+    rdfs:label "the plague destroys leaves, stems and fruits of the tomato plant" ;
+    ns1:dependsOn ns1:episode19,
+        ns1:episode196 ;
+    ns1:hasAction ns1:action16 ;
+    ns1:hasActor ns1:actor7 ;
+    ns1:hasResource ns1:resource17 ;
+    ns1:requiredBy ns1:episode197,
+        ns1:episode21 .
+
+ns1:resource1 a ns1:Resource ;
+    rdfs:label "nutrient" ;
+    owl:sameAs <http://www.wikidata.org/entity/Q181394> ;
+    ns2:description "chemical that an organism needs to live and grow" .
+
+ns1:resource106 a ns1:Resource ;
+    rdfs:label "garden box" .
+
+ns1:resource38 a ns1:Resource ;
+    rdfs:label "seedbed" .
+
+ns1:resource41 a ns1:Resource ;
+    rdfs:label "hotbed" .
+
+ns1:action21 a ns1:Action ;
+    rdfs:label "decides" .
+
+ns1:action29 a ns1:Action ;
+    rdfs:label "evaluates" .
+
+ns1:actor1 a ns1:Actor ;
+    rdfs:label "abiotic disease" .
+
+ns1:episode114 a ns1:Episode ;
+    rdfs:label "the agricultural engineer communicates the disease to the gardener so he can deal with it" ;
+    ns1:dependsOn ns1:episode113,
+        ns1:episode116 ;
+    ns1:hasAction ns1:action53 ;
+    ns1:hasActor ns1:resource79 ;
+    ns1:hasResource ns1:resource81 ;
+    ns1:requiredBy ns1:episode115,
+        ns1:episode117 .
+
+ns1:episode144 a ns1:Episode ;
+    rdfs:label "the gardener takes the garden box and places soil on each hole" ;
+    ns1:dependsOn ns1:scenario27,
+        ns1:scenario28 ;
+    ns1:hasAction ns1:action11 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:resource106,
+        ns1:resource3 ;
+    ns1:requiredBy ns1:episode145,
+        ns1:episode146 .
+
+ns1:episode159 a ns1:Episode ;
+    rdfs:label "the gardener prepares the soil" ;
+    ns1:dependsOn ns1:episode158,
+        ns1:scenario38 ;
+    ns1:hasAction ns1:action13 ;
+    ns1:hasActor ns1:actor0 ;
+    ns1:hasResource ns1:resource3 ;
+    ns1:requiredBy ns1:episode160,
+        ns1:episode192 .
+
+ns1:episode165 a ns1:Episode ;
+    rdfs:label "the agricultural engineer disinfects work tools" ;
+    ns1:dependsOn ns1:episode164,
+        ns1:episode170 ;
+    ns1:hasActor ns1:resource79 ;
+    ns1:requiredBy ns1:episode166,
+        ns1:episode171 .
+
+ns1:resource129 a ns1:Resource ;
+    rdfs:label "watering mechanism" .
+
+ns1:resource25 a ns1:Resource ;
+    rdfs:label "substrate" .
+
+<http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/BehaviourDescription> a owl:Class .
+
+ns1:action2 a ns1:Action ;
+    rdfs:label "applies" .
+
+ns1:resource64 a ns1:Resource ;
+    rdfs:label "fruit" .
+
+ns1:action13 a ns1:Action ;
+    rdfs:label "prepares" .
+
+ns1:action46 a ns1:Action ;
+    rdfs:label "removes" .
+
+ns1:resource21 a ns1:Resource ;
     rdfs:label "irrigation mechanism" .
 
-ns1:resource6 a ns1:Resource ;
-    rdfs:label "tomato",
-        "tomato plant" ;
-    owl:sameAs <http://www.wikidata.org/entity/Q23501> .
+ns1:resource45 a ns1:Resource ;
+    rdfs:label "seedling" .
+
+ns1:action1 a ns1:Action ;
+    rdfs:label "detects" .
+
+ns1:actor9 a ns1:Actor ;
+    rdfs:label "farmer verifie" .
+
+ns1:resource5 a ns1:Resource ;
+    rdfs:label "seed" .
+
+ns1:resource52 a ns1:Resource ;
+    rdfs:label "fertilizer" .
+
+ns1:action6 a ns1:Action ;
+    rdfs:label "chooses" .
+
+ns1:action12 a ns1:Action ;
+    rdfs:label "places" .
+
+ns1:resource16 a ns1:Resource ;
+    rdfs:label "pesticide" .
+
+ns1:resource9 a ns1:Resource ;
+    rdfs:label "tomato" .
+
+ns1:resource20 a ns1:Resource ;
+    rdfs:label "water" .
+
+ns1:actor12 a ns1:Actor ;
+    rdfs:label "gardener 's assistant" .
+
+ns1:resource76 a ns1:Resource ;
+    rdfs:label "tool" .
+
+ns1:Actor a owl:Class .
+
+ns1:resource8 a ns1:Resource ;
+    rdfs:label "tomato plant" .
+
+ns1:resource3 a ns1:Resource ;
+    rdfs:label "soil" .
 
 ns1:Scenario a owl:Class ;
     rdfs:subClassOf <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/BehaviourDescription> .
 
-ns1:Condition a owl:Class .
-
-<http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/BehaviourDescription> a owl:Class .
+ns1:resource79 a ns1:Resource ;
+    rdfs:label "agricultural engineer" .
 
 ns1:Action a owl:Class .
 
-ns1:actor1 a ns1:Actor ;
-    rdfs:label "agricultural engineer" ;
-    owl:sameAs <http://www.wikidata.org/entity/Q18926350> .
+ns1:actor2 a ns1:Actor ;
+    rdfs:label "farmer" .
+
+ns1:Condition a owl:Class .
+
+ns1:actor0 a ns1:Actor ;
+    rdfs:label "gardener" .
 
 ns1:Resource a owl:Class .
 

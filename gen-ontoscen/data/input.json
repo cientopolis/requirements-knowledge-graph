@@ -1,355 +1,676 @@
 [
   {
-    "scenario": "neutralize the soil's acidity",
-    "goal": "neutralize the soil acidity for having the proper ph to sow seeds",
-    "context": "have soil with a high acidity",
-    "actors": ["gardener", "agricultural engineer"],
-    "resources": ["soil", "agricultural lime", "magnesium", "solution"],
+    "scenario": "Control of abiotic diseases",
+    "goal": "control of diseases regarding lack or excess of some necessary condition for the growing of the plant",
+    "context": "tomato plant with some diseases identified",
+    "actors": ["gardener", "abiotic disease"],
+    "resources": [],
     "episodes": [
-      "the agricultural engineer interprets the results of the soil analysis",
-      "the agricultural engineer prepares a solution with agricultural lime and magnesium",
-      "the gardener applies the solution to the soil"
+      "The abiotic disease appears in the tomato plant.",
+      "The gardener detects the abiotic disease.",
+      "The gardener applies calcium based fertilizer.",
+      "The gardener provides nutrients according to the needs of the tomato plant.",
+      "The gardener controls the temperature of the hotbeds.",
+      "The gardener performs drainages to aerate the soil."
     ]
   },
 
   {
-    "scenario": "choose irrigation mechanism",
-    "goal": "select the proper irrigation mechanism for planting tomato seeds",
-    "context": "do not have an irrigation mechanism for watering tomato plants",
-    "resources": ["irrigation mechanism", "tomato plants"],
-    "actors": ["agricultural engineer"],
+    "scenario": "Choose Tomato Variety",
+    "goal": "Choose the variety of tomatoes to plant",
+    "context": "tomato plant with some diseases identified",
+    "actors": ["Farmer", "Weather Service"],
+    "resources": ["Seed"],
     "episodes": [
-      "the agricultural engineer analyzes the soil composition and water availability",
-      "the agricultural engineer chooses an irrigation mechanism based on soil analysis and water availability",
-      "the agricultural engineer installs the irrigation mechanism",
-      "the agricultural engineer analyzes the tomato plants",
-      "the agricultural engineer analyzes the environmental properties",
-      "the agricultural engineer configures the water requirement based on the development of the tomato plants and environmental properties",
-      "the tomato plant sets the frequency of irrigation"
+      "The Farmer chooses a variety of Tomato according to its performance.",
+      "The Meteorological Service reports the weather forecast.",
+      "The Farmer analyzes the weather forecast.",
+      "The Farmer chooses a variety of Tomato."
     ]
   },
 
   {
-    "scenario": "transplant tomato plant",
-    "goal": "plant the tomato seedling on soil",
-    "context": "the tomato plant has grown for about a month after being sowed",
+    "scenario": "Harvest",
+    "goal": "arvest the tomato plant when it is ripe from the tomato plant",
+    "context": "The tomato ripened",
+    "actors": ["Farmer", "Weather Service"],
+    "resources": ["Tomato plant", "tomato", "crate"],
+    "episodes": [
+      "The farmer analyzes the tomato plant.",
+      "The farmer determines that the tomato ripened..",
+      "The farmer decides when to harvest the ripe tomato.",
+      "The laborer takes the tomato from the tomato plant.",
+      "The laborer places the harvested tomatoes in the crate."
+    ]
+  },
+
+  {
+    "scenario": "Supporting with a string",
+    "goal": "Allow to keep the tomato plant upright",
+    "context": "Unsupported tomato plant",
+    "actors": ["Farmer"],
+    "resources": ["Tomato plant", "tomato", "string"],
+    "episodes": [
+      "The farmer chooses the supporting technique.",
+      "The farmer prepares the string.",
+      "The farmer sets the string.",
+      "The stake guides the tomato plant's growth."
+    ]
+  },
+  {
+    "scenario": "Fumigate",
+    "goal": "Using chemicals on tomato plants to control pests",
+    "context": "detection of insect pest on tomato plants",
+    "actors": ["Farmer", "plague", "insects "],
+    "resources": ["Tomato plant", "tomato", "pesticide"],
+    "episodes": [
+      "The farmer detects that there is an abnormal growth in the tomato plant",
+      "The plague destroys leaves, stems and fruits of the tomato plant",
+      "The plague damages the tomato by making holes",
+      "The farmer analyzes the insect",
+      "The farmer chooses a pesticide",
+      "The farmer prepares the pesticide",
+      "The farmer fumigates with pesticide the tomato plants"
+    ]
+  },
+  {
+    "scenario": "irrigate",
+    "goal": "Consist of providing water to the seeds and the tomato plants to meet the water needs",
+    "context": "seeds in seedbeds and tomato plant on ground",
+    "actors": ["Farmer", "weather service"],
+    "resources": ["Tomato plant", "ground", "water", "irrigation mechanism"],
+    "episodes": [
+      "The farmer selects the irrigation mechanism",
+      "The farmer consults the state of weather service",
+      "The weather service provides information about the weather",
+      "The farmer decides the intensity of the irrigation",
+      "The farmer irrigates with the irrigation mechanism and water"
+    ]
+  },
+  {
+    "scenario": "hilling/earthing up",
+    "goal": "favor the development of a greater number of roots in the tomato plant",
+    "context": "The tomato plant has been pruned. The tomato plant is not grafted.",
+    "actors": ["Farmer"],
+    "resources": ["Soil", "substrate", "compost"],
+    "episodes": [
+      "The farmer verifies that the tomato plant is not grafted.",
+      "The farmer covers the bottom of the tomato plant with soil, substrate or compost.",
+      "The farmer verifies that the stem and the roots of the tomato plant have not been damaged.",
+      "The farmer protects the wounds found to prevent the entry of pathogens"
+    ]
+  },
+  {
+    "scenario": "Weeding",
+    "goal": "Prevent the growing of, or eliminate once appeared, undesirable plants of any vegetal species that are not a direct object of the agricultural holding and compete with the tomato plant",
+    "context": "Between 30 and 75 days have passed since the transplant.",
+    "actors": ["Farmer"],
+    "resources": ["Hoe", "string trimmer", "machete", "herbicide"],
+    "episodes": [
+      "The farmer scans the ground in search of crop pests.",
+      "The farmer eliminates the detected pest via the hoe, string trimmer, or machete.",
+      "The farmer cleans the tillage equipment to prevent future entry of crop pests.",
+      "The farmer applies herbicide on the ground."
+    ]
+  },
+  {
+    "scenario": "Prune",
+    "goal": "Remove branches of the tomato plant to make the tomato grow bigger and also to prevent diseases",
+    "context": "tomato plant in its mature stage.",
+    "actors": ["Farmer", "disease"],
+    "resources": ["tomato plant", "soil", "water"],
+    "episodes": [
+      "The gardener detects diseases in the tomato plants",
+      "The gardener detects irregular growing in tomato plants",
+      "The gardener prune the branches with irregular growing"
+    ]
+  },
+  {
+    "scenario": "Sow Tomato Seeds",
+    "goal": "Place the Tomato Seeds in the seedbed",
+    "context": "seed and seedbeds prepared.",
+    "actors": ["Farmer"],
+    "resources": ["Seed", "Seedbed", "substrate", "Water"],
+    "episodes": [
+      "The farmer chooses the tomato seeds.",
+      "The Farmer places the seeds in the seedbed.",
+      "The Farmer covers the seeds with substrate.",
+      "The Farmer sprays the seedbed with water."
+    ]
+  },
+  {
+    "scenario": "Fumigation",
+    "goal": "Pests prevention on tomato plant",
+    "context": "The tomato plant has been transplanted",
+    "actors": ["Farmer"],
+    "resources": ["Pesticide"],
+    "episodes": [
+      "The farmer evaluates the tomato plant",
+      "The farmer decides which pests are a risk for the tomato plant",
+      "The farmer evaluates the available pesticides in the market ",
+      "The farmer decides which pesticides to use for fumigate",
+      "The farmer applies the pesticide on the tomato plant or on the soil"
+    ]
+  },
+  {
+    "scenario": "Transplant",
+    "goal": "Move the seedling from the hotbed to the seedbed",
+    "context": "he seedling is in his young plant stage. It has lasted between 25 and 30 days from the sowing. The seedling has not reached the flowering stage",
     "actors": ["gardener"],
-    "resources": ["soil", "tomato plant", "shovel", "seedbed"],
+    "resources": ["hotbed", "seedbed", "stake "],
     "episodes": [
-      "the gardener digs a hole in the soil with a shovel",
-      "the gardener waters the soil",
-      "the gardener takes the tomato plant from the seedbed",
-      "the gardener places the tomato plant into the hole",
-      "the agricultural engineer covers half of the stem of the tomato plant with soil",
-      "the gardener waters the planted tomato plant"
+      "The gardener determines the maturity stage of the seedling",
+      "The gardener decides the moment to transplant",
+      "The gardener moves the seedling from the hotbed to the seedbed",
+      "The gardener prepares the ridge and the furrows",
+      "The gardener determines whether to use a single or double line of sowing.",
+      "The gardener determines the distance according the plant, the season and past experience.",
+      "The gardener makes the holes in the seedbed according to the previous definitions.",
+      "The gardener waters the soil.",
+      "The gardener fertilizes the soil.",
+      "The gardener puts the seedling in the holes.",
+      "The gardener water the base of the seedling.",
+      "The gardener place the stake.",
+      "The gardener ties the seedling to the stake.",
+      "The gardener places the cover.",
+      "The gardener stretches the 'mecales' to the cover."
     ]
   },
-
   {
-    "scenario": "prune tomato plants",
-    "goal": "improve tomato plants' health for better quality production",
-    "context": "have tomato plants with abnormalities about a month after transplanting",
-    "resources": ["tomato plant", "pruning pliers"],
-    "actors": ["gardener"],
+    "scenario": "Sowing the seed",
+    "goal": "Obtain the tomato plants in a young plant state.",
+    "context": "The sowing of the seed takes place in the month of April (winter sowing) or in October/November (summer sowing)",
+    "actors": ["Farmer"],
+    "resources": ["Seed", "Substrate", "fertilizer", "hotbed", "germinator"],
     "episodes": [
-      "the gardener identifies the tomato plants with an abnormal growth or diseases",
-      "the gardener uses the pruning pliers to prune the infected or withered branches of the tomato plants"
+      "The farmer acquires the seed.",
+      "The farmer sanitizes the hotbed.",
+      "The farmer chooses the type of substrate to use.",
+      "The farmer deposits the substrate in the hotbed",
+      "The farmer fertilizes the substrate.",
+      "The farmer places the mulch on the substrate.",
+      "The farmer places the seed in the hotbed.",
+      "The farmer covers the hotbed with black plastic.",
+      "The farmer verifies the proper lighting of the germinator.",
+      "The farmer verifies that the germinator is free of shadows.",
+      "The farmer verifies that the germinator is protected from strong winds.",
+      "The farmer places the hotbed in the germinator",
+      "The farmer verifies that the hotbed is placed in an east-west orientation in the germinator",
+      "The farmer verifies the availability of water for irrigation.",
+      "The farmer verifies that the temperature in the germinator is between 16 and 28 degrees celsius.",
+      "The farmer verifies the humidity of the substrate.",
+      "The farmer waits for the seed to germinate"
     ]
   },
-
   {
-    "scenario": "hilling tomato plants",
-    "goal": "improve the development of the tomato plant's root",
-    "context": "have a healthy tomato plant, just pruned and ungrafted",
-    "resources": ["soil", "tomato plant"],
-    "actors": ["gardener"],
+    "scenario": "Harvest of an individual tomato",
+    "goal": "Obtain a marketable tomato",
+    "context": "The tomato plants are in a harvestable state. The harvest of an individual tomato starts during the morning. There is no presence of dew",
+    "actors": ["Farmer"],
+    "resources": ["Tomato plant", "tub"],
     "episodes": [
-      "the gardener covers part of the tomato plant's stem with soil",
-      "the gardener ensures the tomato plants were not damaged"
+      "The farmer evaluates the physiological maturity of the tomato plant using the MEIC-MAG 2004 scale.",
+      "The farmer evaluates the commercial maturity of the tomato plant.",
+      "The farmer decides if the fruit has reached the physiological and commercial maturity necessary to be harvested.",
+      "The farmer transports the tubs to the tomato plant.",
+      "The farmer separates the tomato from the tomato plant.",
+      "The farmer discards those fruits presenting damage by pests.",
+      "The farmer eliminates the tomato's calyx.",
+      "The farmer removes the peduncle from the tomato.",
+      "The farmer classifies the tomato according to its state of maturity using the RTCR 739-2004  Technical Regulation specific for Tomato for Consumption in Fresh State.",
+      "The farmer classifies the tomato according to its quality in first, second, third using the caliper.",
+      "The farmer washes the tomato.",
+      "The farmer deposits the fruit on the corresponding tub according to its state of maturity, size, and quality.",
+      "The farmer stows the loaded tub.",
+      "The farmer verifies that the tomato in the tub doesn't get smashed.",
+      "The farmer verifies that the tubs are in the shade",
+      "The farmer verifies that the tubs allow adequate aeration of the tomato."
     ]
   },
-
   {
-    "scenario": "support with a stake",
-    "goal": "facilitate the general management of tomato plants, ensure it's straightness, and prevent it's tomatoes from touching the ground",
-    "context": "between fifteen and twenty two days have passed since the tomato plant's transplant, which is now 60 cm tall and still unsupported",
-    "resources": ["stakes made of cane or bamboo", "sisal yarn", "tools"],
-    "actors": ["gardener", "gardener's assistant (if needed)"],
+    "scenario": "Harvest bunches of tomatoes",
+    "goal": "Get marketable tomatoes",
+    "context": "The tomato plant is ready to be harvested. Harvesting bunches of tomatoes starts at the morning. There is not dew",
+    "actors": ["Farmer"],
+    "resources": ["Tomato plant", "crate"],
     "episodes": [
-      "the gardener chooses the supporting technique",
-      "the farmer prepares the yarn",
-      "the gardener sets marks within 2.5 and 3 meters from each other along the middle of each ridge",
-      "the gardener buries a stake on each mark with about 40 cm of depth, leaving 2.5 meters above the ground (to better support the plants)",
-      "the gardener places a thicker stake on the sides of each ridge",
-      "the gardener ties the tomato plants to the stakes with sisal yarn",
-      "the stake guides the tomato plant's growth",
-      "the gardener checks regularly on the tomato plant, loosening the knots as the plant grows (to avoid tensing) and adding between 3 and 4 rows of yarn"
+      "The farmer evaluates the physiological maturity of the tomato plant using the MEIC-MAG 2004 scale",
+      "The farmer evaluates the commercial maturity of the tomato plant ",
+      "The farmer decides if the fruit has reached the necessary physiological  and commercial maturity to be harvested",
+      "The farmer carries the crates to the tomato plants",
+      "The farmer removes the tomato from the plant.",
+      "The farmer discards those fruits that are damaged by pests",
+      "The farmer classifies the tomato by its maturity using the RTCR 739-2004 regulation, which is specific for tomato for fresh consumption",
+      "The farmer classifies the tomato by its quality in first, second and third, using the grading machine",
+      "The farmer washes the tomato",
+      "The farmer puts the fruit into the suitable crate according to its maturity, size and quality",
+      "The farmer stows the filled crates ",
+      "The farmer checks the tomatoes into the crates are not smashed.",
+      "The farmer checks the crates are in the shade ",
+      "The farmer checks the crates allow the correct aeration of the tomato."
     ]
   },
-
   {
-    "scenario": "fumigate",
-    "goal": "eliminate pests that affect tomato plants",
-    "context": "have infected tomato plants",
-    "resources": ["tomato plant", "pesticide", "pest", "pest traps", "garden"],
-    "actors": ["agricultural engineer", "gardener"],
-    "episodes": [
-      "the agricultural engineer detects the tomato plants with abnormal growth",
-      "the agricultural engineer analyzes which kind of pest affects the tomato plant",
-      "the agricultural engineer prepares the appropriate pesticide",
-      "the agricultural engineer installs pest traps in the garden",
-      "the gardener fumigates the tomato plants with the pesticide"
-    ]
-  },
-
-  {
-    "scenario": "prepare fertilizer solution",
-    "goal": "obtain a proper fertilizer according to the tomato plants' needs",
-    "context": "tomato plants are planted in unfertilized soil",
+    "scenario": "Control the virus",
+    "goal": "Control the main bacterial diseases",
+    "context": "garden with diseases",
+    "actors": ["Gardener", "Gardener's assistant"],
     "resources": [
-      "soil corer",
-      "analysis result",
-      "fertilizer solution",
-      "tomato plant",
-      "sample of soil"
+      "Tools",
+      "natural mixtures",
+      "commercial mixtures",
+      "agricultural engineer"
     ],
-    "actors": ["agricultural engineer"],
     "episodes": [
-      "the agricultural engineer takes a sample of soil with a soil corer",
-      "the agricultural engineer sends the sample for analysis",
-      "the agricultural engineer waits for the results of the analysis",
-      "the agricultural engineer selects the necessary components according to the soil analysis and ripeness of the tomato plant",
-      "the agricultural engineer prepares the fertilizer solution",
-      "the agricultural engineer has the fertilizer solution ready"
+      "The agricultural engineer detects the type of disease according to the symptom presented by the plant",
+      "The agricultural engineer communicates the disease to the gardener so he can deal with it",
+      "The gardener proceeds to incorporate the natural or commercial mixtures into his tuck garden"
     ]
   },
-
   {
-    "scenario": "prepare fertilizer solution",
-    "goal": "obtain a proper fertilizer according to the tomato plants' needs",
-    "context": "tomato plants are planted in unfertilized soil",
+    "scenario": "Control fungus",
+    "goal": "Manage major viral diseases",
+    "context": "truck garden infected",
+    "actors": ["Gardener", "Gardener's assistant"],
     "resources": [
-      "fruit peels",
-      "vegetable scraps",
-      "egg shells",
-      "ground bones",
-      "leaves",
-      "mate herb",
-      "tea bag",
-      "coffee bag",
-      "container",
-      "soil",
-      "fertilizer solution"
+      "Tools",
+      "natural mixtures",
+      "commercial mixtures",
+      "agricultural engineer"
     ],
-    "actors": ["gardener"],
     "episodes": [
-      "the gardener puts fruit peels in the container",
-      "the gardener puts vegetable scraps in the container",
-      "the gardener puts egg shells in the container",
-      "the gardener puts ground bones in the container",
-      "the gardener puts leaves in the container",
-      "the gardener puts mate herb in the container",
-      "the gardener puts tea bag in the container",
-      "the gardener puts coffee bag in the container",
-      "the gardener puts a layer of soil in the container",
-      "the gardener covers the container",
-      "the gardener lets the container sit until the components are indistinguishable",
-      "the gardener has the fertilizer solution ready"
+      "The agricultural engineer identifies the type of disease according to the symptoms of the plant.",
+      "The agricultural engineer communicates the disease to the gardener so he can deal with it",
+      "The gardener applies the organica solution or commercial solution to his garden"
+    ]
+  },
+  {
+    "scenario": "Install windshield",
+    "goal": "Windy environment",
+    "context": "Plants protected by plastic roofs",
+    "actors": ["Gardener", "Gardener's assistant"],
+    "resources": ["Tools"],
+    "episodes": [
+      "The Gardener places a high barrier of tarps or mesh, around the garden, to prevent the fruit from undergoing a pre-harvest abortion."
+    ]
+  },
+  {
+    "scenario": "Manage the pollination of the fruits",
+    "goal": "Pollinate the fruits",
+    "context": "truck garden infected",
+    "actors": ["Gardener", "Gardener's assistant"],
+    "resources": ["Tools"],
+    "episodes": ["The gardener vibrates the plants to release the pollen"]
+  },
+  {
+    "scenario": "Earth up the plant",
+    "goal": "Encourage the development of a greater number of roots.",
+    "context": "Practice carried out after the shape pruning",
+    "actors": ["Gardener", "Gardener's assistant"],
+    "resources": ["Tools"],
+    "episodes": [
+      "The gardener covers the inferior part of the plant with organic fertilizer.",
+      "The gardener must take special care not to damage the stems or roots, since the wounds serve as an entry point for insects or pests."
+    ]
+  },
+  {
+    "scenario": "Cut off inflorescences",
+    "goal": "remove disposable flowers and fruits.",
+    "context": "plants with disposable flowers and fruits",
+    "actors": ["Gardener", "Gardener's assistant"],
+    "resources": ["Tools"],
+    "episodes": [
+      "The gardener removes flowers and fruits to homogenize and increase the size and quality of the fruits"
+    ]
+  },
+  {
+    "scenario": "Shape prune",
+    "goal": "Shape the plant leaving one or two stalk per plant.",
+    "context": "twenty or thirty days after transplant, the plant grow up in height and it can reach 2m until touches the ceiling and the plant can grow vertically up to 1.5m. and the gardener leads it horizontally over the support strings",
+    "actors": ["Gardener", "Gardener's assistant"],
+    "resources": ["Tools", "pruning pliers"],
+    "episodes": [
+      "The gardener takes pruning pliers and cuts, leaving one, two or three stalk per plant",
+      "In case of a plant which its fruit is the cherry tomato, between three and four stems are usually left.",
+      "The gardener get rid of auxiliary stalks, improving the main stalk's growth",
+      "The gardener get rid of old or sick leaves, facilitating plant's ventilation"
+    ]
+  },
+  {
+    "scenario": "Place plastics bands or ceiling",
+    "goal": "Protect the garden from the rain.",
+    "context": "the gardener must protect the plants from the rain and decrease the impact of fungal and bacterial diseases in the garden",
+    "actors": ["Gardener", "Gardener's assistant"],
+    "resources": ["Tools", "transparent plastic", "wires"],
+    "episodes": [
+      "The gardener uses transparent plastic with a width between 0.8 cm and 1.2 m. The plastic is stretched on a wire",
+      "The gardener provides the plasts some degrees of inclination to prevent the accumulation of water"
     ]
   },
 
   {
-    "scenario": "fertilize",
-    "goal": "have soil that provides the essential nutrients needed for an optimal growth of tomato plants",
-    "context": "have a proper fertilizer for the tomato plants' needs",
-    "resources": ["fertilizer", "tomato plants", "soil"],
-    "actors": ["gardener"],
+    "scenario": "tie the plants",
+    "goal": "give support and keep the plants upright",
+    "context": "plants 60 cm tall",
+    "actors": ["gardener", "gardener's assistant"],
+    "resources": ["tools", "sisal yarn"],
     "episodes": [
-      "the gardener prepares the right dose of fertilizer",
-      "the gardener applies the fertilizer on the soil around the tomato plants",
-      "the gardener covers the fertilizer with soil"
-    ]
-  },
-
-  {
-    "scenario": "irrigate by hand",
-    "goal": "irrigate the tomato plant correctly",
-    "context": "have a tomato plant in any state of grow, and a watercan filled with 24 hour rested water( water with 24 hours stagnant)",
-    "resources": [
-      "water",
-      "watercan",
-      "tomato plant",
-      "worm leachate (if the plant requires)"
-    ],
-    "actors": ["gardener"],
-    "episodes": [
-      "the gardener takes the watercan filled with water",
-      "the gardener approach the plant",
-      "the gardener carefully approach the watercan to the plant's base",
-      "the gardener start irrigating without puddling and wet the leaves",
-      "the gardener if it requires irrigate a little again with worm leachate"
-    ]
-  },
-
-  {
-    "scenario": "select marketable tomatoes",
-    "goal": "decide which tomatoes are already ripe and marketable",
-    "context": "some tomatoes ripened",
-    "resources": ["tomato plant", "ripened tomato", "tools"],
-    "actors": ["agricultural engineer", "farmer"],
-    "episodes": [
-      "the agricultural engineer inspects the tomato plant",
-      "the agricultural engineer evaluates the maturity of the tomato plant using the meic-mag 2004 scale",
-      "the farmer evaluates the commercial maturity of the tomato plant",
-      "the farmer decides that the fruit is ripe and ready to be harvested"
+      "the gardener uses sisal yarn to tie the plants to the stakes",
+      "the gardener ties the plant loosely as it grows",
+      "three to four rows of thread are added as the plant grows"
     ]
   },
 
   {
     "scenario": "harvest",
-    "goal": "collect the tomatoes from the tomato plant",
-    "context": "the tomatoes ripened. it's morning time and there's no dew",
-    "resources": [
-      "tomato plant",
-      "ripened tomato",
-      "crate",
-      "clean plastic tubs",
-      "tools"
-    ],
-    "actors": ["agricultural engineer", "farmer"],
+    "goal": "harvest tomato fruits",
+    "context": "the plants have mature fruits",
+    "actors": ["gardener", "gardener's assistant"],
+    "resources": ["clean plastic tubs", "tools"],
     "episodes": [
-      "the farmer carries crates or tubs to the tomato plant",
-      "the farmer carefully and manually removes the fruit from the plant",
-      "the farmer discards those tomatoes presenting plague damage",
-      "the farmer eliminates the tomato's calyx",
-      "the farmer removes the peduncle from the tomato",
-      "the farmer classifies the tomato according to its state of maturity using the rtcr 739-2004  technical regulation specific for tomato for consumption in fresh state",
-      "the farmer classifies each tomato in one of three different levels of quality, using the caliper",
-      "the farmer washes the tomato",
-      "the farmer deposits the fruit in the corresponding container according to its state of maturity, size, and quality",
-      "the farmer stows the loaded containers",
-      "the farmer prevents the tomato from getting smashed",
-      "the farmer ensures the containers are in the shade",
-      "the farmer ensures the crates allow the adequate aeration of the tomato"
+      "the gardener carefully and manually removes the fruit from the plant",
+      "the gardener places the fruit in the clean plastic tub, avoiding blows"
     ]
   },
 
   {
-    "scenario": "make tomato plant graft",
-    "goal": "achieve a new plant with more efficient results",
-    "context": "having tomato seedlings",
-    "resources": [
-      "base tomato seedling",
-      "portion of tissue from another tomato seedling"
-    ],
-    "actors": ["gardener"],
+    "scenario": "prune the plants",
+    "goal": "control plant size",
+    "context": "after four weeks from seeding, the plants grow out of alignment",
+    "actors": ["gardener", "gardener's assistant"],
+    "resources": ["pruning pliers"],
     "episodes": [
-      "the gardener cuts a portion of tissue from a tomato seedling",
-      "the gardener makes a cut in the base tomato seedling",
-      "the gardener joins the portion of tissue in the base tomato seedling"
+      "the gardener grabs the pruning pliers and cuts, limiting the number of productive stems and the amount of fruits per plant",
+      "the gardener repeats the previous step for each plant"
     ]
   },
 
   {
-    "scenario": "disease control",
-    "goal": "health the plant when it present some disease",
-    "context": "the plant present some kind of symptoms",
-    "resources": ["catalogue of symptoms"],
-    "actors": ["gardener"],
+    "scenario": "water the garden",
+    "goal": "water the garden",
+    "context": "insufficient rains",
+    "actors": ["gardener", "gardener's assistant"],
+    "resources": ["crops", "water"],
     "episodes": [
-      "the gardener analyses the plant",
-      "the gardener determines what kind of diseases it presents: abiotic, fungal, batecterial or viral",
-      "the gardener applies the treatment according to the type of disease"
+      "the gardener decides what type of water to apply depending on the conditions of the crop: gravity irrigation, drip irrigation or regular watering."
     ]
   },
 
   {
-    "scenario": "abiotic disease control",
-    "goal": "recover the plant from an abiotic disease",
-    "context": "the plant presents symptom of an abiotic disease",
-    "resources": ["calcium based fertilizer"],
-    "actors": ["gardener"],
+    "scenario": "transplant",
+    "goal": "move the seedlings from the seedbed to a definitive place",
+    "context": "the gardener has garden boxes with seedlings",
+    "actors": ["gardener", "gardener's assistant"],
+    "resources": ["seedlings", "garden boxes", "tools", "soil", "water"],
     "episodes": [
-      "the gardener applies calcium based fertilizer",
-      "the gardener controls the temperature of the seedlings",
-      "the gardener provides adequate nutrition to the plant"
+      "the gardener prepares the beds or loins in a straight line, making a hole slightly larger than the volume occupied by the container that contains the seedling",
+      "the gardener takes the garden boxes with the seedlings and transports them to the final place in the cool hours of the morning or after three in the afternoon",
+      "the gardener waters the soil prior to sowing if it is very dry",
+      "the gardener sprays each hole with fertilizer",
+      "the gardener removes the seedling from the garden box and places it in the hole, adding soil 2 cm to 3 cm from the base of the seedling"
     ]
   },
 
   {
-    "scenario": "fungal disease control",
-    "goal": "recover the plant from a fungal disease",
-    "context": "the plant presents symptom of a fungal disease: white, grey or blackish stains and rottenness",
-    "resources": ["fungicide"],
-    "actors": ["gardener"],
+    "scenario": "water the seedbed",
+    "goal": "water the seedbed",
+    "context": "seeds in the seedbed must be germinating",
+    "actors": ["gardener", "gardener's assistant"],
+    "resources": ["seedbed", "tools", "water"],
     "episodes": [
-      "the gardener applies fungicide to the plant",
-      "the gardener prunes affected parts of the plant",
-      "the gardener prevents the fruit to be in contact with the ground",
-      "the gardener controls the irrigation of the tomato plant"
+      "the gardener takes the watering can filled with water",
+      "the gardener gently pours water into each hole"
     ]
   },
 
   {
-    "scenario": "bacterial disease control",
-    "goal": "recover the plant from a bacterial disease",
-    "context": "the plant presents symptoms of a bacterial disease: pustules on stems and fruits, and also by necrotic spots on fruits",
-    "resources": ["disinfectant"],
-    "actors": ["gardener"],
+    "scenario": "fertilize the seedbed",
+    "goal": "fertilized seedbed",
+    "context": "the gardener must have garden boxes or grow boxes, soil, compost and seeds",
+    "actors": ["gardener", "gardener's assistant"],
+    "resources": ["fertilizer", "tools", "garden boxes"],
     "episodes": [
-      "the gardener prunes the affected fruits of the plant",
-      "the gardener disinfects all the materials and work equipment"
+      "the gardener takes the garden box and places soil on each hole",
+      "the gardener places a seed on each hole, completing in a proportion of 35% to 50%"
+    ]
+  },
+
+  {
+    "scenario": "sow the seedbed",
+    "goal": "germinate the seedbed",
+    "context": "the gardener must have garden boxes or grow boxes, soil, compost, and seeds",
+    "actors": ["gardener", "gardener's assistant"],
+    "resources": ["tools", "garden boxes"],
+    "episodes": [
+      "the gardener takes the garden box and places soil on each hole",
+      "the gardener places a seed on each hole, completing it with compost",
+      "the gardener set the temperature of the garden box (optimal from 16 °C to 28 °C)",
+      "the gardener waits an average of five to eight days after the sowing"
+    ]
+  },
+
+  {
+    "scenario": "pests control",
+    "goal": "control an insect species by taking actions",
+    "context": "tomato plant affected by the pest",
+    "actors": ["agricultural engineer", "pesticide", "soil", "seedbeds"],
+    "resources": ["soil", "fertilizer"],
+    "episodes": [
+      "the agricultural engineer places the seedbeds in protected environments",
+      "the agricultural engineer applies the pesticide",
+      "the agricultural engineer removes remains of crops",
+      "the agricultural engineer uses insect traps",
+      "the agricultural engineer makes a biological control",
+      "the agricultural engineer uses mosquito nets",
+      "the agricultural engineer rotates the crops"
+    ]
+  },
+
+  {
+    "scenario": "fertilize",
+    "goal": "make the soil more fertile with the aim of feeding the tomato plant. The fertilizer could be organic or synthetic compound",
+    "context": "unfertilized soil",
+    "actors": ["agricultural engineer", "gardener"],
+    "resources": ["soil", "fertilizer"],
+    "episodes": [
+      "the agricultural engineer prepares the fertilizer",
+      "the gardener fertilizes the soil"
+    ]
+  },
+
+  {
+    "scenario": "apply agricultural lime to the soil",
+    "goal": "add lime and magnesium to the soil in order to cope the acidity of the soil. That is, adjust the pH according to the needs of the crop",
+    "context": "soil without agricultural lime",
+    "actors": ["agricultural engineer", "gardener"],
+    "resources": ["soil", "soil analysis"],
+    "episodes": [
+      "the agricultural engineer analyses the results of the soil analysis",
+      "the gardener prepares the soil",
+      "the agricultural engineer prepares the solution with lime and magnesium",
+      "the gardener applies the solution to the soil"
     ]
   },
 
   {
     "scenario": "viral disease control",
-    "goal": "recover the plant from a viral disease",
-    "context": "the plant presents symptoms of a viral disease: spots of different colour in the leaves",
-    "resources": ["pesticides", "traps", "disinfectant"],
-    "actors": ["gardener"],
+    "goal": "viral disease control",
+    "context": "the virus produces different colored spots on the leaves, the 'tomato spotted wilt virus' produces discoloration on the leaves and fruit (which is more evident)",
+    "actors": ["agricultural engineer", "viral disease"],
+    "resources": ["soil", "fertilizer", "nutrients"],
     "episodes": [
-      "the gardener gets rid of weeds and residues",
-      "the gardener harvests the fruits",
-      "the gardener uses traps and applies pesticide to neutralize bugs",
-      "the gardener disinfects all the tools"
+      "the viral disease manifests in the tomato plant",
+      "the agricultural engineer detects the viral disease",
+      "the agricultural engineer gets rid of weeds, harvest residues and fruits",
+      "the agricultural engineer disinfects work tools",
+      "the agricultural engineer uses traps to detect and capture bugs",
+      "the agricultural engineer uses pesticide to fight bugs"
     ]
   },
 
   {
-    "scenario": "to weed",
-    "goal": "prevent the growing of (or eliminate once appeared) undesirable plants of any vegetable species that are not a direct object of the agricultural holding and compete with the tomato plant",
-    "context": "between 30 and 75 days have passed since the tomato plants transplant and there are weeds on the soil that have a negative impact on its development",
-    "resources": [
-      "tomato plant",
-      "tools",
-      "weed",
-      "hoe",
-      "string trimmer",
-      "machete",
-      "herbicide"
-    ],
-    "actors": ["gardener", "agricultural engineer"],
+    "scenario": "bacterial disease control",
+    "goal": "bacterial disease control",
+    "context": "bacteria-infected tomato plants",
+    "actors": ["agricultural engineer", "gardener", "bacterial disease"],
+    "resources": ["soil", "fertilizer", "nutrients", "tools"],
     "episodes": [
-      "the agricultural engineer scans the ground in search of crop plagues",
-      "the agricultural engineer detects weed near the tomato plant",
-      "the gardener covers the base of the tomato plant with compost, taking special care not to hurt the stem nor the root (as the wounds would serve as an entry point for insects and plagues)",
-      "the gardener removes the detected weed via the hoe, string trimmer, or machete",
-      "the gardener cleans the tillage equipment to prevent future entry of weeds and other crop plagues",
-      "the gardener applies herbicide on the ground"
+      "the bacterial disease manifests in the tomato plant",
+      "the agricultural engineer detects the bacterial disease",
+      "the agricultural engineer removes infected fruits",
+      "the agricultural engineer disinfects work tools",
+      "the agricultural engineer removes diseased plants"
     ]
   },
 
   {
-    "scenario": "place plastic roof",
-    "goal": "protect the tomato plants from the rain",
-    "context": "have tomato plants exposed to fungal and bacterial diseases due to rains",
-    "resources": ["transparent plastic", "wires"],
-    "actors": ["gardener"],
+    "scenario": "fungal disease control",
+    "goal": "fungal disease control",
+    "context": "fungal infected tomato plants",
+    "actors": ["agricultural engineer", "fungal disease"],
+    "resources": ["soil", "fertilizer", "nutrients", "seedling"],
     "episodes": [
-      "the gardener cuts a portion of transparent plastic with a width between 0.8 cm and 1.2 m.",
-      "the gardener spreads the plastic on a wire",
-      "the gardener gives the roof a few degrees of inclination to prevent the accumulation of water"
+      "the fungal disease manifests in the tomato plant",
+      "the agricultural engineer detects the fungal disease",
+      "the agricultural engineer prevents the fruit of the tomato plant from rubbing against the ground",
+      "the agricultural engineer uses fungicide to protect the tomato plant",
+      "the agricultural engineer removes diseased plants",
+      "the agricultural engineer controls the irrigation of the tomato plant"
+    ]
+  },
+
+  {
+    "scenario": "abiotic disease control",
+    "goal": "disease control due to lack or excess of any factor necessary for the life of the tomato plant",
+    "context": "infected tomato plants",
+    "actors": ["agricultural engineer", "gardener", "abiotic disease"],
+    "resources": ["soil", "fertilizer", "nutrients", "tools"],
+    "episodes": [
+      "the abiotic disease manifests in the tomato plant",
+      "the gardener detects the abiotic disease",
+      "the agricultural engineer applies calcium based fertilizer",
+      "the gardener controls the temperature of the seedlings",
+      "the agricultural engineer engineer provides proper nutrition to the tomato plant"
+    ]
+  },
+
+  {
+    "scenario": "choose irrigation mechanism",
+    "goal": "choose an irrigation mechanism based on soil survey and water availability",
+    "context": "different irrigation mechanisms",
+    "actors": ["agricultural engineer", "gardener"],
+    "resources": ["irrigation mechanisms", "water"],
+    "episodes": [
+      "the agricultural engineer chooses an irrigation mechanism based on soil survey",
+      "the agricultural engineer installs the irrigation mechanism",
+      "the gardener uses the irrigation mechanism"
+    ]
+  },
+
+  {
+    "scenario": "harvest",
+    "goal": "harvest tomato's fruits when they are ready to consume",
+    "context": "tomato plants reach maturity",
+    "actors": ["agricultural engineer", "gardener"],
+    "resources": ["tomato plant", "tomato", "crate"],
+    "episodes": [
+      "the agricultural engineer analyzes the tomato plant",
+      "the agricultural engineer determines that the tomato plant reached the maturity state",
+      "the agricultural engineer decides when the mature  tomato is ready to harvest",
+      "the gardener harvests tomato from tomato plant",
+      "the gardener places the harvested tomatoes in the crate"
+    ]
+  },
+
+  {
+    "scenario": "prune tomato plant",
+    "goal": "cut or remove excess branches so that the plant grows and develops more strongly",
+    "context": "tomato plant in the flowering stage",
+    "actors": ["disease", "gardener"],
+    "resources": ["tomato plant", "soil", "water"],
+    "episodes": [
+      "the gardener identifies the plant with a growing different from the expected",
+      "the gardener prunes the redundant branches of the tomato plant"
+    ]
+  },
+
+  {
+    "scenario": "transplant tomato plant",
+    "goal": "take the tomato plant from the pot and put it into the soil",
+    "context": "prepared soil",
+    "actors": ["agricultural engineer", "gardener"],
+    "resources": ["tomato plant", "soil", "water", "watering mechanism"],
+    "episodes": [
+      "the gardener prepares the soil",
+      "the gardener chooses a tomato plant from the pot",
+      "the agricultural engineer chooses the watering mechanism"
+    ]
+  },
+
+  {
+    "scenario": "weeding",
+    "goal": "remove weeds around the tomato plant",
+    "context": "prepared soil",
+    "actors": ["agricultural engineer", "gardener"],
+    "resources": ["tomato plant", "soil", "water", "watering mechanism"],
+    "episodes": [
+      "the agricultural engineer detects the weed in the tomato plant",
+      "the gardener removes out the weed from the ground"
+    ]
+  },
+
+  {
+    "scenario": "fumigate",
+    "goal": "eliminate crop pests",
+    "context": "pest detected on tomato plants",
+    "actors": ["agricultural engineer", "gardener", "plague"],
+    "resources": ["tomato plant", "tomato", "pesticide"],
+    "episodes": [
+      "the gardener detects abnormal development/growth in tomato plant",
+      "the plague destroys leaves, stems and fruits of the tomato plant",
+      "the plague damages the tomato plant",
+      "the agricultural engineer analyzes the plague type",
+      "the agricultural engineer prepares pesticide",
+      "the agricultural engineer chooses the pesticide",
+      "the gardener fumigates the tomato plants with the pesticide"
+    ]
+  },
+
+  {
+    "scenario": "watering",
+    "goal": "bring water to tomato seeds and plants to meet their water needs",
+    "context": "seeds on seedling and tomato plants on soil",
+    "actors": ["agricultural engineer"],
+    "resources": ["tomato plant", "soil", "watering mechanism", "water"],
+    "episodes": [
+      "the agricultural engineer selects the watering mechanism",
+      "the agricultural engineer decides the intensity of the watering according to the analysis of the ground",
+      "the gardener waters with a watering mechanism and water"
+    ]
+  },
+
+  {
+    "scenario": "make graft",
+    "goal": "achieve a new plant with more efficient results",
+    "context": "rootstock and a portion of tissue from another plant",
+    "actors": ["agricultural engineer", "gardener"],
+    "resources": ["tomato plant"],
+    "episodes": [
+      "the agricultural engineer selects a portion of tissue from a tomato plant",
+      "the gardener makes the graft"
+    ]
+  },
+
+  {
+    "scenario": "sow tomato seeds",
+    "goal": "put tomato seeds in seedling",
+    "context": "seed and seedling ready",
+    "actors": ["gardener"],
+    "resources": ["seedling", "seed", "irrigation mechanism", "soil"],
+    "episodes": [
+      "the agricultural engineer chooses tomato seeds",
+      "the gardener puts the seeds in the seedlings",
+      "the gardener sprays with water the seedling"
     ]
   }
 ]

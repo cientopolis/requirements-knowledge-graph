@@ -291,12 +291,13 @@ class Analyzer:
             for index, resource_not_included in enumerate(
                 not_included_resources
             ):
-                print(str(index + 1) + ")", resource_not_included)
+                print(str(index +1) + ")", resource_not_included)
 
             indexes = input("Options: ").replace("\n", " ").split()
             for index in indexes:
                 if int(index) <= len(not_included_resources):
-                    result.append(not_included_resources[int(index) - 1])
+                    result.append(not_included_resources[int(index)-1])
+
         elif len(not_included_resources) == 1:
             result.append(not_included_resources[0])
 
