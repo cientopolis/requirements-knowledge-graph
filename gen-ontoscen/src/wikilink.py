@@ -1,15 +1,20 @@
-from functools import reduce
-from json import load, dump
+from json import dump, load
+from threading import Lock
 
 from rdflib import Literal, Namespace, URIRef
 from rdflib.namespace import OWL, RDFS
 from wikibase_api import Wikibase
 
-from .ontoscen import Ontoscen
 from .helpers import get_user_input
+from .ontoscen import Ontoscen
 
+CACHE_FILE = "data/cache.json"
 
 SCHEMA = Namespace("https://schema.org/")
+
+WB = Wikibase = Wikibase()
+
+IO_LOCK = Lock()
 
 
 class Wikilink:
@@ -20,10 +25,9 @@ class Wikilink:
             subject.
     """
 
-    def __init__(self, limit: int = 10):
+    def __init__(self, limit: int = 10, max_workers: int = 10):
         self.LIMIT: int = limit
-        self.WB: Wikibase = Wikibase()
-        self.CACHE_FILE: str = "data/cache.json"
+        self.MAX_WORKERS = max_workers
         self.CACHE: dict = self.open_cache()
 
     def enrich(self, graph: Ontoscen) -> Ontoscen:
@@ -37,23 +41,35 @@ class Wikilink:
             graph (Ontoscen): an Ontoscen graph linked with Wikidata.
         """
 
-        enriched_graph = reduce(
-            self._enrich_subject,
-            graph.get_resources() + graph.get_actors(),
-            graph,
-        )
-        self.save_cache()
-        return enriched_graph
+        from concurrent.futures import ThreadPoolExecutor, as_completed
+
+        result = Ontoscen()
+
+        try:
+            with ThreadPoolExecutor(max_workers=self.MAX_WORKERS) as executor:
+                futures = [
+                    executor.submit(self._enrich_subject, graph, subject)
+                    for subject in set(
+                        graph.get_resources() + graph.get_actors()
+                    )
+                ]
+
+                for future in as_completed(futures):
+                    result += future.result()
+        finally:
+            self.save_cache()
+
+        return result
 
     def open_cache(self) -> dict:
         try:
-            with open(self.CACHE_FILE, mode="r", encoding="utf8") as file:
+            with open(CACHE_FILE, mode="r", encoding="utf-8") as file:
                 return load(file)
         except FileNotFoundError:
             return {}
 
     def save_cache(self) -> None:
-        with open(self.CACHE_FILE, "w", encoding="utf-8") as file:
+        with open(CACHE_FILE, "w", encoding="utf-8") as file:
             dump(self.CACHE, file, ensure_ascii=False, indent=4)
 
     def _enrich_subject(self, ontoscen: Ontoscen, subject: URIRef) -> Ontoscen:
@@ -70,7 +86,11 @@ class Wikilink:
         if not results:
             return ontoscen
 
-        chosen_result: dict = self._take_input(results, subject, label)
+        try:
+            IO_LOCK.acquire()
+            chosen_result: dict = self._take_input(results, subject, label)
+        finally:
+            IO_LOCK.release()
 
         if not chosen_result:
             return ontoscen
@@ -92,7 +112,7 @@ class Wikilink:
         return ontoscen
 
     def _take_input(
-        self, options: list[dict], subject: URIRef, subject_label: str
+        self, options: list[dict], subject: URIRef, subject_label: Literal
     ) -> dict:
         print(
             "--------------------------------------------------------------------------------------------------------------------",
@@ -131,7 +151,7 @@ class Wikilink:
 
     def _query(self, item_label: str) -> list[dict]:
         if not item_label in self.CACHE.keys():
-            self.CACHE[item_label] = self.WB.entity.search(
+            self.CACHE[item_label] = WB.entity.search(
                 item_label, "en", limit=self.LIMIT
             )["search"]
         return self.CACHE[item_label]
