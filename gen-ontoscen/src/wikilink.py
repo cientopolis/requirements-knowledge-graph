@@ -23,6 +23,8 @@ class Wikilink:
     Attributes:
         LIMIT (int): max amount of items to choose from for each
             subject.
+        MAX_WORKERS (int): max amount of threads to use.
+        CACHE (dict): a cache of Wikidata search results.
     """
 
     def __init__(self, limit: int = 10, max_workers: int = 10):
@@ -149,9 +151,20 @@ class Wikilink:
         except:
             return {}
 
+    def is_in_cache(self, item_label: str) -> bool:
+        return (item_label in self.CACHE.keys()) and (
+            self.CACHE[item_label]["limit"]
+            > len(self.CACHE[item_label]["results"])
+            or len(self.CACHE[item_label]["results"]) >= self.LIMIT
+        )
+
     def _query(self, item_label: str) -> list[dict]:
-        if not item_label in self.CACHE.keys():
-            self.CACHE[item_label] = WB.entity.search(
-                item_label, "en", limit=self.LIMIT
-            )["search"]
-        return self.CACHE[item_label]
+        if not self.is_in_cache(item_label):
+            self.CACHE[item_label] = {
+                "limit": self.LIMIT,
+                "results": WB.entity.search(
+                    item_label, "en", limit=self.LIMIT
+                )["search"],
+            }
+
+        return self.CACHE[item_label]["results"][: self.LIMIT]
