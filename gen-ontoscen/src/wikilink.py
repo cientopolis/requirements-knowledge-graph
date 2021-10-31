@@ -13,7 +13,7 @@ CACHE_FILE = "data/cache.json"
 
 SCHEMA = Namespace("https://schema.org/")
 
-WB = Wikibase = Wikibase()
+WB = Wikibase()
 
 IO_LOCK = Lock()
 
