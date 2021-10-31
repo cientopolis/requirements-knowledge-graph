@@ -1,36 +1,52 @@
 import unittest
-import sys
-
-sys.path.append("..")
 from src.jsonparser import JSONParser
 from src.ontoscen import Ontoscen
 from rdflib.namespace import RDF, Namespace
 
+from unittest.mock import patch
+
 
 class TestOntoscen(unittest.TestCase):
-    IRI: Namespace = Namespace(
-        "http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl#"
-    )
-    graph = Ontoscen(JSONParser("input.json").requirements())
+    @classmethod
+    @patch("src.analyzer.get_user_input", return_value="y")
+    def create_graph(cls, *_):
+        """Create an Ontoscen graph. Instead of asking for input,
+        select every option."""
 
-    actor = IRI.Actor
-    resource = IRI.Resource
-    action = IRI.Action
+        return Ontoscen(JSONParser("test/data/ontoscen.json").requirements())
 
-    hasActor = IRI.hasActor
-    hasResource = IRI.hasResource
-    hasAction = IRI.hasAction
+    @classmethod
+    def setUpClass(cls):
+        super(TestOntoscen, cls).setUpClass()
 
-    gardener = graph.get_individual("gardener")
-    agricultural_engineer = graph.get_individual("agricultural engineer")
+        cls.IRI: Namespace = Namespace(
+            "http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl#"
+        )
 
-    solution = graph.get_individual("solution")
-    results_of_soil_analysis = graph.get_individual("result of soil analysis")
-    agricultural_lime = graph.get_individual("agricultural lime")
-    soil = graph.get_individual("soil")
-    magnesium = graph.get_individual("magnesium")
-    tomato_plant = graph.get_individual("tomato plant")
-    pruning_plier = graph.get_individual("pruning plier")
+        cls.graph = cls.create_graph()
+
+        cls.actor = cls.IRI.Actor
+        cls.resource = cls.IRI.Resource
+        cls.action = cls.IRI.Action
+
+        cls.hasActor = cls.IRI.hasActor
+        cls.hasResource = cls.IRI.hasResource
+        cls.hasAction = cls.IRI.hasAction
+
+        cls.gardener = cls.graph.get_individual("gardener")
+        cls.agricultural_engineer = cls.graph.get_individual(
+            "agricultural engineer"
+        )
+
+        cls.solution = cls.graph.get_individual("solution")
+        cls.results_of_soil_analysis = cls.graph.get_individual(
+            "result of soil analysis"
+        )
+        cls.agricultural_lime = cls.graph.get_individual("agricultural lime")
+        cls.soil = cls.graph.get_individual("soil")
+        cls.magnesium = cls.graph.get_individual("magnesium")
+        cls.tomato_plant = cls.graph.get_individual("tomato plant")
+        cls.pruning_plier = cls.graph.get_individual("pruning plier")
 
     def test_detect_actors(self):
 

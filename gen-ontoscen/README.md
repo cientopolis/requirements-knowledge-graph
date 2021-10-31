@@ -58,8 +58,8 @@ python main.py --input data/input.json --output data/output.ttl --format turtle
 
 ## Test
 
-From `gen-ontoscen/` go to the `test/` directory. **When asked for input, select every option.**
+From `gen-ontoscen/` run:
 
 ```bash
-$ python -m unittest <testName.py>
+$ python -m unittest discover test -b
 ```

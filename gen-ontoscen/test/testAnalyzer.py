@@ -1,25 +1,25 @@
-import sys
-
-sys.path.append("..")
-from src.analyzer import Analyzer
-from src.jsonparser import JSONParser
 import unittest
+from unittest.mock import patch
 
 from rdflib.term import URIRef
 
+from src.analyzer import Analyzer
+from src.jsonparser import JSONParser
+
 
 class TestAnalyzer(unittest.TestCase):
-    SCENARIO = JSONParser("input.json").requirements()[0]
+    SCENARIO = JSONParser("test/data/analyzer.json").requirements()[0]
     ANALYZER = Analyzer()
 
     def test_detect_actors(self):
         """
         Ensures that each actor of the scenario has been added (both
-        detected and specified)
+        detected and specified).
         """
         actors = set()
-        for episode in self.SCENARIO.episodes:
-            actors.add(self.ANALYZER.analyze_for_actors(episode))
+        with patch("src.analyzer.get_user_input", return_value="y"):
+            for episode in self.SCENARIO.episodes:
+                actors.add(self.ANALYZER.analyze_for_actors(episode))
         actors = list(actors)
         self.assertTrue(
             all(
@@ -32,18 +32,18 @@ class TestAnalyzer(unittest.TestCase):
         """
         Ensures that each resource of the scenario has been added (both
         detected and specified)
-        When promped for input, every resource should be accepted
         """
 
         all_detected_resources = list()
-        for episode in self.SCENARIO.episodes:
-            all_detected_resources += self.ANALYZER.analyze_for_resources(
-                episode,
-                URIRef(
-                    "http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl#scenario0"
-                ),
-                self.SCENARIO.resources,
-            )
+        with patch("src.analyzer.get_user_input", return_value="y"):
+            for episode in self.SCENARIO.episodes:
+                all_detected_resources += self.ANALYZER.analyze_for_resources(
+                    episode,
+                    URIRef(
+                        "http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl#scenario0"
+                    ),
+                    self.SCENARIO.resources,
+                )
 
         self.assertTrue(
             all(

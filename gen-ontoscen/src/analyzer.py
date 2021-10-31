@@ -4,6 +4,8 @@ from rdflib import URIRef
 
 from collections import Counter
 
+from .helpers import get_user_input
+
 NLP = spacy.load("en_core_web_sm")
 
 MATCHER = Matcher(NLP.vocab)
@@ -291,12 +293,16 @@ class Analyzer:
             for index, resource_not_included in enumerate(
                 not_included_resources
             ):
-                print(str(index +1) + ")", resource_not_included)
+                print(str(index + 1) + ")", resource_not_included)
 
-            indexes = input("Options: ").replace("\n", " ").split()
-            for index in indexes:
-                if int(index) <= len(not_included_resources):
-                    result.append(not_included_resources[int(index)-1])
+            indexes = get_user_input("Options: ").replace("\n", " ").split()
+
+            if indexes == ["y"] or indexes == ["Y"]:
+                result = not_included_resources
+            else:
+                for index in indexes:
+                    if int(index) <= len(not_included_resources):
+                        result.append(not_included_resources[int(index) - 1])
 
         elif len(not_included_resources) == 1:
             result.append(not_included_resources[0])

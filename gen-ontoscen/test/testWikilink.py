@@ -60,7 +60,7 @@ class TestWikilink(unittest.TestCase):
     @classmethod
     @patch("src.wikilink.get_user_input", return_value="1")
     def create_enriched_graph(cls, *_):
-        """Create an enriched the graph. Instead of asking for input,
-        select the first option."""
+        """Create an enriched graph without taking input (automatically
+        selecting the first option instead)"""
 
         return Wikilink().enrich(cls.graph)
