@@ -14,7 +14,7 @@ class Ontoscen(Graph):
     """An RDF graph that respects the Ontoscen ontology.
 
     Class attributes:
-        IRI (URIRef): Identifier for the Ontoscen ontology.
+        IRI (URIRef): identifier for the Ontoscen ontology.
     """
 
     ANALYZER = Analyzer()
@@ -73,11 +73,11 @@ class Ontoscen(Graph):
         """Count the amount of individuals belonging to a certain type
 
         Arguments:
-            a_type (str): The RDF class whose individuals are to be
+            a_type (str): the RDF class whose individuals are to be
                 counted.
 
         Returns:
-            counter (int): Amount of individuals of `a_type`.
+            counter (int): amount of individuals of `a_type`.
         """
         return len(list(self.triples((None, RDF.type, self.IRI[a_type]))))
 
@@ -105,11 +105,11 @@ class Ontoscen(Graph):
         label `label`.
 
         Arguments:
-            a_type (str): An RDF class.
-            label (str): A description of the individual.
+            a_type (str): an RDF class.
+            label (str): a description of the individual.
 
         Returns:
-            exists (bool): Is there such an individual in Ontoscen?
+            exists (bool): is there such an individual in Ontoscen?
         """
         return (None, RDF.type, self.IRI[a_type]) in self and (
             None,
@@ -122,15 +122,25 @@ class Ontoscen(Graph):
             `label` or False if not found
 
         Arguments:
-            label (str): A description of the individual.
+            label (str): a description of the individual.
 
         Returns:
-            individual (URIRef): An subject linked with RDFS.label `label`.
+            individual (URIRef): an subject linked with RDFS.label `label`.
 
         """
         return next(self.subjects(RDFS.label, Literal(label)), False)
 
     def is_linked(self, individual: URIRef) -> bool:
+        """Check if an individual is linked with `OWL.sameAs` to any
+        other individual.
+
+        Arguments:
+            individual (URIRef): the individual to be checked.
+
+        Returns:
+            linked (bool): is the individual linked?
+        """
+
         return (individual, OWL.sameAs, None) in self or (
             None,
             OWL.sameAs,
@@ -260,11 +270,11 @@ class Ontoscen(Graph):
             Return it.
 
         Arguments:
-            a_type (str): The RDF class whose individuals are to be
+            a_type (str): the RDF class whose individuals are to be
                 counted.
 
         Returns:
-            individual (URIRef): A node with triples defining its class
+            individual (URIRef): a node with triples defining its class
                 and label.
         """
         ind = self.get_individual(label)
@@ -281,6 +291,16 @@ class Ontoscen(Graph):
         return individual
 
     def _individual_exists(self, label):
+        """Check if an individual with the recieved label exists in the
+        Ontoscen graph.
+
+        Arguments:
+            label (str): the label of the individual to be checked.
+
+        Returns:
+            exists (bool): does the individual exist?
+        """
+
         return (
             None,
             RDFS.label,

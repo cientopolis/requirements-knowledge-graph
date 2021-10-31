@@ -8,6 +8,7 @@ from wikibase_api import Wikibase
 from .helpers import get_user_input
 from .ontoscen import Ontoscen
 
+
 CACHE_FILE = "data/cache.json"
 
 SCHEMA = Namespace("https://schema.org/")
@@ -28,6 +29,13 @@ class Wikilink:
     """
 
     def __init__(self, limit: int = 10, max_workers: int = 10):
+        """Initialize a Wikilink object.
+
+        Arguments:
+            limit (int): max amount of items to choose from for each
+                subject.
+            max_workers (int): max amount of threads to use.
+        """
         self.LIMIT: int = limit
         self.MAX_WORKERS = max_workers
         self.CACHE: dict = self.open_cache()
@@ -64,6 +72,12 @@ class Wikilink:
         return result
 
     def open_cache(self) -> dict:
+        """Open the cache file and return the contents.
+
+        Returns:
+            cache (dict): a cache of Wikidata search results.
+        """
+
         try:
             with open(CACHE_FILE, mode="r", encoding="utf-8") as file:
                 return load(file)
@@ -71,10 +85,22 @@ class Wikilink:
             return {}
 
     def save_cache(self) -> None:
+        """Save the cache to a file."""
+
         with open(CACHE_FILE, "w", encoding="utf-8") as file:
             dump(self.CACHE, file, ensure_ascii=False, indent=4)
 
     def _enrich_subject(self, ontoscen: Ontoscen, subject: URIRef) -> Ontoscen:
+        """Enrich a subject with Wikidata information.
+
+        Arguments:
+            ontoscen (Ontoscen): an Ontoscen graph.
+            subject (URIRef): a subject to enrich.
+
+        Returns:
+            ontoscen (Ontoscen): an Ontoscen graph with a subject linked
+                with Wikidata.
+        """
 
         if ontoscen.is_linked(subject):
             return ontoscen
@@ -116,6 +142,16 @@ class Wikilink:
     def _take_input(
         self, options: list[dict], subject: URIRef, subject_label: Literal
     ) -> dict:
+        """Take input from the user to choose a Wikidata item.
+
+        Arguments:
+            options (list[dict]): a list of Wikidata search results.
+            subject (URIRef): a subject to enrich.
+            subject_label (Literal): the subject's label.
+
+        Returns:
+            chosen_result (dict): a Wikidata search result.
+        """
         print(
             "--------------------------------------------------------------------------------------------------------------------",
             f"The subject '{subject_label}' ({subject}) matches the following wikidata concepts.",
@@ -151,7 +187,18 @@ class Wikilink:
         except:
             return {}
 
-    def is_in_cache(self, item_label: str) -> bool:
+    def _is_in_cache(self, item_label: str) -> bool:
+        """Check if a Wikidata item is in the cache taking the amount of
+        results and the limit into account.
+
+        Arguments:
+            item_label (str): a Wikidata item label.
+
+        Returns:
+            is_in_cache (bool): is the item present in the cache? Is the
+                amount of results enough?
+        """
+
         return (item_label in self.CACHE.keys()) and (
             self.CACHE[item_label]["limit"]
             > len(self.CACHE[item_label]["results"])
@@ -159,7 +206,17 @@ class Wikilink:
         )
 
     def _query(self, item_label: str) -> list[dict]:
-        if not self.is_in_cache(item_label):
+        """Query Wikidata for a given item label.
+        Save the results in the cache if it's not already there.
+
+        Arguments:
+            item_label (str): a Wikidata item label.
+
+        Returns:
+            results (list[dict]): a list of Wikidata search results.
+        """
+
+        if not self._is_in_cache(item_label):
             self.CACHE[item_label] = {
                 "limit": self.LIMIT,
                 "results": WB.entity.search(

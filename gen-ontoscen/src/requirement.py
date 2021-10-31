@@ -13,10 +13,24 @@ class Requirement:
         episodes (list[str]): The steps needed to complete the scenario.
     """
 
-    def __init__(self, req: dict):
+    def __init__(self, req: dict) -> None:
+        """Initialize a Requirement object.
+
+        Args:
+            req (dict): A dictionary containing the requirement
+                specification.
+        """
+
         self.scenario: str = req["scenario"].lower()
         self.goal: str = req["goal"].lower()
         self.context: str = req["context"].lower()
-        self.episodes: list[str] = list(map(lambda r: r.lower(), req["episodes"]))
+        self.episodes: list[str] = list(
+            map(lambda r: r.lower(), req["episodes"])
+        )
         self.actors: list[str] = list(map(lambda r: r.lower(), req["actors"]))
-        self.resources: list[str] = list(map(lambda r: r.lower(), req["resources"]))
+
+        self.resources: list[str] = list(
+
+            map(lambda r: r.lower(), req["resources"])
+
+        )
