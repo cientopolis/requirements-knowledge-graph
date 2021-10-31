@@ -100,29 +100,28 @@ class Ontoscen(Graph):
     def get_label(self, subject: URIRef) -> Union[Literal, None]:
         return next(self.objects(subject, RDFS.label), None)
 
-    def _exists_individual_with(self, type: str, label: str) -> bool:
-        """Check in the graph for an individual of type `type` and label
-            `label`.
+    def _exists_individual_with(self, a_type: str, label: str) -> bool:
+        """Check in the graph for an individual of type `a+type` and
+        label `label`.
 
         Arguments:
-            type (str): An RDF class.
+            a_type (str): An RDF class.
             label (str): A description of the individual.
 
         Returns:
             exists (bool): Is there such an individual in Ontoscen?
         """
-        return (None, RDF.type, self.IRI[type]) in self and (
+        return (None, RDF.type, self.IRI[a_type]) in self and (
             None,
             RDFS.label,
             Literal(label),
         ) in self
 
-    def get_individual(self, label: str) -> Union[URIRef | bool]:
+    def get_individual(self, label: str) -> URIRef | bool:
         """Retrieve the individual of RDFS.label
             `label` or False if not found
 
         Arguments:
-            type (str): An RDF class.
             label (str): A description of the individual.
 
         Returns:
@@ -252,7 +251,7 @@ class Ontoscen(Graph):
             scenario, episode, episode_individual, resources
         )
 
-    def _add_individual(self, type: str, label: str) -> URIRef:
+    def _add_individual(self, a_type: str, label: str) -> URIRef:
         """Add an individual to Ontoscen if it doesn't exist.
 
         If the individual doesn't exist:
@@ -268,14 +267,15 @@ class Ontoscen(Graph):
             individual (URIRef): A node with triples defining its class
                 and label.
         """
-        if self._individual_exists(label):
-            return self.get_individual(label)
+        ind = self.get_individual(label)
+        if type(ind) is URIRef:
+            return ind
 
         individual: URIRef = self.IRI[
-            type.lower() + str(self.count_individuals_of_type(type))
+            a_type.lower() + str(self.count_individuals_of_type(a_type))
         ]
 
-        self._add_type(individual, type)
+        self._add_type(individual, a_type)
         self._add_label(individual, label)
 
         return individual
@@ -290,5 +290,5 @@ class Ontoscen(Graph):
     def _add_label(self, individual, label):
         self.add((individual, RDFS.label, Literal(label)))
 
-    def _add_type(self, individual, type):
-        self.add((individual, RDF.type, self.IRI[type]))
+    def _add_type(self, individual, a_type):
+        self.add((individual, RDF.type, self.IRI[a_type]))
