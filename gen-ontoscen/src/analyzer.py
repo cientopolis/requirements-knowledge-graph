@@ -54,7 +54,7 @@ class Analyzer:
             episode[0 : self._getVerbPosition(episode)], as_spans=True
         )
 
-        return str(max(matches, key=len))
+        return str(max(matches, key=len, default=""))
 
     def _remove_substrings(self, source, target):
         return list(

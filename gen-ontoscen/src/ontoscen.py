@@ -200,6 +200,10 @@ class Ontoscen(Graph):
         self, episode: str, episode_individual: URIRef
     ):
         actor = self.ANALYZER.analyze_for_actors(episode)
+
+        if not actor:
+            # the episode doesn't reference any actor...
+            return
         if self._exists_individual_with("Resource", actor):
             # if actor exists in the graph as Resource, then append it to scenario with role "Actor"
             # TODO: inconsistency detected here
