@@ -114,11 +114,8 @@ class Wikilink:
         if not results:
             return ontoscen
 
-        try:
-            IO_LOCK.acquire()
+        with IO_LOCK:
             chosen_result: dict = self._take_input(results, subject, label)
-        finally:
-            IO_LOCK.release()
 
         if not chosen_result:
             return ontoscen
