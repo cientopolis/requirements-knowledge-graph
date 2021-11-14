@@ -125,7 +125,7 @@ class Wikilink:
         )
         ontoscen.add((subject, RDFS.label, Literal(chosen_result["label"])))
 
-        if "description" in chosen_result.keys():
+        if "description" in chosen_result:
             ontoscen.add(
                 (
                     subject,
@@ -164,7 +164,7 @@ class Wikilink:
             label: str = option["label"]
 
             description: str = ""
-            if "description" in option.keys():
+            if "description" in option:
                 description: str = option["description"]
 
             print(
@@ -196,7 +196,7 @@ class Wikilink:
                 amount of results enough?
         """
 
-        return (item_label in self.CACHE.keys()) and (
+        return (item_label in self.CACHE) and (
             self.CACHE[item_label]["limit"]
             > len(self.CACHE[item_label]["results"])
             or len(self.CACHE[item_label]["results"]) >= self.LIMIT
