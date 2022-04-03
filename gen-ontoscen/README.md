@@ -21,12 +21,9 @@ git clone https://github.com/cientopolis/requirements-knowledge-graph \
   && git checkout ontoscen -- \
   && cd gen-ontoscen
 
-# Setup and activate a virtual environment
-if python -m venv .venv && source .venv/bin/activate; then
-  # Upgrade pip just in case
+# If you don't have `make` installed, fall back to bash
+make setup || if python -m venv .venv && source .venv/bin/activate; then
   python -m pip install --upgrade pip
-
-  # Get dependencies
   pip install -r requirements.txt
 fi
 ```
@@ -54,4 +51,24 @@ Example:
 
 ```bash
 python main.py --input data/input.json --output data/output.ttl --format turtle
+```
+
+Remember to get inside the virtual environment:
+
+```bash
+$ source .venv/bin/activate
+```
+
+## Test
+
+From `gen-ontoscen/` run:
+
+```bash
+$ make test
+```
+
+Or, if you prefer not to use `make`:
+
+```bash
+$ python -m unittest discover test -b
 ```

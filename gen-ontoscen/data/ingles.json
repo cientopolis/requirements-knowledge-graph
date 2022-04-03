@@ -54,19 +54,19 @@
       "The farmer chooses the supporting technique.",
       "The farmer prepares the string.",
       "The farmer sets the string.",
-      "The stake guides the tomato plant's growth."
+      "The stake guides the tomato plant’s growth."
     ]
   },
   {
     "scenario": "Fumigate",
     "goal": "Using chemicals on tomato plants to control pests",
     "context": "detection of insect pest on tomato plants",
-    "actors": ["Farmer", "plague", "insects "],
+    "actors": ["Farmer", "pest", "insects "],
     "resources": ["Tomato plant", "tomato", "pesticide"],
     "episodes": [
       "The farmer detects that there is an abnormal growth in the tomato plant",
-      "The plague destroys leaves, stems and fruits of the tomato plant",
-      "The plague damages the tomato by making holes",
+      "The pest destroys leaves, stems and fruits of the tomato plant",
+      "The pest damages the tomato by making holes",
       "The farmer analyzes the insect",
       "The farmer chooses a pesticide",
       "The farmer prepares the pesticide",
@@ -191,7 +191,7 @@
       "The farmer places the mulch on the substrate.",
       "The farmer places the seed in the hotbed.",
       "The farmer covers the hotbed with black plastic.",
-      "The farmer verifies the proper lighting of the germinator.",
+      "The farmer verifies the proper illumination of the germinator.",
       "The farmer verifies that the germinator is free of shadows.",
       "The farmer verifies that the germinator is protected from strong winds.",
       "The farmer places the hotbed in the germinator",
@@ -215,14 +215,14 @@
       "The farmer transports the tubs to the tomato plant.",
       "The farmer separates the tomato from the tomato plant.",
       "The farmer discards those fruits presenting damage by pests.",
-      "The farmer eliminates the tomato's calyx.",
+      "The farmer eliminates the tomato’s calyx.",
       "The farmer removes the peduncle from the tomato.",
       "The farmer classifies the tomato according to its state of maturity using the RTCR 739-2004  Technical Regulation specific for Tomato for Consumption in Fresh State.",
       "The farmer classifies the tomato according to its quality in first, second, third using the caliper.",
       "The farmer washes the tomato.",
       "The farmer deposits the fruit on the corresponding tub according to its state of maturity, size, and quality.",
       "The farmer stows the loaded tub.",
-      "The farmer verifies that the tomato in the tub doesn't get smashed.",
+      "The farmer verifies that the tomato in the tub doesn’t get smashed.",
       "The farmer verifies that the tubs are in the shade",
       "The farmer verifies that the tubs allow adequate aeration of the tomato."
     ]
@@ -392,7 +392,7 @@
     "actors": ["gardener", "gardener's assistant"],
     "resources": ["crops", "water"],
     "episodes": [
-      "the gardener decides what type of water to apply depending on the conditions of the crop: gravity irrigation, drip irrigation or regular watering."
+      "According to the conditions of the crop, the gardener decides what type of water method applied: gravity irrigation, drop irrigation or regular irrigation"
     ]
   },
 
@@ -569,7 +569,7 @@
 
   {
     "scenario": "harvest",
-    "goal": "harvest tomato's fruits when they are ready to consume",
+    "goal": "harvest tomato’s fruits when they are ready to consume",
     "context": "tomato plants reach maturity",
     "actors": ["agricultural engineer", "gardener"],
     "resources": ["tomato plant", "tomato", "crate"],
@@ -623,13 +623,13 @@
     "scenario": "fumigate",
     "goal": "eliminate crop pests",
     "context": "pest detected on tomato plants",
-    "actors": ["agricultural engineer", "gardener", "plague"],
+    "actors": ["agricultural engineer", "gardener", "pest"],
     "resources": ["tomato plant", "tomato", "pesticide"],
     "episodes": [
       "the gardener detects abnormal development/growth in tomato plant",
-      "the plague destroys leaves, stems and fruits of the tomato plant",
-      "the plague damages the tomato plant",
-      "the agricultural engineer analyzes the plague type",
+      "the pest destroys leaves, stems and fruits of the tomato plant",
+      "the pest damages the tomato plant",
+      "the agricultural engineer analyzes the pest type",
       "the agricultural engineer prepares pesticide",
       "the agricultural engineer chooses the pesticide",
       "the gardener fumigates the tomato plants with the pesticide"

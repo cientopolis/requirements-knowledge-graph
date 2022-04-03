@@ -1,0 +1,2047 @@
+[
+	{
+		"scenario": "Sembrar Semillas de Tomate",
+		"goal": "Colocar las Semillas de Tomate en el almácigo",
+		"context": "semilla y almacigo preparados",
+		"resources": [ "Semilla", "almácigo", "Mecanismo de Riego", "tierra" ],
+		"actors": [ "Huertero" ],
+		"episodes": [
+			"El Ing. Agrónomo elige las semillas de tomate",
+			"El Huertero coloca en el almácigo las semillas.",
+			"El Huertero pulveriza con agua el almácigo."
+		]
+	},
+
+	{
+		"scenario": "Realizar Injerto",
+		"goal": "Lograr una planta nueva con mayor rendimiento",
+		"context": "Planta asentada y porción de tejido de otra planta",
+		"resources": [ "planta de tomate" ],
+		"actors": [ "Ing. Agrónomo", "Huertero" ],
+		"episodes": [
+			"El Ing. Agrónomo selecciona porción de tejido de una planta de tomate",
+			"El Huertero realiza el injerto."
+		]
+	},
+
+	{
+		"scenario": "Regar",
+		"goal": "Consiste en aportar agua a las semillas y a las plantas de tomate para satisfacer las necesidades hídricas",
+		"context": "semillas en almácigo y planta de tomate en tierra",
+		"resources": [ "planta de tomate", "tierra", "agua", "mecanismo de riego" ],
+		"actors": [ "Ing. Agrónomo" ],
+		"episodes": [
+			"El Ing. Agrónomo selecciona mecanismo de riego.",
+			"El Ing. Agrónomo decide la intensidad del riego en base al estudio de suelo.",
+			"El Huertero riega con mecanismo de riego y agua."
+		]
+	},
+
+	{
+		"scenario": "Fumigar",
+		"goal": "Echar productos químicos sobre las plantas de tomate para eliminar plagas de los cultivos.",
+		"context": "Descubrimiento de plaga de insectos en plantas de tomate",
+		"resources": [ "planta de tomate", "plaguicida", "tomate" ],
+		"actors": [ "Huertero", "Plaga", "Ing. Agrónomo" ],
+		"episodes": [
+			"El Huertero detecta desarrollo anormal en Planta de Tomate.",
+			"La plaga destruye hojas, tallos y frutos de la Planta de Tomate.",
+			"La Plaga dañan a la planta de tomate",
+			"El Ing. Agrónomo analiza tipo de plaga.",
+			"El Ing. Agrónomo prepara plaguicida.",
+			"El Ing. Agrónomo elige el plaguicida.",
+			"El Huertero fumiga con plaguicidas las plantas de Tomate."
+		]
+	},
+
+	{
+		"scenario": "Desmalezar",
+		"goal": "Eliminar las malas hierbas alrededor de la planta del tomate",
+		"context": " Suelo con maleza",
+		"resources": [ "planta de tomate", "Herramientas", "maleza" ],
+		"actors": [ "Huertero", "Ing. Agrónomo" ],
+		"episodes": [
+			"Las malezas impiden el desarrollo normal de la planta de tomate",
+			"El Ing. Agrónomo detecta la maleza en la Planta de Tomate.",
+			"El Huertero quita la maleza de la tierra"
+		]
+	},
+
+	{
+		"scenario": "Trasplantar Planta de Tomate",
+		"goal": "Pasar la planta de tomate del almácigo a la tierra",
+		"context": "tierra preparada",
+		"resources": [ "planta de tomate", "tierra", "agua", "mecanismo de riego" ],
+		"actors": [ "Huertero" ],
+		"episodes": [
+			"El Huertero prepara la tierra.",
+			"El Huertero elige las plantas de tomates del almácigo.",
+			"El huertero pasa las plantas de tomates del almácigo a la tierra.",
+			"El Ing. Agrónomo elige mecanismo de riego."
+		]
+	},
+
+	{
+		"scenario": "Podar Planta de Tomate",
+		"goal": "Cortar o quitar las ramas superfluas de las plantas para que crezcan y se desarrollen con más vigor.",
+		"context": "planta de tomate desarrollada",
+		"resources": [ "planta de tomate", "tierra", "agua" ],
+		"actors": [ "Huertero", "Enfermedad" ],
+		"episodes": [
+			"El Huertero detecta las plantas de tomate con crecimiento anormal.",
+			"El Huertero corta las ramas superfluas de la planta de tomate"
+		]
+	},
+
+	{
+		"scenario": "Cosechar",
+		"goal": "recolectar los frutos del tomate de la tierra cuando ya están maduros para su consumo",
+		"context": "Tomate alcanzan madurez",
+		"resources": [ "planta de tomate", "tomate", "cajón" ],
+		"actors": [ "Ing. Agrónomo", "Huertero" ],
+		"episodes": [
+			"El Ing. Agrónomo analiza la Planta de Tomate.",
+			"El Ing. Agrónomo determina que la Planta de Tomate alcanzó el estado de madurez.",
+			"El Ing. Agrónomo decide cuándo cosechar el Tomate maduro.",
+			"El Huertero cosecha el Tomate de la Planta de Tomate.",
+			"El Huertero coloca los tomates cosechados en el cajón."
+		]
+	},
+
+	{
+		"scenario": "Elegir Mecanismo de Riego",
+		"goal": "Elegir un mecanismo de riego en base al estudio de suelo y la disponibilidad del agua.",
+		"context": "diferentes mecanismos de riego.",
+		"resources": [ "mecanismos de riego", "agua" ],
+		"actors": [ "Ing. Agrónomo", "Huertero" ],
+		"episodes": [
+			"El Ing. Agrónomo elige un mecanismo de riego en base al estudio de suelo.",
+			"El Ing. Agrónomo instala el mecanismo de riego.",
+			"El huertero utiliza el mecanismo de riego"
+		]
+	},
+
+	{
+		"scenario": "Control de Enfermedades Abióticas",
+		"goal": "Manejo de enfermedade por falta o el exceso de algún factor necesario para la vida de la Planta de Tomate.",
+		"context": "enfermedad en planta de tomate.",
+		"resources": [ "fertilizante", "nutrientes", "tierra", "almácigo" ],
+		"actors": [ "Ing. Agrónomo", "Enfermedad Abiótica", "Huertero" ],
+		"episodes": [
+			"La enfermedad Abiótica se manifiesta en la Planta de Tomate",
+			"El Huertero detecta enfermedad Abiótica.",
+			"El Ing. Agrónomo aplica fertilizante a base de calcio.",
+			"El Huertero controla la temperatura de los almácigos.",
+			"El Ing. Agrónomo proporciona nutrición adecuada a la planta de tomate."
+		]
+	},
+
+	{
+		"scenario": "Control Enfermedades Fungosas",
+		"goal": "Manejo de Enfermedades causada por Hongos, los síntomas son manchas blancas, grises o negruzcas y podredumbres (Por ejemplo el Mindiu, La ceniza y la Antracnosis)",
+		"context": "enfermedad en planta de tomate.",
+		"resources": [ "fertilizante", "nutrientes", "tierra", "almácigo" ],
+		"actors": [ "Ing. Agrónomo", "Enfermedad Fungosa" ],
+		"episodes": [
+			"La Enfermedad Fungosa se manifiesta en la Planta de Tomate",
+			"El Ing. Agrónomo detecta la Enfermedad Fungosa.",
+			"El Ing. Agrónomo evita que el fruto de la planta de tomate roce con la tierra.",
+			"El Ing. Agrónomo utiliza fungicidas para proteger la planta de tomate.",
+			"El Ing. Agrónomo realiza podas de la planta de tomate.",
+			"El Ing. Agrónomo elimina las plantas de tomates enfermas.",
+			"El Ing. Agrónomo controla el riego de la planta de tomate."
+		]
+	},
+
+	{
+		"scenario": "Control Enfermedades bacterianas",
+		"goal": "Manejo de enfermedades causadas por bacterias son reconocibles por la aparición de pústulas en tallos y frutos y por la formación de manchas necróticas en frutos.",
+		"context": "enfermedad en planta de tomate.",
+		"resources": [ "fertilizante", "nutrientes", "tierra", "herramientas" ],
+		"actors": [ "Ing. Agrónomo", "Huertero", "Enfermedad bacteriana" ],
+		"episodes": [
+			"La Enfermedad bacteriana se manifiesta en la Planta de Tomate",
+			"El Ing. Agrónomo detecta la Enfermedad bacteriana.",
+			"El Huertero elimina los frutos enfermos.",
+			"El Ing. Agrónomo utiliza semillas sanas y desinfectadas.",
+			"El Ing. Agrónomo desinfecta materiales y equipo de trabajo.",
+			"El Ing. Agrónomo elimina plantas enfermas."
+		]
+	},
+
+	{
+		"scenario": "Control de Enfermedades Virales",
+		"goal": "Manejo de enfermedades causadas por virus producen manchas de diferentes colores en hojas, el virus del bronceado produce decoloración de hojas y muy evidente en frutos.",
+		"context": "enfermedad en planta de tomate.",
+		"resources": [ "fertilizante", "nutrientes", "tierra" ],
+		"actors": [ "Ing. Agrónomo", "Enfermedad Virales" ],
+		"episodes": [
+			"La Enfermedad viral se manifiesta en la Planta de Tomate",
+			"El Ing. Agrónomo detecta la Enfermedad viral.",
+			"El Ing. Agrónomo elimina malezas, residuos de cosecha y frutos.",
+			"El Ing. Agrónomo efectúa control de virus.",
+			"El Ing. Agrónomo utiliza variedades resistentes.",
+			"El Ing. Agrónomo siembra plantines sanos.",
+			"El Ing. Agrónomo desinfecta herramientas de trabajo.",
+			"El Ing. Agrónomo utiliza trampas para detección y captura de insectos",
+			"El Ing. Agrónomo utiliza plaguicidas para reducir insectos."
+		]
+	},
+
+	{
+		"scenario": "Abona",
+		"goal": " Nutrir la tierra con el fin de alimentar la planta de tomate pueden ser naturales o preparados químicos.",
+		"context": "tierra sin abonar",
+		"resources": [ "tierra", "abono" ],
+		"actors": [ "Ing. Agrónomo", "Huertero" ],
+		"episodes": [
+			"El Ing. Agrónomo prepara el abono.",
+			"El Huertero abona la tierra."
+		]
+	},
+
+	{
+		"scenario": "Control de Plaga",
+		"goal": " Regular una especie de insecto mediante el uso de medidas.",
+		"context": "planta de tomate afectada por la plaga",
+		"resources": [ "tierra", "abono" ],
+		"actors": [ "Ing. Agrónomo", "plaguicida", "almácigo", "tierra" ],
+		"episodes": [
+			"El Ing. Agrónomo pone los almácigos en ambientes protegidos.",
+			"El Ing. Agrónomo aplica el plaguicida.",
+			"El Ing. Agrónomo elimina restos de cultivos.",
+			"El Ing. Agrónomo usa Trampas para Insectos.",
+			"El Ing. Agrónomo realiza un control biológico.",
+			"El Ing. Agrónomo utiliza mosquiteras.",
+			"El Ing. Agrónomo realiza rotación de cultivos."
+		]
+	},
+
+	{
+		"scenario": "Sembrar el semillero",
+		"goal": "Germinar el semillero",
+		"context": "El Huertero debe tener cajas de huerto o cajones de cultivo, tierra, abono compuesto y semillas.",
+		"resources": [ "semillas", "cajas de huerto o cajones de cultivo", "herramientas" ],
+		"actors": [ "huertero", "ayudante de huertero (si es necesario)" ],
+		"episodes": [
+			"El Huertero toma la caja de huerto y coloca tierra en cada orificio.",
+			"El Huertero coloca una semilla en cada orificio, completando el mismo con abono compuesto.",
+			"Colocar la caja de huerto a temperatura (óptima de 16 °C a 28 °C).",
+			"Esperar en promedio de cinco a ocho días después de la siembra."
+		]
+	},
+
+	{
+		"scenario": "Abonar el semillero",
+		"goal": "Semillero abonado",
+		"context": "El Huertero debe tener cajas de huerto o cajones de cultivo, tierra, abono compuesto y semillas.",
+		"resources": [ "abono compuesto", "cajas de huerto o cajones de cultivo", "herramientas" ],
+		"actors": [ "huertero", "ayudante de huertero (si es necesario)" ],
+		"episodes": [
+			"El Huertero toma la caja de huerto y coloca tierra en cada orificio.",
+			"El Huertero coloca una semilla en cada orificio, completando en una proporción del 35 % al 50 %."
+		]
+	},
+
+	{
+		"scenario": "Regar el semillero",
+		"goal": "Regar el semillero",
+		"context": "El Huertero debe tener el semillero germinando.",
+		"resources": [ "semillero", "herramientas (regadera)", "agua" ],
+		"actors": [ "huertero", "ayudante de huertero (si es necesario)" ],
+		"episodes": [
+			"El Huertero toma la regadera con agua.",
+			"El Huertero coloca suavemente agua en cada orificio."
+		]
+	},
+
+	{
+		"scenario": "Trasplantar",
+		"goal": "Pasar los plantines del semillero a un lugar definitivo.",
+		"context": "El Huertero debe tener cajas de huerto o cajones de cultivo con los plantines germinados.",
+		"resources": [ "plantines", "cajas de huerto o cajones de cultivo", "herramientas", "tierra", "agua" ],
+		"actors": [ "huertero", "ayudante de huertero (si es necesario)" ],
+		"episodes": [
+			"El Huertero prepara las eras o los lomillos en línea recta, haciendo un hoyo de tamaño ligeramente mayor al volumen ocupado por el recipiente que contiene al plantin.",
+			"Durante las horas frescas de la mañana o después de las tres de la tarde, el Huertero toma la caja de huerto con los plantines y los transporta al lugar definitivo.",
+			"Si el terreno está muy seco, el Huertero, hace un riego previo a la siembra.",
+			"El Huertero coloca fertilizante en cada hoyo.",
+			"El Huertero quita el plantin de la caja de huerto y lo coloca en el hoyo, adicionando tierra a 2 cm o 3 cm de la base del plantin.",
+			"Repetir los pasos para la totalidad de los plantines"
+		]
+	},
+
+	{
+		"scenario": "Regar la Huerta",
+		"goal": "Regar el huerta",
+		"context": "El Huertero y las lluvias escasas.",
+		"resources": [ "cultivo en la huerta", "agua" ],
+		"actors": [ "huertero", "ayudante de huertero (si es necesario)" ],
+		"episodes": [
+			"Dependiendo de las condiciones del cultivo, el Huertero decide qué tipo de riesgo aplicar: riego por gravedad, riego por goteo y riego natural."
+		]
+	},
+
+	{
+		"scenario": "Colocar postes o tutores",
+		"goal": "Facilitar el manejo general de las plantas y evitar que los frutos toquen el suelo.",
+		"context": "Entre quince y veintidós días posteriores el trasplante.",
+		"resources": [ "postes de caña o bambú", "herramientas" ],
+		"actors": [ "huertero", "ayudante de huertero (si es necesario)" ],
+		"episodes": [
+			"El Huertero toma la el poste y lo coloca al centro de cada lomillo a una distancia entre postes de 2.5 metros a 3 metros de largo, enterrados a unos 40 cm de profundidad, y a una altura aérea de 2.5 m. para dar mejor soporte a las plantas.",
+			"El Huertero coloca en las cabeceras de cada lomillo un poste de mayor grosor que los internos."
+		]
+	},
+
+	{
+		"scenario": "Podar las plantas",
+		"goal": "Controlar el desarrollo de la planta.",
+		"context": "Pasadas las cuatro semanas de sembrado, las plantas crecen de forma desalineada.",
+		"resources": [ "Pinza de podar" ],
+		"actors": [ "Huertero", "Ayudante de huertero (si es necesario)" ],
+		"episodes": [
+			"El Huertero la pinza de podar y corta, limitando el número de tallos productivos y la cantidad de frutos por planta.",
+			"El Huertero repite el paso anterior por cada planta."
+		]
+	},
+
+	{
+		"scenario": "Controlar plagas e insectos",
+		"goal": "Liberar a las plantas de las plagas e insectos",
+		"context": "Presencia de plagas e insectos durante el ciclo de vida de cultivo del tomate.",
+		"resources": [ "preparados naturales y comerciales", "herramientas" ],
+		"actors": [ "Huertero", "Ayudante de huertero (si es necesario)", "Ingeniero Agrónomo" ],
+		"episodes": [
+			"El Ingeniero Agrónomo revisa las plantas y detecta los hospederos y el daño que le provoca al cultivo del tomate.",
+			"El Ingeniero Agrónomo informa al Huertero qué preparado natural y/o artificial debe aplicarse según plaga o insecto detectado.",
+			"El Huertero procede al manejo y control de las plagas e insectos."
+		]
+	},
+
+	{
+		"scenario": "Cosecha",
+		"goal": "Cosechar los frutos de tomates",
+		"context": "Las plantas presentan una madurez fisiológica de la fruta.",
+		"resources": [ "tinas plásticas limpias", "herramientas" ],
+		"actors": [ "huertero", "ayudante de huertero (si es necesario)" ],
+		"episodes": [
+			"El Huertero retira manualmente y con cuidado la fruta de la planta.",
+			"El Huertero coloca el fruto retirado en la tina de plástico limpia, evitando golpes."
+		]
+	},
+
+	{
+		"scenario": "Hacer el compost",
+		"goal": "Disponer de abono orgánico compuesto",
+		"context": "El Huertero almacena en un lugar separado los residuos orgánicos.",
+		"resources": [ "residuos orgánicos (cáscaras de frutas, restos de verduras, cáscaras de huevo, yerba, té, café, huesos molidos, hojas, entre otras)", "tacho de 200 lts", "sin tapa ni fondo con agujeros en toda la superficie", "herramientas" ],
+		"actors": [ "huertero", "ayudante de huertero (si es necesario)" ],
+		"episodes": [
+			"El Huertero toma el tacho y lo asienta sobre ladrillos, dejando un espacio (que tapará luego con una madera) y por donde extraerá el compuesto más adelante.",
+			"El Huertero todos los días arroja en el tacho los restos de cocina, hojas, pastos, yuyos, etc.",
+			"Cada tanto el huertero agrega una capa de tierra.",
+			"Remueve con la horquilla para airearlo.",
+			"Tapar el tacho para que no se moje con el agua de las lluvias.",
+			"Luego de un tiempo (2 meses en verano y un poco más, en el invierno), el abono orgánico estará “maduro”. Es decir cuando ya no sea posible distinguir los residuos.",
+			"Separar el abono orgánico “maduro” con una horquilla o zaranda, en más grueso (implica que debe continuar el proceso de descomposición), mediano (es utilizado para colocar entre las plantas como protector del suelo) y el material más fino (utilizado en los almácigos)."
+		]
+	},
+
+	{
+		"scenario": "Amarrar las plantas",
+		"goal": "Dar sostén y mantener las plantas erectas.",
+		"context": "Plantas con 60 cm de altura.",
+		"resources": [ "hilo sisal", "herramientas" ],
+		"actors": [ "huertero", "ayudante de huertero (si es necesario)" ],
+		"episodes": [
+			"El Huertero utiliza un hilo sisal para amarrar en forma horizontal los tutores o postes.",
+			"A medida que la planta va creciendo, el Huertero amarra la planta en forma muy suave, evitando no tensar.",
+			"Se agregan entre tres o cuatro hileras de hilo, conforme al crecimiento de la planta."
+		]
+	},
+
+	{
+		"scenario": "Colocar bandas o techos plásticos",
+		"goal": "Proteger la huerta de las lluvias.",
+		"context": "El Huertero debe proteger las plantas de las lluvias y disminuir la incidencia de enfermedades fungosas y bacteriales en la huerta.",
+		"resources": [ "plástico trasparentes", "alambres", "herramientas" ],
+		"actors": [ "huertero", "ayudante de huertero (si es necesario)" ],
+		"episodes": [
+			"El Huertero emplea plásticos trasparentes cuyo ancho oscila entre 0.8 cm y 1.2 m, tensados sobre un alambre.",
+			"El Huertero los plásticos trasparentes manteniendo cierto grado de inclinación para evitar la acumulación de agua."
+		]
+	},
+
+	{
+		"scenario": "Poda de Formación",
+		"goal": "Formar a las plantas dejando uno o dos tallos por planta.",
+		"context": "Veinte o treinta días luego del trasplante, la planta crece hacia arriba y puede sobrepasar los 2 m. de altura hasta alcanzar el techo y, la planta puede crecer en forma vertical hasta  los 1.5 m. y luego el huertero dirige la planta en forma horizontal encima de los hilos de sostén del tutorado.",
+		"resources": [ "pinza de podar", "herramientas" ],
+		"actors": [ "huertero", "ayudante de huertero (si es necesario)" ],
+		"episodes": [
+			"El Huertero toma tijera y corta, dejando uno, dos o tres tallos por planta.",
+			"En caso de ser una planta cuyo fruto sea el cultivo del tomate cherry, suelen dejarse entre tres y cuatro tallos.",
+			"El Huertero elimina brotes axilares, mejorando el desarrollo del tallo principal.",
+			"El Huertero elimina hojas viejas o enfermas, facilitando la ventilación de la planta."
+		]
+	},
+
+	{
+		"scenario": "Despunte de inflorescencias",
+		"goal": "Eliminar flores y frutos desechables",
+		"context": "Plantas con flores y frutos desechables.",
+		"resources": [ "herramientas" ],
+		"actors": [ "huertero", "ayudante de huertero (si es necesario)" ],
+		"episodes": [
+			"El Huertero elimina flores y frutos para homogeneizar y aumentar el tamaño y calidad de los frutos."
+		]
+	},
+
+	{
+		"scenario": "Aporcar la planta",
+		"goal": "Favorecer el desarrollo de una mayor cantidad de raíces.",
+		"context": "Práctica que se realiza luego de la poda de formación.",
+		"resources": [ "herramientas" ],
+		"actors": [ "huertero", "ayudante de huertero (si es necesario)" ],
+		"episodes": [
+			"El Huertero cubre la parte inferior de la plana con abono orgánico.",
+			"El Huertero debe tener especial cuidado de no dañar los tallos ni las raíces, ya que las heridas sirven de entrada a los insectos o plagas."
+		]
+	},
+
+	{
+		"scenario": "Manejar la polinización de los frutos",
+		"goal": "Polinizar los frutos.",
+		"context": "Plantas protegidas por los techos de plástico.",
+		"resources": [ "herramientas" ],
+		"actors": [ "huertero", "ayudante de huertero (si es necesario)" ],
+		"episodes": [
+			"El Huertero hace vibrar las plantas para que desprendan el polen."
+		]
+	},
+
+	{
+		"scenario": "Colocar tapavientos",
+		"goal": "Proteger los cultivos del viento.",
+		"context": "Ambiente con mucho viento.",
+		"resources": [ "herramientas" ],
+		"actors": [ "huertero", "ayudante de huertero (si es necesario)" ],
+		"episodes": [
+			"El Huertero coloca una barrera alta de lonas o malla, alrededor de la huerta, para evitar que la fruta sufra un aborto previo a la cosecha."
+		]
+	},
+
+	{
+		"scenario": "Quita de malezas",
+		"goal": "Limpiar las plantas de cualquier especie vegetal que compita por la luz, el agua y los nutrientes del suelo.",
+		"context": "Treinta a setenta días después del trasplante.",
+		"resources": [ "herramientas" ],
+		"actors": [ "huertero", "ayudante de huertero (si es necesario)" ],
+		"episodes": [
+			"El Huertero cubre la parte inferior de la plana con abono orgánico.",
+			"El Huertero debe tener especial cuidado de no dañar los tallos ni las raíces, ya que las heridas sirven de entrada a los insectos o plagas."
+		]
+	},
+
+	{
+		"scenario": "Controlar hongos",
+		"goal": "Manejar la principales enfermedades bacterianas.",
+		"context": "Huerta con hospederos.",
+		"resources": [ "herramientas", "preparados naturales y preparados comerciales" ],
+		"actors": [ "Huertero", "ayudante de huertero (si es necesario)", "ingeniero agrónomo" ],
+		"episodes": [
+			"El ingeniero agrónomo detecta el tipo de enfermedad  de acuerdo al síntoma presentado por la planta.",
+			"Indica al Huertero el manejo de la enfermedad para controlar la misma.",
+			"El Huertero procede a incorporar a su huerta, los preparados naturales y/o comerciales."
+		]
+	},
+
+	{
+		"scenario": "Controlar virus",
+		"goal": "Manejar la principales enfermedades virales.",
+		"context": "Huerta con hospederos.",
+		"resources": [ "herramientas", "preparados naturales y preparados comerciales" ],
+		"actors": [ "Huertero", "ayudante de huertero (si es necesario)", "ingeniero agrónomo" ],
+		"episodes": [
+			"El ingeniero agrónomo detecta el tipo de enfermedad  de acuerdo al síntoma presentado por la planta.",
+			"Indica al Huertero el manejo de la enfermedad para controlar la misma.",
+			"El Huertero procede a incorporar a su huerta, los preparados naturales y/o comerciales."
+		]
+	},
+
+	{
+		"scenario": "Cosecha del tomate en racimos",
+		"goal": "Obtener el tomate comercializable",
+		"context": "Las tomateras se encuentran en estado cosechable. La cosecha del tomate en racimos comienza durante la mañana. No hay presencia de rocío.",
+		"actors": [ "Agricultor" ],
+		"resources": [ "Tomatera", "Tina" ],
+		"episodes": [
+			"El agricultor evalúa la madurez fisiológica de la tomatera utilizando la escala MEIC-MAG 2004.",
+			"El agricultor evalúa la madurez comercial de la tomatera.",
+			"El agricultor decide si el fruto ha alcanzado la madurez fisiológica y comercial necesaria para ser cosechado.",
+			"El agricultor transporta las tinas hacia la tomatera.",
+			"El agricultor separa el tomate de la tomatera.",
+			"El agricultor descarta aquellos frutos que presenten daños por plagas..",
+			"El agricultor clasifica el tomate según su estado de maduración utilizando el Reglamento Técnico RTCR 739-2004 específico para Tomate para Consumo en Estado Fresco.",
+			"El agricultor clasifica el tomate según su calidad en primera, segunda, tercera utilizando el calibrador.",
+			"El agricultor lava el tomate.",
+			"El agricultor deposita el fruto en la tina correspondiente a su estado de maduración, tamaño, y calidad.",
+			"El agricultor estiba las tinas cargadas.",
+			"El agricultor verifica que el tomate en la tina no sea aplastado.",
+			"El agricultor verifica que las tinas se encuentren a la sombra.",
+			"El agricultor verifica que las tinas permitan la adecuada aireación del tomate."
+		]
+	},
+
+	{
+		"scenario": "Cosecha del tomate individual",
+		"goal": "Obtener el tomate comercializable",
+		"context": "Las tomateras se encuentran en estado cosechable. La cosecha del tomate individual comienza durante la mañana. No hay presencia de rocío.",
+		"actors": [ "Agricultor" ],
+		"resources": [ "Tomatera", "Tina" ],
+		"episodes": [
+			"El agricultor evalúa la madurez fisiológica de la tomatera utilizando la escala MEIC-MAG 2004.",
+			"El agricultor evalúa la madurez comercial de la tomatera.",
+			"El agricultor decide si el fruto ha alcanzado la madurez fisiológica y comercial necesaria para ser cosechado.",
+			"El agricultor transporta las tinas hacia la tomatera.",
+			"El agricultor separa el tomate de la tomatera.",
+			"El agricultor descarta aquellos frutos que presenten daños por plagas..",
+			"El agricultor elimina el cáliz del tomate.",
+			"El agricultor elimina el pedúnculo del tomate.",
+			"El agricultor clasifica el tomate según su estado de maduración utilizando el Reglamento Técnico RTCR 739-2004 específico para Tomate para Consumo en Estado Fresco.",
+			"El agricultor clasifica el tomate según su calidad en primera, segunda, tercera utilizando el calibrador.",
+			"El agricultor lava el tomate.",
+			"El agricultor deposita el fruto en la tina correspondiente a su estado de maduración, tamaño, y calidad.",
+			"El agricultor estiba las tinas cargadas.",
+			"El agricultor verifica que el tomate en la tina no sea aplastado.",
+			"El agricultor verifica que las tinas se encuentren a la sombra.",
+			"El agricultor verifica que las tinas permitan la adecuada aireación del tomate."
+		]
+	},
+
+	{
+		"scenario": "Siembra de la semilla",
+		"goal": "Obtener las tomateras en estado de planta joven",
+		"context": "La semilla se encuentra registrada en la Oficina Nacional de Semillas. La siembra de la semilla se realiza en el mes de Abril (siembra de invierno) o en Octubre/Noviembre (siembra de verano). La siembra de la semilla se realiza cuando comienza la época de lluvias.",
+		"actors": [ "Agricultor" ],
+		"resources": [ "Semilla", "Sustrato", "Fertilizante", "Semillero", "Germinador" ],
+		"episodes": [
+			"El agricultor adquiere la semilla.",
+			"El agricultor higieniza el semillero.",
+			"El agricultor elige el tipo de sustrato a utilizar.",
+			"El agricultor deposita el sustrato en el semillero.",
+			"El agricultor fertiliza el sustrato.",
+			"El agricultor coloca el acolchado sobre el sustrato.",
+			"El agricultor deposita la semilla en el semillero.",
+			"El agricultor cubre el semillero con un plástico negro.",
+			"El agricultor verifica la adecuada iluminación del germinador.",
+			"El agricultor verifica que el germinador esté libre de sombras.",
+			"El agricultor verifica que el germinador esté protegido de vientos fuertes.",
+			"El agricultor coloca el semillero en el germinador.",
+			"El agricultor verifica que el semillero esté colocado en orientación de este a oeste en el germinador.",
+			"El agricultor verifica la disponibilidad de agua para el riego.",
+			"El agricultor verifica que la temperatura en el germinador se encuentra entre 16 y 28 grados centígrados.",
+			"El agricultor verifica la humedad del sustrato.",
+			"El agricultor espera que la semilla germine."
+		]
+	},
+
+	{
+		"scenario": "Transplante",
+		"goal": "Trasladar la tomatera desde el semillero a su lugar definitivo, sea al campo o al invernadero.",
+		"context": "La tomatera se encuentra en estado de crecimiento rápido. Han transcurrido entre 25 y 30 días de la siembra. La tomatera no ha llegado a estado de floración.",
+		"actors": [ "Agricultor" ],
+		"resources": [ "Semillero", "Eras", "Lomillos", "Tierra", "Tutor", "Techo plástico", "Mecales" ],
+		"episodes": [
+			"El agricultor determina el estado de maduración de la tomatera.",
+			"El agricultor decide el momento del transplante.",
+			"El agricultor transporta el semillero del germinador al suelo.",
+			"El agricultor prepara las eras y los lomillos.",
+			"El agricultor determina si se utilizará línea de siembra simple o doble.",
+			"El agricultor determina la distancia de siembra adecuada según el tipo de tomatera, la época, y  las prácticas de cosecha.",
+			"El agricultor perfora los hoyos en el suelo a la distancia de siembra calculada anteriormente y en el tipo de línea determinada anteriormente..",
+			"El agricultor riega el suelo.",
+			"El agricultor fertiliza el suelo.",
+			"El agricultor coloca las tomateras en los hoyos.",
+			"El agricultor agrega tierra a la base de las tomateras.",
+			"El agricultor coloca el tutor.",
+			"El agricultor amarra la tomatera al tutor.",
+			"El agricultor coloca el techo plástico.",
+			"El agricultor tensa los mecales del techo plástico."
+		]
+	},
+
+	{
+		"scenario": "Poda",
+		"goal": "Controlar el desarrollo de la tomatera a conveniencia del agricultor limitando el número de tallos productivos y la cantidad de frutos por tomatera para lograr mayor precocidad en la tomatera y frutos más grandes, con un mejor cuajado, y de mayor calidad.",
+		"context": "La tomatera se encuentra en estado de crecimiento rápido. Hay más de un tallo productivo en la tomatera. Han transcurrido entre 20 y 30 días desde el transplante. La tomatera no ha llegado a estado de floración.",
+		"actors": [ "Agricultor" ],
+		"resources": [ "Tijera de podar" ],
+		"episodes": [
+			"El agricultor identifica el tallo de mayor vigor.",
+			"El agricultor identifica el eje ubicado por debajo de la primera inflorescencia.",
+			"El agricultor corta los primeros tallos laterales con la tijera de podar.",
+			"El agricultor elimina las hojas que se hallan por debajo del primer racimo floral con la tijera de podar."
+		]
+	},
+
+	{
+		"scenario": "Fumigación",
+		"goal": "Prevenir la aparición de plagas en la tomatera",
+		"context": "La tomatera ha sido trasplantada.",
+		"actors": [ "Agricultor" ],
+		"resources": [ "Pesticida" ],
+		"episodes": [
+			"El agricultor evalúa la tomatera.",
+			"El agricultor determina las plagas que presentan riesgo para la tomatera.",
+			"El agricultor evalúa los pesticidas disponibles en el mercado.",
+			"El agricultor decide los pesticidas a utilizar para la fumigación.",
+			"El agricultor aplica el pesticida sobre la tomatera o el suelo."
+		]
+	},
+
+	{
+		"scenario": "Deshierbe",
+		"goal": "Prevenir el crecimiento de, o eliminar una vez aparecidas, las plantas indeseables de cualquier especie vegetal que no son el objeto directo de la explotación agrícola y que compiten con la tomatera.",
+		"context": "Han transcurrido entre 30 y 75 días desde el transplante.",
+		"actors": [ "Agricultor" ],
+		"resources": [ "Azadón", "Motoguadaña", "Machete", "Herbicida" ],
+		"episodes": [
+			"El agricultor escruta el suelo en busca de plagas vegetales.",
+			"El agricultor elimina la plaga detectada por medio del azadón, motoguadaña, o machete.",
+			"El agricultor limpia los equipos de labranza para prevenir futuros ingresos de plagas vegetales.",
+			"El agricultor aplica herbicida sobre el suelo."
+		]
+	},
+
+	{
+		"scenario": "Aporca",
+		"goal": "Favorecer el desarrollo de un mayor número de raíces en la tomatera.",
+		"context": "La tomatera ha sido podada. La tomatera no se encuentra injertada.",
+		"actors": [ "Agricultor" ],
+		"resources": [ "Suelo", "Sustrato", "Abono orgánico" ],
+		"episodes": [
+			"El agricultor verifica que la tomatera no esté injertada.",
+			"El agricultor cubre la parte inferior de la tomatera con suelo, sustrato, o abono orgánico.",
+			"El agricultor verifica que no se haya dañado el tallo ni las raíces de la tomatera.",
+			"El agricultor protege las heridas encontradas para evitar la entrada de patógenos."
+		]
+	},
+
+	{
+		"scenario": "Sembrar Semillas de Tomate",
+		"goal": "Colocar las Semillas de Tomate en el Semillero",
+		"context": "semilla y semilleros preparados",
+		"resources": [ "Semilla", "Semillero", "sustrato", "Agua" ],
+		"actors": [ "Agricultor" ],
+		"episodes": [
+			"El Agricultor elige las semillas de tomate.",
+			"El Agricultor coloca en el semillero las semillas.",
+			"El Agricultor tapa con sustrato las semillas.",
+			"El Agricultor pulveriza con agua el semillero."
+		]
+	},
+
+	{
+		"scenario": "Trasplantar Planta de Tomate",
+		"goal": "Pasar la planta de tomate del semillero a el Suelo",
+		"context": "suelo preparado",
+		"resources": [ "planta de tomate", "suelo", "agua", "mecanismo de riego" ],
+		"actors": [ "Agricultor" ],
+		"episodes": [
+			"El Agricultor elige las plantas de tomates del semillero.",
+			"El agricultor pasa las plantas de tomates del semillero al suelo.",
+			"El agricultor elige mecanismo de riego.",
+			"El Agricultor riega con agua la planta de tomate."
+		]
+	},
+
+	{
+		"scenario": "Podar Planta de Tomate",
+		"goal": "Recortar la planta de tomate para incrementar su fruto como así también para prevenir enfermedades.",
+		"context": "planta de tomate desarrollada",
+		"resources": [ "planta de tomate", "suelo", "agua" ],
+		"actors": [ "Agricultor", "Enfermedad" ],
+		"episodes": [
+			"El Agricultor detecta las plantas de tomates con Enfermedad.",
+			"El Agricultor detecta las plantas de tomate con crecimiento anormal.",
+			"El agricultor corta las partes de la planta con crecimiento anormal."
+		]
+	},
+
+	{
+		"scenario": "Regar",
+		"goal": "Consiste en aportar agua a las semillas y a las plantas de tomate para satisfacer las necesidades hídricas",
+		"context": "semillas en semilleros y planta de tomate en suelo",
+		"resources": [ "planta de tomate", "suelo", "agua", "mecanismo de riego" ],
+		"actors": [ "Agricultor", "Servicio Meteorológico" ],
+		"episodes": [
+			"El Agricultor selecciona el mecanismo de riego.",
+			"El Agricultor consulta estado del Servicio Meteorológico.",
+			"El Servicio Meteorológico proporciona información sobre clima.",
+			"El Agricultor decide intensidad del riego.",
+			"El Agricultor riega con mecanismo de riego y agua."
+		]
+	},
+
+	{
+		"scenario": "Fumigar",
+		"goal": "Echar productos químicos sobre las plantas de tomate cultivadas para combatir plagas.",
+		"context": "detección de plaga de insectos en plantas de tomate",
+		"resources": [ "planta de tomate", "insecticida", "tomate" ],
+		"actors": [ "Agricultor", "Plaga", "insectos" ],
+		"episodes": [
+			"El Agricultor detecta desarrollo anormal en Planta de Tomate.",
+			"La Plaga destruye hojas, tallos y frutos de la Planta de Tomate.",
+			"La Plaga dañan el Tomate haciendo perforaciones.",
+			"El Agricultor analiza insecto.",
+			"El Agricultor elige insecticida.",
+			"El Agricultor prepara insecticida.",
+			"El Agricultor Fumiga con insecticida las plantas de Tomate."
+		]
+	},
+
+	{
+		"scenario": "Tutorado",
+		"goal": "permitir mantener erguida la planta de tomate.",
+		"context": "planta de tomate sin tutor.",
+		"resources": [ "planta de tomate", "tomate", "tutor" ],
+		"actors": [ "Agricultor" ],
+		"episodes": [
+			"El Agricultor elige la técnica de Tutorado",
+			"El Agricultor prepara tutor",
+			"El Agricultor instala tutor.",
+			"El tutor guía el crecimiento de la Planta de Tomate."
+		]
+	},
+
+	{
+		"scenario": "Cosechar",
+		"goal": "Cosechar el Tomate cuando esté maduro de la planta de tomate",
+		"context": "Tomate alcanzan madurez",
+		"resources": [ "planta de tomate", "tomate", "cajon" ],
+		"actors": [ "Agricultor", "Jornalero" ],
+		"episodes": [
+			"El Agricultor analiza la Planta de Tomate.",
+			"El Agricultor determina que la Planta de Tomate alcanzó el estado de madurez.",
+			"El Agricultor decide cuándo cosechar el Tomate maduro.",
+			"El Jornalero saca el Tomate de la Planta de Tomate.",
+			"El Jornalero coloca los tomates cosechados en el cajón."
+		]
+	},
+
+	{
+		"scenario": "Elegir Variedad de Tomate",
+		"goal": "Elegir la variedad de tomates a sembrar.",
+		"context": "diferentes variedades de semillas de tomate.",
+		"resources": [ "semilla" ],
+		"actors": [ "Agricultor", "Servicio Meteorológico" ],
+		"episodes": [
+			"El Agricultor elige una variedad de Tomate de acuerdo a su rendimiento.",
+			"El Servicio Meteorológico informa pronóstico del clima.",
+			"El Agricultor analiza pronóstico del clima",
+			"El Agricultor elige una variedad de Tomate."
+		]
+	},
+
+	{
+		"scenario": "Elegir Mecanismo de Riego",
+		"goal": "Elegir un mecanismo de riego en base al pronóstico proporcionado por el Servicio Meteorológico o a la disponibilidad de agua.",
+		"context": "diferentes mecanismos de riego.",
+		"resources": [ "mecanismos de riego", "agua" ],
+		"actors": [ "Agricultor", "Servicio Meteorológico" ],
+		"episodes": [
+			"El Agricultor elige un mecanismo de riego en base a la disponibilidad de agua.",
+			"El Agricultor elige un mecanismo de riego en base a pronóstico del Servicio meteorológico.",
+			"El Agricultor instala el mecanismo de riego."
+		]
+	},
+
+	{
+		"scenario": "Manejo de Enfermedades Abióticas",
+		"goal": "Manejo de enfermedades por falta o el exceso de algún factor necesario para la vida de la Planta de Tomate.",
+		"context": "enfermedad en planta de tomate.",
+		"resources": [ "fertilizante", "nutrientes", "suelo", "semillero" ],
+		"actors": [ "Agricultor", "Enfermedad Abiótica" ],
+		"episodes": [
+			"La enfermedad Abiótica se manifiesta en la Planta de Tomate",
+			"El Agricultor detecta enfermedad Abiótica.",
+			"El agricultor aplica fertilizante en base de calcio.",
+			"El agricultor proporciona nutrición adecuada a la planta de tomate.",
+			"El agricultor controla la temperatura de los semilleros.",
+			"El agricultor realiza drenajes para mantener el suelo aireado."
+		]
+	},
+
+	{
+		"scenario": "Manejo Enfermedades Fungosas",
+		"goal": "Manejo de Enfermedades causada por Hongos, los síntomas son manchas blancas, grises o negruzcas y podredumbres (Por ejemplo el Mindiu, La ceniza y la Atracnosis)",
+		"context": "enfermedad en planta de tomate.",
+		"resources": [ "fertilizante", "nutrientes", "suelo", "semillero" ],
+		"actors": [ "Agricultor", "Enfermedad Fungosa" ],
+		"episodes": [
+			"La Enfermedad Fungosa se manifiesta en la Planta de Tomate",
+			"El Agricultor detecta la Enfermedad Fungosa.",
+			"El agricultor evita que el fruto de la planta de tomate roce con el suelo.",
+			"El agricultor utiliza fungicidas para proteger la planta de tomate.",
+			"El agricultor realiza podas de la planta de tomate.",
+			"El agricultor elimina las plantas de tomates enfermas.",
+			"El agricultor controla el riego de la planta de tomate."
+		]
+	},
+
+	{
+		"scenario": "Manejo Enfermedades bacterianas",
+		"goal": "Manejo de  enfermedades causadas por bacterias  son reconocibles por la aparición de pústulas en tallos y frutos y por la formación de manchas necróticas en frutos.",
+		"context": "enfermedad en planta de tomate.",
+		"resources": [ "fertilizante", "nutrientes", "suelo" ],
+		"actors": [ "Agricultor", "Enfermedad bacteriana" ],
+		"episodes": [
+			"La Enfermedad bacteriana se manifiesta en la Planta de Tomate",
+			"El Agricultor detecta la Enfermedad bacteriana.",
+			"El agricultor elimina los frutos enfermos.",
+			"El agricultor utiliza semillas sanas y desinfectadas.",
+			"El agricultor desinfecta materiales y equipo de trabajo.",
+			"El agricultor elimina planta de tomate enfermas."
+		]
+	},
+
+	{
+		"scenario": "Manejo Enfermedades Virales",
+		"goal": "Manejo de enfermedades causadas por virus producen manchas de diferentes colores en hojas, el virus del bronceado produce decoloración de hojas y muy evidente en frutos.",
+		"context": "enfermedad en planta de tomate.",
+		"resources": [ "fertilizante", "nutrientes", "suelo" ],
+		"actors": [ "Agricultor", "Enfermedad Virales" ],
+		"episodes": [
+			"La Enfermedad viral se manifiesta en la Planta de Tomate",
+			"El Agricultor detecta la Enfermedad viral.",
+			"El Agricultor elimina malezas, residuos de cosecha y frutos.",
+			"El agricultor efectúa control de virus.",
+			"El Agricultor utiliza variedades resistentes.",
+			"El Agricultor siembra plantines sanos.",
+			"El Agricultor desinfecta herramientas de trabajo.",
+			"El Agricultor utiliza trampas para detección y captura de insectos",
+			"El Agricultor utiliza insecticidas para reducir insectos."
+		]
+	},
+
+	{
+		"scenario": "Consultar Pronóstico del Servicio Meteorológico",
+		"goal": "Obtener información sobre el clima, en los meses futuros.",
+		"context": "información sobre clima.",
+		"resources": [ "tomate", "mecanismo de riego" ],
+		"actors": [ "Agricultor", "Servicio Meteorológico" ],
+		"episodes": [
+			"El Agricultor consulta estado del Servicio Meteorológico.",
+			"El Servicio Meteorológico envía pronóstico del clima.",
+			"El Agricultor analiza pronósticos.",
+			"El Agricultor define mecanismos de riego.",
+			"El Agricultor prepara invernadero."
+		]
+	},
+
+	{
+		"scenario": "Servicio meteorológico Emite Alertas de Helada",
+		"goal": "Recibir del Servicio meteorológico  alertas de temperaturas muy bajas",
+		"context": "información sobre temperaturas extremas.",
+		"resources": [ "suelo", "planta de tomate", "invernadero" ],
+		"actors": [ "Agricultor", "Servicio Meteorológico" ],
+		"episodes": [
+			"El Agricultor recibe alerta de helada del Servicio Meteorológico.",
+			"El Agricultor revisa el Invernadero",
+			"El Agricultor riega el suelo.",
+			"El Agricultor protege la planta de Tomate."
+		]
+	},
+
+	{
+		"scenario": "Desmalezar",
+		"goal": " Quitar la maleza y las hierbas al suelo.",
+		"context": "suelo con maleza.",
+		"resources": [ "suelo", "maleza" ],
+		"actors": [ "Agricultor" ],
+		"episodes": [
+			"La maleza afecta a la planta de tomate.",
+			"La maleza quita nutrientes a la planta de Tomate.",
+			"El Agricultor observa malezas cerca de Planta de Tomate.",
+			"El Agricultor quita la maleza del suelo"
+		]
+	},
+
+	{
+		"scenario": "Encalado del Suelo",
+		"goal": " Adición al suelo de algún compuesto que contiene sólo calcio, o calcio y magnesio, y que es capaz de reducir la acidez del suelo.",
+		"context": "suelo sin encalado",
+		"resources": [ "suelo", "Análisis del Suelo" ],
+		"actors": [ "Agricultor" ],
+		"episodes": [
+			"El Agricultor analiza información de Análisis del Suelo",
+			"El Agricultor prepara el Suelo",
+			"El Agricultor prepara el compuesto con calcio, magnesio.",
+			"El Agricultor realiza el encalado del suelo."
+		]
+	},
+
+	{
+		"scenario": "Abona",
+		"goal": " Nutrir el suelo con el fin de alimentar la planta de tomate pueden ser naturales o preparados químicos.",
+		"context": "suelo sin abonar",
+		"resources": [ "suelo", "abono" ],
+		"actors": [ "Agricultor" ],
+		"episodes": [
+			"El Agricultor prepara el abono.",
+			"El Agricultor abona el suelo."
+		]
+	},
+
+	{
+		"scenario": "Control de Plaga",
+		"goal": " Regular una especie de insecto mediante el uso de medidas.",
+		"context": "plaga afecto planta de tomate",
+		"resources": [ "suelo", "abono" ],
+		"actors": [ "Agricultor", "insecticidas", "semilleros", "suelo" ],
+		"episodes": [
+			"El Agricultor pone los semilleros en ambientes protegidos.",
+			"El Agricultor aplica insecticidas.",
+			"El Agricultor elimina restos de cultivos.",
+			"El Agricultor usa Trampa para Insecto.",
+			"El Agricultor realiza un control biológico.",
+			"El Agricultor utiliza mallas antiinsectos.",
+			"El Agricultor realiza rotación de cultivos.",
+			"El Agricultor desinfecta el suelo."
+		]
+	},
+
+	{
+		"scenario": "Manejar la semilla.",
+		"goal": "Preparar la semilla de tomate para colocarla en el semillero.",
+		"context": "El Huertero selecciona el cultivar de tomate.",
+		"actors": [ "Huertero" ],
+		"resources": [ "Semilla", "semillero", "agua", "tierra" ],
+		"episodes": [
+			"El Huertero selecciona el cultivar de tomate.",
+			"El Huertero extrae la semilla.",
+			"El Huertero limpia la semilla.",
+			"El Huertero seca la semilla.",
+			"El Huertero deposita la semilla en el semillero."
+		]
+	},
+
+	{
+		"scenario": "Elaborar semillero.",
+		"goal": "Elaborar el semillero.",
+		"context": "Recipiente adecuado seleccionado para depositar las semillas.",
+		"actors": [ "Huertero" ],
+		"resources": [ "Semilla", "semillero", "agua", "tierra", "bandejas plásticas de polipropileno", "bandejas de estereofón" ],
+		"episodes": [
+			"El Huertero selecciona el recipiente adecuado para depositar las semillas.",
+			"El Huertero siembra la semilla en bandejas plásticas de polipropileno o bandejas de estereofón.",
+			"El Huertero coloca las bandejas en cuartos oscuros germinadores o cubre las bandejas con un plástico negro.",
+			"El Huertero realiza riegos cortos, frecuentes y por aspersión al semillero.",
+			"El Huertero revisa la semilla germinada.",
+			"El Huertero agrega el sustrato en el semillero."
+		]
+	},
+
+	{
+		"scenario": "Sembrar",
+		"goal": "Arrojar y esparcir las semillas en la tierra",
+		"context": "Semillas de tomate preparadas.",
+		"actors": [ "Huertero" ],
+		"resources": [ "Semillas", "semillero", "tierra", "sustrato" ],
+		"episodes": [
+			"El Huertero prepara la semilla.",
+			"El Huertero arroja la semilla en el semillero.",
+			"El Huertero cubre la semilla con medio centímetro de tierra o sustrato.",
+			"El Huertero riega la tierra cuidadosamente para no moverla demasiado.",
+			"El Huertero mantiene la tierra húmeda hasta la aparición de los primeros brotes."
+		]
+	},
+
+	{
+		"scenario": "Trasplantar",
+		"goal": "Acción para mover la plántula a un lugar definitivo.",
+		"context": "Las plántulas ya tiene al menos 4 hojas.",
+		"actors": [ "Huertero" ],
+		"resources": [ "Plántula", "semillero", "fertilizante", "tierra" ],
+		"episodes": [
+			"El Huertero trasplanta entre 25 y 30 días después de la siembra según calidad y vigor de la plántula.",
+			"El Huertero transporta el semillero del invernadero al campo en las horas frescas de la mañana o luego de las 3, en un sitio sombreado.",
+			"El Huertero hace un riego previo al espequeado y a la siembre si el terreno está muy seco.",
+			"El Huertero coloca el fertilizante evitando contacto con el sistema radical de las plántulas.",
+			"El Huertero coloca  las plántulas en los hoyos y adiciona tierra a 2 o 3 cm de la base de la plántula lo que facilita el crecimiento de las raíces."
+		]
+	},
+
+	{
+		"scenario": "Fertilizar",
+		"goal": "Proporcionar los nutrientes en las cantidades suficientes y en el momento en que el cultivo tiene la mayor demanda.",
+		"context": "Tomatera trasplantada.",
+		"actors": [ "Huertero o Ingeniero Agrónomo", "laboratorio de suelos" ],
+		"resources": [ "Fertilizante", "muestra de suelo" ],
+		"episodes": [
+			"El Huertero/Ing. Agrónomo calcula la cantidad de fertilizante según necesidades del cultivo.",
+			"El Huertero/Ing. Agrónomo toma una muestra de suelo.",
+			"El laboratorio de suelos correspondiente realiza un análisis químico del suelo.",
+			"El agente de extensión verifica las necesidades de nutrientes de la tomatera",
+			"El agente de extensión calcula las cantidades de fertilizante para el cultivo.",
+			"El Huertero/Ing. Agrónomo aplica fertilizante luego del transplante.",
+			"El Huertero aplica multiminerales 1 vez por semana."
+		]
+	},
+
+	{
+		"scenario": "Fertilizar Almácigo",
+		"goal": "Fertilizar en la etapa de almácigo.",
+		"context": "Almácigo creado.",
+		"actors": [ "Huertero o Ingeniero Agrónomo" ],
+		"resources": [ "Fertilizante", "almácigo" ],
+		"episodes": [
+			"El Huertero revisa el almácigo.",
+			"El Huertero aplica la fórmula completa 12-60-0 a razón de 2,5 g/l de agua.",
+			"El Huertero aplica la fórmula a los 4, 8 y 12 días después de la siembra.",
+			"El Huertero aplica la fórmula completa 20-20-20 a razón de 2,5 g/l de agua.",
+			"El Huertero aplica la fórmula completa a los 10, 14, 16, 18, 20 y 22 días posteriores a la siembra."
+		]
+	},
+
+	{
+		"scenario": "Fertilizar después del trasplante",
+		"goal": "Fertilizar después del trasplante",
+		"context": "Tomatera trasplantada.",
+		"actors": [ "Huertero o Ingeniero Agrónomo" ],
+		"resources": [ "macronutrientes", "micronutrientes", "insecticidas", "fungicidas" ],
+		"episodes": [
+			"El Huertero analiza la necesidad de macro y micronutrientes del tomate.",
+			"El Huertero fertiliza con nitrógeno y potasio a partir del trasplante y hasta la floración.",
+			"El Huertero fertiliza con nitrógeno y potasio al inicio del llenado del fruto.",
+			"El Huertero aplica los micronutrientes al follaje al menos una vez por semana junto con insecticidas o fungicidas."
+		]
+	},
+
+	{
+		"scenario": "Aporcar",
+		"goal": "Favorecer el desarrollo de un mayor número de raíces.",
+		"context": "Tomatera con poda de formación.",
+		"actors": [ "Huertero" ],
+		"resources": [ "Azadón", "moto guadaña o machete" ],
+		"episodes": [
+			"El Huertero maneja malezas con moto guadaña o machete.",
+			"El Huertero remueve la tierra con azadón.",
+			"El Huertero cubre la parte inferior de la tomatera con suelo, sustrato o abono orgánico."
+		]
+	},
+
+	{
+		"scenario": "Regar",
+		"goal": "Proporcionar una determinada cantidad de agua para obtener buenos rendimientos comerciales en épocas en las que la precipitación resulta insuficiente para el cultivo de tomate.",
+		"context": "Las plántulas del semillero requieren agua.",
+		"actors": [ "Huertero" ],
+		"resources": [ "Semillero", "plántula", "equipo de riego" ],
+		"episodes": [
+			"El Huertero aplica el agua continuamente para proporcionar un óptimo desarrollo de las plántulas.",
+			"El Huertero riega el semillero suavemente para evitar daños mecánicos.",
+			"El Huertero riega el cultivo en el campo.",
+			"El Huertero aplica uno o varios tipos de riego  según condiciones de cultivo y accesibilidad del equipo adecuado.",
+			"El Huertero riega por goteo comúnmente."
+		]
+	},
+
+	{
+		"scenario": "Fertirrigar",
+		"goal": "Aportar nutrientes a través del agua de riego.",
+		"context": "Tomatera en crecimiento.",
+		"actors": [ "Huertero" ],
+		"resources": [ "Fertilizante", "agua", "nutriente" ],
+		"episodes": [
+			"El Huertero recorre la plantación.",
+			"El Huertero aplica fertilizante, cantidad de agua y nutrientes adecuados según demanda del cultivo."
+		]
+	},
+
+	{
+		"scenario": "Manejar plagas",
+		"goal": "Controlar y manejar las principales plagas.",
+		"context": "Tomatera en crecimiento.",
+		"actors": [ "Huertero" ],
+		"resources": [ "Insecticida", "fertilizante" ],
+		"episodes": [
+			"El Huertero recorre la plantación.",
+			"El Huertero identifica el tipo de plaga.",
+			"El Huertero identifica el daño en la tomatera.",
+			"El Huertero maneja y controla la plaga."
+		]
+	},
+
+	{
+		"scenario": "Podar",
+		"goal": "Concentrar el crecimiento del tomate para obtenerlos más grandes, con mejor cuajado y mayor calidad para los cultivares de crecimiento semideterminado e indeterminado.",
+		"context": "La tomatera tiene entre 20 y 30 días posteriores al trasplante.",
+		"actors": [ "Huertero" ],
+		"resources": [ "Yema de los dedos" ],
+		"episodes": [
+			"El Huertero poda con la yema de los dedos.",
+			"El Huertero corta por encima de las ramas florales.",
+			"El Huertero realiza sucesivas podas.",
+			"El Huertero saca cuidadosamente los “chuponcitos” que crecen entre las ramas y frutos.",
+			"Los chupones se sacan cuando son pequeños.",
+			"Los chupones más grandes se sacan con mucho cuidado.",
+			"El Huertero deja uno, dos o tres ejes (tallos) por tomatera.",
+			"El Huertero elimina los primeros tallos laterales y hojas más viejas que se hallan por debajo del primer racimo floral."
+		]
+	},
+
+	{
+		"scenario": "Manejar malezas mediante prácticas culturales.",
+		"goal": "Realizar la tarea para eliminar malezas alrededor de la tomatera mediante prácticas culturales.",
+		"context": " Treinta y cinco y los setenta días después del trasplante.",
+		"actors": [ "Huertero" ],
+		"resources": [ "Azadón", "moto guadaña o machete" ],
+		"episodes": [
+			"El Huertero recorre el cultivo de tomate entre los 35 y 70 días del trasplante.",
+			"El Huertero aplica el tipo de práctica cultural para minimizar la competencia de la maleza, utilizando azadón, moto guadaña o machete."
+		]
+	},
+
+	{
+		"scenario": "Tutorar.",
+		"goal": "Mantener la tomatera erguida.",
+		"context": "Transcurridos de 15 a 22 días posteriores al trasplante.",
+		"actors": [ "Huertero" ],
+		"resources": [ "Tutor", "hilo tomatero" ],
+		"episodes": [
+			"El Huertero recorre el cultivo de tomate.",
+			"El Huertero coloca el tutor  al centro de cada lomillo.",
+			"El Huertero coloca el tutor con una distancia entre postes de 2,5 a 3m de largo.",
+			"El Huertero coloca un tutor de caña de bambú con mayor grosor en las cabeceras o al final de cada lomillo.",
+			"El Huertero entierra los tutores a 40 o 50 cm de profundidad y una altura aérea de 2.5 m.",
+			"El Huertero amarra en forma horizontal los tutores con hilo tomatero."
+		]
+	},
+
+	{
+		"scenario": "Amarrar.",
+		"goal": "Sostener y mantener a las tomateras erectas.",
+		"context": "El Huertero amarra en forma horizontal los tutores con hilo tomatero.",
+		"actors": [ "Huertero" ],
+		"resources": [ "Tutor", "hilo tomatero" ],
+		"episodes": [
+			"El Huertero coloca el hilo tomatero a partir de los primeros 60 cm de altura de la tomatera.",
+			"El Huertero amarra la tomatera al hilo tomatero a un extremo del tallo.",
+			"El Huertero amarra el tallo sin tensarlo para que no se estrangule.",
+			"El Huertero coloca hiladas de hilo tomatero según la tomatera va creciendo.",
+			"El Huertero coloca hiladas de hilo tomatero como espaldera.",
+			"El Huertero coloca hileras de hilo tomatero según el crecimiento de la tomatera."
+		]
+	},
+
+	{
+		"scenario": "Cosechar",
+		"goal": "Recoger el Tomate de la plantación.",
+		"context": "Recorrido de la plantación.",
+		"actors": [ "Cosechador" ],
+		"resources": [ "Tina plástica" ],
+		"episodes": [
+			"El Cosechador recorre la plantación en la mañana.",
+			"El Cosechador cosecha los tomates cuando no hay presencia de rocío.",
+			"El Cosechador cosecha los tomates cuando no hay  temperaturas que superan los 25 °C ya que el tomate se deshidrata.",
+			"El Cosechador determina si el tomate alcanzó la madurez fisiológica y comercial.",
+			"El Cosechador determina el grado de madurez del tomate.",
+			"El Cosechador preselecciona y descarta los tomates con daños por insectos y enfermedades.",
+			"El Cosechador cosecha los tomates en tinas plásticas limpias.",
+			"El Cosechador coloca las tinas cargadas, formando una estiba vertical y sin aplastar el producto."
+		]
+	},
+
+	{
+		"scenario": "Poscosechar",
+		"goal": "Consiste en mantener la calidad de los productos desde la cosecha hasta su consumo.",
+		"context": "Tinas cargadas de tomate sobre tarimas de madera o plástico",
+		"actors": [ "Cosechador", "Comercializador", "Consumidor" ],
+		"resources": [ "Tina plástica", "tarima de madera o plástico", "galerón", "sistema de lavado" ],
+		"episodes": [
+			"El Cosechador coloca las tarimas de madera o plástico dentro de un galerón con buena aireación, a la sombra evitando la transpiración y elevación de la temperatura.",
+			"El Cosechador preselecciona los tomates.",
+			"El Cosechador separa las calidades de los tomates.",
+			"El Cosechador instala un sistema de lavado en la finca",
+			"El Cosechador traslada el tomate a los centros de comercialización.",
+			"El Comercializador vende los tomates.",
+			"El Consumidor compra los tomates.",
+			"El Consumidor consume los tomates."
+		]
+	},
+
+	{
+		"scenario": "Preparar el suelo",
+		"goal": "Evitar la erosión por el exceso de agua.",
+		"context": "Realizarlo un mes antes de la siembra. Suelo o tierra del campo preparado para la siembra",
+		"resources": [ "azadón", "rastrillo", "almohadilla", "regadera", "carretilla" ],
+		"actors": [ "agricultor" ],
+		"episodes": [
+			"El agricultor  pasa una arada, una rastra y una almohadilla para levantar surcos de 30 cm de alto, con una distancia de 1,2 m a 1,8m entre ellos en el suelo o tierra para el sembrío",
+			"El agricultor incorpora residuos de cosechas y malezas",
+			"El agricultor expone al sol las plagas y enfermedades del suelo, para mejorar el escurrimiento del agua y el establecimiento de la planta en el suelo."
+		]
+	},
+
+	{
+		"scenario": "sembrar",
+		"goal": "Colocar  la semilla en la tierra preparada para la iniciación del ciclo de desarrollo de la tomatera",
+		"context": "semilla sembrada en el semillero, huerto o campo de cultivo",
+		"resources": [ "semilla", "semillero", "campo de cultivos", "invernadero" ],
+		"actors": [ "agricultor", "huertero" ],
+		"episodes": [
+			"El agricultor coloca el mulching o acolchados en el campo de siembra",
+			"El agricultor prepara los recipientes o semilleros",
+			"El agricultor rellena los recipientes o planteles con el sustrato.",
+			"El agricultor introduce semillas en la tierra."
+		]
+	},
+
+	{
+		"scenario": "Regar",
+		"goal": "Esparcir agua sobre la tierra o sobre la tomatera.",
+		"context": "tierra húmeda",
+		"resources": [ "plan de riego", "sistema de riego" ],
+		"actors": [ "agricultor", "huertero" ],
+		"episodes": [
+			"el agricultor verifica el tipo de suelo",
+			"el agricultor verifica la humedad de la tierra",
+			"el agricultor verifica la temporalidad del riego (1 o 2 veces por semana)",
+			"el agricultor lo realiza al amanecer o atardecer para evitar evaporación",
+			"el agricultor lo realiza hasta que el agua llegue hasta las raíces de la planta"
+		]
+	},
+
+	{
+		"scenario": "Trasplantar",
+		"goal": "Trasladar la tomatera cuando le sale la primera hoja al huerto o campo de cultivo, entre los 25 o 30 días después de la siembra de la tomatera",
+		"context": "tomatera colocada en el huerto o campo de cultivo",
+		"resources": [ "esqueque", "plan de riego", "sistema de riego" ],
+		"actors": [ "agricultor", "huertero" ],
+		"episodes": [
+			"El agricultor hace hoyos en la tierra del campo o huerto, con un espeque",
+			"El agricultor riega la tierra previo a la siembra",
+			"El agricultor realiza fertilización de la tierra",
+			"El agricultor toma la planta desde la parte del tallo más próxima a la tierra",
+			"El agricultor arranca la tomatera con firmeza y con cuidado",
+			"El agricultor siembra la tomatera en el huerto o campo de cultivo",
+			"El agricultor cubre la tomatera con tierra hasta donde cubren las primeras hojas",
+			"El agricultor riega la tomatera"
+		]
+	},
+
+	{
+		"scenario": "Fertilizar",
+		"goal": "Proporcionar nutrientes a la planta en las cantidades suficientes, en el momento en que el cultivo tiene la mayor demanda,  para que cumpla su ciclo de vida,",
+		"context": "tierra fertilizada",
+		"resources": [ "fertilizante", "nutriente", "agua" ],
+		"actors": [ "agricultor", "huertero" ],
+		"episodes": [
+			"el agricultor selecciona el fertilizante de acuerdo a las necesidades de la tierra",
+			"el agricultor abastece y suministra los elementos inorgánicos u orgánicas al suelo para que la planta los absorba"
+		]
+	},
+
+	{
+		"scenario": "Fertirrigación",
+		"goal": "Colocar nutrientes en el agua de riego, para la aplicación uniforme de los fertilizantes",
+		"context": "tierra nutrida",
+		"resources": [ "fertilizante", "nutriente", "agua" ],
+		"actors": [ "agricultor", "huertero" ],
+		"episodes": [
+			"el agricultor revisa el plan de fertirrigación",
+			"el agricultor coloca los nutrientes en el sistema de riego",
+			"el agricultor controla la cantidad de fertilizante"
+		]
+	},
+
+	{
+		"scenario": "Tutorado",
+		"goal": "Colocar el tutor 15 a 22 días posterior al trasplante, con la finalidad de que la  tomatera permanezca erguida y los frutos no toquen el suelo.",
+		"context": "planta erguida",
+		"resources": [ "tutor", "mecate tomatero" ],
+		"actors": [ "agricultor", "huertero" ],
+		"episodes": [
+			"el agricultor coloca el tutor en el centro de cada lomillo o cama",
+			"el agricultor controla una distancia entre tutores de 2,5m a 3 m de largo",
+			"el agricultor coloca un tutor con mayor grosor que los del centro, en la cabecera o al final de cada lomillo.",
+			"el agricultor entierra el tutor a 40 cm o 50 cm de profundidad y con una altura de 2.5 m"
+		]
+	},
+
+	{
+		"scenario": "Podar",
+		"goal": "Controlar el desarrollo de la planta a conveniencia del agricultor, realizando podas por encima de las ramas florales, mejorando la aireación de la planta y facilitando la aporca y la aplicación de agroquímicos e influyendo en el tamaño de los frutos.",
+		"context": "planta podada",
+		"resources": [ "tijeras", "guantes", "rastrillo", "paleta de mano", "transplantadora" ],
+		"actors": [ "agricultor", "huertero" ],
+		"episodes": [
+			"el agricultor poda la planta limitando el número de tallos productivos y la cantidad de frutos por planta",
+			"el agricultor deja dos o tres ejes (tallos) por planta.",
+			"el agricultor obtiene mayor precocidad y frutos más grandes con un mejor cuajado"
+		]
+	},
+
+	{
+		"scenario": "Fumigar",
+		"goal": "Echar humo o productos químicos sobre los campos de cultivo, utilizando fungicidas, pesticidas que permitiendo un cultivo libre de plagas o enfermedades",
+		"context": "tomates libre de plagas o enfermedades",
+		"resources": [ "fungicidas", "pesticidas" ],
+		"actors": [ "agricultor", "huertero" ],
+		"episodes": [
+			"el agricultor determina el tipo de plaga para seleccionar el producto de fumigación",
+			"el agricultor rocía el producto químico sobre el campo de cultivo",
+			"el agricultor controla el campo de cultivo para que esté  libre de plaga"
+		]
+	},
+
+	{
+		"scenario": "Cosechar",
+		"goal": "Recolectar los frutos de la tomatera en función del grado de madurez de los tomates para su comercialización",
+		"context": "cosecha",
+		"resources": [ "cajón", "tijera" ],
+		"actors": [ "agricultor", "huertero" ],
+		"episodes": [
+			"el agricultor verifica la madurez del tomate",
+			"el agricultor corta con tijeras los tomates dejando un poco de tallo arriba del tomate",
+			"el agricultor obtiene los tomates y los coloca en el cajón"
+		]
+	},
+
+	{
+		"scenario": "Deshierbar",
+		"goal": "Eliminar malezas que afecten la producción del tomate",
+		"context": "Todo el ciclo de vida de la planta de tomate",
+		"resources": [ "Tijeras" ],
+		"actors": [ "Huertero" ],
+		"episodes": [
+			"El huertero quita las malas hierbas con las tijeras y arrancando de la tierra."
+		]
+	},
+
+	{
+		"scenario": "Fertilizar",
+		"goal": "Colocar fertilizante a las plantas de tomate.",
+		"context": "Se desarrolla en la etapa de desarrollo y maduración de las plantas de tomate.",
+		"resources": [ "Fertilizante", "Agua", "Regador", "Tierra" ],
+		"actors": [ "Huertero" ],
+		"episodes": [
+			"El huertero procede a medir la cantidad de fertilizante y realiza una mezcla del mismo con agua, lo coloca en el regador y riega la tierra."
+		]
+	},
+
+	{
+		"scenario": "Fumigar enfermedad",
+		"goal": "Eliminar enfermedades de las plantas de tomate.",
+		"context": "Acción de combatir enfermedades de las plantas de tomate.",
+		"resources": [ "Fungicida", "Tomatera" ],
+		"actors": [ "Huertero", "Enfermedad" ],
+		"episodes": [
+			"El huertero aplica fungicida para enfermedades a las plantas de tomate."
+		]
+	},
+
+	{
+		"scenario": "Fumigar plaga",
+		"goal": "Eliminar hongos y plagas (polillas) de las plantas de tomate.",
+		"context": "Se desarrolla en la etapa de floración, desarrollo y maduración de la planta de tomate.",
+		"resources": [ "Fungicida", "Tomatera" ],
+		"actors": [ "Huertero", "Plaga" ],
+		"episodes": [
+			"El huertero aplica fungicida a las plantas de tomate."
+		]
+	},
+
+	{
+		"scenario": "Podar",
+		"goal": "Eliminar ramas de la planta de tomate",
+		"context": "Se desarrolla en la etapa de desarrollo de la planta de tomate.",
+		"resources": [ "tijeras", "tomatera", "tutor" ],
+		"actors": [ "Huertero" ],
+		"episodes": [
+			"El huertero quita las ramas innecesarias de la planta de tomate."
+		]
+	},
+
+	{
+		"scenario": "Regar mucho",
+		"goal": "Mantener el nivel de humedad e hidratación de la planta de tomate.",
+		"context": "En la etapa vegetativa el huertero riega mucho las plantas de tomate",
+		"resources": [ "Agua", "Tierra", "Tomatera", "Regador" ],
+		"actors": [ "Huertero" ],
+		"episodes": [
+			"El huertero riega moderadamente los tomates con el regador con agua."
+		]
+	},
+
+	{
+		"scenario": "Regar poco",
+		"goal": "Mantener el nivel de humedad e hidratación de la planta de tomate.",
+		"context": "Anterior  a la etapa de cosecha se riega poco las plantas de tomates.",
+		"resources": [ "Agua", "Tierra", "Tomatera", "Regador" ],
+		"actors": [ "Huertero" ],
+		"episodes": [
+			"El huertero riega mucho los tomates con el regador con agua."
+		]
+	},
+
+	{
+		"scenario": "Cosechar",
+		"goal": "Obtener el fruto tomate del tomatera",
+		"context": "Etapa de cosechar el tomate",
+		"resources": [ "Tomate", "Tomatera", "cajón" ],
+		"actors": [ "Huertero" ],
+		"episodes": [
+			"El agricultor quita los tomates maduros del tomatero y los deposita en un cajón."
+		]
+	},
+
+	{
+		"scenario": "Secar",
+		"goal": "secar las semillas del tomate",
+		"context": "En el estado vegetativo el huertero extrae la pulpa del tomate y de esta extrae las semillas.",
+		"resources": [ "semilla", "tomate" ],
+		"actors": [ "Huertero" ],
+		"episodes": [
+			"El huertero extrae la pulpa del tomate y separa las semillas para secarlas a temperatura ambiente de uno a tres dias."
+		]
+	},
+
+	{
+		"scenario": "100 Sembrar",
+		"goal": "sembrar semillas de tomate en el la tierra",
+		"context": "Etapa de establecimiento de planta joven",
+		"resources": [ "semilla", "semillero", "tierra", "agua" ],
+		"actors": [ "Huertero" ],
+		"episodes": [
+			"El huertero deposita semillas de tomate en la tierra ubicada en el semillero, los tapa con medio centímetro de tierra y coloca agua."
+		]
+	},
+
+	{
+		"scenario": "101 Trasplantar",
+		"goal": "Reubicar la planta de tomate a otro lugar",
+		"context": "Acción de mover la planta de tomate cuando le sale la primera hoja",
+		"resources": [ "tomatera", "tutor" ],
+		"actors": [ "Huertero" ],
+		"episodes": [
+			"El huertero deposita semillas de tomate en la tierra ubicada en el semillero, los tapa con medio centímetro de tierra y coloca agua."
+		]
+	},
+
+	{
+		"scenario": "Sembrar",
+		"goal": "Acción para arrojar y esparcir las semillas en la tierra",
+		"context": "Estado Vegetativo",
+		"actors": [ "semilla" ],
+		"resources": [ "tierra preparada" ],
+		"episodes": [
+			"El agricultor remueve la tierra y la mezcla con nutrientes mezclando 2 partes de tierra por una de composta y agrega un poco de tierra de hoja,",
+			"El agricultor deposita las semillas del tomate en el suelo, a una profundidad igual al tamaño de la semilla."
+		]
+	},
+
+	{
+		"scenario": "Regar automáticamente",
+		"goal": "Mantener la humedad uniforme",
+		"context": "Estado humedad de la tierra",
+		"actors": [ "automatismo de riego por goteo" ],
+		"resources": [ "Riego automático" ],
+		"episodes": [
+			"El sistema de riego automático mide la humedad del suelo.",
+			"El sistema de riego automático inicia o detiene el riego por goteo de acuerdo al valor de la humedad del suelo.",
+			"El agricultor riega las zonas donde no existe sistema automático de acuerdo al plan de riego."
+		]
+	},
+
+	{
+		"scenario": "Preparar la tierra",
+		"goal": "Es una labor que incide tanto en el crecimiento de la planta como en la cantidad de frutos que nos proporcione",
+		"context": "Estado de maduración",
+		"actors": [ "agricultor" ],
+		"resources": [ "Planta de tomate" ],
+		"episodes": [
+			"El agricultor elige el lugar para plantar por orientación y profundidad.",
+			"El agricultor elimina las hierbas.",
+			"El agricultor labra y airea la tierra.",
+			"El laboreo de la tierra se puede hacer con herramientas manuales o mediante maquinaria, ya sea motoazada o tractor, si es que el terreno es de grandes extensiones."
+		]
+	},
+
+	{
+		"scenario": "Podar",
+		"goal": "La Planta de Tomate se debe podar para concentrar crecimiento del Tomate. Se mejora la aireación, se retiran hojas enfermas o viejas y se favorece la maduración de los frutos.",
+		"context": "Estado de desarrollo de la fruta",
+		"actors": [ "agricultor" ],
+		"resources": [ "poda" ],
+		"episodes": [
+			"El agricultor debe podar después de las 4 semanas de sembrado.",
+			"Se sacan cuidadosamente los brotes o chuponcitos que crecen entre las ramas y frutos.",
+			"La poda se hace con la yema de los dedos ya que los brotes se desprenden fácilmente al tirar de ellos.",
+			"El agricultor tratará de no eliminar más de 3 hojas por planta en cada operación de poda ya que retirar más podría ocasionar desequilibrios en la tomatera."
+		]
+	},
+
+	{
+		"scenario": "Fumigar",
+		"goal": "Realizar tareas para eliminar plagas",
+		"context": "Estado de control de plagas",
+		"actors": [ "Fumigador" ],
+		"resources": [ "Enfermedad" ],
+		"episodes": [
+			"El fumigador coloca trampas cromáticas y riega con agua y aceite de neem, una vez al mes, para prevenir y tratar la mosca blanca.",
+			"El fumigador determina el tipo de plaga y procede de acuerdo a ella."
+		]
+	},
+
+	{
+		"scenario": "cosechar",
+		"goal": "Acción que realiza el SUJETO para tomar el Objeto tomate.",
+		"context": "Estado de cosecha",
+		"actors": [ "agricultor" ],
+		"resources": [ "Tomate" ],
+		"episodes": [
+			"El agricultor realiza la cosecha.",
+			"El agricultor determina si el fruto está maduro",
+			"El agricultor almacena el fruto en una cámara frigorífica."
+		]
+	},
+
+	{
+		"scenario": "deshierbar",
+		"goal": "Realizar la tarea para eliminar las malas hierbas alrededor de la planta",
+		"context": "Estado de desarrollo de la fruta",
+		"actors": [ "agricultor" ],
+		"resources": [ "hierbas" ],
+		"episodes": [
+			"El agricultor realiza el deshierbe durante todo el ciclo vida de la planta porque la maleza le roba el agua a las plantas de tomate.",
+			"El agricultor evita el crecimiento de la maleza y mantiene estable la temperatura del suelo mediante la colocación de mantillo alrededor de la planta de tomate con una capa de 2 a 3 pulgadas de trozos de corteza."
+		]
+	},
+
+	{
+		"scenario": "fertilizar",
+		"goal": "Acción de proporcionar los nutrientes en las cantidades suficientes y en el momento que el cultivo tiene la mayor demanda.",
+		"context": "Estado de desarrollo de la fruta",
+		"actors": [ "agricultor" ],
+		"resources": [ "Fertilizante" ],
+		"episodes": [
+			"El agricultor aplica el fertilizante que sirve para enriquecer el suelo y favorecer el crecimiento del fruto. Los más importantes son:",
+			"Nitrógeno y Fósforo: en las fases tempranas del desarrollo de la planta.",
+			"Potasio: antes y luego de la siembra",
+			"Calcio: durante toda la temporada."
+		]
+	},
+
+	{
+		"scenario": "trasplantar",
+		"goal": "Es un proceso mediante el cual las plántulas del semillero pasan a un lugar definitivo, sea al campo o al invernadero.",
+		"context": "maduración",
+		"actors": [ "agricultor" ],
+		"resources": [ "planta de tomate" ],
+		"episodes": [
+			"El agricultor realiza el proceso de trasplantar para la maduración de la planta.",
+			"Antes de realizar el trasplante de las tomateras, el agricultor verifica la textura del suelo, el pH, el balance de nutrientes, el porcentaje de materia orgánica, la presencia de patógenos.",
+			"Se realiza 1 mes después de la siembra en semillero o almácigo en un día poco soleado o bien por la tarde para que las plantas jóvenes sufran menos estrés.",
+			"Los pasos son: marcar la ubicación, regar el suelo, realizar un hoyo, introducir la planta en el agujero, añadir tierra al agujero y regar."
+		]
+	},
+
+	{
+		"scenario": "controlar la floración",
+		"goal": "Acción de controlar de veinte a cuarenta días, luego del transplante, la floración.",
+		"context": "Floración",
+		"actors": [ "agricultor" ],
+		"resources": [ "planta de tomate índigo" ],
+		"episodes": [
+			"El agricultor verifica el buen estado de la planta de tomate.",
+			"El agricultor cruza una planta de tomate sana con otra que contiene mutación de la hormona que fabrica el florígeno logrando una super planta con gran producción y tomates con más sabor."
+		]
+	},
+
+	{
+		"scenario": "Colocar  tutor (entutorar)",
+		"goal": "Es una práctica para mantener la planta erguida.",
+		"context": "Estado de maduración",
+		"actors": [ "agricultor" ],
+		"resources": [ "tutor" ],
+		"episodes": [
+			"El agricultor debe clavar los tutores en la parte trasera de cada plantón de tomate, sin dañar las raíces.",
+			"El agricultor fija las plantas a cada uno de los tutores utilizando cuerda sin apretarlas mucho.",
+			"El agricultor realiza esta tarea luego de 15 a 22 días del trasplante."
+		]
+	},
+
+	{
+		"scenario": "Regar mucho en forma manual",
+		"goal": "Se realiza el riego en forma manual previo a comprobar qué tan seca o húmeda está la tierra. En este caso, riega mucho.",
+		"context": "Estado humedad de la tierra",
+		"actors": [ "agricultor" ],
+		"resources": [ "agua" ],
+		"episodes": [
+			"El agricultor debe controlar la cantidad de agua.",
+			"El agricultor riega mucho por lo que la planta se quedará sin oxígeno y se debilitará, favoreciendo el desarrollo de hongos. La tierra muy mojada puede conducir a la pudrición de las raíces causada por los hongos y puede producir frutos con demasiada agua.",
+			"El agricultor debe evitar el riego desde arriba ya que el follaje húmedo puede conducir a varias enfermedades causadas por hongos."
+		]
+	},
+
+	{
+		"scenario": "Regar poco en forma manual",
+		"goal": "Se realiza el riego en forma manual previo a comprobar qué tan seca o húmeda está la tierra. En este caso, riega poco.",
+		"context": "Estado humedad de la tierra",
+		"actors": [ "agricultor" ],
+		"resources": [ "agua" ],
+		"episodes": [
+			"El agricultor debe controlar la cantidad de agua.",
+			"El agricultor riega poco por lo que la planta se arrugará y evidenciará que necesita beber. La tierra muy seca puede traer como resultado frutos agrietados y la pudrición en el extremo inferior del fruto."
+		]
+	},
+
+	{
+		"scenario": "Controlar cantidad de agua",
+		"goal": "determinar cantidad de agua de acuerdo a la humedad de la tierra.",
+		"context": "Estado humedad de la tierra",
+		"actors": [ "agricultor" ],
+		"resources": [ "medidor de humedad digital" ],
+		"episodes": [
+			"El agricultor controla la humedad escarbando un poco la tierra e introduciendo un medidor de humedad digital en diferentes puntos.",
+			"Antes de la medición, el agricultor, frota ligeramente la punta del final de la varilla del medidor digital con un papel de lija muy fino o un estropajo de cocina para asegurar un correcto funcionamiento del instrumento."
+		]
+	},
+
+	{
+		"scenario": "Preparar el Suelo",
+		"goal": "Acondicionar el suelo un mes antes de la siembra de la Plántula del tomate.",
+		"context": "El suelo a campo abierto o de invernadero debe ser preparado previo a la siembra.",
+		"actors": [ "Ingeniero Agrónomo", "jornalero", "Laboratorio" ],
+		"resources": [ "Elementos para toma de muestras", "arado", "palas", "campo", "invernadero", "fertilizante" ],
+		"episodes": [
+			"El ingeniero agrónomo toma muestras del suelo del campo o invernadero.",
+			"El ingeniero agrónomo envía las muestras al Laboratorio",
+			"El ingeniero agrónomo analiza las muestras",
+			"El jornalero remueve la tierra con el arado",
+			"El jornalero surca la tierra con el arado",
+			"El Jornalero construye salidas de agua en el campo o invernadero."
+		]
+	},
+
+	{
+		"scenario": "Plantar",
+		"goal": "Poner las semillas en el suelo",
+		"context": "Se debe plantar las semillas en un semillero, para obtener la Planta Joven del tomate.",
+		"actors": [ "Jornalero", "Ingeniero Agrónomo" ],
+		"resources": [ "Semillas", "semillero" ],
+		"episodes": [
+			"El Ingeniero Agrónomo entrega las semillas al Jornalero",
+			"El Jornalero coloca las semillas en la tierra del semillero.",
+			"El Jornalero cubre las semillas con tierra"
+		]
+	},
+
+	{
+		"scenario": "Hacer Semillero",
+		"goal": "Plantar las semillas en semilleros.",
+		"context": "Se preparan los semilleros para iniciar el ciclo de crecimiento de la tomatera. La plántula permanecerá en el semillero hasta el momento de la siembra.",
+		"actors": [ "Productor.", "Ingeniero Agrónomo", "Jornalero" ],
+		"resources": [ "Semillero", "tierra", "semillas", "tomatera de crecimiento determinado" , "tomatera de crecimiento indeterminado" ],
+		"episodes": [
+			"El Ing. Agrónomo selecciona producción por crecimiento determinado o indeterminado",
+			"El Ingeniero Agrónomo selecciona el tipo de semillero",
+			"El productor compra semillas y semilleros",
+			"El jornalero planta las semillas en el semillero."
+		]
+	},
+
+	{
+		"scenario": "Regar Semillero",
+		"goal": "Poner agua en los semilleros",
+		"context": "Las semillas necesitan agua para transformarse en plántulas.",
+		"actors": [ "Ingeniero Agrónomo", "Jornalero" ],
+		"resources": [ "Plan de riego", "agua", "Tipo de riego",  "riego por aspersión" ],
+		"episodes": [
+			"El Ing. Agrónomo realiza plan de riego para el semillero.",
+			"El jornalero instala sistema de riego por aspersión",
+			"El jornalero ejecuta el plan de riego para el semillero."
+		]
+	},
+
+	{
+		"scenario": "Regar Plantación",
+		"goal": "Agregar agua a las tomateras sembradas a campo abierto o invernadero.",
+		"context": " Las tomateras en su estado vegetativo necesitan agua con control de humedad.",
+		"actors": [ "Ingeniero Agrónomo", "Jornalero" ],
+		"resources": [ "Agua", "campo abierto", "invernadero", "tomatera", "plan de riego", "tipo de riego", "riego por goteo" ],
+		"episodes": [
+			"El ingeniero Agrónomo estudia la humedad del suelo.",
+			"El ingeniero Agrónomo realiza plan de riego para la plantación.",
+			"El jornalero instala tipo de riego por goteo",
+			"El jornalero ejecuta el plan de riego para la plantación."
+		]
+	},
+
+	{
+		"scenario": "Endurecer el Suelo",
+		"goal": "Agregar sustrato a la tierra de las plántulas, para endurecer raíces.",
+		"context": "En la etapa final de Planta Joven, es necesario endurecer el suelo para proteger las raíces de la tomatera y favorecer su crecimiento y paso efectivo al estado vegetativo.",
+		"actors": [ "Productor", "Ingeniero Agrónomo", "Jornalero", "Laboratorio" ],
+		"resources": [ "Semillero", "sustrato", "plántulas" ],
+		"episodes": [
+			"El Ingeniero Agrónomo toma muestra de suelo",
+			"El laboratorio estudia muestra de suelo.",
+			"EL Ingeniero Agrónomo selecciona el sustrato",
+			"EL productor compra el sustrato",
+			"El jornalero disminuye el riego.",
+			"El jornalero agrega el sustrato a la tierra de los semilleros."
+		]
+	},
+
+	{
+		"scenario": "Acolchar",
+		"goal": "Acondicionar el suelo para la siembra de las plántulas.",
+		"context": "previa a la siembra de la tomatera en campo abierto o invernadero se acondiciona el suelo con plástico o pasto cortado para proteger la plántula de tomate-",
+		"actors": [ "Ingeniero Agrónomo", "Jornalero" ],
+		"resources": [ "acolchado", "campo", "invernadero" ],
+		"episodes": [
+			"El ingeniero agrónomo elige el tipo de acolchado.",
+			"El jornalero prepara el acolchado seleccionado",
+			"Jornalero coloca acolchado en el suelo del campo o invernadero."
+		]
+	},
+
+	{
+		"scenario": "Sembrar/Siembra",
+		"goal": "Poner en el suelo del campo abierto o invernadero las plántulas de tomate, para su desarrollo.",
+		"context": " Las tomateras en su estado de Planta Joven deben ser puestas en el  suelo de campo abierto o invernadero, para que la tomatera avance a su estado vegetativo.",
+		"actors": [ "Ingeniero Agrónomo", "Jornalero" ],
+		"resources": [ "Plántulas", "campo abierto", "invernadero", "agua", "fertilizante", "espeque" ],
+		"episodes": [
+			"Ingeniero Agrónomo inspecciona el suelo.",
+			"Ingeniero Agrónomo ordena tareas de riego y fertilización.",
+			"Jornalero riega la tierra",
+			"Jornalero agrega fertilizante",
+			"Jornalero realiza hoyos con el espeque",
+			"Jornalero traslada las plántulas en hs. frescas de la mañana o tarde.",
+			"Jornalero introduce la raíz de las plántulas en los hoyos de  tierra."
+		]
+	},
+
+	{
+		"scenario": "Tutorar",
+		"goal": "Dar soporte a las tomateras para que los frutos no toquen el piso.",
+		"context": "Las tomateras a medida que crecen necesitan soporte para asegurar el desarrollo óptimo de la planta y tomates de calidad.",
+		"actors": [ "Productor", "Ingeniero Agrónomo", "Jornalero" ],
+		"resources": [ "Tomatera", "tutor/poste" ],
+		"episodes": [
+			"El ingeniero Agrónomo sugiere material del tutor.",
+			"El productor compra tutores/postes.",
+			"El jornalero coloca tutores/postes en las tomateras",
+			"El jornalero amarra la tomatera a los tutores."
+		]
+	},
+
+	{
+		"scenario": "Amarrar",
+		"goal": "sujetar el tallo de la tomatera al tutor",
+		"context": "La tomatera en su estado vegetativo, de floración y  cuaje de la fruta  necesitan un soporte de crecimiento, para asegurar la calidad del tomate.",
+		"actors": [ "Ingeniero Agrónomo", "Jornalero" ],
+		"resources": [ "tutor/poste", "mecate tomate", "tomatera" ],
+		"episodes": [
+			"El ingeniero Agrónomo inspecciona la altura de la tomatera.",
+			"El Jornalero coloca hileras de  mecate tomatero",
+			"El jornalero sujeta el tallo de la tomatera  al tutor con mecate tomatero"
+		]
+	},
+
+	{
+		"scenario": "Fertilizar",
+		"goal": "proporcionar los nutrientes que la tomatera necesita para crecer.",
+		"context": "La tomatera en su estado de floración y desarrollo necesita de nutrientes para el desarrollo óptimo del tomate.",
+		"actors": [ "Productor", "Ingeniero Agrónomo", "Laboratorio", "Jornalero" ],
+		"resources": [ "Tomatera", "fertilizante", "agua", "suelo" ],
+		"episodes": [
+			"Ingeniero agrónomo toma muestra de suelo",
+			"El laboratorio analiza muestra de suelo",
+			"Ingeniero Agrónomo realiza esquema de fertilización.",
+			"El productor compra fertilizante.",
+			"El Jornalero coloca el fertilizante en el suelo o agua."
+		]
+	},
+
+	{
+		"scenario": "Polinizar",
+		"goal": "Fecundar la flor de la tomatera para el desarrollo del tomate.",
+		"context": "El estado de cuaje de la fruta durante la floración, se produce por la fecundación de la flor de la tomatera para convertirse en tomate. Se de",
+		"actors": [ "Ingeniero Agrónomo", "Jornalero" ],
+		"resources": [ "Tomatera" ],
+		"episodes": [
+			"El Ingeniero Agrónomo inspecciona el estado de la tomatera",
+			"El Ingeniero Agrónomo planifica actividad de polinización",
+			"El Jornalero agita la tomatera"
+		]
+	},
+
+	{
+		"scenario": "Agitar",
+		"goal": "Polinizar la flor de la tomatera",
+		"context": "Es necesario asegurar la polinización de la flor de la tomatera, simulando el movimiento natural  del viento en la tomatera.",
+		"actors": [ "Jornalero" ],
+		"resources": [ "Tomatera" ],
+		"episodes": [
+			"El jornalero toma suavemente las hojas de la tomatera.",
+			"El jornalero agita las hojas de la tomatera."
+		]
+	},
+
+	{
+		"scenario": "Podar",
+		"goal": "Acortar los nuevos brotes de la tomatera",
+		"context": "Durante el estado de desarrollo de la fruta se debe cortar el crecimiento de nuevos brotes de la tomatera, para obtener un tomate de calidad",
+		"actors": [ "Ingeniero Agrónomo", "Jornalero" ],
+		"resources": [ "Tomatera",  "brotes", "escala de madurez" ],
+		"episodes": [
+			"El ingeniero Agrónomo inspecciona el  grado de madurez del tomate",
+			"El ingeniero Agrónomo planifica la poda de la tomatera",
+			"El jornalero cortas los nuevos brotes de la tomatera"
+		]
+	},
+
+	{
+		"scenario": "Fumigar",
+		"goal": "Prevenir y/o curar enfermedades de la Tomatera y el tomate.",
+		"context": "La tomatera en todos sus estados de crecimiento puede verse afectada por enfermedades que atentan con el crecimiento y desarrollo del tomate.",
+		"actors": [ "productor" , "Ingeniero Agrónomo", "Fumigador" ],
+		"resources": [ "Tomatera", "tomate", "enfermedad", "plan de fumigación" ],
+		"episodes": [
+			"El Ingeniero Agrónomo identifica la enfermedad",
+			"El ingeniero Agrónomo elabora un plan de fumigación",
+			"El productor aprueba el plan de fumigación",
+			"El Fumigador ejecuta el plan de fumigación."
+		]
+	},
+
+	{
+		"scenario": "Cosechar",
+		"goal": "Cortar el tomate de la tomatera para su comercialización",
+		"context": "Cuando el  tomate está en estado de madurez, se compara el grado de madurez deseado por el productor, pasando a un estado de cosecha para su acopio y comercialización",
+		"actors": [ "Productor", "Ingeniero Agrónomo", "Jornalero" ],
+		"resources": [ "tomatera", "tomate", "escala de madurez" ],
+		"episodes": [
+			"El Productor aprueba grado de madurez del tomate de la escala de madurez",
+			"El ingeniero agrónomo controla el grado de madurez del tomate",
+			"El jornalero corta el tomate de la tomatera"
+		]
+	},
+
+	{
+		"scenario": "Seleccionar",
+		"goal": "separar los tomates por su grado de madurez",
+		"context": "Luego de la cosecha los tomates deben ser separados de acuerdo al grado de madurez para no dañar la cosecha",
+		"actors": [ "Ingeniero Agrónomo", "Jornalero" ],
+		"resources": [ "Tomates", "escala de madurez", "tinas" ],
+		"episodes": [
+			"El ingeniero agrónomo selecciona el tomate por su grado de madurez",
+			"El jornalero separa el tomate.",
+			"El jornalero acopia los  tomates de acuerdo al grado de madurez."
+		]
+	},
+
+	{
+		"scenario": "Acopiar",
+		"goal": "Colocar los tomates en tinas para su almacenaje y comercialización",
+		"context": "Luego de la selección del tomate por su grado de madurez, los tomates son colocados en tinas para su posterior almacenaje y comercialización.",
+		"actors": [ "Ingeniero Agrónomo", "Jornalero" ],
+		"resources": [ "tomates", "tinas" ],
+		"episodes": [
+			"El Jornalero deposita el tomate en tinas.",
+			"El Ingeniero Agrónomo controla el nivel de llenado de las tinas",
+			"El Productor inspecciona la clasificación de los tomates de acuerdo a la escala de madurez."
+		]
+	},
+
+	{
+		"scenario": "Estibar",
+		"goal": "Colocar en columnas verticales las tinas de tomates para su almacenaje y comercialización",
+		"context": "Las tinas con tomates deben ser almacenadas en un lugar fresco y aireado para la conservación de la calidad del tomate",
+		"actors": [ "Ingeniero Agrónomo", "Jornalero" ],
+		"resources": [ "tomates", "tinas", "tarimas", "depósito" ],
+		"episodes": [
+			"El Ingeniero Agrónomo dispone la distribución de tarimas en el depósito",
+			"El jornalero coloca las tarimas en el depósito",
+			"El jornalero apila las tinas en columnas",
+			"El Ingeniero Agrónomo controla la pila de tinas por cada tarima."
+		]
+	},
+
+	{
+		"scenario": "Cosechar los Tomates.",
+		"goal": "Sacar el tomate de la planta.",
+		"context": "Tomates en la planta.",
+		"resources": [ "Tomate", "cajón de plástico" ],
+		"actors": [ "Huertero" ],
+		"episodes": [
+			"La cosecha debe realizarse preferiblemente en horas de la mañana para evitar la desecación del fruto.",
+			"El huertero visualiza el tomate y determina el estado de madurez fisiológica y",
+			"comercial.",
+			"La cosecha se debe realizar con mucho cuidado para evitar hacerle heridas al fruto.",
+			"El huertero toma con su mano el tomate y da un giro para que se desprenda del rabillo.",
+			"El huertero elimina el cáliz y el pedúnculo. Cuando los frutos se venden en racimos le dejan el pedúnculo adherido al fruto.",
+			"El huertero coloca los tomates en cajones de plástico, sin tirarlos para evitar golpes y magulladuras y heridas.",
+			"El huertero coloca los cajones en una estiba vertical sin aplastar el producto sobre tarimas de madera o plástico."
+		]
+	},
+
+	{
+		"scenario": "Sembrar en semillero o almácigo.",
+		"goal": "Generar una planta de tomate.",
+		"context": "Semillero o Almácigo con Sustrato.",
+		"resources": [ "semillero o almácigo", "sustrato", "semillas y agua" ],
+		"actors": [ "Huertero" ],
+		"episodes": [
+			"El huertero pone las semillas en remojo durante 3 o 4 días.",
+			"El huertero rellena un poco el almácigo con sustrato.",
+			"El huertero coloca 2 o 3 semillas en cada hueco del semillero o almácigo.",
+			"El huertero tapa las semillas con un poco de sustrato.",
+			"El semillero debe estar protegido de la luz directa del sol y del frío.",
+			"El huertero riega al semillero pulverizando agua.",
+			"Transcurridos los 2 o 3 meses se trasplantan las plantas a cielo abierto."
+		]
+	},
+
+	{
+		"scenario": "Sembrar a cielo abierto.",
+		"goal": "Generar una planta de tomate.",
+		"context": "Tierra preparada para la siembra.",
+		"resources": [ "tierra", "surcos", "semillas y agua", "plásticos o mantas" ],
+		"actors": [ "Huertero" ],
+		"episodes": [
+			"El huertero prepara la tierra.",
+			"El huertero coloca las semillas entre 40 y 60 cm de distancia entre sí.",
+			"El huertero cubre la zona con plásticos o mantas."
+		]
+	},
+
+	{
+		"scenario": "Preparar la Tierra.",
+		"goal": "Acondicionar el suelo para realizar el trasplante.",
+		"context": "Tierra preparada para la siembra.",
+		"resources": [ "tierra", "malezas", "humus", "lomillos" ],
+		"actors": [ "Huertero", "Ingeniero Agrónomo" ],
+		"episodes": [
+			"El ingeniero agrónomo selecciona el terreno por su orientación, ubicación y profundidad del mismo.",
+			"El huertero deshierba el terreno eliminando las malezas",
+			"El huertero labra e airea la tierra, se realizan excavaciones de entre 20 y 30 cm.",
+			"El huertero fertiliza el suelo, con humus por ejemplo.",
+			"El huertero realiza lomillos en el suelo o tierra."
+		]
+	},
+
+	{
+		"scenario": "Trasplantar.",
+		"goal": "Trasladar la planta de tomate del semillero al suelo.",
+		"context": "Planta de tamaño adecuado para su trasplante.",
+		"resources": [ "tierra o suelo", "agua", "espeque", "sustrato" ],
+		"actors": [ "Huertero" ],
+		"episodes": [
+			"El trasplante desde el semillero o almácigo se realiza cuando tiene al menos 4 hojas.",
+			"El huertero riega la tierra o suelo.",
+			"El huertero realiza hoyos en la tierra con el espeque.",
+			"Los hoyos en la tierra se realizan en línea recta y de un tamaño un poco mayor al hueco donde se encuentra la planta.",
+			"El huertero toma la planta por el tallo más cercano al sustrato y lo saca del semillero.",
+			"El huertero coloca las plantitas en los hoyos y le adiciona 2 o 3 cm de tierra.",
+			"El huertero riega alrededor de las plantas para eliminar bolsas de aire y favorecer el contacto de las raíces con el suelo."
+		]
+	},
+
+	{
+		"scenario": "Amarrar la planta de tomate.",
+		"goal": "Mantener erguida la planta de tomate.",
+		"context": "Planta de tomate atada al tutor.",
+		"resources": [ "tutor/poste", "hilo tomatero", "planta de tomate", "tierra o suelo" ],
+		"actors": [ "Huertero" ],
+		"episodes": [
+			"Luego de 15 a 20 días posterior al trasplante se comienza con la tarea de amarrar la planta de tomate.",
+			"El huertero coloca el poste en el centro de cada lomada a una distancia entre postes de 2,5 m a 3 m de largo.",
+			"El huertero entierra el poste a 40 cm o 50 cm de profundidad.",
+			"El huertero utiliza el hilo tomatero para amarrar la planta de tomate",
+			"El huertero amarra al poste la planta de tomate a 60 cm del suelo.",
+			"El hilo tomatero no se debe tensar para evitar el estrangulamiento de la planta.",
+			"La cantidad de hileras de hilo tomatero depende del crecimiento de la planta."
+		]
+	},
+
+	{
+		"scenario": "Podar la planta de tomate.",
+		"goal": "Mantener el desarrollo de la planta de tomate.",
+		"context": "Planta de tomate sin podar.",
+		"resources": [ "brote apical", "brotes axilares o chupones", "hojas", "planta de tomate", "navaja o cuchillo" ],
+		"actors": [ "Huertero" ],
+		"episodes": [
+			"El huertero toma con los dedos el brote axilar o chupone, gira hacia un costado y el brote auxiliar se desprende de la planta.",
+			"El huertero utiliza una navaja o cuchillo para sacar los brotes más crecidos.",
+			"El huertero retira las hojas más viejas próximas al suelo, las hojas que se encuentran por encima de cada ramo de frutos y menos expuestas al sol.",
+			"El huertero no debe retirar más de 3 hojas por planta de tomate.",
+			"El huertero corta el brote apical de la planta para frenar el crecimiento de ésta y concentrar los recursos en el engorde y maduración de los tomates.",
+			"La poda del brote apical se realiza cuando se considera que no tendrá tiempo de madurar nuevos frutos.",
+			"El huertero deshierba el terreno."
+		]
+	},
+
+	{
+		"scenario": "Regar del almácigo o semillero.",
+		"goal": "Mantener hidratado el sustrato del almácigo o semillero.",
+		"context": "Almácigo con poca humedad.",
+		"resources": [ "agua", "semilla", "almácigo", "sistema de aspersión" ],
+		"actors": [ "Huertero" ],
+		"episodes": [
+			"El huertero rocía o pulveriza agua sobre el sustrato del semillero o almácigo.",
+			"Una vez que la semilla germinó, el huertero riega con el sistema de aspersión.",
+			"El huertero riega frecuentemente para asegurar un óptimo desarrollo de las plantas germinadas."
+		]
+	},
+
+	{
+		"scenario": "Regar el suelo (a cielo abierto).",
+		"goal": "Mantener hidratado el suelo.",
+		"context": "Suelo con poca humedad.",
+		"resources": [ "agua", "suelo", "tipo de riego", "acolchado o mulching" ],
+		"actors": [ "Huertero", "ingeniero agrícola" ],
+		"episodes": [
+			"El huertero suministra agua al suelo por algún tipo de riego.",
+			"El tipo de riego a utilizar lo determinará el ingeniero agrícola.",
+			"El huertero debe lograr que el agua penetre 15-20 cm por debajo del nivel del suelo para que estimule el crecimiento de la raíces en toda esa área.",
+			"El huertero suministra agua al suelo evitando que toque las hojas, tallo y frutos.",
+			"EL huertero coloca un acolchado o mulching para asegurar la humedad del suelo."
+		]
+	},
+
+	{
+		"scenario": "Fertilizar.",
+		"goal": "Mantener con nutrientes el suelo.",
+		"context": "Suelo o tierra con falta de nutrientes.",
+		"resources": [ "fertilizante", "suelo", "agua", "nutrientes", "humus" ],
+		"actors": [ "Huertero", "ingeniero agrícola" ],
+		"episodes": [
+			"El huertero fertiliza con humus el suelo antes de realizar el trasplante.",
+			"El huertero a través de la fertirrigación aplica nutrientes al suelo.",
+			"Los fertilizantes utilizados normalmente en el fertirriego son sólidos o líquidos.",
+			"El huertero diluye en el agua de riego los fertilizantes sólidos."
+		]
+	},
+
+	{
+		"scenario": "Fumigar.",
+		"goal": "Realizar tareas para evitar plagas.",
+		"context": "Plantas de tomate con plagas.",
+		"resources": [ "Tipo de plaguicida", "agua", "fumigación líquida", "fumigación del suelo", "suelo", "hojas" ],
+		"actors": [ "Huertero", "ingeniero agrícola" ],
+		"episodes": [
+			"El ingeniero agrícola determinará el tipo de fumigación y plaguicida dependiendo de la plaga.",
+			"El huertero aplica plaguicidas dependiendo del comportamiento del mismo (por contacto/sistémico/traslaminares o de profundidad).",
+			"El huertero utiliza fumigación líquida directamente sobre las hojas de tomate.",
+			"El huertero utiliza fumigación del suelo disolviendo en agua el plaguicida.",
+			"El huertero aplica la menor cantidad de plaguicida posible."
+		]
+	}
+]

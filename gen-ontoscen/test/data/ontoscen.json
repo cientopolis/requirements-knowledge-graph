@@ -1,0 +1,26 @@
+[
+    {
+      "scenario": "neutralize the soil's acidity",
+      "goal": "neutralize the soil acidity for having the proper ph to sow seeds",
+      "context": "have soil with a high acidity",
+      "actors": [],
+      "resources": ["magnesium"],
+      "episodes": [
+        "the agricultural engineer interprets the results of the soil analysis",
+        "the agricultural engineer prepares a solution with agricultural lime and magnesium", 
+        "the gardener applies the solution to the soil",
+        "the solution improves the soil"
+      ]
+    },
+    {
+      "scenario": "prune tomato plants",
+      "goal": "improve tomato plants' health for better quality production",
+      "context": "have tomato plants with abnormalities about a month after transplanting",
+      "resources": ["tomato plant", "pruning pliers"],
+      "actors": ["gardener"],
+      "episodes": [
+        "the gardener identifies the tomato plants with an abnormal growth or diseases",
+        "the gardener uses the pruning pliers to prune the infected or withered branches of the tomato plants"
+      ]
+    }
+]

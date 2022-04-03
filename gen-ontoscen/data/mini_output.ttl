@@ -1,0 +1,252 @@
+@prefix ns1: <https://schema.org/> .
+@prefix ns2: <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl> a owl:Ontology .
+
+ns2:hasAction a owl:ObjectProperty ;
+    rdfs:domain ns2:Episode ;
+    rdfs:range ns2:Action ;
+    rdfs:subPropertyOf owl:topObjectProperty .
+
+ns2:hasActor a owl:ObjectProperty ;
+    rdfs:domain <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/BehaviourDescription> ;
+    rdfs:range ns2:Actor .
+
+ns2:hasContext a owl:ObjectProperty ;
+    rdfs:domain ns2:Scenario ;
+    rdfs:range ns2:Condition .
+
+ns2:hasEpisode a owl:ObjectProperty ;
+    rdfs:domain ns2:Scenario ;
+    rdfs:range ns2:Episode .
+
+ns2:hasGoal a owl:ObjectProperty ;
+    rdfs:domain ns2:Scenario ;
+    rdfs:range ns2:Condition .
+
+ns2:hasResource a owl:ObjectProperty ;
+    rdfs:domain <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/BehaviourDescription> ;
+    rdfs:range ns2:Resource .
+
+<http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/requiredBy> a owl:ObjectProperty ;
+    owl:inverseOf ns2:dependsOn .
+
+ns2:action0 a ns2:Action ;
+    rdfs:label "interprets" .
+
+ns2:action1 a ns2:Action ;
+    rdfs:label "prepares" .
+
+ns2:action2 a ns2:Action ;
+    rdfs:label "applies" .
+
+ns2:action4 a ns2:Action ;
+    rdfs:label "chooses" .
+
+ns2:action5 a ns2:Action ;
+    rdfs:label "installs" .
+
+ns2:action6 a ns2:Action ;
+    rdfs:label "configures" .
+
+ns2:action7 a ns2:Action ;
+    rdfs:label "sets" .
+
+ns2:condition0 a ns2:Condition ;
+    rdfs:label "neutralize the soil acidity for having the proper ph to sow seeds" .
+
+ns2:condition1 a ns2:Condition ;
+    rdfs:label "have soil with a high acidity" .
+
+ns2:condition2 a ns2:Condition ;
+    rdfs:label "select the proper irrigation mechanism for planting tomato seeds" .
+
+ns2:condition3 a ns2:Condition ;
+    rdfs:label "do not have an irrigation mechanism for watering tomato plants" .
+
+ns2:dependsOn a owl:ObjectProperty ;
+    rdfs:comment "Represents that an BehaviourDescription depends its behaviour on the completion of another BehaviourDescription."@en ;
+    rdfs:domain <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/BehaviourDescription> ;
+    rdfs:range <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/BehaviourDescription> .
+
+ns2:resource0 a ns2:Resource ;
+    rdfs:label "soil" ;
+    owl:sameAs <http://www.wikidata.org/entity/Q36133> ;
+    ns1:description "natural body consisting of layers that are primarily composed of minerals" .
+
+ns2:resource2 a ns2:Resource ;
+    rdfs:label "magnesium" ;
+    owl:sameAs <http://www.wikidata.org/entity/Q660> ;
+    ns1:description "chemical element with symbol Mg and atomic number 12" .
+
+ns2:resource4 a ns2:Resource ;
+    rdfs:label "result of soil analysis" .
+
+ns2:resource7 a ns2:Resource ;
+    rdfs:label "soil composition" .
+
+ns2:resource8 a ns2:Resource ;
+    rdfs:label "environmental property" .
+
+ns2:resource9 a ns2:Resource ;
+    rdfs:label "frequency of irrigation" .
+
+ns2:scenario0 a ns2:Scenario ;
+    rdfs:label "neutralize the soil's acidity" ;
+    ns2:hasActor ns2:actor0,
+        ns2:actor1 ;
+    ns2:hasContext ns2:condition1 ;
+    ns2:hasEpisode ns2:episode0,
+        ns2:episode1,
+        ns2:episode2 ;
+    ns2:hasGoal ns2:condition0 ;
+    ns2:hasResource ns2:resource0,
+        ns2:resource1,
+        ns2:resource2,
+        ns2:resource3 ;
+    ns2:requiredBy ns2:episode0 .
+
+ns2:scenario1 a ns2:Scenario ;
+    rdfs:label "choose irrigation mechanism" ;
+    ns2:hasActor ns2:actor1 ;
+    ns2:hasContext ns2:condition3 ;
+    ns2:hasEpisode ns2:episode3,
+        ns2:episode4,
+        ns2:episode5,
+        ns2:episode6,
+        ns2:episode7,
+        ns2:episode8,
+        ns2:episode9 ;
+    ns2:hasGoal ns2:condition2 ;
+    ns2:hasResource ns2:resource5,
+        ns2:resource6 ;
+    ns2:requiredBy ns2:episode3 .
+
+ns2:actor0 a ns2:Actor ;
+    rdfs:label "gardener" ;
+    owl:sameAs <http://www.wikidata.org/entity/Q758780> ;
+    ns1:description "person who tends gardens" .
+
+ns2:episode2 a ns2:Episode ;
+    rdfs:label "the gardener applies the solution to the soil" ;
+    ns2:dependsOn ns2:episode1 ;
+    ns2:hasAction ns2:action2 ;
+    ns2:hasActor ns2:actor0 ;
+    ns2:hasResource ns2:resource3 .
+
+ns2:episode9 a ns2:Episode ;
+    rdfs:label "the tomato plant sets the frequency of irrigation" ;
+    ns2:dependsOn ns2:episode8 ;
+    ns2:hasAction ns2:action7 ;
+    ns2:hasActor ns2:resource6 ;
+    ns2:hasResource ns2:resource9 .
+
+ns2:resource1 a ns2:Resource ;
+    rdfs:label "agricultural lime" ;
+    owl:sameAs <http://www.wikidata.org/entity/Q3550861> ;
+    ns1:description "soil additive containing calcium carbonate and other ingredients" .
+
+ns2:Actor a owl:Class .
+
+ns2:action3 a ns2:Action ;
+    rdfs:label "analyzes" .
+
+ns2:episode0 a ns2:Episode ;
+    rdfs:label "the agricultural engineer interprets the results of the soil analysis" ;
+    ns2:dependsOn ns2:scenario0 ;
+    ns2:hasAction ns2:action0 ;
+    ns2:hasActor ns2:actor1 ;
+    ns2:hasResource ns2:resource4 ;
+    ns2:requiredBy ns2:episode1 .
+
+ns2:episode1 a ns2:Episode ;
+    rdfs:label "the agricultural engineer prepares a solution with agricultural lime and magnesium" ;
+    ns2:dependsOn ns2:episode0 ;
+    ns2:hasAction ns2:action1 ;
+    ns2:hasActor ns2:actor1 ;
+    ns2:hasResource ns2:resource1,
+        ns2:resource3 ;
+    ns2:requiredBy ns2:episode2 .
+
+ns2:episode3 a ns2:Episode ;
+    rdfs:label "the agricultural engineer analyzes the soil composition and water availability" ;
+    ns2:dependsOn ns2:scenario1 ;
+    ns2:hasAction ns2:action3 ;
+    ns2:hasActor ns2:actor1 ;
+    ns2:hasResource ns2:resource7 ;
+    ns2:requiredBy ns2:episode4 .
+
+ns2:episode4 a ns2:Episode ;
+    rdfs:label "the agricultural engineer chooses an irrigation mechanism based on soil analysis and water availability" ;
+    ns2:dependsOn ns2:episode3 ;
+    ns2:hasAction ns2:action4 ;
+    ns2:hasActor ns2:actor1 ;
+    ns2:hasResource ns2:resource5 ;
+    ns2:requiredBy ns2:episode5 .
+
+ns2:episode5 a ns2:Episode ;
+    rdfs:label "the agricultural engineer installs the irrigation mechanism" ;
+    ns2:dependsOn ns2:episode4 ;
+    ns2:hasAction ns2:action5 ;
+    ns2:hasActor ns2:actor1 ;
+    ns2:hasResource ns2:resource5 ;
+    ns2:requiredBy ns2:episode6 .
+
+ns2:episode6 a ns2:Episode ;
+    rdfs:label "the agricultural engineer analyzes the tomato plants" ;
+    ns2:dependsOn ns2:episode5 ;
+    ns2:hasAction ns2:action3 ;
+    ns2:hasActor ns2:actor1 ;
+    ns2:hasResource ns2:resource6 ;
+    ns2:requiredBy ns2:episode7 .
+
+ns2:episode7 a ns2:Episode ;
+    rdfs:label "the agricultural engineer analyzes the environmental properties" ;
+    ns2:dependsOn ns2:episode6 ;
+    ns2:hasAction ns2:action3 ;
+    ns2:hasActor ns2:actor1 ;
+    ns2:hasResource ns2:resource8 ;
+    ns2:requiredBy ns2:episode8 .
+
+ns2:episode8 a ns2:Episode ;
+    rdfs:label "the agricultural engineer configures the water requirement based on the development of the tomato plants and environmental properties" ;
+    ns2:dependsOn ns2:episode7 ;
+    ns2:hasAction ns2:action6 ;
+    ns2:hasActor ns2:actor1 ;
+    ns2:requiredBy ns2:episode9 .
+
+ns2:resource3 a ns2:Resource ;
+    rdfs:label "solution" ;
+    owl:sameAs <http://www.wikidata.org/entity/Q5447188> ;
+    ns1:description "homogeneous mixture composed of only one phase" .
+
+ns2:resource5 a ns2:Resource ;
+    rdfs:label "irrigation mechanism" .
+
+ns2:resource6 a ns2:Resource ;
+    rdfs:label "tomato",
+        "tomato plant" ;
+    owl:sameAs <http://www.wikidata.org/entity/Q23501> ;
+    ns1:description "type of plant species with edible, often red, berry fruit" .
+
+ns2:Scenario a owl:Class ;
+    rdfs:subClassOf <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/BehaviourDescription> .
+
+ns2:Condition a owl:Class .
+
+<http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/BehaviourDescription> a owl:Class .
+
+ns2:Action a owl:Class .
+
+ns2:actor1 a ns2:Actor ;
+    rdfs:label "agricultural engineer" ;
+    owl:sameAs <http://www.wikidata.org/entity/Q18926350> ;
+    ns1:description "engineering profession" .
+
+ns2:Resource a owl:Class .
+
+ns2:Episode a owl:Class ;
+    rdfs:subClassOf <http://sw.cientopolis.org/scenarios_ontology/0.1/scenarios.ttl/BehaviourDescription> .
+

@@ -20,6 +20,7 @@ class JSONParser:
     """
 
     def __init__(self, file_name: str):
+        """Initialize the JSONParser object."""
         with open(file_name, mode="r", encoding="utf8") as file:
             self.data: dict = load(file)
 
